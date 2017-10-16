@@ -1,0 +1,104 @@
+\documentclass[12pt,oneside,a4paper]{report}
+
+%%%%% NEW COMMANDS
+\newcommand{\BR}{\ensuremath{\mathcal{B}r}} %
+\newcommand{\pb}{\ensuremath{\,\cmsSymbolFace{pb}}\xspace} %
+\newcommand{\fb}{\ensuremath{\,\cmsSymbolFace{fb}}\xspace} %
+\newcommand{\Ks}{\ensuremath{\cmsSymbolFace{K}^{*0}}\xspace} %
+\newcommand{\BKsmm}{\ensuremath{\PBz\to{\Ks\mu\mu}\,}\xspace} %
+\newcommand{\KsKpi}{\ensuremath{{\Ks\to\cmsSymbolFace{K^+}\pi^-}\,}\xspace} %
+\newcommand{\BKpimm}{\ensuremath{\PBz\to{\Ks(\to{\cmsSymbolFace{K^+}\pi^-})\mu\mu}\,}\xspace} %
+
+\newcommand{\BKsJ}{\ensuremath{\PBz\to{\Ks(\to{\cmsSymbolFace{K^+}\pi^-})\JPsi(\to\mu\mu)}\,}\xspace} %
+\newcommand{\BKsPsip}{\ensuremath{\PBz\to{\Ks(\to{\cmsSymbolFace{K^+}\pi^-})\psi'(\to\mu\mu)}\,}\xspace} %
+\newcommand{\Pfp}{\ensuremath{P'_5}\xspace} %
+\newcommand{\TL}{\ensuremath{\theta_l}\xspace} %
+\newcommand{\TK}{\ensuremath{\theta_K}\xspace} %
+\newcommand{\cTL}{\ensuremath{\cos\theta_l}\xspace} %
+\newcommand{\cTK}{\ensuremath{\cos\theta_K}\xspace} %
+\newcommand{\PHI}{\ensuremath{\phi}\xspace} %
+
+\newcommand{\pdf}{\texttt{p.d.f.\xspace}} %
+\newcommand{\e}[1]{\ensuremath{\cdot{10}^{#1}}}%
+
+
+%%% from the paper
+\providecommand{\cPKst}{\ensuremath{\cmsSymbolFace{K}^\ast}\xspace}
+\providecommand{\cPKstz}{\ensuremath{\cmsSymbolFace{K}^{\ast0}}\xspace}
+\providecommand{\cPAKstz}{\ensuremath{\overline{\cmsSymbolFace{K}}{}^{\ast0}}\xspace}
+\newcommand{\BtoKstmumu}{\ensuremath{\PBz\to\cPKstz \Pgmp \Pgmm}\xspace}
+\newcommand{\BtoKstJpsi}{\ensuremath{\PBz\to\cPJgy \cPKstz}\xspace}
+\newcommand{\BtoKstpsip}{\ensuremath{\PBz\to\psi' \cPKstz}\xspace}
+\newcommand{\BtoKstJpsimumu}{\ensuremath{\PBz\to\cPJgy(\Pgmp \Pgmm) \cPKstz}\xspace}
+\newcommand{\BtoKstpsipmumu}{\ensuremath{\PBz\to\psi'(\Pgmp \Pgmm) \cPKstz}\xspace}
+\newcommand{\BtoKstmumudecay}{\ensuremath{\PBz\to\cPKstz(\PKp \Pgpm) \Pgmp \Pgmm}\xspace}
+\newcommand{\BtoKstJpsidecay}{\ensuremath{\PBz\to\cPJgy(\Pgmp \Pgmm) \cPKstz(\PKp \Pgpm)}\xspace}
+\newcommand{\BtoKstpsipdecay}{\ensuremath{\PBz\to\psi'(\Pgmp \Pgmm) \cPKstz(\PKp \Pgpm)}\xspace}
+\newcommand{\Kstmumudecay}{\ensuremath{\cPKstz(\PKp \Pgpm) \Pgmp \Pgmm}\xspace}
+\newcommand{\KstJpsidecay}{\ensuremath{\cPJgy(\Pgmp \Pgmm) \cPKstz(\PKp \Pgpm)}\xspace}
+\newcommand{\Kstpsipdecay}{\ensuremath{\psi'(\Pgmp \Pgmm) \cPKstz(\PKp \Pgpm)}\xspace}
+\renewcommand{\PaBz}{\ensuremath{\overline{\cmsSymbolFace{B}}{}^{0}}\xspace}
+
+
+
+
+%%%%%%%%%%%%%%% INFOS
+
+\title{Measurement of the P5' angular observable of  the decay \texorpdfstring{$\PBz\to\PKst^0\Pgmp\Pgmm$}{B0->K*mumu} at 8 TeV}
+
+% >> Authors
+\address[pdinfn]{INFN sez. Padova - Italy}
+\address[pduni]{Universit\`a Padova and INFN - Italy}
+\author[pdinfn,pduni]{Alessio Boletti}
+
+% >> Date
+\date{\today}
+
+% >> Abstract
+\abstract{
+  Does a thesis need an abstract?
+}
+
+% In this note, we describe how the efficiency for signal as well as
+% background selection is computed and parametrized vs the three angles used
+% in the full angular analysis.
+
+
+% >> PDF Metadata
+\hypersetup{%
+pdfauthor={Alessio Boletti, Stefano Lacaprara, Geng Chen, Mauro Dinardo, Linwei Li, Dayong Wang},%
+pdftitle={Full angular analysis B0 to Kstar muon-muon},%
+pdfsubject={Efficiency for B0 to Ks mumu},%
+pdfkeywords={CMS, B-physics, FCNC, B0}}
+
+
+%%%%%%%% CONTENTS
+
+\begin{document}
+
+\maketitle %maketitle comes after all the front information has been supplied
+
+\tableofcontents
+\clearpage
+
+\input{Introduction.tex}
+\clearpage
+
+
+%%%%%%%%%% acknowledgments
+\begin{acknowledgments}
+
+Thanks everybody!
+\end{acknowledgments}
+
+%%%%%%%%%% BIBLIOGRAPHY
+%% \bibliography{auto_generated}   % will be created by the tdr script.
+%% \clearpage
+
+%%%%%%%%% APPENDICES
+%% \appendix
+%% \input{Appendix.tex}
+%% \clearpage
+
+\end{document}
+

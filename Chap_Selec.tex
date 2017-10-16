@@ -1,0 +1,60 @@
+\section{Data collection and event selection}\label{sec:selection}
+
+The data used for this analysis have been collected by CMS detector during 2012 $pp$ run, at a centre-of-mass energy $\sqrt{s}=8~\TeV$.
+The integrated luminosity collected and certified is $20.5~\fbinv$.
+
+The events have been selected by two-level criteria: firstly an online trigger selection is used during data taking, and then an offline selection and candidate identification is performed after the events are fully reconstructed.
+
+\subsection{Online event selection}
+\label{sec:onsel}
+All the events used in this analysis, both for signal regions and control regions, are selected by a single trigger. This requires the presence of two reconstructed muons in the event with opposite charge, each of them with a transverse momentum greater than $3.5\GeV$, a pseudo-rapidity smaller, in module, than $2.2$, and a distance with respect to the beam axis smaller than $2\cm$. The dimuon system is required to have a transverse momentum greater than $6.9\GeV$, an invariant mass between $1\GeV$ and $4.8\GeV$, and a distance of closest approach (DCA) between the muons smaller than $0.5\cm$. In addition, the two muons are required to form a common vertex, with fit $\chi^2$ probability greater than $10\%$, an flight distance significance with respect to the beamspot, measured in the plane transverse to the beam axis, greater than 3, and $\cos{\alpha}>0.9$, where $\alpha$ is the angle in the transverse plane between the dimuon momentum vector and the vector from the beamspot to the dimuon vertex.
+
+No requirements on the hadronic particles in the final state are present at trigger level.
+
+\subsection{Offline candidate identification}
+\label{sec:offsel}
+
+In the offline selection the full final state, composed by two muons and two hadrons, is required to be reconstructed. A set of four reconstructed objects compatible with those four particles is considered as a candidate. The offline cuts are applied independently to each candidate in a event.
+
+The two reconstructed muons are required to have opposite charge and be matched with those that triggered the event. This is done by requiring $\Delta R = \sqrt{(\Delta\eta)^2+(\Delta\phi)^2}<0.1$, where $\Delta\eta$ and $\Delta\phi$ are the pseudorapidity and azimuthal angle differences between the directions of the trigger-level and offline muons.
+In addition, they have to satisfy general muon identification requirements: the muon track candidate from the silicon  tracker must match a track segment from the muon detector, the $\chi^2$ per degree of freedom in a global fit to the silicon tracker and muon detector hits must be less than 1.9, there must be at least six silicon tracker hits, including at least two from the pixel detector, and the transverse and longitudinal impact parameters with respect to the beamspot must be less than 3\cm and 30\cm, respectively.
+The same requirements applied at trigger level and described in Section~\ref{sec:onsel} are also applied to the offline reconstructed dimuon system.
+
+The two charged hadron candidates are required to have opposite charge and each of them has to fail the muon identification criteria, have a transverse momentum greater than 0.8\GeV, and a significance of the extrapolated distance $d$ of closest approach to the beamspot in the transverse plane greater 2. The uncertainty associated to $d$ is defined as the sum in quadrature of the uncertainty of the track position and the beamspot transverse size.
+
+Since the CMS detector has not the possibility to identify the charged hadron masses, in each candidate is still present an ambiguity: the mass of the kaon can be assigned to the positive charged hadron track and the mass of the pion to the negative one and they are the products of a \cPKstz decay, or viceversa and they are the products of a \cPAKstz decay.
+For at least one of these two identity assignments, the hadron pair invariant mass is requested to be within 90\MeV of the nominal \cPKstz\ mass~\cite{PDG}.
+
+To avoid the contamination from $\Pgf\to\PKp\PKm$ decays, we request that the invariant mass of the hadron pair, in the hypothesis both tracks have the kaon mass, is larger than 1.035\GeV.
+
+The \PBz\ candidates are obtained by fitting a second time the four charged tracks after applying a common vertex constraint. This operation is used to improve the resolution of the track parameters.
+The \PBz\ candidates is required to have a trasverse momentum greater than 8\GeV, a pseudorapidity smaller, in module, than 2.2, and a vertex fit $\chi^2$ probability larger than 10\%.
+The vertex distance from the beamspot in the transverse plane, $L$, must be greater than 12 times the sum in quadrature of the uncertainty on $L$ and the beamspot transverse size. Then, $\cos{\alpha_{xy}}$, where $\alpha_{xy}$ is the angle in the transverse plane between the \PBz\ momentum vector and the line-of-flight between the beamspot and the \PBz\ vertex, is required to be larger than 0.9994.
+
+The invariant mass $m$ of the \PBz\ candidate is required to be within 280\MeV of the nominal \PBz\ mass $(m_\PBz)$~\cite{PDG}, for at least one of the mass assignmenthypothesis, $\PKm\Pgpp\Pgmp\Pgmm$ or $\PKp\Pgpm\Pgmp\Pgmm$.
+
+The mass sideband is defined as the set of \PBz\ cnadidates with $3\sigma_m < \abs{m-m_{\PBz}} < 280\MeV$, where $\sigma_m$ is the average mass resolution (${\approx}45$\MeV) as obtained from fitting the $m$ distribution of simulated signal events with a sum of two Gaussian functions with a common mean.
+
+The cuts on the hadronic track transverse momentum and $d$ significance, the \cPKstz\ mass window, and the \PBz\ candidate vertex fit probability, displacement significance and pointing angle are optimized by maximising the signal significance in the region $\abs{m-m_{\PBz}} < 2.5\sigma_m$, using signal event samples from simulation and background event samples from sideband data in $m$.
+
+After applying these selection criteria, about 5\% of the events have more than one candidate.
+For these events, a single candidate is chosen based on the best \PBz\ vertex $\chi^2$ probability.
+
+For each candidate, the dimuon invariant mass $q$ and its uncertainty $\sigma_{q}$ are calculated.
+Two control samples, corresponding to the \BtoKstJpsi and \BtoKstpsip decay channels, are defined by the requirements $\abs{q - m_{\cPJgy}} < 3\sigma_{q}$ and $\abs{q - m_{\psi'}} < 3\sigma_{q}$, respectively, where $m_{\cPJgy}$ and $m_{\psi'}$ are the nominal masses~\cite{PDG} of the indicated meson.
+On average, the value of $\sigma_{q}$ is about 26\MeV.
+
+A strong contamination from \BtoKstJpsi and \BtoKstpsip decays is still present in the sample of events passing the selections, mainly because of unreconstructed soft photons in the charmonium decay, \ie, $\cPJgy\ {\rm or}\ \psi' \to \Pgmp \Pgmm \Pgg$.
+These events have value of $q$ which is lower than $m_{\cPJgy}$ and $m_{\psi'}$, respectively, and are not included in the control sample described above.
+They also have a value of $m$ lower than $m_{\PBz}$, and they can be efficiently removed by a combined requirement on $q$ and $m$.
+For $q<m_{\cPJgy}$ $(q>m_{\cPJgy})$, it is required that $\abs{(m-m_{\PBz})-(q-m_{\cPJgy})}>160\: (60)\MeV$.
+For $q<m_{\psi'}$ $(q>m_{\psi'})$, it is required that $\abs{(m-m_{\PBz})-(q-m_{\psi'})}>60\: (30)\MeV$.
+These cuts are tuned using MC simulations, in such a way that less than 10\% of the background events with $q^2$ values close to the control regions originate from the control channels.
+
+%% The selection criteria are such that they do not depend upon the choice of the primary vertex, and their optimization procedure makes use of both MC simulated signal events generated with the same pileup distribution as in data, and sideband data.
+After applying the full set of requirements described here 3191 events remain in the data sample, including the sideband region.
+
+The selected four-track candidate is identified as a \PBz\ or $\PaBz$, and the corresponding masses are assigned to the hadronic tracks, depending on whether the $\PKp\Pgpm$ or $\PKm\Pgpp$ invariant mass hypothesis is closest to the nominal \cPKstz\ mass.
+The candidates assigned to the correct state will be called right-tagged, while we will refer to the candidates assigned to the incorrect state as mis-tagged.
+The fraction of mis-tagged events is estimated from simulation to be in the range 12--14\%, depending on $q^2$.
+
