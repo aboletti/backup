@@ -1,0 +1,39 @@
+****INTRODUCTION****[1]
+aim of the thesis and chapter structure
+
+****STANDARD MODEL AND FLAVOUR PHYSICS****[2]
+
+****THE CMS EXPERIMENT****[3]
+
+****DATA COLLECTION AND EVENT SELECTION****[4]
+**Online event selection**
+
+**Offline candidate selection**
+
+****EFFICIENCY MEASUREMENT****[5]
+**Kernel Density Estimator definition**
+
+**Closure test**
+
+****FIT STRUCTURE AND VALIDATION****[6]
+**Angular parametrization of the signal**
+
+**PDF definition**
+
+**Fit structure**
+
+**Fit validation**
+
+****FIT UNCERTAINTIES****[7]
+**Statistical uncertainties**
+
+**Systematic uncertainties**
+
+****RESULTS****[8]
+
+[???]****FUTURE PERSPECTIVE****[9]
+**RunII data taking**
+
+**Trigger developments**
+
+****CONCLUSIONS****[10]
