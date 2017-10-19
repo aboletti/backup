@@ -10,30 +10,31 @@ aim of the thesis and chapter structure
 
 **Offline candidate selection**
 
-****EFFICIENCY MEASUREMENT****[5]
-**Kernel Density Estimator definition**
-
-**Closure test**
-
-****FIT STRUCTURE AND VALIDATION****[6]
+****ANALYSIS STRATEGY****[5]
 **Angular parametrization of the signal**
 
 **PDF definition**
 
+****EFFICIENCY PARAMETRIZATION****[6]
+**Kernel Density Estimator definition**
+
+**Closure test**
+
+****FIT STRUCTURE AND VALIDATION****[7]
 **Fit structure**
 
 **Fit validation**
 
-****FIT UNCERTAINTIES****[7]
+****FIT UNCERTAINTIES****[8]
 **Statistical uncertainties**
 
 **Systematic uncertainties**
 
-****RESULTS****[8]
+****RESULTS****[9]
 
-[???]****FUTURE PERSPECTIVE****[9]
+[???]****FUTURE PERSPECTIVE****[10]
 **RunII data taking**
 
 **Trigger developments**
 
-****CONCLUSIONS****[10]
+****CONCLUSIONS****[11]

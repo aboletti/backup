@@ -1,6 +1,6 @@
 \section{Efficiency}\label{sec:eff}
 
-The efficiency for signal (and for control channels) is defined as the ratio of number of events passing the selection and whose selected candidate is matched with the generated final state, over the total number of events generated.
+The efficiency for signal and for control channels is defined as the ratio of number of events passing the selection and whose selected candidate is matched with the generated final state, over the total number of events generated.
 It includes the effects of detector geometric acceptance, the trigger selection efficiency and the offline selection efficiency, and is entirely computed from MC simulation.
 The efficiency is built as a three-dimensional function of the angular observables \TL, \TK, and \PHI, and computed independently for each bin of $q^2$, both for signal and for the control regions.
 The use of such a function allows to account for any possible correlation among the variables introduced by the selection cuts.
@@ -56,36 +56,39 @@ Since the \TK and \TK variables are defined in the range $[0,\pi]$, there is no 
 
 %% The efficiency is defined as the product of two ratios as described in eq.~\ref{eq:eff} for each bin of $q^2$.
 %% In the following, we will take as implicit the dependence on $q^2$ in order to simplify the formula: $\epsilon(q^2,\theta_L,\theta_K,\phi)=\epsilon(\theta_L,\theta_K,\phi)$.
+In the first angular analysis based on this dataset, the efficiency was built as a two-dimensional function against the angular variables \TK and \TL.
+The method used to parameterise it was composed by two steps.
+Firstly, a two-dimensional function is constructed by performing the bin-by-bin ratios of the binned distributions of numerators and denominators.
+Then, this binned efficiency is fitted with a polinomial function, which is used as parameterisation of the efficiency.
+Some complex procedures were needed in order to have this fit converging and to grant that the final efficiency functions were positive in the whole range of definition.
 
-%%%%%%%%%%%%%%%%%%%%%%%5
-One possible way to deal with it is to construct the efficiency in a binned way as a function of the three angular observables and then parametrize its three dimensional shape via some function.
-This has been done for the previous angular analysis, which needed only to consider \cTL and \cTL, since the \pdf was integrated over \PHI.
-The choice, in that work, was to parametrize the two-dimensional efficiency with a polynomial function in two variables, third degree on \cTK and fifth on \cTL, for a total of $4\cdot6=24$ parameters for each $q^2$ bin.
-The parameter were extracted via a fit of the polynomial to the binned efficiency, which needed some complex procedure in order to converge.
-The extension of this method to three variables seemed not easy.
+Most of the problems in this technique were due to both the low MC event statistics in some $q^2$ bins, especially for the mis-tagged event efficiency, and the large number of free parameters in the two-dimensional polynomial function.
+Extending this procedure to a three dimensional efficiency would imply the usage of three-dimensional binned distributions, with a global decrease of the bin statistics, and the usage of a three-dimensional polynomial function, with a larger number of free parameters to fit.
+For this reason, the usage of this method was not considered for this analysis, but new parameterisation techniques were tested.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%55
-Two independent approaches have been tested and compared to determine the best one.
-The first extend the efficiency description from two to three dimensions by
-considering two variables at a time, while integrating over the third, and then
-iterating on the variables choice. The final three dimensional efficiency is
-then defined as the product of the three two dimensional ones. In formula:
+Two independent approaches have been tested: a two dimensional reduction of the binned method and a parametrization based on Kernel Density Estimator (KDE) distributions.
+In this section both of them are described and some example functions are showed.
+In the next section a closure test developed to determine their accuracy is described and the better performances of the KDE-based method will be highlighted.
 
+%% The first extend the efficiency description from two to three dimensions by considering two variables at a time, while integrating over the third, and then iterating on the variables choice.
+The first method is based on binned efficiency functions.
+Instead of building directly a three-dimensional binned efficiency, facing the low per-bin statistics, we use two-dimensional functions to compose the final efficiency.
+To model the efficiency correlation between each couple of parameters, three functions are created by integrating out, recursively, one angular variable and building the efficiency as a function of the remaining two.
+The final three dimensional efficiency is then defined as the product of the three two dimensional ones.
+In formula:
 \begin{equation}\label{eq:eff2d}
     \epsilon(\cTL,\cTK,\phi)=\epsilon(\cTL,\cTK)\times\epsilon(\cTL,\phi)\times\epsilon(\cTK,\phi)
 \end{equation}
+The final function results not correctly normalised and was rescaled in such a way that the global efficiency, averaged over all the angular variables, matches the simple ratio of the number of events in the numerator and denominator distributions.
 
-This approach has the advantage to reduce the three dimensional problem to
-three two dimensional ones, easier to deal with.  The correlation among the
-three angular variables are taken into account by the final product.
-A disadvantage is that the efficiency is computed from binned distributions,
-where the bin width is ultimately determined by the statistics of montecarlo
-events avaiable.  Any structure or behaviour inside a given bin is not
-resolved, and some kind of smoothing is needed.
+This approach has the advantage to reduce the three-dimensional problem to three two-dimensional ones, easier to deal with and less prone to lack of statistics.
+The correlation among the three angular variables are taken into account by the final product.
+A disadvantage is that the efficiency is computed from binned distributions, where the bin width is determined by the statistics of events avaiable in the MC samples used.
+Any structure or behaviour inside a given bin is notresolved, and some kind of smoothing is needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
-A first order solution to this binning problem is to use a two-dimensional
-interpolation between the bins of the three two-dimensional efficiencies of
-eq.~\ref{eq:eff2d}. The interpolation can be linear or parabolic.
+The solution used to this binning problem is to use a two-dimensional interpolation between the bins of the three two-dimensional efficiencies of eq.~\ref{eq:eff2d}.
+The interpolation can be linear or parabolic.
 
 The two dimension binned efficiency are shown in Fig.~\ref{fig:eff2D}.
 
@@ -97,6 +100,7 @@ The two dimension binned efficiency are shown in Fig.~\ref{fig:eff2D}.
         $\epsilon(\cTL,\phi)$, and $\epsilon(\cTK,\phi)$}
     \label{fig:eff2D}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%5
 
 The second approach uses a non-parametric description of the
 efficiency based on a kernel density estimator
