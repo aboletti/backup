@@ -1,9 +1,10 @@
-\documentclass[12pt,oneside,a4paper,draft]{report}
+\documentclass[12pt,oneside,a4paper]{report}
 
 \usepackage{siunitx}
 \usepackage{xspace}
 \usepackage{amsmath}
 \usepackage{mathtools}
+\usepackage{graphicx}
 
 %%%%% NEW COMMANDS
 \newcommand{\MeV}{\ensuremath{\,\textrm{MeV}}\xspace}
@@ -40,6 +41,7 @@
 \newcommand{\PHI}{\ensuremath{\phi}\xspace} %
 
 \newcommand{\pdf}{\texttt{p.d.f.\xspace}} %
+\newcommand{\pdfs}{\texttt{p.d.f.}s\xspace} %
 \newcommand{\e}[1]{\ensuremath{\cdot{10}^{#1}}}%
 
 
@@ -60,11 +62,11 @@
 \newcommand{\Kstpsipdecay}{\ensuremath{\psi'(\Pgmp \Pgmm) \cPKstz(\PKp \Pgpm)}\xspace}
 
 
-
+\graphicspath{{./Note/}{./Paper/}}
 
 %%%%%%%%%%%%%%% INFOS
 
-\title{Measurement of the P5' angular observable of  the decay B0->K*mu+mu- at 8 TeV}
+\title{Measurement of the P5' angular observable of  the decay B0 to K*mu+mu- at 8 TeV}
 
 % >> Authors
 %% \address[pdinfn]{INFN sez. Padova - Italy}
@@ -74,18 +76,6 @@
 
 % >> Date
 \date{\today}
-
-\begin{document}
-
-% >> Abstract
-\abstract{
-  Does a thesis need an abstract?
-}
-
-% In this note, we describe how the efficiency for signal as well as
-% background selection is computed and parametrized vs the three angles used
-% in the full angular analysis.
-
 
 % >> PDF Metadata
 %% \hypersetup{%
@@ -97,7 +87,14 @@
 
 %%%%%%%% CONTENTS
 
+\begin{document}
+
 \maketitle %maketitle comes after all the front information has been supplied
+
+%% % >> Abstract
+%% \abstract{
+%%   Does a thesis need an abstract?
+%% }
 
 \tableofcontents
 \clearpage
@@ -105,11 +102,11 @@
 \input{Chap_Selec.tex}
 \clearpage
 
-%% \input{Chap_Effic.tex}
-%% \clearpage
-
 %% \input{Chap_Param.tex}
 %% \clearpage
+
+\input{Chap_Effic.tex}
+\clearpage
 
 
 %%%%%%%%%% acknowledgments

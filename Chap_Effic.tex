@@ -71,6 +71,7 @@ In this section both of them are described and some example functions are showed
 In the next section a closure test developed to determine their accuracy is described and the better performances of the KDE-based method will be highlighted.
 
 %% The first extend the efficiency description from two to three dimensions by considering two variables at a time, while integrating over the third, and then iterating on the variables choice.
+\subsubsection{Two-diemnsional binned method}\label{sec:eff_2Dprod}
 The first method is based on binned efficiency functions.
 Instead of building directly a three-dimensional binned efficiency, facing the low per-bin statistics, we use two-dimensional functions to compose the final efficiency.
 To model the efficiency correlation between each couple of parameters, three functions are created by integrating out, recursively, one angular variable and building the efficiency as a function of the remaining two.
@@ -85,552 +86,477 @@ This approach has the advantage to reduce the three-dimensional problem to three
 The correlation among the three angular variables are taken into account by the final product.
 A disadvantage is that the efficiency is computed from binned distributions, where the bin width is determined by the statistics of events avaiable in the MC samples used.
 Any structure or behaviour inside a given bin is notresolved, and some kind of smoothing is needed.
-%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
-The solution used to this binning problem is to use a two-dimensional interpolation between the bins of the three two-dimensional efficiencies of eq.~\ref{eq:eff2d}.
-The interpolation can be linear or parabolic.
+The solution used to mitigate this binning problem is to use an interpolation between the bins of each two-dimensional efficiencies of eq.~\ref{eq:eff2d}.
+Both a linear and parabolic interpolations have been tested.
 
-The two dimension binned efficiency are shown in Fig.~\ref{fig:eff2D}.
+An example of the two dimension binned efficiencies after a linear interpolation is applied, for the $q^2$ bin~1, are shown in Fig.~\ref{fig:eff2D}.
 
 \begin{figure}[hbt]
     \includegraphics[width=1.\textwidth]{Plot/cEff2d3_2D_q2bin1.pdf}
-
-    \caption{Distribution of the three 2D binned efficiency of
-        eq~\ref{eq:eff2d} for bin 1. Left to right: $\epsilon(\cTL,\cTK)$,
-        $\epsilon(\cTL,\phi)$, and $\epsilon(\cTK,\phi)$}
+    \caption{Distribution of the two-dimensional binned efficiency of equation~\ref{eq:eff2d} after the application of a linear interpolation between the bins, for $q^2$ bin~1: $\epsilon(\cTL,\cTK)$ (left), $\epsilon(\cTL,\phi)$ (centre), and $\epsilon(\cTK,\phi)$ (right).}
     \label{fig:eff2D}
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%5
 
-The second approach uses a non-parametric description of the
-efficiency based on a kernel density estimator
-(KDE)~\cite{opac-b1089297,Cranmer:2000du}.  The idea behind this
-method is to start from an unbinned distribution of events as a
-function of a given variable $x$, and describe the true distribution
-\texttt{pdf}$_{TRUE}$ by building a kernel, namely a function with
-unit integral $\int{K(x)dx}=1$, on top of every event, and use the sum
-of all kernels, with proper normalization, as a non-parametric
-description of the \texttt{pdf}$_{TRUE}$:
+\subsubsection{Kernel Density Estimator method}\label{sec:eff_kde}
+The second approach uses a non-parametric description of the efficiency based on a Kernel Density Estimator (KDE)~\cite{opac-b1089297,Cranmer:2000du}.
 
+The general idea behind this method, in its simplest form for a uni-dimensional problem, is to start from an unbinned distribution of events as a function of a given variable $x$, and describe its true distribution \pdf$_{TRUE}$ by building a kernel, namely a function $K(x)$ with unitary integral over the range of definition of $x$, on top of every event, and use the sum of all kernels, with proper normalization, as a non-parametric description of \pdf$_{TRUE}$:
 \begin{equation}\label{eq:KDE}
     \mathtt{pdf}_{KDE}(x)=\frac{1}{N}\sum_{i=1}^{N} K(x-x_i)
 \end{equation}
-where i denotes the ith event and N is the total number of events.
+where $i$ is an index running over the set of events and $N$ is the total number of events.
+The kernel $K(x)$ can be any non-negative function with unitary integral, and can be of different type; some common examples are uniform, triangular, or Gaussian kernels.
+A remarkable property of the KDE technique is that the quality of the PDF description depends rather weakly on the kernel used.
+The resulting $\mathtt{pdf}_{KDE}(x)$ in the limit $N\to\infty$ is a convolution of \pdf$_{TRUE}$ with the kernel $K(x)$.
+In this analysis, we decided to use a Gaussian kernel, becuase of its ability to produce a smooth \pdf even in region where a low event statistics is available.
 
-The kernel $K$ can be any non-negative function with unit integral, and can be
-of different type: uniform, triangular, bi/triweight, normal, \ldots. A
-remarkable property of the KDE technique is that the quality of the PDF
-description depends rather weakly on the actual kernel used.
-The $x$ can be a single variable as well as multidimensional variable
-$x=(x_1,\ldots,x_n)$. In this case, the kernel used should be multidimensional
-as well. The resulting $\mathtt{pdf}_{KDE}(x)$ in the limit $N\to\infty$ 
-is a convolution of the true \texttt{pdf}$_{TRUE}$ with the kernel $K(x)$.
+The KDE method can be extended to multi-dimensional problems, building a \pdf as a function of a set of $n$ variables $x_1,\ldots,x_n)$.
+In this case, the kernel used should be $n$-dimensional as well.
 
-An implementation of KDE, using a normal kernel, is available within the
-{\sc RooFit} package~\cite{RooFit}. 
+An implementation of KDE method using a Gaussian kernel is available, for both the uni-dimensional and the multi-dimensional application, within the {\sc RooFit} package~\cite{RooFit}.
 
-The advantage of the KDE over a parametric description is that no prior
-knowledge of assumption on the actual \texttt{pdf}$_{TRUE}$ is needed, and the
-structure of the original \pdf is followed as good as the statistics allow.
-The last point is particular relevant in the case under study, since in spite
-of the large statistics of events used to compute the efficiency, the phase
-space is very large, given the four variables considered for the efficiency
-description.
-A disadvantage is that an unbinned distribution of event is needed, so it is
-not possible to use KDE directly on the efficiency, which is binned by
-construction, but rather the numerators and denominators from which the
-efficiency is computed can be described via KDE, and then the efficiency will
-be the product of the two ratios of these \pdf.
+The advantage of the KDE over a parametric description is that no prior assumption on the actual \pdf$_{TRUE}$ is needed, and the structure of the original \pdf is described as accurately as the statistics allow.
+The last point is particularly relevant in the case under study, since in spite of the large statistics of events in the MC samples used to compute the efficiency, the phase space is very large, given the number of variables considered for the efficiency description.
+A disadvantage is that an unbinned distribution of event is needed, so it is not possible to use the KDE method directly on the efficiency, which is binned by construction, but it needs to be used on the numerator and denominator distributions, and then the efficiency will be defined through the ratios of these \pdfs.
 
-The efficiency at the observable boundaries is not expected to be null,
-especially for \PHI, given its periodic nature. 
-%% The kernel estimator would
-%% instead force the modeling to go to zero at the boundary, since no data is
-%% present over the edge.
-In such cases, the kernel estimator would introduce a significant decreasing of the model, since it would behave, close to the border, like a convolution between a step function and a gaussian function.
-In order to improve the behaviour of the modeling close the observable
-boundaries, data are mirrored across the boundaries. It means that, for any gaussian function added for a data point next to a boundary, the tail of this function that goes outside is reflected inside the boundary.
+The efficiency at the observable boundaries is not expected to be null, especially for \PHI, given its periodic nature. 
+In such cases, the kernel estimator would introduce a significant decreasing of the \pdf, since it would behave, close to the border, like a convolution between a step function and a gaussian function.
+In order to improve the behaviour of the modeling close the observable boundaries, data are mirrored across the boundaries.
+It means that, for any gaussian function added for a data point next to a boundary, the tail of this function that exceeds it is reflected inside the boundary.
 
-A further tuning is possible by defining the overall scale for the width of the
-kernel used. A wide kernel is less sensitive to the limited statistic of the
-data sample but may fail to reproduce fine structures of the original
-distribution, especially when the distribution is steep. A small kernel width
-has the opposite drawbacks and advantages. Several width (1.0, 0.5, 0.3) have
-been tested to optimize the choice which has been based on the
-goodness of the closure test~\ref{sec:closure}.
+Even if the KDE with Gaussian kernel is a non-parametric method, the values of the widths and correlation terms of the multi-dimensional kernel need to be determined.
+For simplicity, the correlation terms are kept equal to zero; the usage of these terms could be useful when the distribution to model shows a strong correlation between two or more of its varaibles, but it is not the case for these numerator and denominator distributions.
+The {\sc RooFit} class used to build the $\mathtt{pdf}_{KDE}$ uses a set of standard values for the width parameters, determined as a function of the varables range of definition.
+An allowed tuning is the definition of an global scale factor, applied to the whole set of width parameters.
+On one hand, a wide kernel is less sensitive to the limited statistic of the data sample and allows to produce smoother \pdfs.
+On the other hand, a narrow kernel reproduces in a more accurate way the fine structures of the original distribution, especially when this distribution is steep.
+Several width scale factors (1.0, 0.5, 0.3) have been tested and the choice of the value used for the efficiency is based on the goodness of the results of the closure test described in Section~\ref{sec:closure}.
 
-A even more optimal solution would have been to use an adaptive approach, where
-a non-constant width of the kernel is used, depending on the density of the
-data in the around the kernel centroid. This method is known to behave better
-than a fixed width one, but at the cost of a important overhead in the actual
-modeling computing time ($\gtrsim10x$).
-Given the size of the datasets used in this analysis, and since the closure
-test of the fixed width approach are good~\ref{sec:closure}, the adaptive
-approach has been disregarded.
+%% A even more optimal solution would have been to use an adaptive approach, where
+%% a non-constant width of the kernel is used, depending on the density of the
+%% data in the around the kernel centroid. This method is known to behave better
+%% than a fixed width one, but at the cost of a important overhead in the actual
+%% modeling computing time ($\gtrsim10x$).
+%% Given the size of the datasets used in this analysis, and since the closure
+%% test of the fixed width approach are good~\ref{sec:closure}, the adaptive
+%% approach has been disregarded.
 
-The procedure used to obtain the efficiency \pdf is to use the KDE for
-each of the four distributions($N_{gen}, D_{gen}, N_{reco}, D_{reco}$)
-of in eq.~\ref{eq:eff}, and then combine the four pdf's into final
-efficiency.  For technical reason, the pdf obtained via the KDE
-algorithm have been sampled into a three dimensional histogram, with
-$40\times40\times40$ bins, then the four histograms combined, and
-finally a \pdf extracted from the combined 3D histogram. The technical
-reason is that it is not possible, in ROOT, to save the output of a
-multidimensional KDE pdf, {\tt
-  \href{https://root.cern.ch/root/html/RooNDKeysPdf.html}{RooNDKeysPdf}}
-class, into an output file.  The sampling to a 3D histogram is a
-workaround for this deficiency. The granularity of the bins have been
-chosen as a compromise between the fine structure of the efficiency
-distribution and total number of bins, which affect the output file
-size.
+The procedure used to obtain the efficiency function is to use the KDE method on each of the four distributions ($N_{gen}, D_{gen}, N_{reco}, D_{reco}$) used in eq.~\ref{eq:eff}, to normalize each of the resulting \pdfs to the number of events in the original distributions, and then combine the four functions into final efficiency.
+For technical reason, it is not possible, in ROOT, to save the output of a multidimensional KDE \pdf into an output file and the time consumption to create the efficiency function, starting from the MC event distributions, any time the fit procedure is run is too large.
+For this reason, it was decided to save a binned distribution obtained from the sampling of the KDE \pdfs: numerator and denominator functions, obtained via the KDE algorithm, have been sampled into a three dimensional histogram, with $40\times40\times40$ bins, then the four histograms are combined in a binned efficiency function, which is finally saved in the output file.
+%% The sampling to a 3D histogram is a workaround for this deficiency.
+The granularity of the bins have been chosen as a compromise between the fine structure of the efficiency distribution and computing time needed to perform the \pdf sampling.
 
-Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-$N_{gen}$, $D_{reco}$, and $N_{reco}$, for different $q^2$ bins,
-togheter with the kernel estimator pdf are shown in
-Fig.~\ref{fig:NDKde0} to Fig.~\ref{fig:NDKde8}.
+An example of the event distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$, $N_{gen}$, $D_{reco}$, and $N_{reco}$, for right-tagged events in $q^2$ bin~1, as fuctions of each of the angular variables, togheter with the projections of the correctly-normalized \pdfs, as obtained by the KDE method with width scale factor equal to 0.5, are shown in Fig.~\ref{fig:NDKde1}.
 
-\begin{figure}[hbt]
-    \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin1.pdf}}
+%% \begin{figure}[hbt]
+%%     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin1.pdf}}
 
-    \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin1.pdf}}
+%%     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin1.pdf}}
 
-    \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin1.pdf}}
+%%     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin1.pdf}}
 
-    \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin1.pdf}}
+%%     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin1.pdf}}
 
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 0
-        togheter with the kernel estimator {\texttt pdf} (red line)}
-    \label{fig:NDKde0}
-\end{figure}
+%%     \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
+%%         $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 0
+%%         togheter with the kernel estimator {\texttt pdf} (red line)}
+%%     \label{fig:NDKde0}
+%% \end{figure}
 
 \begin{figure}[hbt]
     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin2.pdf}}
-
     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin2.pdf}}
-
     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin2.pdf}}
-
     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin2.pdf}}
-
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 1
-        togheter with the kernel estimator {\texttt pdf} (red line)}
+    \caption{Event distributions of the four efficiency terms of eq.~\ref{eq:eff}, $D_{gen}$, $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for right-tagged events in $q^2$ bin~1, togheter with the projections of the correctly-normalized \pdfs, as obtained by the KDE method with width scale factor equal to 0.5, (red line)}
     \label{fig:NDKde1}
 \end{figure}
 
-\begin{figure}[hbt]
-    \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin3.pdf}}
+%% \begin{figure}[hbt]
+%%     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin3.pdf}}
 
-    \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin3.pdf}}
+%%     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin3.pdf}}
 
-    \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin3.pdf}}
+%%     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin3.pdf}}
 
-    \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin3.pdf}}
+%%     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin3.pdf}}
 
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 2
-        togheter with the kernel estimator {\texttt pdf} (red line)}
-    \label{fig:NDKde2}
-\end{figure}
+%%     \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
+%%         $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 2
+%%         togheter with the kernel estimator {\texttt pdf} (red line)}
+%%     \label{fig:NDKde2}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin4.pdf}}
+%% \begin{figure}[hbt]
+%%     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin4.pdf}}
 
-    \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin4.pdf}}
+%%     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin4.pdf}}
 
-    \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin4.pdf}}
+%%     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin4.pdf}}
 
-    \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin4.pdf}}
+%%     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin4.pdf}}
 
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 3
-        togheter with the kernel estimator {\texttt pdf} (red line)}
-    \label{fig:NDKde3}
-\end{figure}
+%%     \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
+%%         $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 3
+%%         togheter with the kernel estimator {\texttt pdf} (red line)}
+%%     \label{fig:NDKde3}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin5.pdf}}
+%% \begin{figure}[hbt]
+%%     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin5.pdf}}
 
-    \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin5.pdf}}
+%%     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin5.pdf}}
 
-    \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin5.pdf}}
+%%     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin5.pdf}}
 
-    \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin5.pdf}}
+%%     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin5.pdf}}
 
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 4
-        togheter with the kernel estimator {\texttt pdf} (red line)}
-    \label{fig:NDKde4}
-\end{figure}
+%%     \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
+%%         $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 4
+%%         togheter with the kernel estimator {\texttt pdf} (red line)}
+%%     \label{fig:NDKde4}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin6.pdf}}
+%% \begin{figure}[hbt]
+%%     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin6.pdf}}
 
-    \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin6.pdf}}
+%%     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin6.pdf}}
 
-    \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin6.pdf}}
+%%     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin6.pdf}}
 
-    \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin6.pdf}}
+%%     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin6.pdf}}
 
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 5
-        togheter with the kernel estimator {\texttt pdf} (red line)}
-    \label{fig:NDKde5}
-\end{figure}
+%%     \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
+%%         $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 5
+%%         togheter with the kernel estimator {\texttt pdf} (red line)}
+%%     \label{fig:NDKde5}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin7.pdf}}
+%% \begin{figure}[hbt]
+%%     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin7.pdf}}
 
-    \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin7.pdf}}
+%%     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin7.pdf}}
 
-    \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin7.pdf}}
+%%     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin7.pdf}}
 
-    \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin7.pdf}}
+%%     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin7.pdf}}
 
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 6
-        togheter with the kernel estimator {\texttt pdf} (red line)}
-    \label{fig:NDKde6}
-\end{figure}
+%%     \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
+%%         $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 6
+%%         togheter with the kernel estimator {\texttt pdf} (red line)}
+%%     \label{fig:NDKde6}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin8.pdf}}
+%% \begin{figure}[hbt]
+%%     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin8.pdf}}
 
-    \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin8.pdf}}
+%%     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin8.pdf}}
 
-    \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin8.pdf}}
+%%     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin8.pdf}}
 
-    \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin8.pdf}}
+%%     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin8.pdf}}
 
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 7
-        togheter with the kernel estimator {\texttt pdf} (red line)}
-    \label{fig:NDKde7}
-\end{figure}
+%%     \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
+%%         $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 7
+%%         togheter with the kernel estimator {\texttt pdf} (red line)}
+%%     \label{fig:NDKde7}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin9.pdf}}
+%% \begin{figure}[hbt]
+%%     \subfigure[$N_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin9.pdf}}
 
-    \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin9.pdf}}
+%%     \subfigure[$D_{gen}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3genDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin9.pdf}}
 
-    \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin9.pdf}}
+%%     \subfigure[$N_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoNum__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin9.pdf}}
 
-    \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin9.pdf}}
+%%     \subfigure[$D_{reco}$]{\includegraphics[width=1.\textwidth]{Plot/can1D_h3recoDen__CosThetaK_AbsCosThetaMu_AbsPhiKstMuMuPlane_Bin9.pdf}}
 
-    \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
-        $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 8
-        togheter with the kernel estimator {\texttt pdf} (red line)}
-    \label{fig:NDKde8}
-\end{figure}
+%%     \caption{Distribution of the four terms of eq.~\ref{eq:eff}, $D_{gen}$,
+%%         $N_{gen}$, $D_{reco}$, and $N_{reco}$ (black dot), for $q^2$ bin 8
+%%         togheter with the kernel estimator {\texttt pdf} (red line)}
+%%     \label{fig:NDKde8}
+%% \end{figure}
 
 
-Projection of the efficiency on two variables and one variable,
-integrating over the other variable for different $q^2$ bins, are
-shown in Fig.~\ref{fig:effPro0} to Fig.~\ref{fig:effPro8}.
+An example of the projections of the efficiency, as obtained by the KDE method with width scale factor equal to 0.5, on each single and on each couple of angular variables, for right-tagged events in $q^2$ bin~1, are shown in Fig.~\ref{fig:effPro1}.
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/canProjection1.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 0}
-    \label{fig:effPro0}
-\end{figure}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/canProjection1.pdf}
+%%     \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 0}
+%%     \label{fig:effPro0}
+%% \end{figure}
 
 \begin{figure}[hbt]
     \includegraphics[width=1.\textwidth]{Plot/canProjection2.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 1}
+    \caption{Projections of the efficiency, as obtained by the KDE method with width scale factor equal to 0.5, on two (upper row) and one angular variable (lower row), for right-tagged events in $q^2$ bin~1}
     \label{fig:effPro1}
 \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/canProjection3.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 2}
-    \label{fig:effPro2}
-\end{figure}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/canProjection3.pdf}
+%%     \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 2}
+%%     \label{fig:effPro2}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/canProjection4.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 3}
-    \label{fig:effPro3}
-\end{figure}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/canProjection4.pdf}
+%%     \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 3}
+%%     \label{fig:effPro3}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/canProjection5.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 4}
-    \label{fig:effPro4}
-\end{figure}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/canProjection5.pdf}
+%%     \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 4}
+%%     \label{fig:effPro4}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/canProjection6.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 5}
-    \label{fig:effPro5}
-\end{figure}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/canProjection6.pdf}
+%%     \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 5}
+%%     \label{fig:effPro5}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/canProjection7.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 6}
-    \label{fig:effPro6}
-\end{figure}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/canProjection7.pdf}
+%%     \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 6}
+%%     \label{fig:effPro6}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/canProjection8.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 7}
-    \label{fig:effPro7}
-\end{figure}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/canProjection8.pdf}
+%%     \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 7}
+%%     \label{fig:effPro7}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/canProjection9.pdf}
-    \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 8}
-    \label{fig:effPro8}
-\end{figure}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/canProjection9.pdf}
+%%     \caption{Projection of the efficiency on two (upper row) and one variable (lower row), integrating over the other variable for $q^2$ bin 8}
+%%     \label{fig:effPro8}
+%% \end{figure}
 
 \clearpage
 
 \subsection{Closure test}\label{sec:closure}
 
-A validation of the efficiency parametrization is performed via a closure test
-based on montecarlo.
-We compare the distribution of the three angular
-observables, \TK, \TL, and \PHI as reconstructed after full simulation and
-having applied all selections, with the corresponding generator-level
-quantities weighting each event with its efficiency.
-In order to remove any statistical correlation in the closure test, half of
-each sample have been used to estimated the efficiency, and the closure has
-been performed on the other half.
+A validation of the efficiency parametrization is performed via a closure test based on MC samples.
+We compare the event distribution of the three angular observables, \cTK, \cTL, and \PHI, as reconstructed after the full simulation and after the application of the whole set of selections described in Section~\ref{sec:selection}, with the full set of generated event distribution, before the application of the GEN-filter, weighted, event-by-event, with the tested efficiency function.
+In order to remove any statistical correlation in the closure test, half of each sample have been used to estimated the efficiency, and the closure has been performed on the other half.
 
+The equality to test is the following:
 \begin{equation}\label{eq:effClosure}
-    \mathtt{pdf}(q^2,\TK,\TL,\phi)_{reco}^{R/M}=\mathtt{pdf}(q^2,\TK,\TL,\phi)_{gen}\otimes\epsilon^{R/M}(q^2,\theta_L,\theta_K,\phi)
+    \mathtt{pdf}(q^2,\cTK,\cTL,\phi)_{reco}^{R/M}=\mathtt{pdf}(q^2,\cTK,\cTL,\phi)_{gen}\otimes\epsilon^{R/M}(q^2,\cTK,\cTL,\phi)
 \end{equation}
 
-As before, the closure test has been performed for each $q^2$ bin, separately
-for right (R) and mis-tag (M), and for signal and control samples.
+The closure test has been performed for any efficiency function produced: for each $q^2$ bin, separately for right (R) and mis-tag (M), and for signal and control samples.
 
-The closure test results from the first method, using eq.~\ref{eq:eff2d}, are
-shown for the linear interpolated efficiency in Fig.~\ref{fig:clEff2Dlin}, and
-with paraboloic interpolation in Fig.~\ref{fig:clEff2Dpar}.
-The closure is decent, but does not follow very well the original distribution
-where is very steep and introduce a \PHI dependence where none is present.  The
-second order interpolation improves a little the closure, but
-either a finer binning or a better parametric interpolation of the efficiency
-distribution are needed in order to improve the results. The former way is
-difficult given the montecarlo statistics available, the second one is viable,
-as shown in the two-angular analysis.
+An example of the closure test results of the first method efficiencies, as described in Section~\ref{eff_2Dprod}, is shown, for right-tagged events in $q^2$ bin~1, for the linear interpolation in Fig.~\ref{fig:clEff2Dlin}, and for the paraboloic interpolation in Fig.~\ref{fig:clEff2Dpar}.
+The result quality for the linerly-interpolated efficiency is decent, but does not follow very well the original distribution where is very steep and introduce a \PHI dependence where none is present.
+The quality improvement due to the second-order interpolation is not enough to have an accurate description of the shape in the \cTK projection and the modulation against \PHI is still present.
+An improvement to this technique could come from an increase in the number of bins used to build the two-dimensional components of the efficiency, but the available statistics of the MC samples, especially for the mis-tagged events, prevent to go further with this.
 
 \begin{figure}[hbt]
     \includegraphics[width=.66\textwidth,trim={0 280 0 0},clip]{Plot/Closure2D_lin.pdf}
     \includegraphics[width=.33\textwidth,trim={0 0 280 280},clip]{Plot/Closure2D_lin.pdf}
-    \caption{Comparison of reconstucted angles \TK, \TL, and \PHI (dots) with generated one convoluted with efficiency, parametrized as in eq~\ref{eq:eff2d} with linear interpolation of the three two-dimension efficiency}
+    \caption{Comparison of the reconstructed and selected MC event distributions (dots) with generated event distributions weighted with the efficiency, parametrized as in eq~\ref{eq:eff2d} with linear interpolation of the two-dimension efficiency functions. Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~1.}
     \label{fig:clEff2Dlin}
 \end{figure}
 
 \begin{figure}[hbt]
     \includegraphics[width=.66\textwidth,trim={0 280 0 0},clip]{Plot/Closure2D_par.pdf}
     \includegraphics[width=.33\textwidth,trim={0 0 280 280},clip]{Plot/Closure2D_par.pdf}
-    \caption{Comparison of reconstucted angles \TK, \TL, and \PHI (dots) with generated one convoluted with efficiency, parametrized as in eq~\ref{eq:eff2d} with parabolic interpolation of the three two-dimension efficiency}
+    \caption{Comparison of the reconstructed and selected MC event distributions (dots) with generated event distributions weighted with the efficiency, parametrized as in eq~\ref{eq:eff2d} with parabolic interpolation of the two-dimension efficiency functions. Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~1.}
     \label{fig:clEff2Dpar}
 \end{figure}
 
-The closure test results for the second method are shown in
-Fig.~\ref{fig:clKDEwidthBin1},~\ref{fig:clKDEwidthBin8} for three
-different kernel width: 1.0, 0.5, and 0.3 for two $q^2$ bins,
-respectively. It is possible to notice how the closure improves, in
-particulat near the boundary of \TK for bin 1, and of \PHI for bin 8,
-where a rather obvious dip is present.  In general, where the variable
-distribution is steep, the smaller the width the better the closure.
-However, a small width tends to create fine structures in a otherwise
-flat distribution, as seen for \PHI distribution.  The value of 0.5
-has been choosen as optimal for right tag, while the default 1.0 was
-retained for wrong tag where less statistic is available.
+An example of the closure test results for the KDE method is shown in Fig.~\ref{fig:clKDEwidthBin1} for right-tagged events in $q^2$ bin~0, and in Fig.~\ref{fig:clKDEwidthBin8} for right-tagged events in $q^2$ bin~7, comparing three different width scale factors: 1.0, 0.5, and 0.3.
+It is possible to notice that using smaller widths improves the result quality where some steep features are present, in particulat near the boundary of \cTK for $q^2$ bin~0, and of \PHI for $q^2$ bin~7.
+On the other hand, a small width tends to create fine structures bue to statistic fluctuations, in particulat near the boundary of \PHI for $q^2$ bin~0.
 
 \begin{figure}[hbt]
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin1width10.pdf}
-
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin1width05.pdf}
-
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin1width03.pdf}
-
-    \caption{Closure test using the KDE approach, for three different kernel
-        width for $q^2$ bin 1. Top to bottom: width=1.0, 0.5, 0.3.
-        An improvement of the closure is visible near the boundary of \cTK distribution.}
+    \caption{Comparison of the reconstructed and selected MC event distributions (dots) with generated event distributions weighted with the efficiency, built through the KDE method, with width scale factor set to 1.0 (top), 0.5 (middle), and 0.3 (bottom). Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~0.}
     \label{fig:clKDEwidthBin1}
 \end{figure}
 
 \begin{figure}[hbt]
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin8width10.pdf}
-
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin8width05.pdf}
-
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin8width03.pdf}
-
-    \caption{Comparison of reconstucted angles \TK, \TL, and \PHI (dots) with
-        generated ones convoluted with efficiency, using the KDE approach, for
-        three different kernel width for one $q^2$ bin. Top to bottom: width=1.0, 0.5, 0.3.
-        An improvement of the closure is visible near the boundary of \cTK distribution as well as for \PHI.}
+    \caption{Comparison of the reconstructed and selected MC event distributions (dots) with generated event distributions weighted with the efficiency, built through the KDE method, with width scale factor set to 1.0 (top), 0.5 (middle), and 0.3 (bottom). Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~7.}
     \label{fig:clKDEwidthBin8}
 \end{figure}
 
-Figures~\ref{fig:clKDE1} through~\ref{fig:clKDE9} show the results of
-closure test for $q^2$ bin 1 to 9, respectively, for correctly tagged
-signal events.  The same distributions for wrongly tagged signal
-events are shown in Fig~\ref{fig:clKDE1wt},~\ref{fig:clKDE9wt}.
+From the overall results of the closure test, the optimal parameterisation for this analysis in the KDE method. The width scale factor is chosen to be 0.5 for the efficiency for right-tagged events, while the scale factor of 1.0 was found to be optimal for the efficiency of mis-tagged events, for which less statistic is available in the MC samples.
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin1.pdf}
+%%%%%%%%%%%%%%%%%%%
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 1}
-    \label{fig:clKDE1}
-\end{figure}
+%% Figures~\ref{fig:clKDE1} through~\ref{fig:clKDE9} show the results of
+%% closure test for $q^2$ bin 1 to 9, respectively, for correctly tagged
+%% signal events.  The same distributions for wrongly tagged signal
+%% events are shown in Fig~\ref{fig:clKDE1wt},~\ref{fig:clKDE9wt}.
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin2.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin1.pdf}
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 2}
-    \label{fig:clKDE2}
-\end{figure}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 1}
+%%     \label{fig:clKDE1}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin3.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin2.pdf}
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 3}
-    \label{fig:clKDE3}
-\end{figure}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 2}
+%%     \label{fig:clKDE2}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin4.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin3.pdf}
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 4}
-    \label{fig:clKDE4}
-\end{figure}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 3}
+%%     \label{fig:clKDE3}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin5.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin4.pdf}
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 5}
-    \label{fig:clKDE5}
-\end{figure}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 4}
+%%     \label{fig:clKDE4}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin6.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin5.pdf}
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 6}
-    \label{fig:clKDE6}
-\end{figure}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 5}
+%%     \label{fig:clKDE5}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin7.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin6.pdf}
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 7}
-    \label{fig:clKDE7}
-\end{figure}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 6}
+%%     \label{fig:clKDE6}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin8.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin7.pdf}
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 8}
-    \label{fig:clKDE8}
-\end{figure}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 7}
+%%     \label{fig:clKDE7}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin9.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin8.pdf}
 
-    \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 9}
-    \label{fig:clKDE9}
-\end{figure}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 8}
+%%     \label{fig:clKDE8}
+%% \end{figure}
 
-\clearpage
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_sgn_bin9.pdf}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin1.pdf}
+%%     \caption{Closure test for the reconstructed angles using KDE, for $q^2$ bin 9}
+%%     \label{fig:clKDE9}
+%% \end{figure}
 
-    \caption{Closure test using KDE, for $q^2$ bin 1, for wrongly tagged events}
-    \label{fig:clKDE1wt}
-\end{figure}
+%% \clearpage
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin2.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin1.pdf}
 
-    \caption{Closure test using KDE, for $q^2$ bin 2, for wrongly tagged events}
-    \label{fig:clKDE2wt}
-\end{figure}
+%%     \caption{Closure test using KDE, for $q^2$ bin 1, for wrongly tagged events}
+%%     \label{fig:clKDE1wt}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin3.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin2.pdf}
 
-    \caption{Closure test using KDE, for $q^2$ bin 3, for wrongly tagged events}
-    \label{fig:clKDE3wt}
-\end{figure}
+%%     \caption{Closure test using KDE, for $q^2$ bin 2, for wrongly tagged events}
+%%     \label{fig:clKDE2wt}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin4.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin3.pdf}
 
-    \caption{Closure test using KDE, for $q^2$ bin 4, for wrongly tagged events}
-    \label{fig:clKDE4wt}
-\end{figure}
+%%     \caption{Closure test using KDE, for $q^2$ bin 3, for wrongly tagged events}
+%%     \label{fig:clKDE3wt}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin5.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin4.pdf}
 
-    \caption{Closure test using KDE, for $q^2$ bin 5, for wrongly tagged events}
-    \label{fig:clKDE5wt}
-\end{figure}
+%%     \caption{Closure test using KDE, for $q^2$ bin 4, for wrongly tagged events}
+%%     \label{fig:clKDE4wt}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin6.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin5.pdf}
 
-    \caption{Closure test using KDE, for $q^2$ bin 6, for wrongly tagged events}
-    \label{fig:clKDE6wt}
-\end{figure}
+%%     \caption{Closure test using KDE, for $q^2$ bin 5, for wrongly tagged events}
+%%     \label{fig:clKDE5wt}
+%% \end{figure}
+
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin6.pdf}
+
+%%     \caption{Closure test using KDE, for $q^2$ bin 6, for wrongly tagged events}
+%%     \label{fig:clKDE6wt}
+%% \end{figure}
 
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin7.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin7.pdf}
 
-    \caption{Closure test using KDE, for $q^2$ bin 7, for wrongly tagged events}
-    \label{fig:clKDE7wt}
-\end{figure}
+%%     \caption{Closure test using KDE, for $q^2$ bin 7, for wrongly tagged events}
+%%     \label{fig:clKDE7wt}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin8.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin8.pdf}
 
-    \caption{Closure test using KDE, for $q^2$ bin 8, for wrongly tagged events}
-    \label{fig:clKDE8wt}
-\end{figure}
+%%     \caption{Closure test using KDE, for $q^2$ bin 8, for wrongly tagged events}
+%%     \label{fig:clKDE8wt}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin9.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin9.pdf}
 
-    \caption{Closure test using KDE, for $q^2$ bin 9, for wrongly tagged events}
-    \label{fig:clKDE9wt}
-\end{figure}
+%%     \caption{Closure test using KDE, for $q^2$ bin 9, for wrongly tagged events}
+%%     \label{fig:clKDE9wt}
+%% \end{figure}
 
-Finally, the closure test for two control samples, \BKsJ and \BKsPsip are shown
-in Fig.~\ref{fig:clKDEJpsi} and~\ref{fig:clKDEpsip} for the $q^2$ bins where
-such control samples are present.
+%% Finally, the closure test for two control samples, \BKsJ and \BKsPsip are shown
+%% in Fig.~\ref{fig:clKDEJpsi} and~\ref{fig:clKDEpsip} for the $q^2$ bins where
+%% such control samples are present.
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_jp_bin5.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_jp_bin5.pdf}
 
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_jp_bin5.pdf}
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_jp_bin5.pdf}
 
-    \caption{Closure test for efficiency for the reconstructed angles
-        using the KDE approach, for $q^2$ for bin 5, correct tag (top) and wrong tag (bottom), for \BKsJ control sample.}
-    \label{fig:clKDEJpsi}
-\end{figure}
+%%     \caption{Closure test for efficiency for the reconstructed angles
+%%         using the KDE approach, for $q^2$ for bin 5, correct tag (top) and wrong tag (bottom), for \BKsJ control sample.}
+%%     \label{fig:clKDEJpsi}
+%% \end{figure}
 
-\begin{figure}[hbt]
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_psip_bin6.pdf}
+%% \begin{figure}[hbt]
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_psip_bin6.pdf}
 
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_psip_bin7.pdf}
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_RT_psip_bin7.pdf}
 
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_psip_bin6.pdf}
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_psip_bin6.pdf}
 
-    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_psip_bin7.pdf}
+%%     \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_psip_bin7.pdf}
 
-    \caption{Closure test for efficiency for the reconstructed angles
-        using the KDE approach, for correctly tagged events (top two rows), for
-        $q^2$ bin 6 (first row) and 7 (second row), for \BKsPsip control
-        sample.
-        The two bottom row has the same plots for wrongly tagged events.
-        The $\psi'(2s)$ invariant mass falls inside bin 7, but the tail of its
-        radiative decay populate also the previous one, bin 6.}
-    \label{fig:clKDEpsip}
-\end{figure}
+%%     \caption{Closure test for efficiency for the reconstructed angles
+%%         using the KDE approach, for correctly tagged events (top two rows), for
+%%         $q^2$ bin 6 (first row) and 7 (second row), for \BKsPsip control
+%%         sample.
+%%         The two bottom row has the same plots for wrongly tagged events.
+%%         The $\psi'(2s)$ invariant mass falls inside bin 7, but the tail of its
+%%         radiative decay populate also the previous one, bin 6.}
+%%     \label{fig:clKDEpsip}
+%% \end{figure}
