@@ -1,13 +1,13 @@
 \section{Data collection and event selection}\label{sec:selection}
 
-The data used for this analysis have been collected by CMS detector during 2012 $pp$ run, at a centre-of-mass energy $\sqrt{s}=8~\TeV$.
-The integrated luminosity collected and certified is $20.5~\fbinv$.
+The data used for this analysis have been collected by CMS detector during 2012 $pp$ run, at a centre-of-mass energy $\sqrt{s}=8\TeV$.
+The integrated luminosity collected and certified is \SI{20.5}{\per\femto\barn}.
 
 The events have been selected by two-level criteria: firstly an online trigger selection is used during data taking, and then an offline selection and candidate identification is performed after the events are fully reconstructed.
 
 \subsection{Online event selection}
 \label{sec:onsel}
-All the events used in this analysis, both for signal regions and control regions, are selected by a single trigger. This requires the presence of two reconstructed muons in the event with opposite charge, each of them with a transverse momentum greater than $3.5\GeV$, a pseudo-rapidity smaller, in module, than $2.2$, and a distance with respect to the beam axis smaller than $2\cm$. The dimuon system is required to have a transverse momentum greater than $6.9\GeV$, an invariant mass between $1\GeV$ and $4.8\GeV$, and a distance of closest approach (DCA) between the muons smaller than $0.5\cm$. In addition, the two muons are required to form a common vertex, with fit $\chi^2$ probability greater than $10\%$, an flight distance significance with respect to the beamspot, measured in the plane transverse to the beam axis, greater than 3, and $\cos{\alpha}>0.9$, where $\alpha$ is the angle in the transverse plane between the dimuon momentum vector and the vector from the beamspot to the dimuon vertex.
+All the events used in this analysis, both for signal regions and control regions, are selected by a single trigger. This requires the presence of two reconstructed muons in the event with opposite charge, each of them with a transverse momentum greater than $3.5\GeV$, a pseudo-rapidity smaller, in module, than $2.2$, and a distance with respect to the beam axis smaller than \SI{2}{\centi\metre}. The dimuon system is required to have a transverse momentum greater than $6.9\GeV$, an invariant mass between $1\GeV$ and $4.8\GeV$, and a distance of closest approach (DCA) between the muons smaller than \SI{0.5}{\centi\metre}. In addition, the two muons are required to form a common vertex, with fit $\chi^2$ probability greater than $10\%$, an flight distance significance with respect to the beamspot, measured in the plane transverse to the beam axis, greater than 3, and $\cos{\alpha}>0.9$, where $\alpha$ is the angle in the transverse plane between the dimuon momentum vector and the vector from the beamspot to the dimuon vertex.
 
 No requirements on the hadronic particles in the final state are present at trigger level.
 
@@ -17,7 +17,7 @@ No requirements on the hadronic particles in the final state are present at trig
 In the offline selection the full final state, composed by two muons and two hadrons, is required to be reconstructed. A set of four reconstructed objects compatible with those four particles is considered as a candidate. The offline cuts are applied independently to each candidate in a event.
 
 The two reconstructed muons are required to have opposite charge and be matched with those that triggered the event. This is done by requiring $\Delta R = \sqrt{(\Delta\eta)^2+(\Delta\phi)^2}<0.1$, where $\Delta\eta$ and $\Delta\phi$ are the pseudorapidity and azimuthal angle differences between the directions of the trigger-level and offline muons.
-In addition, they have to satisfy general muon identification requirements: the muon track candidate from the silicon  tracker must match a track segment from the muon detector, the $\chi^2$ per degree of freedom in a global fit to the silicon tracker and muon detector hits must be less than 1.9, there must be at least six silicon tracker hits, including at least two from the pixel detector, and the transverse and longitudinal impact parameters with respect to the beamspot must be less than 3\cm and 30\cm, respectively.
+In addition, they have to satisfy general muon identification requirements: the muon track candidate from the silicon  tracker must match a track segment from the muon detector, the $\chi^2$ per degree of freedom in a global fit to the silicon tracker and muon detector hits must be less than 1.9, there must be at least six silicon tracker hits, including at least two from the pixel detector, and the transverse and longitudinal impact parameters with respect to the beamspot must be less than \SI{3}{\centi\metre} and \SI{30}{\centi\metre}, respectively.
 The same requirements applied at trigger level and described in Section~\ref{sec:onsel} are also applied to the offline reconstructed dimuon system.
 
 The two charged hadron candidates are required to have opposite charge and each of them has to fail the muon identification criteria, have a transverse momentum greater than 0.8\GeV, and a significance of the extrapolated distance $d$ of closest approach to the beamspot in the transverse plane greater 2. The uncertainty associated to $d$ is defined as the sum in quadrature of the uncertainty of the track position and the beamspot transverse size.
@@ -44,7 +44,7 @@ For each candidate, the dimuon invariant mass $q$ and its uncertainty $\sigma_{q
 Two control samples, corresponding to the \BtoKstJpsi and \BtoKstpsip decay channels, are defined by the requirements $\abs{q - m_{\cPJgy}} < 3\sigma_{q}$ and $\abs{q - m_{\psi'}} < 3\sigma_{q}$, respectively, where $m_{\cPJgy}$ and $m_{\psi'}$ are the nominal masses~\cite{PDG} of the indicated meson.
 On average, the value of $\sigma_{q}$ is about 26\MeV.
 
-A strong contamination from \BtoKstJpsi and \BtoKstpsip decays is still present in the sample of events passing the selections, mainly because of unreconstructed soft photons in the charmonium decay, \ie, $\cPJgy\ {\rm or}\ \psi' \to \Pgmp \Pgmm \Pgg$.
+A strong contamination from \BtoKstJpsi and \BtoKstpsip decays is still present in the sample of events passing the selections, mainly because of unreconstructed soft photons in the charmonium decay, i.e., $\cPJgy\ {\rm or}\ \psi' \to \Pgmp \Pgmm \Pgg$.
 These events have value of $q$ which is lower than $m_{\cPJgy}$ and $m_{\psi'}$, respectively, and are not included in the control sample described above.
 They also have a value of $m$ lower than $m_{\PBz}$, and they can be efficiently removed by a combined requirement on $q$ and $m$.
 For $q<m_{\cPJgy}$ $(q>m_{\cPJgy})$, it is required that $\abs{(m-m_{\PBz})-(q-m_{\cPJgy})}>160\: (60)\MeV$.
