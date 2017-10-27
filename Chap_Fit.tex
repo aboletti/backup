@@ -1,6 +1,6 @@
 \section{Fit strategy} \label{sec:fit}
 
-The angular parameters are extracted through an unbinned fit, using an extended maximum likelihood estimator.
+The angular parameters are extracted through an unbinned fit to four variables, the $\PKp\Pgpm\Pgmp\Pgmm$ invariant mass and the three angular variables, using an extended maximum likelihood estimator.
 
 In the following sections I will give a detailed description of the probability density function used in the fit, and of the methods used to estimate its parameters.
 
@@ -10,223 +10,306 @@ In the following sections I will give a detailed description of the probability 
 The probability density function (\pdf) used in the fit has the following expression:
 \begin{equation} \label{eq:angALL}
   \begin{split}
-    \mathrm{pdf}(m,\theta_\PK,\theta_\ell,\varphi) & = Y^{C}_{S} \biggl[ S^{C}(m)  \, S^a(\theta_\PK,\theta_\ell,\varphi) \, \epsilon^{C}(\theta_\PK,\theta_\ell,\varphi) \biggr. \\
-      & \biggl. + \frac{f^{M}}{1-f^{M}}~S^{M}(m) \, S^a(-\theta_\PK,-\theta_\ell,\varphi) \, \epsilon^{M}(\theta_\PK,\theta_\ell,\varphi) \biggr] \\
-    & + Y_{B}\,B^m(m) \, B^{\theta_\PK}(\theta_\PK) \, B^{\theta_\ell}(\theta_\ell) \, B^{\varphi}(\varphi), \\
+    \mathrm{pdf}(m,\TK,\TL,\varphi) & = Y^{C}_{S} \biggl[ S^{C}(m)  \, S^a(\TK,\TL,\varphi) \, \epsilon^{C}(\TK,\TL,\varphi) \biggr. \\
+      & \biggl. + \frac{f^{M}}{1-f^{M}}~S^{M}(m) \, S^a(-\TK,-\TL,\varphi) \, \epsilon^{M}(\TK,\TL,\varphi) \biggr] \\
+    & + Y_{B}\,B^m(m) \, B^{\TK}(\TK) \, B^{\TL}(\TL) \, B^{\varphi}(\varphi), \\
   \end{split}
 \end{equation}
-%%%%%%%%%%%%%% FROM AN
-where:
-\begin{description}
-    \item[$Y_{S}^C$] is the yields of signal events;
-    \item[$Y_{B}$] is the yields of background events;
-    \item[$f_i^M$] is the CP-mistag fraction (i.e. the number of mis-tagged signal events divided by the number of total signal events);
-    \item[$S_i^R(m)$] describes the shape of the right-tagged signal events as a function of the $K\pi\mu\mu$ invariant mass;
-    \item[$S_i^M(m)$] describes the shape of the mis-tagged signal events as a function of the $K\pi\mu\mu$ invariant mass;
-    \item[$S_i^a(\cos\theta_l,\cos\theta_\mathrm{K},\phi)$] describes the shape of the signal events as a function of the three angular observables;
-    \item[$B_i^m(m) \cdot B_i^{\cos\theta_\mathrm{K}}(\cos\theta_\mathrm{K}) \cdot B_i^{\cos\theta_l}(\cos\theta_l) \cdot B_i^{\phi}(\phi) $] are four functions describeing the shapes of the combinatorial background events, as functions of the $K\pi\mu\mu$ invariant mass and the three angular observables; 
-    \item[$\epsilon_i^R(\cos\theta_l,\cos\theta_\mathrm{K},\phi)$] describes the efficiency for right-tagged signal events in the 3D-space of the angular observables;
-    \item[$\epsilon_i^M(\cos\theta_l,\cos\theta_\mathrm{K},\phi)$] describes the efficiency for mis-tagged signal events in the 3D-space of the angular observables;
-\end{description}
-
-All the subscript $i$ runs over the $q^2$ bins listed in the Table~\ref{tab:q2 bins} if not otherwise specified.
-
-%%%%%%%%%%%%% FROM PAPER
 where its three terms correspond to the \pdfs for right-tagged signal, mis-tagged signal, and background events, respectively.
 
 The parameters $Y^{C}_{S}$ and $Y_{B}$ are the yields of right-tagged signal events and background events, respectively, while the parameter $f^{M}$ is the fraction of signal events that are mis-tagged.
 
 The functions $S^{C}(m)$ and $S^{M}(m)$ are the signal \PBz-mass \pdfs, for right-tagged and mis-tagged signal events, respectively.
 Each of them is composed as the sum of two Gaussian functions, with a common mean for all four Gaussian functions.
-
 %% In the fit, the mean, the four Gaussian function's width parameters, and the two fractions specifying the relative contribution of the two Gaussian functions in $S^{C}(m)$ and $S^{M}(m)$ are determined from simulation.
-%% The function $S^a(\theta_\PK,\theta_\ell,\varphi)$ describes the signal in the three-dimensional (3D) space of the angular variables and corresponds to Eq.~(\ref{eq:PDF}).
-The four \pdfs $B^m(m) \, B^{\theta_\PK}(\theta_\PK) \, B^{\theta_\ell}(\theta_\ell) \, B^{\varphi}(\varphi)$ describe the background in the space of the \PBz candidate invariant mass and the angular variables.
-$B^m(m)$ is an exponential function, $B^{\theta_\PK}(\theta_\PK)$ and $B^{\theta_\ell}(\theta_\ell)$ are second- to fourth-order polynomials, depending on the $q^2$ bin, and $B^{\varphi}(\varphi)$ is a first-order polynomial.
-The factorization assumption of the background pdf in Eq.~(\ref{eq:angALL}) is validated by dividing the range of an angular variable into two at its center point and comparing the distributions of events from the two halves in the other angular variables.
+%% The function $S^a(\TK,\TL,\varphi)$ describes the signal in the three-dimensional (3D) space of the angular variables and corresponds to Eq.~(\ref{eq:PDF}).
+
+The four \pdfs $B^m(m) \, B^{\TK}(\TK) \, B^{\TL}(\TL) \, B^{\varphi}(\varphi)$ describe the background in the space of the \PBz candidate invariant mass and the angular variables.
+The mass \pdf $B^m(m)$ is an exponential function, The angular \pdfs $B^{\TK}(\TK)$ and $B^{\TL}(\TL)$ are polynomials functions, ranging from second to forth degree depending on the $q^2$ bin, and $B^{\varphi}(\varphi)$ is a first-order polynomial function.
+The factorisation assumption of the background pdf in Equation~(\ref{eq:angALL}) is discussed in Section~\ref{sec:fact}.
+
+The three-dimensional functions $\epsilon^{C}(\TK,\TL,\varphi)$ and $\epsilon^{M}(\TK,\TL,\varphi)$ are the efficiencies for right-tagged and mis-tagged signal events, respectively.
+The construction of these functions has been described in Section~\ref{sec:eff}.
+
+\subsubsection{Fraction of mis-tagged signal events}
+\label{sec:mistag}
+
+%% The signal and control channels are self-tagging decays.
+%% This means that in principle one can distinguish whether the mother particle is a $B^0$ or $\overline{B}^0$ by simply measuring the charges of the daughter hadrons, but this in turn requires the capability of disentangling kaons and pions.
+%% Unfortunately the CMS experiment does not possess such a capability for charged particles above $\mathcal{O}(1~\GeV)$.
+%% To overcome this deficit an algorithm, based on the analysis of the invariant mass of the two hadrons has been used.
+%% Both the $\pi$ and $K$ mass hypothesis is considered for each of the two hadrons of the decay: the hypothesis with an invariant mass for the two-hadrons closer to the nominal $\PKst$ one is retained.
+
+%% As described in Section~\ref{sec:selection}, the CP-state of the candidate \PBz is affigned on the base of 
+The algorithm used to tag the CP-state of the \PBz candidate, described in Section~\ref{sec:selection}, has an intrinsic percentage of failure which is referred to as mistag fraction, $f^M_i$, defined as the ratio of mistagged signal events divided by the total number of signal events.
+The mistag fraction is determined from simulated events, comparing the results of the tag method to the MC truth, and by counting the number of correctly and wrongly tagged events.
+The resulting mistag fractions, for each $q^2$ bin, are shown in Table~\ref{tab:mistag}.
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-The three-dimensional functions $\epsilon^{C}(\theta_\PK,\theta_\ell,\varphi)$ and $\epsilon^{M}(\theta_\PK,\theta_\ell,\varphi)$ are the efficiencies for right-tagged and mis-tagged signal events, respectively.
-The construction of these functions is described in Section~\ref{sec:eff}.
-%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[!htb]
+  \begin{center}
+    %% \begin{small}
+      \caption{Mistag fraction as determined from simulated MC samples, for each $q^2$ bin.
+        The values in $q^2$ bins 4 and 6 are evaluated on \BtoKstJpsimumu and \BtoKstpsipmumu MC samples, respectively. For the other $q^2$ bins the values are evaluated on signal MC sample.
+        \label{tab:Mis tag fraction}}
+      \begin{tabular}{c|l|l}
+        $q^2$ bin & Mistag fraction & Statistical \\
+        index     & $f^M$           & uncertainty \\
+        \hline
+        $0$ & $0.124$  & $0.002$  \\
+        $1$ & $0.129$  & $0.001$  \\
+        $2$ & $0.134$  & $0.001$  \\
+        $3$ & $0.132$  & $0.001$  \\
+        $4$ & $0.1373$ & $0.0005$ \\
+        $5$ & $0.132$  & $0.001$  \\
+        $6$ & $0.140$  & $0.002$  \\
+        $7$ & $0.132$  & $0.001$  \\
+        $8$ & $0.137$  & $0.001$  \\
+      \end{tabular}
+    %% \end{small}
+  \end{center}
+\end{table}
 
+The mistag fraction parameter is fixed in the fit to the values evaluated on MC simulation.
+Some eventual differences between simulated and real events could lead to a bias in the mistag fraction values used in the \pdf, that could propagate to a bias in the analysis results.
+The contribution of this effect to the systematic uncertainty, is discussed in Section~\ref{sec:sys-mistag}.
 
-\subsubsection{Correctly and wrongly CP-tagged signal events}
-\label{sec:fullform}
-
-The signal and control channels are self-tagging decays.
-This means that in principle one can distinguish whether the mother particle is a $B^0$ or $\overline{B}^0$ by simply measuring the charges of the daughter hadrons, but this in turn requires the capability of disentangling kaons and pions.
-Unfortunately the CMS experiment does not possess such a capability for charged particles above $\mathcal{O}(1~\GeV)$.
-To overcome this deficit an algorithm, based on the analysis of the invariant mass of the two hadrons has been used.
-Both the $\pi$ and $K$ mass hypothesis is considered for each of the two hadrons of the decay: the hypothesis with an invariant mass for the two-hadrons closer to the nominal $\PKst$ one is retained.
-The algorithm has an intrinsic percentage of failure which is referred to as mistag fraction, $f^M_i$, defined as the ratio of mistagged signal events divided by the total signal events.
-The mistag fraction is determined from simulated events, comparing the results of the algorithm to the MC truth.
-The mistag fraction is determined by counting the number of correctly and wrongly tagged events, where only truth-matched events are considered: results for each bin are shown in Table~\ref{tab:Mis tag fraction}.
-
-\begin{table*}[!htb]
-    \begin{center}
-        \begin{small}
-            \caption{Number of correctly and wrongly CP-tagged events determined with signal and con-
-                trol channel simulation samples for each $q^2$ bin in Table~\ref{tab:q2 bins}.
-                \label{tab:Mis tag fraction}}
-            \begin{tabular}{|l|c|c|c|c|}
-                \hline
-                $q^2$ bin index  & Correctly tagged &  Wrongly tagged   & Mistag fraction ($f^M_i$)  &   Error  \\
-                \hline
-                $ 0$    &  $ 30518 $      &  $ 4312 $  & $ 0.124 $ & $ 0.002 $    \\
-                $ 1 $   &  $ 64438$       &  $9542$    & $ 0.129 $ & $ 0.001 $\\
-                $ 2$    &  $ 51149 $      &  $7892$    & $ 0.134 $ & $ 0.001 $ \\
-                $3 $    &  $ 91065$       &  $13845$   & $ 0.132 $ & $ 0.001 $   \\
-                $4  $   &   $ 472326$     &  $75157$   & $0.1373 $ & $ 0.0005$ \\
-                $ 5 $   &  $119644 $      &  $18256$   & $0.132  $ & $ 0.001 $\\
-                $ 6$    &  $30808$        &  $5013 $   & $0.140 $  & $ 0.002$\\
-                $ 7 $   &  $69773$        &  $10623$   & $0.132 $  & $ 0.001$\\
-                $ 8 $   &  $72769$        &  $11523$   & $0.137$   & $0.001$\\
-                \hline
-            \end{tabular}
-        \end{small}
-    \end{center}
-\end{table*}
-
-The mis-tag fraction is fixed in the final fit considering it is small.
-The MC estimation of mis-tag fraction may have some differences with respect to the real data case.
-The contribution of this effect to the systematic uncertainty, evaluated from the data, is discussed in Sect.~\ref{sec:sys-mistag}.
-
-%% We consider this as one source of
-%% uncertainties, which will be evaluated from the data after the
-%% unblinding of the analysis, in Sect. \ref{sec:sys-mistag}.
-
-
-
-\subsubsection{Background shape parameterisation}
+\subsubsection{Background parameterisation}
 \label{sec:backg}
 
-After the transformation described in section~\ref{sec:transform} on
-data, we can get the background shape from the data sidebands fitting,
-which is described in Eq.~\ref{eq:PDF} as:
-$$B_i^m \cdot B_i^{\cos\theta_\mathrm{K}}(\cos\theta_\mathrm{K}) \cdot
-B_i^{\cos\theta_l}(\cos\theta_l) \cdot B_i^{\phi}(\phi) $$
+Several kind of background events can contaminate the dataset used for the fit.
+In this section I will present the studies performed to describe and evaluate the many sources of this contamination.
 
-The different components are described as follow: $B_i^m$ is described as a single exponential with translation term tied to the $S^R_i(m)$ mean, and $B_i^{\cos\theta_\mathrm{K}}(\cos\theta_\mathrm{K}) \cdot B_i^{\cos\theta_l}(\cos\theta_l) \cdot B_i^{\phi}(\phi)$ are different degree polynomial depending on $q^2$ bin (in Table~\ref{tab:q2 bins}).
-These functional forms are chosen to be good enough to describe the
-data and to allow the fitting to converge easily. The details are
-listed in the Table~\ref{tab:background shape}. The detail of background 
-of $q^2$ bin 0 are from Figure~\ref{fig:bin0-bkg-l} to Figure~\ref{fig:bin0-bkg-phi}.
-Other $q^2$ bins are in App.~\ref{sec:background}.
+The main contribution derives from the combinatorial background, i.e. events in which the four particles of the final state do not come from the same decay vertex.
+Since the four-body invariant mass distribution of these events does not have any structure, their contribution can be evaluated from the mass sidebands, and extrapolated to the full mass range.
 
-The hypothesis that the angular description of the background is factorisable for each variable has been tested. The results of this test are presented of App.~\ref{sec:app-bkg.fact}.
+In addition, no correlation is expected between the four-body mass distribution and the angular variable distributions.
+This allows to estimate the shapes of the angular distributions on the sidebands, and consider them valid also to describe the combinatorial background contamination in the \PBz mass region.
 
-\begin{table*}[!htb]
-    \begin{center}
-        \begin{small}
-            \caption{Mathematical description of the background parameterization for 
-                data as a function for each $q^2$ bin in Table~\ref{tab:q2 bins}.
-                \label{tab:background shape}}
-            \begin{tabular}{|l|c|c|c|c|}
-                \hline
-                $q^2$ bin index   & $B_i^m$         & $B_i^{\cos\theta_\mathrm{K}}(\cos\theta_\mathrm{K})$    & $B_i^{\cos\theta_l}(\cos\theta_l)$  &  $B_i^{\phi}(\phi)$   \\
-                \hline
-                $ 0$    &  $ 1 exp $      &  $ 3^{rd} degree $  & $ 2^{nd} degree $ & $ 1^{st} degree $    \\
-                $ 1 $   &  $ 1 exp$       &  $ 4^{th} degree$    & $ 2^{nd} degree $ & $ 1^{st} degree $\\
-                $ 2$    &  $ 1 exp $      &  $ 4^{th} degree$    & $ 3^{rd} degree $ & $ 1^{st} degree $ \\
-                $3 $    &  $ 1 exp$       &  $ 2^{nd} degree$   & $ 4^{th} degree $ & $ 1^{st} degree $   \\
-                $ 5 $   &  $1 exp $      &   $ 4^{th} degree$   & $ 2^{nd} degree  $ & $ 1^{st} degree $\\
-                $ 7 $   &  $1 exp$        &  $ 2^{nd} degree$   & $3^{rd} degree $  & $ 1^{st} degree$\\
-                $ 8 $   &  $1 exp$        &  $ 2^{nd} degree$   & $2^{nd} degree$   & $1^{st} degree$\\
-                \hline
-            \end{tabular}
-        \end{small}
-    \end{center}
-\end{table*}
+The \pdf used to model the angular shape of this background is the product of three uncorrelated polynomial functions, $B^{\TK}(\TK) \, B^{\TL}(\TL) \, B^{\varphi}(\varphi)$.
+The orders of the polynomial functions are chosen individually for each $q^2$ bin, in order to have them successfully describe any shape feature, while keeping the degrees of freedom as low as possible, to have a converging fit even with the low sideband statistics.
+The polynomial degrees used are listed in the Table~\ref{tab:back-degree}.
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.7\textwidth]{Figures/background/bin0-l.pdf}
-  \caption{The data sidebands result of $q^2$ bins in the Table~\ref{tab:q2 bins} bin 0. The figure
-    show the projections on $cos\theta_l$.}
-  \label{fig:bin0-bkg-l}
-\end{figure}
+\begin{table}[!htb]
+  \begin{center}
+    %% \begin{small}
+    \caption{Degree of the polynomial functions used to described the angular shape of the combinatorial background distributions, for each $q^2$ bin.
+      \label{tab:back-degree}}
+    \begin{tabular}{c|c|c|c}
+      $q^2$ bin & $B_i^{\cos\theta_\mathrm{K}}$ & $B_i^{\cos\theta_l}$ & $B_i^{\phi}$ \\
+      index & degree & degree & degree \\
+      \hline
+      0 & 3 & 2 & 1 \\
+      1 & 4 & 2 & 1 \\
+      2 & 4 & 3 & 1 \\
+      3 & 2 & 4 & 1 \\
+      5 & 4 & 2 & 1 \\
+      7 & 2 & 3 & 1 \\
+      8 & 2 & 2 & 1 \\
+    \end{tabular}
+    %% \end{small}
+  \end{center}
+\end{table}
 
+An example of the sideband event distributions, for $q^2$ bin~0, are plotted from Figure~\ref{fig:bin0-bkg-l} to Figure~\ref{fig:bin0-bkg-phi}, together with the projections of the combinatorial background \pdf on the angular variables, after the fit to the sideband distributions described in Section~\ref{sec:fitseq}.
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/background/bin0-k.pdf}
-  \caption{The data sidebands result of $q^2$ bins in the Table~\ref{tab:q2 bins} bin 0. The figure
-    show the projections on $cos\theta_\mathrm{K}$.}
+  \caption{The sideband event distribution and the projection of the background \pdf as a function of $\cTK$, for $q^2$ bin~0.}
   \label{fig:bin0-bkg-k}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
+  \includegraphics[width=0.7\textwidth]{Figures/background/bin0-l.pdf}
+  \caption{The sideband event distribution and the projection of the background \pdf as a function of $\cTL$, for $q^2$ bin~0.}
+  \label{fig:bin0-bkg-l}
+\end{figure}
+
+\begin{figure}[!hbt]
+  \centering
   \includegraphics[width=0.7\textwidth]{Figures/background/bin0-phi.pdf}
-  \caption{The data sidebands result of $q^2$ bins in the Table~\ref{tab:q2 bins} bin 0. The figure
-    show the projections on $\phi$.}
+  \caption{The sideband event distribution and the projection of the background \pdf as a function of $\phi$, for $q^2$ bin~0.}
   \label{fig:bin0-bkg-phi}
 \end{figure}
+
+%%%%%%%%%%%%%%555
+%% Using simulation, we search for possible backgrounds that might peak in the \PBz\ mass region.
+%% The event selection is applied to inclusive MC samples of \PBz, \PBs, \PBp, and $\Lambda_{\rm b}$ decays to \cPJgy\ X and $\psi'$ X, where X denotes all possible SM particles required to complete the known exclusive decay channels, and with the \cPJgy\ and $\psi'$ decaying to \Pgmp \Pgmm.
+%% No evidence for a peaking structure near the \PBz\ mass is found.
+%% The distributions of the few events that satisfy the selection criteria are similar to the shape of the combinatorial background.
+%% As an additional check, we generate events with $\PBs \to \cPKstz({\rm K}^+ \pi^-) \Pgmp \Pgmm$ decays, using the same branching fraction as for $\PBz \to \cPKstz({\rm K}^+ \pi^-)$ $\Pgmp \Pgmm$.
+%% About 70 such events, integrated over $q^2$, are found to cluster near the \PBs\ mass.
+%% This background is considered negligible since it should be rescaled by the ratio of branching fractions $\mathcal{B}(\PBs \to \cPJgy \cPKstz) / \mathcal{B}(\BtoKstJpsi) \approx 10^{-2}$~\cite{PDG}.
+%% Possible backgrounds from events with hadrons misidentified as muons or with muons misidentified as hadrons, \eg, from random \PD\ mesons associated with random stable charged hadrons or from $\PBz \to \PD {\rm X}$ or $\PBz \to {\rm J}/\psi {\rm K}^*$ decays, are considered negligible because of the good muon identification capabilities of the CMS detector~\cite{Chatrchyan:2012xi}.
+%% We also investigated possible background from events in which a $\PBp \to \PKp \Pgmp \Pgmm$ decay is combined with a random pion, and from events with a $\Lambda_b \to \Pp \PK \Pgmp \Pgmm$ decay in which the proton is assigned the pion mass.
+%% Both these potential sources of background are found to be negligible.
+%% The low-mass sideband might be affected by background events that have a different origin with respect to the combinatorial background that characterizes the signal region, \eg, partially reconstructed multibody \PB\ decays.
+%% We address this possible background contamination in Section~\ref{sec:Systematics}
+.
+%%%%%%%%%%%%%%%%%%55
+
+\subsubsection{Test of factorisable background hypothesis}
+\label{sec:fact}
+
+The correlation of the variable distributions for the combinatorial background events is tested and the results shown in this section.
+
+For each angular variable, the mass-sideband sample has been divided in two sub-samples, cutting in the middle of the variable range.
+Then, the two sub-sample distributions as functions of the other variables are compared.
+Furthermore, the angular variable distributions of the lower and higher sidebands are compared.
+
+These comparisons are performed for each signal bin, for each control sample, and for two ``special bins'' that merge events in bin ranges [0-3] and [8-9], respectively.
+As example, the distributions for the special $q^2$ bin [0-3] are showed in Figure~\ref{fig:side9}, where four plots are shown, one for each variable, and in each plot six distributions are compared, corresponding to the three pair of sub-samples obtained cutting on the not-plotted variables.
+%% The colour code identifies the sub-sample:
+%% \begin{center}
+%% \begin{tabular}{c|c}
+%% dim green & $\cos\theta_K$ lower half\\
+%% grey & $\cos\theta_K$ higher half\\
+%% black & $\cos\theta_L$ lower half\\
+%% red & $\cos\theta_L$ higher half\\
+%% bright green & $\phi$ lower half\\
+%% blue & $\phi$ higher half\\
+%% magenta & low mass sideband\\
+%% light blue & high mass sideband\\
+%% \end{tabular}
+%% \end{center}
+
+For some bins the low statistics don't allow to compare the distributions, but in the other bins and in the merged ones the good compatibility is probed.
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands0.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $q^2$ bin 0. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side0}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands1.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $q^2$ bin 1. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side1}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands2.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $q^2$ bin 2. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side2}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands3.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $q^2$ bin 3. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side3}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands4.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $J/\psi$ control region. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side4}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands5.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $q^2$ bin 5. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side5}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands6.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $\psi(2S)$ control region. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side6}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands7.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $q^2$ bin 7. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side7}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands8.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $q^2$ bin 8. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side8}
+%% \end{figure}
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands9.pdf}
+  \caption{Distributions of the sideband events as a function of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right), in the $q^2$ bin range [0,3]. As described in Section~\ref{sec:fact}, each distribution corresponds to a different sub-sample of the sideband events: $\cos\theta_K$ lower half (dim green) and upper half (grey), $\cos\theta_L$ lower half (black) and upper half (red), $\phi$ lower half (bright green) and upper half (blue), and low and high mass sidebands (magenta and light blue, respectively).}
+  \label{fig:side9}
+\end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.85\textwidth]{Figures/bkg_fact/sidebands10.pdf}
+%%   \caption{Distributions of $\cos\theta_K$ (top left), $\cos\theta_L$ (top right), $\phi$ (bottom left), $m_{K\pi\mu\mu}$ (bottom right) for subsamples of the data sideband events, in the $q^2$ bin range [7,8]. The procedure to obtained these subsamples is described in App.~\ref{sec:app-bkg.fact}. }
+%%   \label{fig:side10}
+%% \end{figure}
 
 \subsection{The fitting sequence, components and strategy}
 \label{sec:fitseq}
 
-The decay rate, as described by Eq.~(\ref{eq:PDF-f2}), depends upon six parameters,
-$F_\mathrm{L}$, $F_\mathrm{S}$, $A_\mathrm{S}$, $P_1$, $P_5'$, and $A^5_\mathrm{S}$.
-In order to avoid fit convergence problems due to the limited number of
-signal candidate events the angular parameters $F_\mathrm{L}$, $F_\mathrm{S}$,
-and $A_\mathrm{S}$ are fixed to previous CMS measurements performed
-on the same dataset with the same event selection criteria~\cite{CMS:2012}.
-For each $q^2$ bin, the observables of interest are extracted from an unbinned
-extended maximum-likelihood fit to four variables: the $\PKp\Pgpm\Pgmp\Pgmm$
-invariant mass $m$ and the three angular variables ${\theta_\PK}$, ${\theta_l}$,
-and $\phi$.
+Before applying the fit procedure on data, some parameters of the \pdf in Equation~\ref{eq:angALL} are estimated, for each $q^2$ bin, on the simulated signal MC sample and kept fixed for the full fitting process.
+These parameters are the mistag fraction $f^{M}$, as described in Section~\ref{sec:mistag}, and the seven parameters of the signal mass component of the \pdf: the two widths and the relative abundance for the double Gaussian describing the right-tagged events, the same for the double Gaussian describing the mis-tagged events, and the common mean.
+To take into account the effect of eventual difference between simulated and real events, some systematic uncertainties have been computed and will be described in Section~\ref{sec:syst}.
+%% The PDF components whose parameters are determined with a MC simulaion are: $f^{M}$, $S^{C}(m)$, $S^{M}(m)$, $\epsilon^{C}(\TK,\theta_l,\phi)$ and $\epsilon^{M}(\TK,\theta_l,\phi)$, while all the remaining parameters are determined on data.
 
-The PDF components whose parameters are determined with a MC simulaion are:
-$f^{M}$, $S^{C}(m)$, $S^{M}(m)$, $\epsilon^{C}(\theta_\PK,\theta_l,\phi)$ and $\epsilon^{M}(\theta_\PK,\theta_l,\phi)$,
-while all the remaining parameters are determined on data.
+The angular component of the signal \pdf, as described by Equation~(\ref{eq:PDF-f2}), depends on six  parameters, $F_\mathrm{L}$, $F_\mathrm{S}$, $A_\mathrm{S}$, $P_1$, $P_5'$, and $A^5_\mathrm{S}$.
+In order to facilitate the convergence of the fit process, and avoid problems related to the limited number of events and the presence of the physical boundary in the parameter phase space, the angular parameters that have already been measured by the previous CMS analysis on the same dataset, $F_\mathrm{L}$, $F_\mathrm{S}$, and $A_\mathrm{S}$, have been fixed to the results of that measurement.
+To take into account the effect of fixing these parameters, a systematic uncertainty has been computed and will be described in Section~\ref{sec:syst}.
 
-The fit is performed in two steps. The initial fit uses the data from the sidebands of the $\PBz$
-mass to obtain the $B^m(m)$, $B^{\theta_\PK}(\theta_\PK)$, $B^{\theta_l}(\theta_l)$, and $B^{\phi}(\phi)$
-distributions (the signal component is absent from this fit). The sideband regions are
-$3\sigma_m < \abs{m-m_{\PBz}} < 5.5\sigma_m$, where $\sigma_m$ is the average mass resolution ($\approx$45\MeV),
-obtained from fitting the MC simulation signal to a sum of two Gaussians with a common mean. The distributions
-obtained in this step are then fixed for the second step, which is a fit to the data over the full mass range.
-The free parameters in this fit are the angular parameters $P_1$, $P_5'$, and $A^5_\mathrm{S}$,
-and the yields $Y^{C}_{S}$ and $Y_{B}$.
+%% In order to avoid fit convergence problems due to the limited number of signal candidate events the angular parameters $F_\mathrm{L}$, $F_\mathrm{S}$, and $A_\mathrm{S}$ are fixed to previous CMS measurements performed on the same dataset with the same event selection criteria~\cite{CMS:2012}.
+%% For each $q^2$ bin, the observables of interest are extracted from an unbinned extended maximum-likelihood fit to four variables: the $\PKp\Pgpm\Pgmp\Pgmm$ invariant mass $m$ and the three angular variables ${\TK}$, ${\theta_l}$, and $\phi$.
 
-The expression describing the angular distribution of $\mathrm{B}^0\to{\mathrm{K}^*\mu\mu}$, Eq.~(\ref{eq:PDF-f2}) and also its more
-general form in Ref.~\cite{Descotes-Genon:2013vna}, can become negative for certain values of the angular parameters.
-In particular the PDF in Eq.~(\ref{eq:PDF}) is only guaranteed to be non-negative for a particular subset of the parameter
-space $P_1$, $P_5'$, and $A^5_\mathrm{S}$, whose mathematical expression is non trivial. The presence of such a physical
-region greatly complicates the numerical maximisation process of the likelihood by \textsc{minuit}~\cite{Minuit}
-and especially the error determination by \textsc{minos}~\cite{Minuit},
-in particular next to the boundary between physical and unphysical regions.
-Therefore the second fit step is performed by discretizing the bidimensional space $P_1$ -- $P_5'$, and by maximising the
-likelihood as a function of the nuisance parameters $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$ at fixed values of $P_1$,
-$P_5'$. Finally the distribution of the likelihood values is fit with a bivariate Normal distribution whose position
-of the maximum inside the physical region corresponds to the best estimate of the angular parameters $P_1$, $P_5'$.
+%%%%%%%%%%%%%%%%%%%%%%%55555
 
-When we perform the final fit we need to make sure that we are discretizing the subset of the physical region
-$P_1$ -- $P_5'$ containing the absolute maximum of the likelihood.
-To this extent we fit the data 200 times, each time with starting values of the parameters $P_1$ and
-$P_5'$ chosen randomly according to a uniform distribution defined over their physical region.
+The fit is performed in two steps.
+In the first one, the sidebands events are fitted, using only the background component of the \pdf, to obtain the parameters of the $B^m(m)$, $B^{\TK}(\TK)$, $B^{\theta_l}(\theta_l)$, and $B^{\phi}(\phi)$ distributions.
+These parameters are then kept fixed in the second step of the fit.
+To correctly propagate the uncertainties on the background parameters to the analysis results, a specific systematic uncertainty has been computed and will be described in Section~\ref{sec:syst}.
 
-In this note we require that all the fitts have the status ``GOOD'', with which are labelled the plots.
-The ``GOOD'' label depends upon two conditions: the convergence is verified, and the positive definiteness
-of the covariance matrix is confirmed.
+%% The sideband regions are $3\sigma_m < \abs{m-m_{\PBz}} < 5.5\sigma_m$, where $\sigma_m$ is the average mass resolution ($\approx$45\MeV), obtained from fitting the MC simulation signal to a sum of two Gaussians with a common mean.
+In the second step, the full set of events is fitted using the whole \pdf.
+The free parameters in this fit are the angular parameters $P_1$, $P_5'$, and $A^5_\mathrm{S}$, and the yields $Y^{C}_{S}$ and $Y_{B}$.
+%% The expression describing the angular distribution of $\mathrm{B}^0\to{\mathrm{K}^*\mu\mu}$, Eq.~(\ref{eq:PDF-f2}) and also its more general form in Ref.~\cite{Descotes-Genon:2013vna}, can become negative for certain values of the angular parameters.
+%% In particular the PDF in Eq.~(\ref{eq:PDF}) is only guaranteed to be non-negative for a particular subset of the parameter space $P_1$, $P_5'$, and $A^5_\mathrm{S}$, whose mathematical expression is non trivial.
+This last fit cannot be run in a single step, since the presence of a physical boundary for the validity of the fitted parameters complicates the numerical maximisation process of the likelihood by \textsc{minuit}~\cite{Minuit}.
+Especially in the $q^2$ bins in which the likelihood maximum is close to this boundary, the maximisation results tend to be unstable and strongly dependent on the values of the parameters at the begin of the fit.
+Since this instability is unacceptable, a strategy was developed to avoid the effect of the physical boundary: the bi-dimensional space $P_1$ -- $P_5'$ is discretised by building a $90\times90$ rectangular grid, and for each of its points the values of $P_1$, $P_5'$ are fixed in the fit, and the likelihood is maximised as a function of the nuisance parameters $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
+Once the likelihood has been minimised for each point of the grid, it is fit with a bi-variate Normal distribution.
+The position of the maximum of this function, limited to the physical region, corresponds to the best estimate of the angular parameters $P_1$, $P_5'$.
+To avoid that any eventual non-Gaussian behaviour of the likelihood distribution in regions far from the maximum could introduce a bias in the results, the fit with the bi-variate Normal distribution is limited to the grid points ($P_1^i$, $P_5'^i$) for which is valid the following request: $$\log\mathcal{L}(P_1^i,P_5'^i) > \log\mathcal{L}(P_1^{\mathrm{max}},P_5'^{\mathrm{max}}) - 0.5$$, where ($P_1^{\mathrm{max}}$, $P_5'^{\mathrm{max}}$) is the grid point for which the likelihood is maximum.
+In this way the grid points fitted are limited to a region around the maximum position.
+The dependence of the fit result as a function of the region width, was tested and is found to be negligible.
 
-The interference terms $A_\mathrm{S}$ and $A^5_\mathrm{S}$ must vanish if either of the two interfering components
-vanish. From Ref.~\cite{Descotes-Genon:2013vna}, these constraints are implemented as
-$\abs{A_\mathrm{S}} < \sqrt{12 F_\mathrm{S}(1-F_\mathrm{S})F_\mathrm{L}}R$ and as
-$\abs{A^5_\mathrm{S}} < \sqrt{3 F_\mathrm{S} (1-F_\mathrm{S}) (1-F_\mathrm{L}) (1+P_1)}R$, where $R$ is a ratio related
-to the S-wave and P-wave line shapes, estimated to be 0.89 near the $\cPKstz$ mass.
-The constraint on $A_\mathrm{S}$ is naturally satisfied since the measurement of the parameters $F_\mathrm{S}$,
-$F_\mathrm{L}$, and $A_\mathrm{S}$ are inherited from the previous CMS analysis~\cite{CMS:2012}.
+%% The presence of such a physical region greatly complicates the numerical maximisation process of the likelihood by \textsc{minuit}~\cite{Minuit} and especially the error determination by \textsc{minos}~\cite{Minuit}, in particular next to the boundary between physical and unphysical regions.
+%% Therefore the second fit step is performed by discretizing the bidimensional space $P_1$ -- $P_5'$, and by maximising the likelihood as a function of the nuisance parameters $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$ at fixed values of $P_1$, $P_5'$.
+%% Finally the distribution of the likelihood values is fit with a bivariate Normal distribution whose position of the maximum inside the physical region corresponds to the best estimate of the angular parameters $P_1$, $P_5'$.
 
-To ensure correct coverage for the uncertainties of the angular parameters, the Feldman-Cousins method~\cite{FC}
-is used with nuisance parameters.
-Two main sets of pseudo-experimental samples are generated to compute the coverage for the two angular observables
-$P_1$ and $P_5'$, respectively. The first (second) set, used to compute the coverage for $P_1$ ($P_5'$), is generated
-by assigning values to the other parameters as obtained by profiling the likelihood on data at fixed $P_1$ ($P_5'$)
-values. When fitting the pseudo-experimental samples the same fit procedure as in data is applied (more details can be
-found in Sec.~\ref{sec:statUncert}).
+%% When we perform the final fit we need to make sure that we are discretizing the subset of the physical region $P_1$ -- $P_5'$ containing the absolute maximum of the likelihood.
+%% To this extent we fit the data 200 times, each time with starting values of the parameters $P_1$ and $P_5'$ chosen randomly according to a uniform distribution defined over their physical region.
 
-The fit formalism and results are validated through fits to pseudo-experimental samples,
-MC simulation samples, and control channels.
+%%%%%%%%%%%%%%%%%%%%%%%55555
+
+
+%% In this note we require that all the fitts have the status ``GOOD'', with which are labelled the plots.
+%% The ``GOOD'' label depends upon two conditions: the convergence is verified, and the positive definiteness of the covariance matrix is confirmed.
+
+%% The interference terms $A_\mathrm{S}$ and $A^5_\mathrm{S}$ must vanish if either of the two interfering components vanish.
+%% From Ref.~\cite{Descotes-Genon:2013vna}, these constraints are implemented as $\abs{A_\mathrm{S}} < \sqrt{12 F_\mathrm{S}(1-F_\mathrm{S})F_\mathrm{L}}R$ and as $\abs{A^5_\mathrm{S}} < \sqrt{3 F_\mathrm{S} (1-F_\mathrm{S}) (1-F_\mathrm{L}) (1+P_1)}R$, where $R$ is a ratio related to the S-wave and P-wave line shapes, estimated to be 0.89 near the $\cPKstz$ mass.
+%% The constraint on $A_\mathrm{S}$ is naturally satisfied since the measurement of the parameters $F_\mathrm{S}$, $F_\mathrm{L}$, and $A_\mathrm{S}$ are inherited from the previous CMS analysis~\cite{CMS:2012}.
+
+%% To ensure correct coverage for the uncertainties of the angular parameters, the Feldman-Cousins method~\cite{FC} is used with nuisance parameters.
+%% Two main sets of pseudo-experimental samples are generated to compute the coverage for the two angular observables $P_1$ and $P_5'$, respectively.
+%% The first (second) set, used to compute the coverage for $P_1$ ($P_5'$), is generated by assigning values to the other parameters as obtained by profiling the likelihood on data at fixed $P_1$ ($P_5'$) values.
+%% When fitting the pseudo-experimental samples the same fit procedure as in data is applied (more details can be found in Sec.~\ref{sec:statUncert}).
+
+%% The fit formalism and results are validated through fits to pseudo-experimental samples, MC simulation samples, and control channels.
