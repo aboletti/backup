@@ -1,5 +1,7 @@
 \documentclass[12pt,oneside,a4paper]{report}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{siunitx}
 \usepackage{xspace}
 \usepackage{amsmath}
@@ -14,12 +16,18 @@
 \newcommand{\GeV}{\ensuremath{\,\textrm{GeV}}\xspace}
 \newcommand{\TeV}{\ensuremath{\,\textrm{TeV}}\xspace}
 
+\newcommand{\stat}{\ensuremath{\,\textrm{(stat)}}\xspace}
+\newcommand{\syst}{\ensuremath{\,\textrm{(syst)}}\xspace}
+
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
 
 \newcommand{\PaBz}{\ensuremath{\overline{\textrm{B}}{}^{0}}\xspace}
 \newcommand{\PBz}{\ensuremath{{\textrm{B}}{}^{0}}\xspace}
 \newcommand{\Pgmp}{\ensuremath{\mu^{+}}\xspace}
 \newcommand{\Pgmm}{\ensuremath{\mu^{-}}\xspace}
+\newcommand{\Ppsi}{\ensuremath{\psi}\xspace}
+\newcommand{\JPsi}{\ensuremath{\textrm{J}/\psi}\xspace}
+\newcommand{\PJpsi}{\ensuremath{\textrm{J}/\psi}\xspace}
 \newcommand{\cPJgy}{\ensuremath{\textrm{J}/\psi}\xspace}
 \newcommand{\PKp}{\ensuremath{\textrm{K}^{+}}\xspace}
 \newcommand{\PKm}{\ensuremath{\textrm{K}^{-}}\xspace}
@@ -43,15 +51,16 @@
 \newcommand{\cTK}{\ensuremath{\cos\theta_K}\xspace} %
 \newcommand{\PHI}{\ensuremath{\phi}\xspace} %
 
-\newcommand{\pdf}{\texttt{pdf\xspace}} %
+\newcommand{\pdf}{\texttt{pdf}\xspace} %
 \newcommand{\pdfs}{\texttt{pdf}s\xspace} %
 \newcommand{\e}[1]{\ensuremath{\cdot{10}^{#1}}}%
 
 
 %%% from the paper
-\providecommand{\cPKst}{\ensuremath{\textrm{K}^\ast}\xspace}
-\providecommand{\cPKstz}{\ensuremath{\textrm{K}^{\ast0}}\xspace}
-\providecommand{\cPAKstz}{\ensuremath{\overline{\textrm{K}}{}^{\ast0}}\xspace}
+\newcommand{\PKst}{\ensuremath{\textrm{K}^\ast}\xspace}
+\newcommand{\cPKst}{\ensuremath{\textrm{K}^\ast}\xspace}
+\newcommand{\cPKstz}{\ensuremath{\textrm{K}^{\ast0}}\xspace}
+\newcommand{\cPAKstz}{\ensuremath{\overline{\textrm{K}}{}^{\ast0}}\xspace}
 \newcommand{\BtoKstmumu}{\ensuremath{\PBz\to\cPKstz \Pgmp \Pgmm}\xspace}
 \newcommand{\BtoKstJpsi}{\ensuremath{\PBz\to\cPJgy \cPKstz}\xspace}
 \newcommand{\BtoKstpsip}{\ensuremath{\PBz\to\psi' \cPKstz}\xspace}
@@ -65,7 +74,7 @@
 \newcommand{\Kstpsipdecay}{\ensuremath{\psi'(\Pgmp \Pgmm) \cPKstz(\PKp \Pgpm)}\xspace}
 
 
-\graphicspath{{./Note/}{./Paper/}}
+\graphicspath{{./Note1/}{./Paper/}}
 
 %%%%%%%%%%%%%%% INFOS
 
@@ -108,17 +117,20 @@
 %% \input{Chap_Param.tex}
 %% \clearpage
 
-%% \input{Chap_Selec.tex}
-%% \clearpage
+\input{Chap_Selec.tex}
+\clearpage
 
-%% \input{Chap_Effic.tex}
-%% \clearpage
+\input{Chap_Effic.tex}
+\clearpage
 
 \input{Chap_Fit.tex}
 \clearpage
 
-%% \input{Chap_Valid.tex}
-%% \clearpage
+\input{Chap_Valid.tex}
+\clearpage
+
+\input{Chap_Syst.tex}
+\clearpage
 
 
 

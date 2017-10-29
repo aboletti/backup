@@ -1,61 +1,56 @@
-\section{Validation with MC samples and data sidebands}
+\section{Validation of the fit algorithm}
 \label{sec:validation}
 
-To apply the angular fitter to the data reliably, we have
-made many checks and validation of the whole procedures. In addition
-to check and validate the fitting procedures, some systematic
-uncertainties are also derived from some of these studies.
+Since the whole fit procedure is very complex, many checks and validation are performed to verify the robustness of the final result.
 
+In this section I will present the studies performed on the fit procedure, both on simulated MC events and on data control channels.
+Since all the signal MC samples contains resonant P-wave events only, it will be implicit in this section that the angular decay rate used when fitting MC events do not have the S-wave and interference terms, while the full decay rate is used when fitting on data control channels.
 
-%%%%%%%%%%from previous note section
-\subsection{The fitting with GEN level signal MC samples}
+\subsection{Generator level fit to signal MC events}
 \label{sec:fitval-gen}
 
-In this section, we describe the studies made on GEN level signal MC samples.
-We fit the GEN sample with Eq.~(\ref{eq:PDF-f2}) in each $q^2$ bin.
-The results of the fits will serve as a basis for comparison with the fitts
-to the RECO-level MC samples.
+The first validation step, presenting the minimum level of complexity, is performed by fitting the generator-level angular distributions of the signal MC sample, using the pure decay rate as \pdf.
 
-The fitting results of GEN level signal sample for all $q^2$ bins are
-shown in Fig.~\ref{fig:gen-bin0} to Fig.~\ref{fig:gen-bin8}.
+The good status of the fit is considered a successful probe of the the minimisation process and of the correct description of the generated angular distribution through the decay rate.
+The angular folding operations are applied to distributions and \pdfs, but this has no effect on the result, since the terms of the \pdf are either odd or even with respect to them.
 
-From these results, it can be shown that the fitting mechanisms
-works well on GEN level. Also the fitting results here are used to do
-the closure tests with RECO level fitting.Details of this will be
-described in Section~\ref{sec:fitval-closure}.
+Since the ``true'' values of the angular parameters used to simulate the events of the MC samples are not defined, the results of this fit will be used as a reference value for any comparison of the following results.
+This fit is clean from any effect due to finite experimental resolution, so I expect that the fit results do not have any bias.
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin0.pdf}
-  \caption{The fitting results of the $q^2$ bin No.0 on the GEN
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are the GEN  sample. } 
-  \label{fig:gen-bin0}
-\end{figure}
+An example of the generator-level angular distributions and the projections of the fitted decay rate, for $q^2$ bin~3, are shown in Fig.~\ref{fig:gen-bin3}.
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin1.pdf}
-  \caption{The fitting results of the $q^2$ bin No.1 on the GEN
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are the GEN  sample. } 
-  \label{fig:gen-bin1}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin0.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.0 on the GEN
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are the GEN  sample. } 
+%%   \label{fig:gen-bin0}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin2.pdf}
-  \caption{The fitting results of the $q^2$ bin No.2 on the GEN
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are the GEN  sample. } 
-  \label{fig:gen-bin2}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin1.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.1 on the GEN
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are the GEN  sample. } 
+%%   \label{fig:gen-bin1}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin2.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.2 on the GEN
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are the GEN  sample. } 
+%%   \label{fig:gen-bin2}
+%% \end{figure}
 
 \begin{figure}[!hbt]
   \centering
@@ -68,352 +63,306 @@ described in Section~\ref{sec:fitval-closure}.
   \label{fig:gen-bin3}
 \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin5.pdf}
-  \caption{The fitting results of the $q^2$ bin No.5 on the GEN
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are the GEN  sample. } 
-  \label{fig:gen-bin5}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin5.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.5 on the GEN
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are the GEN  sample. } 
+%%   \label{fig:gen-bin5}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin7.pdf}
-  \caption{The fitting results of the $q^2$ bin No.7 on the GEN
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are the GEN  sample. } 
-  \label{fig:gen-bin7}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin7.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.7 on the GEN
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are the GEN  sample. } 
+%%   \label{fig:gen-bin7}
+%% \end{figure}
 
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin8.pdf}
-  \caption{The fitting results of the $q^2$ bin No.8 on the GEN
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are the GEN  sample. } 
-  \label{fig:gen-bin8}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin8.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.8 on the GEN
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are the GEN  sample. } 
+%%   \label{fig:gen-bin8}
+%% \end{figure}
 
 \clearpage
 
-\subsection{The fitting with RECO level signal MC samples}
+\subsection{Reconstruction-level fit to signal MC samples}
 \label{sec:fitval-reco}
 
-In this section we describe the studies made on RECO-level signal MC
-samples. We fit the RECO sample with the same PDF as in data but without
-the S-wave term since MC is lacking of this particular component and without
-the background description.
+The second validation step is performed by fitting the reconstruction-level angular distributions of the signal MC sample, after applying the criteria of candidate selection and CP-state tag described in Section~\ref{sec:selection}.
+This fit is performed using only the angular terms of the signal components in the \pdf described in Equation~\ref{eq:angALL}.
 
-For RECO level fitting, we check the procedures step by step. First,
-we only fit the correctly tagged events with the corresponding PDF,
-then do the similar standalone fitting on the mis-tagged events. After
-these are validated, we fit the full RECO sample together, taking into
-account both components.
+The simulated sample contains both right-tagged and mis-tagged events, which can be distinguished by using the MC truth information.
+As a first step, these two categories are fitted individually, using for each of them the corresponding angular component of the \pdf, which is the decay rate times the efficiency function.
+The results of the fit successfully check that the inclusion of the efficiency function in the fit procedure is successfully implemented.
 
+An example of the reconstruction-level angular distributions of the signal MC sample and the projections of the angular component of the \pdf, for $q^2$ bin~3, is shown in Figure~\ref{fig:rtag-bin3} for right-tagged events and in Figure~\ref{fig:wtag-bin3} for mis-tagged events.
 
-\subsubsection{Fitting the correctly tagged events}
-\label{sec:fitval-reco-rtag}
-
-The fitting results of correctly tagged events for all $q^2$ bins are
-shown in Fig.~\ref{fig:rtag-bin0} to Fig.~\ref{fig:rtag-bin8}.
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv0.pdf}
-  \caption{The fitting results of the $q^2$ bin No.0 on the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:rtag-bin0}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv0.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.0 on the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:rtag-bin0}
+%% \end{figure}
 
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv1.pdf}
-  \caption{The fitting results of the $q^2$ bin No.1 on the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:rtag-bin1}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv1.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.1 on the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:rtag-bin1}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv2.pdf}
-  \caption{The fitting results of the $q^2$ bin No.2 on the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:rtag-bin2}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv2.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.2 on the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:rtag-bin2}
+%% \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv3.pdf}
-  \caption{The fitting results of the $q^2$ bin No.3 on the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
+  \caption{The fit results of $q^2$ bin~3 on the right-tagged recontructio-level MC sample.
+    The plots show the projections of the fitting results on three different angular variables: \cTL, \cTK and $\phi$.
+    The curve is the fitting and the points with error bars are from RECO sample.}
   \label{fig:rtag-bin3}
 \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv5.pdf}
-  \caption{The fitting results of the $q^2$ bin No.5 on the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:rtag-bin5}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv5.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.5 on the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:rtag-bin5}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv7.pdf}
-  \caption{The fitting results of the $q^2$ bin No.7 on the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:rtag-bin7}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv7.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.7 on the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:rtag-bin7}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv8.pdf}
-  \caption{The fitting results of the $q^2$ bin No.8 on the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:rtag-bin8}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv8.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.8 on the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:rtag-bin8}
+%% \end{figure}
 
-\clearpage
-
-\subsubsection{Fitting the wrongly tagged events}
-\label{sec:fitval-reco-wtag}
-
-The fitting results of wrongly tagged events for all $q^2$ bins are
-shown in Fig.~\ref{fig:wtag-bin0} to Fig.~\ref{fig:wtag-bin8}.
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv0.pdf}
-  \caption{The fitting results of the $q^2$ bin No.0 on the wrongly
-    tagged RECO sample. The plots show the projections of the fitting
-    results on three different angular variables: $cos\theta_l$,
-    $cos\theta_k$ and $\phi$. The curve is the fitting and the points
-    with error bars are from RECO sample. }
-  \label{fig:wtag-bin0}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv0.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.0 on the wrongly
+%%     tagged RECO sample. The plots show the projections of the fitting
+%%     results on three different angular variables: $cos\theta_l$,
+%%     $cos\theta_k$ and $\phi$. The curve is the fitting and the points
+%%     with error bars are from RECO sample. }
+%%   \label{fig:wtag-bin0}
+%% \end{figure}
 
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv1.pdf}
-  \caption{The fitting results of the $q^2$ bin No.1 on the wrongly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:wtag-bin1}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv1.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.1 on the wrongly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:wtag-bin1}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv2.pdf}
-  \caption{The fitting results of the $q^2$ bin No.2 on the wrongly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:wtag-bin2}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv2.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.2 on the wrongly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:wtag-bin2}
+%% \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv3.pdf}
-  \caption{The fitting results of the $q^2$ bin No.3 on the wrongly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
+  \caption{The fit results of $q^2$ bin~3 on the mis-tagged recontructio-level MC sample.
+    The plots show the projections of the fitting results on three different angular variables: \cTL, \cTK and $\phi$.
+    The curve is the fitting and the points with error bars are from RECO sample.}
   \label{fig:wtag-bin3}
 \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv5.pdf}
-  \caption{The fitting results of the $q^2$ bin No.5 on the wrongly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:wtag-bin5}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv5.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.5 on the wrongly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:wtag-bin5}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv7.pdf}
-  \caption{The fitting results of the $q^2$ bin No.7 on the wrongly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:wtag-bin7}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv7.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.7 on the wrongly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:wtag-bin7}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv8.pdf}
-  \caption{The fitting results of the $q^2$ bin No.8 on the wrongly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. } 
-  \label{fig:wtag-bin8}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv8.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.8 on the wrongly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. } 
+%%   \label{fig:wtag-bin8}
+%% \end{figure}
 
-\clearpage
+As a second step, the full MC sample, containing both right-tagged and mis-tagged events, is used in the fit, and both the signal terms of the \pdf are used.
+The mistag fraction parameter in the \pdf is fixed to the values reported in Section~\ref{sec:mistag}.
+Since the mistag fraction values are computed on the same MC sample used for this fit, there is a statistical correlation between it and the fitted distributions; anyway its effects on the fit results are negligible because of the extremely small statistical uncertainty on this parameter.
 
-\subsubsection{Fitting the full RECO samples}
-\label{sec:fitval-reco-full}
+The fit is still limited to the three angular variables, because all the parameters of the mass shapes and the relative abundances are fixed in the fit and there is no information to extract from the mass distributions.
 
-Based on the previous two steps of fitting on correctly and wrongly tagged events,
-we now show the results of the fits to a a full RECO sample containing both components.
+An example of the reconstruction-level angular distributions of the signal MC sample and the projections of the angular component of the \pdf, for both right-tagged and mis-tagged events in $q^2$ bin~3, is shown in Figure~\ref{fig:fullreco-bin3}.
 
-The fitting results of full RECO events for all $q^2$ bins are
-shown in Fig.~\ref{fig:fullreco-bin0} to Fig.~\ref{fig:fullreco-bin8}.
-
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv0.pdf}
-  \caption{The fitting results of the $q^2$ bin No.0 on the full RECO
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:fullreco-bin0}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv0.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.0 on the full RECO
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:fullreco-bin0}
+%% \end{figure}
 
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv1.pdf}
-  \caption{The fitting results of the $q^2$ bin No.1 on the full RECO
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:fullreco-bin1}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv1.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.1 on the full RECO
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:fullreco-bin1}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv2.pdf}
-  \caption{The fitting results of the $q^2$ bin No.2 on the full RECO
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:fullreco-bin2}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv2.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.2 on the full RECO
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:fullreco-bin2}
+%% \end{figure}
 
 
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv3.pdf}
-  \caption{The fitting results of the $q^2$ bin No.3 on the full RECO
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
+  \caption{The fit results of $q^2$ bin~3 on the full recontructio-level MC sample.
+    The plots show the projections of the fitting results on three different angular variables: \cTL, \cTK and $\phi$.
+    The curve is the fitting and the points with error bars are from RECO sample.}
   \label{fig:fullreco-bin3}
 \end{figure}
 
 
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv5.pdf}
-  \caption{The fitting results of the $q^2$ bin No.5 on the full RECO
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:fullreco-bin5}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv5.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.5 on the full RECO
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:fullreco-bin5}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv7.pdf}
-  \caption{The fitting results of the $q^2$ bin No.7 on the full RECO
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:fullreco-bin7}
-\end{figure}
-
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv8.pdf}
-  \caption{The fitting results of the $q^2$ bin No.8 on the full RECO
-    sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:fullreco-bin8}
-\end{figure}
-
-\clearpage
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv7.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.7 on the full RECO
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:fullreco-bin7}
+%% \end{figure}
 
 
-%%%%%%%% back from validation note section
-\subsection{Validation with GEN/RECO samples}
-\label{sec:fitval-closure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv8.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.8 on the full RECO
+%%     sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:fullreco-bin8}
+%% \end{figure}
 
-After verifying the fitting procedures and checking results with GEN
-and RECO MC samples as described in Sections \ref{sec:fitval-gen} and
-\ref{sec:fitval-reco}, we could compare the fitting values obtained at
-different RECO fitting steps with the corresponding GEN fitting
-results. This provides the closure tests and are important indication
-of the reliability of our fitting results.
+The results of the fits performed in this section are compared with the results of the generator-level fits.
 
-
-\subsubsection{Closure test with the correctly tagged events}
-\label{sec:fitval-closure-rtag}
-
-
-The closure test results of the correctly tagged RECO events for all
-$q^2$ bins are shown in Fig.~\ref{fig:correct-closure-fl} to
-Fig.~\ref{fig:correct-closure-p1}.
+The results of right-tagged event fit and of the generator-level fit, are shown in Figure~\ref{fig:correct-closure-fl} for the $F_L$ parameter, in Figure~\ref{fig:correct-closure-p5p} for the $P_5'$ parameter, and in Figure~\ref{fig:correct-closure-p1} for the $P_1$ parameter.
+The results of mis-tagged event fit and of the generator-level fit, are shown in Figure~\ref{fig:wrong-closure-fl} for the $F_L$ parameter, in Figure~\ref{fig:wrong-closure-p5p} for the $P_5'$ parameter, and in Figure~\ref{fig:wrong-closure-p1} for the $P_1$ parameter.
+The results of right-tagged event fit and of the generator-level fit, are shown in Figure~\ref{fig:fullreco-closure-fl} for the $F_L$ parameter, in Figure~\ref{fig:fullreco-closure-p5p} for the $P_5'$ parameter, and in Figure~\ref{fig:fullreco-closure-p1} for the $P_1$ parameter.
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/correct/Fl.pdf}
-  \caption{Closure test of the fitting results of $F_L$ for each $q^2$
-    bins from the correctly tagged RECO sample with GEN sample.  The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances.}
+  \caption{Results for the $F_L$ parameter from the reconstruction-level fit to right-tagged event distributions (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:correct-closure-fl}
 \end{figure}
 
@@ -421,39 +370,24 @@ Fig.~\ref{fig:correct-closure-p1}.
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/correct/P5p.pdf}
-  \caption{Closure test of the fitting results of $P_5'$ for each $q^2$
-    bins from the correctly tagged  RECO sample with GEN sample. The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances.}
+  \caption{Results for the $P_5'$ parameter from the reconstruction-level fit to right-tagged event distributions (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:correct-closure-p5p}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/correct/P1.pdf}
-  \caption{Closure test of the fitting results of $P_1$ for each $q^2$
-    bins from the correctly tagged  RECO sample with GEN sample.  The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances.}
+  \caption{Results for the $P_1$ parameter from the reconstruction-level fit to right-tagged event distributions (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:correct-closure-p1}
 \end{figure}
-
-\clearpage
-
-\subsubsection{Closure test with the wrongly tagged events}
-\label{sec:fitval-closure-wtag}
-
-The closure test results of the wrongly tagged RECO events for all
-$q^2$ bins are shown in Fig.~\ref{fig:wrong-closure-fl} to
-Fig.~\ref{fig:wrong-closure-p1}.
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/wrong/Fl.pdf}
-  \caption{Closure test of the fitting results of $F_L$ for each $q^2$
-    bins from the wrongly tagged RECO sample with GEN sample.  The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+  \caption{Results for the $F_L$ parameter from the reconstruction-level fit to mis-tagged event distributions (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:wrong-closure-fl}
 \end{figure}
 
@@ -461,39 +395,24 @@ Fig.~\ref{fig:wrong-closure-p1}.
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/wrong/P5p.pdf}
-  \caption{Closure test of the fitting results of $P_5'$ for each $q^2$
-    bins from the wrongly tagged  RECO sample with GEN sample.  The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+  \caption{Results for the $P_5'$ parameter from the reconstruction-level fit to mis-tagged event distributions (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:wrong-closure-p5p}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/wrong/P1.pdf}
-  \caption{Closure test of the fitting results of $P_1$ for each $q^2$
-    bins from the wrongly tagged  RECO sample with GEN sample.  The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+  \caption{Results for the $P_1$ parameter from the reconstruction-level fit to mis-tagged event distributions (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:wrong-closure-p1}
 \end{figure}
-
-\clearpage
-
-\subsubsection{Closure test  the full RECO samples}
-\label{sec:fitval-closure-full}
-
-The closure test results of the full  RECO events for all
-$q^2$ bins are shown in Fig.~\ref{fig:fullreco-closure-fl} to
-Fig.~\ref{fig:fullreco-closure-p1}.
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/full-reco/Fl.pdf}
-  \caption{Closure test of the fitting results of $F_L$ for each $q^2$
-    bins from the full RECO sample with GEN sample.  The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+  \caption{Results for the $F_L$ parameter from the reconstruction-level fit (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:fullreco-closure-fl}
 \end{figure}
 
@@ -501,10 +420,8 @@ Fig.~\ref{fig:fullreco-closure-p1}.
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/full-reco/P5p.pdf}
-  \caption{Closure test of the fitting results of $P_5'$ for each $q^2$
-    bins from the full RECO sample with GEN sample.  The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+  \caption{Results for the $P_5'$ parameter from the reconstruction-level fit (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:fullreco-closure-p5p}
 \end{figure}
 
@@ -512,413 +429,563 @@ Fig.~\ref{fig:fullreco-closure-p1}.
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/RECOFit/full-reco/P1.pdf}
-  \caption{Closure test of the fitting results of $P_1$ for each $q^2$
-    bins from the full RECO sample with GEN sample.  The red points are
-    from the GEN fitting and the black points are from the RECO
-    fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+  \caption{Results for the $P_1$ parameter from the reconstruction-level fit (black) and from the generator-level fit (red), for each $q^2$ bin.
+    The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:fullreco-closure-p1}
 \end{figure}
 
 \clearpage
-\subsection{Validation of independent MC samples}
-\label{sec:fitval-half}
+%% \subsection{Validation of independent MC samples}
+%% \label{sec:fitval-half}
 
-Since the efficiency derivation procedures use the same full
-statistics of RECO level signal simulation sample as we fit
-described in \ref{sec:fitval-reco}, we need to check whether the
-efficiency works well with an independent sample. In order to check
-this, we re-derive the efficiency with half of the RECO sample and
-perform the fitting on the other half of the sample to check the
-results.
+%% Since the efficiency derivation procedures use the same full
+%% statistics of RECO level signal simulation sample as we fit
+%% described in \ref{sec:fitval-reco}, we need to check whether the
+%% efficiency works well with an independent sample. In order to check
+%% this, we re-derive the efficiency with half of the RECO sample and
+%% perform the fitting on the other half of the sample to check the
+%% results.
 
-In this section, we show the fitting results thus obtained for the
-RECO sample and the closure test for the correctly tagged
-events. Basically these results agree well with those reported in
-Sections \ref{sec:fitval-reco-full} and \ref{sec:fitval-closure-rtag}
-respectively. These agreements indicate that there is no bias caused
-by the possible correlation in derivation of efficiency.
+%% In this section, we show the fitting results thus obtained for the
+%% RECO sample and the closure test for the correctly tagged
+%% events. Basically these results agree well with those reported in
+%% Sections \ref{sec:fitval-reco-full} and \ref{sec:fitval-closure-rtag}
+%% respectively. These agreements indicate that there is no bias caused
+%% by the possible correlation in derivation of efficiency.
 
-\subsubsection{Fitting the independents MC samples}
-\label{sec:fitval-fitres-half}
+%% \subsubsection{Fitting the independents MC samples}
+%% \label{sec:fitval-fitres-half}
 
-The fitting results of correctly tagged events from half the RECO
-samples for all $q^2$ bins are shown in Fig.~\ref{fig:halfrtag-bin0}
-to Fig.~\ref{fig:halfrtag-bin8}.
+%% The fitting results of correctly tagged events from half the RECO
+%% samples for all $q^2$ bins are shown in Fig.~\ref{fig:halfrtag-bin0}
+%% to Fig.~\ref{fig:halfrtag-bin8}.
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv0.pdf}
-  \caption{The fitting results of the $q^2$ bin No.0 on the half of the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:halfrtag-bin0}
-\end{figure}
-
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv1.pdf}
-  \caption{The fitting results of the $q^2$ bin No.1 on the half of the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:halfrtag-bin1}
-\end{figure}
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv2.pdf}
-  \caption{The fitting results of the $q^2$ bin No.2 on the half of the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:halfrtag-bin2}
-\end{figure}
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv3.pdf}
-  \caption{The fitting results of the $q^2$ bin No.3 on the half of the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:halfrtag-bin3}
-\end{figure}
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv5.pdf}
-  \caption{The fitting results of the $q^2$ bin No.5 on the half of the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:halfrtag-bin5}
-\end{figure}
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv7.pdf}
-  \caption{The fitting results of the $q^2$ bin No.7 on the half of the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:halfrtag-bin7}
-\end{figure}
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv8.pdf}
-  \caption{The fitting results of the $q^2$ bin No.8 on the half of the correctly
-    tagged RECO  sample. The plots show the projections of the fitting results on
-    three different angular variables: $cos\theta_l$, $cos\theta_k$
-    and $\phi$. The curve is the fitting and the points with error
-    bars are from RECO sample. }
-  \label{fig:halfrtag-bin8}
-\end{figure}
-
-\clearpage
-
-\subsubsection{Closure test with the correctly tagged events}
-\label{sec:fitval-closure-half}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv0.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.0 on the half of the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:halfrtag-bin0}
+%% \end{figure}
 
 
-The closure test results of the correctly tagged events with
-independent RECO sample for all $q^2$ bins are shown in
-Fig.~\ref{fig:hc-closure-fl} to
-Fig.~\ref{fig:hc-closure-p1}.
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv1.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.1 on the half of the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:halfrtag-bin1}
+%% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.7\textwidth]{Figures/HalfFit/Fl.pdf}
-  \caption{Closure test of the fitting results of $F_L$ for each $q^2$
-    bins from half the correctly tagged RECO sample with GEN sample.
-    The red points are from the GEN fitting and the black points are from
-    the RECO fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
-  \label{fig:hc-closure-fl}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv2.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.2 on the half of the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:halfrtag-bin2}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv3.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.3 on the half of the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:halfrtag-bin3}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv5.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.5 on the half of the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:halfrtag-bin5}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv7.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.7 on the half of the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:halfrtag-bin7}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/HalfFit/SignalRECO_Canv8.pdf}
+%%   \caption{The fitting results of the $q^2$ bin No.8 on the half of the correctly
+%%     tagged RECO  sample. The plots show the projections of the fitting results on
+%%     three different angular variables: $cos\theta_l$, $cos\theta_k$
+%%     and $\phi$. The curve is the fitting and the points with error
+%%     bars are from RECO sample. }
+%%   \label{fig:halfrtag-bin8}
+%% \end{figure}
+
+%% \clearpage
+
+%% \subsubsection{Closure test with the correctly tagged events}
+%% \label{sec:fitval-closure-half}
 
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.7\textwidth]{Figures/HalfFit/P5p.pdf}
-  \caption{Closure test of the fitting results of $P_5'$ for each
-    $q^2$ bins from half the correctly tagged RECO sample with GEN
-    sample.  The red points are from the GEN fitting and the black points
-    are from the RECO fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
-  \label{fig:hc-closure-p5p}
-\end{figure}
+%% The closure test results of the correctly tagged events with
+%% independent RECO sample for all $q^2$ bins are shown in
+%% Fig.~\ref{fig:hc-closure-fl} to
+%% Fig.~\ref{fig:hc-closure-p1}.
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.7\textwidth]{Figures/HalfFit/P1.pdf}
-  \caption{Closure test of the fitting results of $P_1$ for each $q^2$
-    bins from half the correctly tagged RECO sample with GEN sample.
-    The red points are from the GEN fitting and the black points are from
-    the RECO fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
-  \label{fig:hc-closure-p1}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.7\textwidth]{Figures/HalfFit/Fl.pdf}
+%%   \caption{Closure test of the fitting results of $F_L$ for each $q^2$
+%%     bins from half the correctly tagged RECO sample with GEN sample.
+%%     The red points are from the GEN fitting and the black points are from
+%%     the RECO fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+%%   \label{fig:hc-closure-fl}
+%% \end{figure}
 
 
-\subsection{Validation with data-like statistics simulation}
-\label{sec:Cocktail-MC}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.7\textwidth]{Figures/HalfFit/P5p.pdf}
+%%   \caption{Closure test of the fitting results of $P_5'$ for each
+%%     $q^2$ bins from half the correctly tagged RECO sample with GEN
+%%     sample.  The red points are from the GEN fitting and the black points
+%%     are from the RECO fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+%%   \label{fig:hc-closure-p5p}
+%% \end{figure}
 
-The analysis technique is also validated with the simulation
-containing both the signal and the background components. The goal is
-to verify whether the analysis is able to measure the interesting
-observables, in data-like conditions, and with the same number of
-events as in data.
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.7\textwidth]{Figures/HalfFit/P1.pdf}
+%%   \caption{Closure test of the fitting results of $P_1$ for each $q^2$
+%%     bins from half the correctly tagged RECO sample with GEN sample.
+%%     The red points are from the GEN fitting and the black points are from
+%%     the RECO fitting. The vertical shaded regions correspond to the $J/\psi$ and $\psi'$ resonances. }
+%%   \label{fig:hc-closure-p1}
+%% \end{figure}
 
-We produced many ``cocktail MC'' samples, each with the same
-statistics as the data. Signal distributions are obtained from a subsample of signal
-MC. The background distribution is generated with pseudo-experiments with p.d.f
-parameters measured with data sidebands.
-A total of 200 independent toy MC sample has been generated.
-These samples have been used to validate the fitting procedure, first using only
-the signal, then considering signal plus background.
+\subsection{Reconstructed level fit to low statistics simulated samples}
+\label{sec:datalike-MC}
 
-\subsubsection{Validation with data-like statistics pure signal simulation}
+The fit algorithm is also validated with simulated samples having the same statistics of the real data sample, and containing both the signal and the background components.
+The goal is to verify whether the analysis is able to measure the interesting observables, in conditions that are as close as possible to the real data sample.
+
+The data events are obtained by dividing the MC samples in sub-samples with a number of events exactly equal to the signal yield, as obtained from fitting on data the \PBz mass distribution.
+The number of sub-samples that we can produced is limited by the statistics available in the MC sample, and for simplicity has been rounded down to 200 sub-samples, for each $q^2$ bin.
+
+The background distributions are generated with pseudo-experiments, using the \pdf described in Section~\ref{sec:backg}, and parameter values measured with data sidebands.
+The number of events generated for each sub-sample are equal to the background yield, as obtained from fitting on data the \PBz mass distribution.
+To match the signal MC sub-samples, also for background a total of 200 set of events have been generated, for each $q^2$ bin.
+
+These samples have been used to validate the fitting procedure, first using only the signal, then merging each signal sub-sample with a background one.
+I will refer to a merged sub-sample as ``cocktail'' MC sample.
+
+\subsubsection{Data-like samples of signal MC events}
 \label{sec:Cocktail-MC-pure}
 
+As a first step, the angular distribution of the signal sub-samples is fitted, using only the signal components of the \pdf.
+As for the fit to the full MC sample, including the mass in the fitted distributions would not change the result.
 
-In this section, the simulation samples used are the pure signal
-components from the cocktail MC. The parameter $F_L$ is free to float
-in these fittings.
+Each of the 200 MC sub-samples are fitted.
+An example of the distributions of the parameters' results, for $q^2$ bin~3, are shown in Figure~\ref{fig:closure-signal-cocktail-bin3}.
 
-The App.~\ref{sec:pure-signal-result}  and App.~\ref{sec:pure-signal-value} summarize the $F_L$, $P_1$
-and $P_5'$ average results of the 200 fittings. The error bars are from the
-$RMS$ of the measured distributions divided by the square root of the
-number of fittings ( only good fittings are considered).
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=1.0\textwidth]{Figures/cocktail-Fit/bin3-value-s.pdf}
+  \caption{Distributions of the parameters' results from the fits to the 200 signal MC sub-samples, for $q^2$ bin~3.}
+  \label{fig:closure-signal-cocktail-bin3}
+\end{figure}
+
+The distributions of these results are compared with the results of the fit to the full MC sample.
+Any significant difference can be an hint of biases on the results introduced by the fit procedure.
+
+The mean value of the results' distributions are shown in Figure~\ref{fig:sub-samp-FL}, in Figure~\ref{fig:sub-samp-P1}, and in Figure~\ref{fig:sub-samp-P5p}, for the $F_L$, $P_1$, and $P_5'$ parameters, respectively.
+The error bars assigned to the mean values are the standard deviation of the results' distributions, divided by the square root of the number of results in them. 
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/com-reco-Fl.pdf}
-  \caption{Closure test of the fitting results between 200 pure signal cocktail
- samples and truth-matched Reco-MC of $Fl$ for each $q^2$ bin. The blue points
-are average value of the 200 fitting values, its error just the RMS. The red
-points are the fitting results of truth-matched Reco-MC. }
-  \label{fig:Fit bias of Fl}
+  \caption{Average values of the $F_L$ result distribution from the fit to 200 signal MC sub-sample (blue), together with the $F_L$ results of the fit to the full MC sample (red).}
+  \label{fig:sub-samp-FL}
 \end{figure}
 
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/com-reco-P1.pdf}
-  \caption{Closure test of the fitting results between 200 pure signal cocktail
- samples and truth-matched Reco-MC of $P_1$ for each $q^2$ bin. The blue points
-are average value of the 200 fitting values, its error just the $RMS$. The red
-points are the fitting results of truth-matched Reco-MC. }
-  \label{fig:Fit bias of P1}
+  \caption{Average values of the $P_1$ result distribution from the fit to 200 signal MC sub-sample (blue), together with the $F_L$ results of the fit to the full MC sample (red).}
+  \label{fig:sub-samp-P1}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/com-reco-P5p.pdf}
-  \caption{Closure test of the fitting results between 200 pure signal cocktail
- samples and truth-matched Reco-MC of $P_5'$ for each $q^2$ bin. The blue points
-are average value of the 200 fitting values, its error just the $RMS$. The red
-points are the fitting results of truth-matched Reco-MC. }
-  \label{fig:Fit bias of P5'}
+  \caption{Average values of the $P_5'$ result distribution from the fit to 200 signal MC sub-sample (blue), together with the $F_L$ results of the fit to the full MC sample (red).}
+  \label{fig:sub-samp-P5p}
 \end{figure}
 
 \clearpage
 
-Pull distributions from fitting on the data-like simulation samples
-are reported in App.\ref{sec:cock-signal-pull} for each $q^2$ bin.
-Ideally the pull distributions should follow
-a N(0,1) normal distribution if the fitting procedures are unbiased
-and evaluating the error correctly.
+%% Pull distributions from fitting on the data-like simulation samples
+%% are reported in App.\ref{sec:cock-signal-pull} for each $q^2$ bin.
+%% Ideally the pull distributions should follow
+%% a N(0,1) normal distribution if the fitting procedures are unbiased
+%% and evaluating the error correctly.
 
-Since we use the average values of the fitting as the true values in
-the construction of the pull, the mean of the pull distributions are
-not interesting here and the focus is the width of the pull.  The unit
-width of these distributions indicate the fitting is good and the
-error estimation from the fitting is reasonable.
+%% Since we use the average values of the fitting as the true values in
+%% the construction of the pull, the mean of the pull distributions are
+%% not interesting here and the focus is the width of the pull.  The unit
+%% width of these distributions indicate the fitting is good and the
+%% error estimation from the fitting is reasonable.
 
 
-\subsubsection{Validation with data-like statistics with background}
+\subsubsection{Data-like ``cocktail'' MC samples}
 \label{sec:Cocktail-MC-full}
 
-In this section, the simulation samples used are mixtures of two
-components: signal and background, as described above.
+As a second step, the mass and angular distributions of the 200 ``cocktail'' MC samples are fitted using the full \pdf function.
+This fit is very similar to the one performed on data, even if here there is no S-wave component in the signal events, and it's an important step of the validation procedure.
+As for the signal MC sub-samples, also here the mean and the standard deviation, divided by the square root of fits, are used to represent the ``cocktail'' fit results.
 
-Figure ~\ref{fig:closure-full-cocktail-p1} and Figure
-~\ref{fig:closure-full-cocktail-P5'} compared the $P_1$ and $P_5'$
-average results of the 200 fittings with the fitting results of Reco MC.
-The error bars of average value are from  the $RMS$ of
-the measured distributions divided by the square root of the number of
-fittings ( only good fittings are considered).
+The comparison between the average results of the 200 ``cocktails'' fit and the fit results of Reco MC, is shown in Figure ~\ref{fig:closure-full-cocktail-p1} and Figure~\ref{fig:closure-full-cocktail-P5'}, for the $P_1$ and $P_5'$  parameters, respectively.
 
-In some bins the measurements are biased, which is caused by fitting
-programs and procedures. We account
-the discrepancies between average values and the fitting result of Reco-MC
-as a systematic uncertainties called fitting bias. The discrepancies
-of every bin are shoen in the Figure ~\ref{fig:closure-full-cocktail-p1}
-and Figure ~\ref{fig:closure-full-cocktail-P5'}. The detail of fitting bias are in Section~\ref{sec:fitbias-syst}.
-
+%% In some bins the measurements are biased, which is caused by fitting programs and procedures.
+%% We account the discrepancies between average values and the fitting result of Reco-MC as a systematic uncertainties called fitting bias.
+%% The discrepancies of every bin are shoen in the Figure ~\ref{fig:closure-full-cocktail-p1} and Figure ~\ref{fig:closure-full-cocktail-P5'}.
+%% The detail of fitting bias are in Section~\ref{sec:fitbias-syst}.
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/avg-full-P1.pdf}
-  \caption{Closure test of the fitting results between 200 full cocktail
- samples and truth-matched Reco-MC of $P_1$ for each $q^2$ bin. The blue points
-are average value of the 200 fitting values, its error just the RMS. The red
-points are the fitting results of truth-matched Reco-MC.}
+  \caption{Average values of the $P_1$ result distribution from the fit to 200 ``cocktail'' sample (blue), together with the $F_L$ results of the fit to the full MC sample (red).}
   \label{fig:closure-full-cocktail-p1}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/avg-full-P5.pdf}
-  \caption{Closure test of the fitting results between 200 full cocktail
- samples and truth-matched Reco-MC of $P_5'$ for each $q^2$ bin. The blue points
-are average value of the 200 fitting values, its error just the RMS. The red
-points are the fitting results of truth-matched Reco-MC. }
+  \caption{Average values of the $P_5'$ result distribution from the fit to 200 ``cocktail'' sample (blue), together with the $F_L$ results of the fit to the full MC sample (red).}
   \label{fig:closure-full-cocktail-P5'}
 \end{figure}
 
 \clearpage
 
-\subsubsection{Comparison of data-like statistics fit with and without background}
-\label{sec:Cocktail-MC-com}
+%% \subsubsection{Comparison of data-like statistics fit with and without background}
+%% \label{sec:Cocktail-MC-com}
 
-Then we compared the average fitting results with full simulation described in
-Section~\ref{sec:Cocktail-MC-full}. The comparison are in the Figure~\ref{fig:comparison-cocktail-P1}
-and Figure~\ref{fig:comparison-cocktail-P5}.
-When fitting with the background, we fixed the parameter $F_L$ to have a better convergence
-as we will do for data fit (details in Section~\ref{sec:formula}), so we can
-compare the value of $P_1$ and $P_5'$.
+%% Then we compared the average fitting results with full simulation described in
+%% Section~\ref{sec:Cocktail-MC-full}. The comparison are in the Figure~\ref{fig:comparison-cocktail-P1}
+%% and Figure~\ref{fig:comparison-cocktail-P5}.
+%% When fitting with the background, we fixed the parameter $F_L$ to have a better convergence
+%% as we will do for data fit (details in Section~\ref{sec:formula}), so we can
+%% compare the value of $P_1$ and $P_5'$.
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/com-toy-P1.pdf}
+%%   \caption{Comparison between the average results of 200 full cocktail
+%%           samples and 200 pure signal cocktail samples of $P1$ for each $q^2$
+%%     bins. The red points are average results of full cocktail MC and the blue are
+%%      pure signal cocktail MC.}
+%%   \label{fig:comparison-cocktail-P1}
+%% \end{figure}
+
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/com-toy-P5p.pdf}
+%%   \caption{Comparison between the average results of 200 full cocktail
+%%           samples and 200 pure signal cocktail samples of $P_5'$ for each $q^2$
+%%     bins. The red points are average results of full cocktail MC and the blue are
+%%      pure signal cocktail MC.}
+%%   \label{fig:comparison-cocktail-P5}
+%% \end{figure}
+
+%% \subsection{Error comparison between the blinded data and data-like simulation}
+%% \label{sec:error-comparison}
+
+%% This section describes the check on the statistical errors we perform
+%% on data in a blinded way. We have fit the data in the signal region,
+%% but "blinding" the central values for $P_1$ and $P_5'$. That means we
+%% check the size of the statistical errors from the fitting only,
+%% without looking at the
+%% central values.  The errors are from the preliminary
+%% fitting results obtained with "HESSE".  If using "MINOS" and more
+%% detailed scanning of the initial values, probably there will be some
+%% improvements, but we can only fully tune those options after the green
+%% light for unblinding.
+
+%% We compare the errors with what are expected from data-like statistics
+%% full simulations which are described in
+%% Section~\ref{sec:Cocktail-MC-full}, to verify the error estimation in
+%% our analysis. The Figure~\ref{fig:error-com-0} to
+%% Figure~\ref{fig:error-com-8} are the comparison of all $q^2$ bins'
+%% results. In the figures, the red lines are the errors from the data,
+%% and the histograms are the distributions from the simulation. The
+%% first subplots are for $P_1$, the second ones are for $P_5'$, the
+%% third are for the fraction of signal.
+
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-0.pdf}
+%%   \caption{Validation between errors of 200 full cocktail samples and
+%%     data channel for $q^2$ bin0. The red line is the error of data
+%%     channel, the histogram is the distribution of simulations. And the
+%%     first is $P_1$, the second is $P_5'$, the third is fraction of
+%%     signal.}
+%%   \label{fig:error-com-0}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-1.pdf}
+%%   \caption{Validation between errors of 200 full cocktail samples and
+%%     data channel for $q^2$ bin1. The red line is the error of data
+%%     channel, the histogram is the distribution of simulations. And the
+%%     first is $P_1$, the second is $P_5'$, the third is fraction of
+%%     signal.}
+%%   \label{fig:error-com-1}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-2.pdf}
+%%   \caption{Validation between errors of 200 full cocktail samples and
+%%     data channel for $q^2$ bin2. The red line is the error of data
+%%     channel, the histogram is the distribution of simulations. And the
+%%     first is $P_1$, the second is $P_5'$, the third is fraction of
+%%     signal.}
+%%   \label{fig:error-com-2}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-3.pdf}
+%%   \caption{Validation between errors of 200 full cocktail samples and
+%%     data channel for $q^2$ bin3. The red line is the error of data
+%%     channel, the histogram is the distribution of simulations. And the
+%%     first is $P_1$, the second is $P_5'$, the third is fraction of
+%%     signal.}
+%%   \label{fig:error-com-3}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-5.pdf}
+%%   \caption{Validation between errors of 200 full cocktail samples and
+%%     data channel for $q^2$ bin5. The red line is the error of data
+%%     channel, the histogram is the distribution of simulations. And the
+%%     first is $P_1$, the second is $P_5'$, the third is fraction of
+%%     signal.}
+%%   \label{fig:error-com-5}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-7.pdf}
+%%   \caption{Validation between errors of 200 full cocktail samples and
+%%     data channel for $q^2$ bin7. The red line is the error of data
+%%     channel, the histogram is the distribution of simulations. And the
+%%     first is $P_1$, the second is $P_5'$, the third is fraction of
+%%     signal.}
+%%   \label{fig:error-com-7}
+%% \end{figure}
+
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-8.pdf}
+%%   \caption{Validation between errors of 200 full cocktail samples and
+%%     data channel for $q^2$ bin8. The red line is the error of data
+%%     channel, the histogram is the distribution of simulations. And the
+%%     first is $P_1$, the second is $P_5'$, the third is fraction of
+%%     signal.}
+%%   \label{fig:error-com-8}
+%% \end{figure}
+
+\subsection{Validation with data control channels}
+\label{sec:controlchannel}
+
+The analysis technique is validated with the data by means of the control channels.
+In this way also the S-wave component of the PDF is tested, and we have a check of the efficiency behaviour on real data.
+
+\subsubsection{ Retrieved background shape from the data sidebands}
+\label{sec:bkgforcc}
+
+The background shape is determined as for the other bins, by using the data sidebands as a function of the angular observables.
+Each of the three angular observables is fit with a polynomial with different degrees, specified in Table~\ref{tab:psi-bkg}.
+The background distributions and \pdf projections are plotted in Figure~\ref{fig:back-l-bin4} to Figure~\ref{fig:back-phi-bin4}, for the \BtoKstJpsi control channel, and in Figure~\ref{fig:back-l-bin6} to Figure~\ref{fig:back-phi-bin6}, for the \BtoKstpsip control channel.
+
+\begin{table*}[!htb]
+  \begin {center}
+    %% \begin{small}
+      \caption{Degrees of the polynomial functions used for control channel \pdfs.
+        \label{tab:psi-bkg}}
+      \begin{tabular}{c|c|c|c}
+        $q^2$ bin & $B^{\cos\theta_\mathrm{K}}$ & $B^{\cos\theta_l}$ & $B^{\phi}$ \\
+        index & degree & degree & degree \\
+        \hline
+        \BtoKstJpsi & 4 & 4 & 5 \\
+        \BtoKstpsip & 4 & 3 & 5 \\
+      \end{tabular}
+    %% \end{small}
+  \end{center}
+\end{table*}
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/com-toy-P1.pdf}
-  \caption{Comparison between the average results of 200 full cocktail
-          samples and 200 pure signal cocktail samples of $P1$ for each $q^2$
-    bins. The red points are average results of full cocktail MC and the blue are
-     pure signal cocktail MC.}
-  \label{fig:comparison-cocktail-P1}
+  \includegraphics[width=0.7\textwidth]{Figures/J/bkg-l.pdf}
+  \caption{Distribution of the \cTL variable in mass sidebands of the \BtoKstJpsi control channel and the background \pdf projection.}
+  \label{fig:back-l-bin4}
 \end{figure}
-
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=0.7\textwidth]{Figures/cocktail-Fit/com-toy-P5p.pdf}
-  \caption{Comparison between the average results of 200 full cocktail
-          samples and 200 pure signal cocktail samples of $P_5'$ for each $q^2$
-    bins. The red points are average results of full cocktail MC and the blue are
-     pure signal cocktail MC.}
-  \label{fig:comparison-cocktail-P5}
+  \includegraphics[width=0.7\textwidth]{Figures/J/bkg-k.pdf}
+  \caption{Distribution of the \cTK variable in mass sidebands of the \BtoKstJpsi control channel and the background \pdf projection.}
+  \label{fig:back-k-bin4}
 \end{figure}
 
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/J/bkg-phi.pdf}
+  \caption{Distribution of the \PHI variable in mass sidebands of the \BtoKstJpsi control channel and the background \pdf projection.}
+  \label{fig:back-phi-bin4}
+\end{figure}
 
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/Psi/bkg-l.pdf}
+  \caption{Distribution of the \cTL variable in mass sidebands of the \BtoKstpsip control channel and the background \pdf projection.}
+  \label{fig:back-l-bin6}
+\end{figure}
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/Psi/bkg-k.pdf}
+  \caption{Distribution of the \cTK variable in mass sidebands of the \BtoKstpsip control channel and the background \pdf projection.}
+  \label{fig:back-k-bin6}
+\end{figure}
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.7\textwidth]{Figures/Psi/bkg-phi.pdf}
+  \caption{Distribution of the \PHI variable in mass sidebands of the \BtoKstpsip control channel and the background \pdf projection.}
+  \label{fig:back-phi-bin6}
+\end{figure}
 \clearpage
-\input{ControlChannel.tex}
-\clearpage
 
-\subsection{Error comparison between the blinded data and data-like simulation}
-\label{sec:error-comparison}
+\subsubsection{Control channel fit}
+\label{sec:fitcc}
 
-This section describes the check on the statistical errors we perform
-on data in a blinded way. We have fit the data in the signal region,
-but "blinding" the central values for $P_1$ and $P_5'$. That means we
-check the size of the statistical errors from the fitting only,
-without looking at the
-central values.  The errors are from the preliminary
-fitting results obtained with "HESSE".  If using "MINOS" and more
-detailed scanning of the initial values, probably there will be some
-improvements, but we can only fully tune those options after the green
-light for unblinding.
-
-We compare the errors with what are expected from data-like statistics
-full simulations which are described in
-Section~\ref{sec:Cocktail-MC-full}, to verify the error estimation in
-our analysis. The Figure~\ref{fig:error-com-0} to
-Figure~\ref{fig:error-com-8} are the comparison of all $q^2$ bins'
-results. In the figures, the red lines are the errors from the data,
-and the histograms are the distributions from the simulation. The
-first subplots are for $P_1$, the second ones are for $P_5'$, the
-third are for the fraction of signal.
-
+The two control channels are fitted, with $F_L$ floating, and  $F_s$ and $A_s$ fixed.
+The projection plots of the fit results are shown Figure~\ref{fig:result-bin4} and Figure~\ref{fig:result-bin6}, for \BtoKstJpsi and \BtoKstpsip channels respectively.
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-0.pdf}
-  \caption{Validation between errors of 200 full cocktail samples and
-    data channel for $q^2$ bin0. The red line is the error of data
-    channel, the histogram is the distribution of simulations. And the
-    first is $P_1$, the second is $P_5'$, the third is fraction of
-    signal.}
-  \label{fig:error-com-0}
+  \includegraphics[width=1.0\textwidth]{Figures/J/TotalPDF-J.pdf}
+  \caption{The fitting results of the control channel \cPJgy on data.
+    The plots show the projections of the fitting results on three different angular variables: \PBz mass, \cTL, \cTK and \PHI.}
+  \label{fig:result-bin4}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-1.pdf}
-  \caption{Validation between errors of 200 full cocktail samples and
-    data channel for $q^2$ bin1. The red line is the error of data
-    channel, the histogram is the distribution of simulations. And the
-    first is $P_1$, the second is $P_5'$, the third is fraction of
-    signal.}
-  \label{fig:error-com-1}
+  \includegraphics[width=1.0\textwidth]{Figures/Psi/TotalPDF-Psi.pdf}
+  \caption{The fitting results of the control channel $\Psi'$ on data.
+    The plots show the projections of the fitting results on three different angular variables: \PBz mass, \cTL, \cTK and \PHI.}
+  \label{fig:result-bin6}
 \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-2.pdf}
-  \caption{Validation between errors of 200 full cocktail samples and
-    data channel for $q^2$ bin2. The red line is the error of data
-    channel, the histogram is the distribution of simulations. And the
-    first is $P_1$, the second is $P_5'$, the third is fraction of
-    signal.}
-  \label{fig:error-com-2}
-\end{figure}
+The results of the measurements for the control channel \BtoKstJpsi are:
+\begin{itemize}
+\item $F_L = 0.537 \pm 0.002$ (stat);
+\item $A_s^5 = -0.002 \pm 0.002$ (stat);
+\item $P1 = -0.081 \pm 0.011$ (stat);
+\item $P_5' = -0.024 \pm 0.007$ (stat).
+\end{itemize}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-3.pdf}
-  \caption{Validation between errors of 200 full cocktail samples and
-    data channel for $q^2$ bin3. The red line is the error of data
-    channel, the histogram is the distribution of simulations. And the
-    first is $P_1$, the second is $P_5'$, the third is fraction of
-    signal.}
-  \label{fig:error-com-3}
-\end{figure}
+The results of the measurements for the control channel \BtoKstpsip are:
+\begin{itemize}
+\item $F_L = 0.538 \pm 0.008$ (stat);
+\item $A_s^5 = 0.005 \pm 0.001$ (stat);
+\item $P1 = -0.031 \pm 0.001$ (stat);
+\item $P_5' = -0.039 \pm 0.001$ (stat).
+\end{itemize}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-5.pdf}
-  \caption{Validation between errors of 200 full cocktail samples and
-    data channel for $q^2$ bin5. The red line is the error of data
-    channel, the histogram is the distribution of simulations. And the
-    first is $P_1$, the second is $P_5'$, the third is fraction of
-    signal.}
-  \label{fig:error-com-5}
-\end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-7.pdf}
-  \caption{Validation between errors of 200 full cocktail samples and
-    data channel for $q^2$ bin7. The red line is the error of data
-    channel, the histogram is the distribution of simulations. And the
-    first is $P_1$, the second is $P_5'$, the third is fraction of
-    signal.}
-  \label{fig:error-com-7}
-\end{figure}
+For both the control channels, $F_L$ have been measured in the previous CMS analysis and also by other experiments.
+Comparing the results from this work and those results as reference, we found they are in good agreement, and it is also agree with known SM predictions.
+The results are:
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=1.0\textwidth]{Figures/errorbar/error-8.pdf}
-  \caption{Validation between errors of 200 full cocktail samples and
-    data channel for $q^2$ bin8. The red line is the error of data
-    channel, the histogram is the distribution of simulations. And the
-    first is $P_1$, the second is $P_5'$, the third is fraction of
-    signal.}
-  \label{fig:error-com-8}
-\end{figure}
+\begin{table*}[!htb]
+  \begin {center}
+    \begin{small}
+      \caption{Measurements from CMS (both in this and in the previous analysis), PDG, and BaBar\cite{BaBar2} of $F_L$ in the control channels.
+        The first uncertainty is statistical and the second is systematic.
+        \label{tab:com.control channel}}
+      \begin{tabular}{l|c|c|c|c|c|c|c}
+        control channel & \multicolumn{3}{|c|}{$B^0 \rightarrow K^{*0}(K^+\pi^-) J/\psi(\mu^+ \mu^-)$} & \multicolumn{3}{|c|}{$B^0 \rightarrow K^{*0}(K^+\pi^-) \psi'(\mu^+ \mu^-)$}\\
+        \hline
+        Experiment  & $F_L$  &  Err(stat) & Err(syst) & $F_L$  &  Err(stat) & Err(syst)\\
+        \hline
+        This work & $0.537$ & $\pm0.002$ &  $-$  & $0.538$ & $\pm0.008$ &  $-$\\
+        \hline
+        CMS   &  $0.537$ & $\pm0.002$ &  $-$    &  $0.538$ & $\pm0.008$ &  $-$  \\
+        \hline
+        PDG   &  $0.571$ & $\pm0.007$ & $-$      &  $0.463$ & $^{+0.028}_{-0.040} $ & $-$ \\
+        \hline
+        BaBar &  $0.556$ & $\pm0.009$ & $\pm0.010 $   &  $0.48$ & $\pm0.005$ & $\pm0.002 $\\
+      \end{tabular}
+    \end{small}
+  \end{center}
+\end{table*}
+
+As further test, the fitting results with $F_L$ either free to float or fixed at the values fitted in the previous CMS analysis are compared.
+
+The results with fixed $F_L$ parameter, for the control channel $B^0 \rightarrow K^{*0}(K^+\pi^-) J/\psi(\mu^+ \mu^-)$, are:
+\begin{itemize}
+\item $A_s^5 = -0.001 \pm 0.002$ (stat);
+\item $P1 = -0.082 \pm 0.003$ (stat);
+\item $P_5' = -0.024 \pm 0.002$ (stat).
+\end{itemize}
+while the results for the $B^0 \rightarrow K^{*0}(K^+\pi^-) \psi'(\mu^+ \mu^-)$ control channel are:
+\begin{itemize}
+\item $A_s^5 = 0.005 \pm 0.011$ (stat);
+\item $P1 = -0.033 \pm 0.025$ (stat);
+\item $P_5' = -0.040 \pm 0.031$ (stat).
+\end{itemize}
+
+The difference between the two fitting results are listed in the Table~\ref{tab:difference Fl free or fix}
+Since these differences are very small compared to the statistical errors of the results, this test shows that the bias in the results introduced by the choice of fixing some parameters in the \pdf is negligible in the final result.
+
+\begin{table*}[!htb]
+  \begin {center}
+    \begin{small}
+      \caption{Validation of the two control channels with $F_L$ free or fix.
+        \label{tab:difference Fl free or fix}}
+      \begin{tabular}{c|c|c}
+        \hline
+        control channel & $P1$ & $P_5'$ \\
+        {$B^0 \rightarrow K^{*0}(K^+\pi^-) J/\psi(\mu^+ \mu^-)$} & $0.001$ & $<0.001$ \\
+        \hline
+        {$B^0 \rightarrow K^{*0}(K^+\pi^-) \psi'(\mu^+ \mu^-)$}  & $0.002$ & $0.001$  \\
+      \end{tabular}
+    \end{small}
+  \end{center}
+\end{table*}
