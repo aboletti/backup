@@ -1,0 +1,678 @@
+\chapter[LHC and CMS detector]{The Large Hadron Collider and the Compact Muon Solenoid Experiment}
+
+The Large Hadron Collider (LHC) \cite{LHC} is an accelerator located at the European Laboratory for Particle Physics Research (CERN) in Geneva. It has been conceived to collide proton beams at a centre-of-mass energy of $\sqrt{s} = 14$ TeV and
+a nominal instantaneous luminosity of $\mathcal{L} = 10^{34}$ cm$^{-2}$ s$^{-1}$, representing a seven-fold increase in energy and a hundred-fold increase in integrated luminosity over the previous hadron collider experiments. Its main purpose is to search for rare processes like the production of Higgs or new particles with mass of 1 TeV and beyond. Two experiments have been installed around the LHC to pursue these results: ATLAS \cite{ATL} and CMS \cite{CMS}. Furthermore, the LHCb \cite{LHbr} experiment studies the properties of charm and beauty hadrons produced with large cross sections in the forward region in collisions at the LHC, and the ALICE \cite{ALI} experiment analyses the data from relativistic heavy ion collisions to study the hadronic matter in extreme temperature and density conditions (i.e. high quark-gluon density).
+
+\section{The Large Hadron Collider}
+The LHC has been installed in the same tunnel which hosted the $e^+e^-$ collider
+LEP (Large Electron-Positron collider). Accelerated electrons and positrons suffer large
+energy loss due to the synchrotron radiation, which is proportional to $E^4/(Rm^4)$,
+where $E$ is the electron energy, $m$ its mass and $R$ the accelerator radius. To
+obtain energies of the order of TeV, at the fixed accelerator radius, only massive
+charged particles could have been used: protons and heavy nuclei. The energy loss
+is reduced by a factor $(2000)^4$ for a given fixed energy $E$ for protons, respect to electrons.
+Another important aspect of the LHC is the collision rate. To produce a sufficient
+number of rare processes, the collision rate needs to be very high. Beam protons
+are collected in packets called bunches. The collision rate is proportional to the
+instantaneous luminosity of the accelerator, defined as:
+\begin{displaymath}\quad
+\mathcal{L}=\frac{fkn^2_p}{4\pi\sigma_x\sigma_y} \quad,
+\end{displaymath}
+where $f$ is the bunch revolution frequency, $k$ the number of bunches, $n_p$ the number
+ of protons per bunch, $\sigma_x$ and $\sigma_y$ their transverse dispersion along the $x$ and $y$
+axis. At the nominal 14 TeV LHC conditions ($\mathcal{L} = 10^{34}$ cm$^{-2}$ s$^{-1}$) the parameter
+values are: $k$ = 2808, $n_p=1.5\cdot10^{11}$ and $\sigma_x\sigma_y = 16.6\,\mu\mathrm{m}^2$ (with $\sigma_z = 7.6$ cm along
+the beam). The integrated luminosity is defined as $L =\int\mathcal{L}\mathrm{d}t$. For comparison
+we can consider the Tevatron accelerator at Fermilab, which produced proton-antiproton
+collisions since 1992. Its centre of mass energy was $1.8$ TeV until 1998 and $1.96$ TeV
+since 2001. To increase $\mathcal{L}$ by two orders of magnitude, protons are injected in both
+LHC beams. The antiprotons, in fact, are obtained by steering
+proton beams onto a nickel target and represent only a small fraction of the wide
+range of secondary particles produced in this interactions, thus have a production rate lower than the proton one.
+\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{Images/beamline.png}
+\caption{LHC dipole magnet section scheme.}
+\label{beamline}
+\end{figure}
+The LHC is composed by 1232 super-conducting dipole magnets each 15 m
+long, providing a $8.3$ T magnetic field to let the beams circulate inside their trajectories 
+along the 27 km circumference. Two vacuum pipes are used to let beams
+circulate in opposite directions. A scheme representing the transverse dipole magnet 
+section is represented in figure \ref{beamline}. More than 8000 other magnets are utilized
+for the beam injection, their collimation, trajectory correction, crossing. All the
+magnets are kept cool by superfluid helium at $1.9$ K temperature.
+The beams are accelerated from 450 GeV (the injection energy from the SPS) to 7
+TeV with 16 Radio Frequency cavities (8 per beam) which raise the beam energy
+by 16 MeV each round with an electric field of 5 MV/m oscillating at 400 MHz
+frequency.\\
+Before the injection into the LHC, the beams are produced and accelerated by
+different components of the CERN accelerator complex. Being produced from
+ionized hydrogen atoms, protons are accelerated by the linear accelerator LINAC,
+Booster and the Proton Synchrotron (PS) up to 26 GeV energy, the bunches being
+separated by 25 ns each. The beams are then injected into the Super Proton Synchrotron 
+(SPS) where they are accelerated up to 450 GeV. They are then finally
+transferred to the LHC and accelerated up to 7 TeV energy per beam. The CERN
+accelerator complex is illustrated in figure \ref{acc}.
+\begin{figure}
+\centering
+\includegraphics[width=0.7\columnwidth]{Images/acc.pdf}
+\caption{Scheme representing the CERN accelerator complex.}
+\label{acc}
+\end{figure}
+
+The LHC started its operations in December 2009 with centre of mass energy for the proton-proton collision
+$\sqrt{s} = 0.9$ TeV. The centre of mass energy was set to $\sqrt{s} = 7$ TeV in the 2010 and 2011 runs and raised to $\sqrt{s} = 8$ TeV in the 2012 runs. Here are reported the CMS detected peak and integrated luminosities for proton-proton runs.
+In 2010 the peak luminosity reached $\mathcal{L}=203.80\,\mathrm{Hz}/\mu\mathrm{b}$ and the integrated luminosity has been $L=40.76\,\mathrm{pb}^{-1}$, while during 2011 the peak luminosity increased to $\mathcal{L}=4.02\,\mathrm{Hz}/\mathrm{nb}$ and the integrated luminosity has been $L=5.55\,\mathrm{fb}^{-1}$.
+In the 2012 runs the peak luminosity reached $\mathcal{L}=7.67\,\mathrm{Hz}/\mathrm{nb}$ and the integrated luminosity has been $L=21.79\,\mathrm{fb}^{-1}$, as graphically summarized in figure \ref{lumi_2012}.
+\begin{figure}
+\centering
+\begin{tabular}{@{}p{0.5\columnwidth}@{} p{0.5\columnwidth}@{}}
+\includegraphics[width=0.52\columnwidth]{Images/lumi_pea_2012.pdf}&
+\includegraphics[width=0.52\columnwidth]{Images/lumi_int_2012.pdf}
+\end{tabular}
+\caption{LHC performance in 2012. Left: CMS detected peak
+luminosity; right: CMS detected integrated luminosity.}
+\label{lumi_2012}
+\end{figure}
+
+\section{CMS Experiment}
+The Compact Muon Solenoid \cite{CMS} is a general purpose detector situated at interaction 
+point 5 of the CERN Large Hadron Collider. It is designed around a 4 T 
+solenoidal magnetic field provided by the largest superconducting solenoid ever
+built. The structure of CMS is shown in figure \ref{CMS_sch}, where particular emphasis is
+put on the volumes of the different subsystems: the Silicon Pixel Detector, the
+Silicon Strip Tracker, the Electromagnetic and Hadronic Calorimeters, and Muon
+Detectors.
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{Images/CMS2.pdf}
+\caption{Transverse (left) and longitudinal (right) cross sections of the CMS detector showing the volumes of the different detector subsystems. The transverse cross section is drawn for the central barrel, coaxial with the beam line, while complementary end-caps are shown in the longitudinal view.}
+\label{CMS_sch}
+\end{figure}
+
+We can briefly summarize the aims of the CMS detector \cite{CMS1}. They are mainly:
+\begin{itemize}
+\item search for SM and MSSM Higgs boson decaying into photons, $b$ quarks, $\tau$
+leptons, $W$ and $Z$ bosons,
+\item search for additional heavy neutral gauge bosons predicted in many superstring-inspired 
+theories or Great Unification Theories and decaying to muon pairs,
+\item search for new Physics in various topologies: multilepton events, multijet
+events, events with missing transverse energy\footnote{Missing transverse energy \met is the amount of energy which must be added to balance the modulus of the vector sum of the projections of the track momenta and calorimeter clusters in the plane perpendicular to beam axis. Its direction is opposite to this vector sum directions.} or momentum, any combination 
+of the three above,
+\item study of the $B$-hadron rare decay channels (like $B^0_{(s)}\to\mu\mu$) and of CP violation in the decay of the $B$ mesons (like $B^0_s\to J/\psi\phi\to\mu^+\mu^-K^+K^-$),
+\item search for $B^0\to\mu^+\mu^-$ decays,
+\item study of QCD and jet physics at the TeV scale,
+\item study of top quark and EW physics.
+\end{itemize}
+CMS has been therefore designed as a multipurpose experiment, with particular 
+focus on muon, photon, and displaced tracks
+reconstruction. Superb performances have been achieved overall, in particular in:
+\begin{itemize}
+\item primary and secondary vertex localization,
+\item charged particle momentum resolution and reconstruction efficiency in the
+tracking volume,
+\item electromagnetic energy resolution,
+\item isolation of leptons and photons at high luminosities,
+\item measurement of the direction of photons, rejection of $\pi^0\to\gamma\gamma$,
+\item diphoton and dielectron mass resolution $\sim1\%$ at 100GeV,
+\item measurement of the missing transverse energy \met and dijet mass with high
+resolution,
+\item muon identification over a wide range of momenta,
+\item dimuon mass resolution $\sim1\%$ at 100 GeV,
+\item unambiguously determining the charge of muons with $p_T$ up to 1 TeV,
+\item triggering and offline tagging of $\tau$ leptons and $b$ jets.
+\end{itemize}
+\mbox{}\\
+
+The reference frame used to describe the CMS detector and the collected events
+has its origin in the geometrical centre of the solenoid. Different
+types of global coordinates measured with respect to the origin\footnote{Global coordinates are measured in the CMS reference frame while local coordinates are measured in the reference frame of a specific sub-detector or sensitive element.} are used:
+\begin{itemize}
+\item cartesian coordinate system, $\hat{x}$ axis points towards the centre of LHC,
+$\hat{y}$ points upwards, perpendicular to LHC plane, while $\hat{z}$ completes the
+right-handed reference,
+\item polar coordinate system, directions are defined with an azimuthal angle
+$\tan\phi=y/x$ and a polar angle $\tan\theta=\rho/z$, where $\rho=\sqrt{x^2+y^2}$,
+\item polar coordinate system, with instead of the polar angle the rapidity $y$ and the pseudorapidity $\eta$, obtained for any particle from
+\begin{displaymath}\quad
+y=\frac{1}{2}\ln\Bigg(\frac{E+p_z}{E-p_z}\Bigg) \quad,
+\end{displaymath}
+\begin{displaymath}\quad
+\eta=-\ln\bigg(\tan\frac{\theta}{2}\bigg) \quad,
+\end{displaymath}
+where $E$ is the particle energy and $p_z$ the component of its momentum along the
+beam direction.
+\end{itemize}
+
+\subsection{Magnet}
+The whole CMS detector is designed around a $\sim4$ T superconducting solenoid \cite{mag}
+$12.5$ m long and with inner radius of 3 m. The solenoid thickness is $3.9$ radiation
+lengths and it can store up to $2.6$ GJ of energy.
+
+The field is closed by a $10^4$ t iron return yoke made of five barrels and two
+end-caps, composed of three layers each. The yoke is instrumented with four layers
+of muon stations. The coil is cooled down to $4.8$ K by a helium refrigeration plant,
+while insulation is given by two pumping stations providing vacuum on the 40 m$^3$
+of the cryostat volume.
+
+The magnet was designed in order to reach precise measurement of muon momenta. 
+A high magnetic field is required to keep a compact spectrometer capable
+to measure 100 GeV track momentum with percent precision. A solenoidal field
+was chosen because it keeps the bending in the transverse plane, where an accuracy
+better than $20\,\mu\mathrm{m}$ is achieved in vertex position measurements. The size of the
+solenoid allows efficient track reconstruction up to a pseudorapidity of $2.4$. The
+inner radius is large enough to accommodate both the Silicon Tracking System
+and the calorimeters. During the 2012 acquisitions the magnet was operated at $3.8$ T.
+
+\subsection{Tracking System}
+The core of CMS is a Silicon Tracking System \cite{trs} with $2.5$ m diameter and
+$5.8$ m length, designed to provide a precise and efficient measurement of the trajectories 
+of charged particles emerging from LHC collisions and reconstruction of
+secondary vertices.
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{Images/tra_sch.pdf}
+\caption{Layout of the CMS silicon tracker showing the relative position of
+hybrid pixels, single-sided strips and double-sided strips. Figure from \cite{CMS}.}
+\label{tra_sch}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{Images/tren_sch.pdf}
+\caption{Layout of the current CMS Pixel Detector. Figure from \cite{trs}.}
+\label{tren_sch}
+\end{figure}
+The CMS Tracking System is composed of both silicon Pixel and Strip Detectors, 
+as shown in figure \ref{tra_sch}. The Pixel Detector consists of 1440 pixel modules
+arranged in three barrel layers and two disks in each end-cap as in figure \ref{tren_sch}. The
+Strip Detector consists of an inner tracker with four barrel layers and three end-cap
+disks and an outer tracker with six barrel layers and nine end-cap disks, housing a
+total amount of 15148 strip modules of both single-sided and double-sided types.
+Its active silicon surface of about 200 m$^2$ makes the CMS tracker the largest silicon
+tracker ever built.
+
+The LHC physics programme requires high reliability, efficiency and precision
+in reconstructing the trajectories of charged particles with transverse momentum
+larger than 1 GeV in the pseudorapidity range $|\eta|<2.5$. Heavy quark flavours
+can be produced in many of the interesting channels and a precise measurement
+of secondary vertices is therefore needed. The tracker completes the functionalities 
+of ECAL and Muon System to identify electrons and muons. Also hadronic
+decays of tau leptons need robust tracking to be identified in both the one-prong
+and three-prongs topologies. Tracker information is heavily used in the High Level
+Trigger of CMS to help reducing the event collection rate from the 40 MHz of
+bunch crossing to the 100 Hz of mass storage.
+
+\subsubsection{Silicon Pixel Detector}
+The large number of particles produced in 25 pile-up events\footnote{Events that occur in the same bunch crossing.}, at nominal LHC
+luminosity, results into a hit rate density of 1 MHz mm$^{-2}$ at 4 cm from the beamline,
+decreasing down to 3 kHz mm$^{-2}$ at a radius of 115 cm. Pixel detectors are used
+at radii below 10 cm to keep the occupancy below $1\%$. The chosen size for pixels,
+$0.100\times0.150\,\mathrm{mm}^2$ in the transverse and longitudinal directions respectively, leads
+to an occupancy of the order of $10^{-4}$. The layout of the Pixel Detector consists
+of a barrel region (BPIX), with three barrels at radii of $4.4$, $7.3$ and $10.2$ cm,
+complemented by two disks on each side (FPIX), at $34.5$ and $46.5$ cm from the
+nominal interaction point. This layout provides about 66 million pixels covering a
+total area of about 1 m$^2$ and measuring three high precision points on each charged
+particle trajectory up to $|\eta|=2.5$. Detectors in FPIX disks are tilted by $20^\circ$ in a
+turbine-like geometry to induce charge sharing and achieve a spatial resolution of
+about $20\,\mu\mathrm{m}$.
+
+\subsubsection{Silicon Strip Tracker}
+In the inner Strip Tracker, which is housed between radii of 20 and 55 cm, the
+reduced particle flux allows a typical cell size of $0.080\times100\,\mathrm{mm}^2$, resulting in a
+$2\%$ occupancy per strip at design luminosity. In the outer region, the strip pitch
+is increased to $0.180\times250\,\mathrm{mm}^2$ together with the sensor thickness which scales
+from $0.320$ mm to $0.500$ mm. This choice compensates the larger capacitance of
+the strip and the corresponding larger noise with the possibility to achieve a larger
+depletion of the sensitive volume and a higher charge signal.
+
+The Tracker Inner Barrel and Disks (TIB and TID) deliver up to 4 \mbox{($r$, $\phi$)} measurements 
+on a trajectory using $0.320$ mm thick silicon strip sensors with strips
+parallel to the beamline. The strip pitch is $0.080$ mm in the first two layers and
+$0.120$ mm in the other two layers, while in the TID the mean pitch varies from
+$0.100$ mm to $0.141$ mm. Single point resolution in the TIB is $0.023$ mm with the
+finer pitch and $0.035$ mm with the coarser one. The Tracker Outer Barrel (TOB)
+surrounds the TIB/TID and provides up to 6 $r-\phi$ measurements on a trajectory
+using 0.500 mm thick sensors. The strip pitch varies from $0.183$ mm in the four
+innermost layers to $0.122$ mm in the outermost two layers, corresponding to a resolution 
+of $0.053$ mm and $0.035$ mm respectively. Tracker End-Caps (TEC) enclose
+the previous sub-detectors at $124\mathrm{cm}<|z|<282\mathrm{cm}$ with 9 disks carrying 7 rings
+of microstrips, 4 of them are $0.320$ mm thick while the remaining 3 are $0.500$ mm
+thick. TEC strips are radially oriented and their pitch varies from $0.097$ mm to
+$0.184$ mm.
+
+As shown in figure \ref{tra_sch}, the first two layers and rings of TIB, TID and TOB, as
+well as three out of the TEC rings, carry strips on both sides with a stereo angle
+of 100 milliradians to measure the other coordinate: $z$ in barrels and $r$ in rings.
+This layout ensures 9 hits in the silicon Strip Tracker in the full acceptance range
+$|\eta|<2.4$, and at least four of them are two-dimensional. The total area of Strip
+Tracker is about 198 m$^2$ read out by $9.3$ million channels.
+
+\subsubsection{Trajectory Reconstruction}
+Due to the magnetic field charged particles travel through the tracking detectors
+on a helical trajectory which is described by 5 parameters: the curvature $\kappa$, the
+track azimuthal angle $\phi$, the pseudorapidity $\eta$, the signed transverse impact parameter 
+$d_0$ and the longitudinal impact parameter $z_0$. The transverse (longitudinal)
+impact parameter of a track is defined as the transverse (longitudinal) distance of
+closest approach of the track to the primary vertex. %as explained in Section ??.
+The main standard algorithm used in CMS for track reconstruction is the Combinatorial 
+Track Finder (CFT) algorithm \cite{CFT} which uses the reconstructed positions
+of the passage of charged particles in the silicon detectors to determine the track
+parameters. The CFT algorithm proceeds in three stages: track seeding, track
+finding and track fitting. Track candidates are best seeded from hits in the pixel
+detector because of the low occupancy, the high efficiency and the unambiguous
+two-dimensional position information. The track finding stage is based on a standard 
+Kalman filter pattern recognition approach which starts with the seed
+parameters. The trajectory is extrapolated to the next tracker layer and compatible 
+hits are assigned to the track on the basis of the $\chi^2$ between the predicted and
+measured positions. At each stage the Kalman filter updates the track parameters
+with the new hits.
+
+The tracks are assigned a quality based on the $\chi^2$ and the number of missing
+hits and only the best quality tracks are kept for further propagation. Ambiguities
+between tracks are resolved during and after track finding. In case two tracks share
+more than $50\%$ of their hits, the lower quality track is discarded. For each trajectory 
+the finding stage results in an estimate of the track parameters. However,
+since the full information is only available at the last hit and constraints applied
+during trajectory building can bias the estimate of the track parameters, all valid
+tracks are refitted with a standard Kalman filter and a second filter (smoother)
+running from the exterior towards the beam line. The expected performance of
+the track reconstruction is shown in figure \ref{part_eff} for muons, pions and hadrons. The
+track reconstruction efficiency for high energy muons is about $99\%$ and drops at
+$|\eta|>2.1$ due to the reduced coverage of the forward pixel detector. For pions and
+hadrons the efficiency is in general lower because of interactions with the material
+in the tracker.
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{Images/part_eff.pdf}
+\caption{Global track reconstruction effciency as a function of track pseudorapidity 
+for muons (left) and pions (right) of transverse momenta of 1, 10 and 100
+GeV. Figures from \cite{CMS}.}
+\label{part_eff}
+\end{figure}
+
+The material budget is shown in figure \ref{mat_bud} as a function of pseudorapidity,
+with the different contributions of sub-detectors and services.
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{Images/mat_bud.pdf}
+\caption{Material budget of the current CMS Tracker in units of radiation
+length $X_0$ as a function of the pseudorapidity, showing the different contribution
+of sub-detectors (left) and functionalities (right). Figures from \cite{CMS}.}
+\label{mat_bud}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{Images/part_res.pdf}
+\caption{Resolution of several track parameters as a function of track pseudorapidity 
+for single muons with transverse momenta of 1, 10 and 100 GeV: transverse
+momentum (left), transverse impact parameter (middle) and longitudinal impact
+parameter (right). Figures from \cite{CMS}.}
+\label{part_res}
+\end{figure}
+The performance of the Silicon Tracker in terms of track reconstruction efficiency 
+and resolution, of vertex and momentum measurement, are shown in figure \ref{part_eff}
+and figure \ref{part_res} respectively. The first one, in particular, shows the difference in reconstruction 
+efficiency for muons and pions, due to the larger interaction cross section
+of pions, which cannot be assumed to be minimum-ionizing particles and therefore
+are much more degraded by the amount of material.
+
+\subsubsection{Vertex Reconstruction}
+The reconstruction of interaction vertices allows CMS
+to reject tracks coming from pile-up events. The primary vertex reconstruction is a
+two-step process. Firstly the reconstructed tracks are grouped in vertex candidates
+and their $z$ coordinates at the beam closest approach point are evaluated, retaining
+only tracks with impact parameter respect to the vertex candidate less than 3 cm. Vertices are then reconstructed
+through a recursive method for parameter estimation through a Kalman filter \cite{Kal1}
+algorithm. For a given event, the primary vertices are ordered according to the
+total transverse momentum of the associated tracks, $\sum p_T$. The vertex reconstruction 
+efficiency is very close to $100\%$ and the position resolution is of the order of
+$\mathcal{O}(10)\,\mu\mathrm{m}$ in all directions.
+
+It is also possible to reconstruct the secondary vertices, for example those from
+b-quark decays. The secondary vertex reconstruction uses tracks associated to
+jets applying further selection cuts: the transverse impact parameter of the tracks
+must be greater than $100\,\mu\mathrm{m}$, to avoid tracks coming from the primary vertex, and the longitudinal impact parameter
+below 2 cm, to avoid tracks from pile-up events.
+
+\subsection{Muon Spectrometer}
+Detection of muons at CMS exploits different technologies and is performed by
+a ``Muon System'' rather than a single detector \cite{muo}. Muons are the only particles 
+able to reach the external muon chambers with a minimal energy loss when
+traversing the calorimeters, the solenoid and the magnetic field return yoke. Muons can
+provide strong indication of interesting signal events and are natural candidates
+for triggering purposes. The CMS Muon System was designed to cope with three
+major functions: robust and fast identification of muons, good resolution of momentum 
+measurement and triggering.
+
+The Muon System is composed of three types of gaseous detectors, located inside
+the empty volumes of the iron yoke, and therefore arranged in barrel and end-cap
+sections. The coverage of Muon System is shown in figure \ref{muo_sch}.
+\begin{figure}
+\centering
+\includegraphics[width=1.1\columnwidth]{Images/muo_sch.pdf}
+\caption{Transverse and longitudinal cross sections of the CMS detector showing 
+the Muon System with particular emphasis on the different technologies used
+for detectors; the ME/4/2 CSC layers in the end-cap were included in the design
+but are not currently installed. Figures from \cite{CMS}.}
+\label{muo_sch}
+\end{figure}
+
+In the barrel region the neutron-induced background is small and the muon
+rate is low; moreover, the field is uniform and contained in the yoke. For these
+reasons, standard drift chambers with rectangular cells are used. The barrel Drift
+Tubes (DT) cover the $|\eta|<1.2$ region, are divided in five wheels in the beam direction and are organized in four stations housed among the yoke layers.
+The first three stations contain 12 cell planes, arranged in two superlayers providing measurement along $r\phi$ and one superlayerlayer measuring along $z$, each of them containing four layers.
+The fourth station provides measurement only in the transverse plane.
+
+Both the muon rates and backgrounds are high in the forward region, where
+the magnetic field is large and non uniform. The choice for muon detectors fell
+upon cathode strip chambers (CSC) because of their fast response time, fine segmentation 
+and radiation tolerance. Each end-cap is equipped with four stations
+of CSCs. The CSCs cover the $0.9<|\eta|<2.4$ pseudorapidity range. The cathode 
+strips are oriented radially and provide precise measurement in the bending
+plane, the anode wires run approximately perpendicular to the strips and are read
+out to measure the pseudorapidity and the beam-crossing time of a muon. The
+muon reconstruction efficiency is typically $95-99\%$ except for the regions between
+two barrel DT wheels or at the transition between DTs and CSCs, where the
+efficiency drops.
+
+Both the DTs and CSCs can trigger on muons with a Level 1 $p_T$ (see section \ref{TRG}) resolution
+of $15\%$ and $25\%$, respectively. Additional trigger-dedicated muon detectors were
+added to help measured the correct beam-crossing time. These are Resistive Plate
+Chambers (RPC), gaseous detector operated in the avalanche mode, which can
+provide independent and fast trigger with high segmentation and sharp $p_T$ threshold 
+over a large portion of the pseudorapidity range. The overall $p_T$ resolution on
+muons is shown in figure \ref{mu_reso}, with emphasis on the different contribution from the
+Muon System and the Silicon Tracker.
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{Images/mu_reso.pdf}
+\caption{Resolution on $p_T$ measurement of muons with the Muon System, the
+Silicon Tracker or both, in the barrel (left) and end-caps (right). Figures from \cite{CMS}.}
+\label{mu_reso}
+\end{figure}
+
+\subsubsection{Muon Reconstruction}
+Muon detection and reconstruction play a key role in the CMS physics program,
+both for the discovery of New Physics and for precision measurements of SM
+processes. CMS has been designed for a robust detection of muons over the entire
+kinematic range of the LHC and in a condition of very high background. The
+muon system allows an efficient and pure identification of muons, while the inner
+tracker provides a very precise measurement of their properties. An excellent
+muon momentum resolution is made possible by the high-field solenoidal magnet.
+The steel flux return yoke provides additional bending power in the spectrometer,
+and serves as hadron absorber to facilitate the muon identification. Several muon
+reconstruction strategies are available in CMS, in order to fulfil the specific needs
+of different analyses. The muon reconstruction consists of three main stages:
+\begin{enumerate}
+\item local reconstruction: in each muon chamber, the raw data from the detector
+read-out are reconstructed as individual points in space; in CSC and DT
+chambers, such points are then fitted to track segments;
+\item stand-alone reconstruction: points and segments in the muon spectrometer
+are collected and fitted to tracks, referred to as ``stand-alone muon tracks'';
+\item global reconstruction: stand-alone tracks are matched to compatible tracks in
+the inner tracker and a global fit is performed using the whole set of available
+measurements: the resulting tracks are called ``global muon tracks''.
+\end{enumerate}
+Muon identification represents a complementary approach with respect to global
+reconstruction: it starts from the inner tracker tracks and flags them as muons by
+searching for matching segments in the muon spectrometer. The muon candidates
+produced with this strategy are referred to as ``tracker muons''.
+After the completion of both algorithms, the reconstructed stand-alone, global
+and tracker muons are merged into a single software object, with the addition of
+further information, like the energy collected in the matching calorimeter towers.
+This information can be used for further identification, in order to achieve a balance
+between efficiency and purity of the muon sample.
+
+\subsection{Calorimetry}
+Identification of electrons, photons, and hadrons relies on accurate calorimetry,
+which is a destructive measurement of the energy of a particle. As in most of
+the particle physics experiments, a distinction is made between electromagnetic
+calorimetry and hadron calorimetry. Electromagnetic calorimetry is based on the
+production of EM showers inside a high-Z absorber, while hadron calorimetry
+measures the effects of hadron inelastic scattering with heavy nuclei, including
+production of photons from neutral pions and muons, and neutrinos from weak
+decays. Calorimetry must be precise and hermetic also to measure any imbalance
+of momenta in the transverse plane which can signal the presence of undetected
+particles such as high-$p_T$ neutrinos.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\columnwidth]{Images/ecal_fig.pdf}
+\caption{Cut-away view of the CMS ECAL showing the hierarchical structure
+of crystals arranged in supercystals and modules and the orientation of crystals
+whose major axis is always directed to the origin of the reference frame.}
+\label{ecal_fig}
+\end{figure}
+The electromagnetic calorimeter of CMS, ECAL, is a homogeneous calorimeter, 
+where the absorber material is the same as the sensitive one \cite{ECA}. ECAL
+is composed of 61200 lead tungstate (PbWO$_4$) crystals in the barrel region and
+7324 crystals in the end-caps, as shown in figure \ref{ecal_fig}. The crystal cross-section is
+$22\times22\,\mathrm{mm}^2$ at the front face, while the length is 230 mm. End-caps are equipped
+with a preshower detector. Lead tungstate was chosen because of its high density, $8.28$
+g cm$^{-3}$, short radiation length, $0.89$ cm, and small Molière radius, $2.2$ cm. This way,
+the calorimeter can be kept compact with fine granularity, while scintillation and
+optical properties of PbWO$_4$ make it fast and radiation tolerant. Signal transmission 
+exploits total internal reflection. Scintillation light detection relies on two
+different technologies. Avalanche photodiodes (APD) are used in the barrel region,
+mounted in pairs on each crystals, while vacuum phototriodes (VPT) are used in
+the end-caps. The preshower detector is a sampling calorimeter composed of lead
+radiators and silicon strips detectors, and it is used to identify neutral pions in
+the forward region. The nominal energy resolution, measured with electron beams
+having momenta between 20 and 250 GeV, is
+\begin{displaymath}\quad
+\bigg(\frac{\sigma_E}{E}\bigg)^2=\Bigg(\frac{2.8\%}{\sqrt{E}}\Bigg)^2+\Bigg(\frac{0.12}{E}\Bigg)^2+(0.30\%)^2 \quad,
+\end{displaymath}
+where all the energies are in GeV and the different contributions are respectively: the stochastic one (S), due to fluctuations 
+in the lateral shower containment and in the energy released in the
+preshower, that due to electronics (N), digitization and pile-up, and the constant term (C),
+due to intercalibration errors, energy leakage from the back of the crystal and non-
+uniformity in light collection.
+\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{Images/hcal_sch.pdf}
+\caption{Cross section of the CMS HCAL showing the tower segmentation.
+Figure from \cite{HCA}.}
+\label{hcal_sch}
+\end{figure}
+The hadron calorimeter of CMS, HCAL, is a sampling calorimeter employed
+for the measurement of hadron jets and neutrinos or exotic particles resulting in
+apparent missing transverse energy \cite{HCA}. A longitudinal view of HCAL is shown
+in figure \ref{hcal_sch}. The hadron calorimeter size is constrained in the barrel region,
+$|\eta|<1.3$, by the maximum radius of ECAL and the inner radius of the solenoid
+coil. Because of this, the total amount of the absorber material is limited and
+an outer calorimeter layer is located outside of the solenoid to collect the tail
+of the showers. The pseudorapidity coverage is extended in the $3<|\eta|<5.2$ by
+forward Cherenkov-based calorimeters. The barrel part, HB, consists of 36 wedges,
+segmented into 4 azimuthal sectors each, and made out of flat brass absorber
+layers, enclosed between two steel plates and bolted together without any dead
+material on the full radial extent. There are 17 active plastic scintillator tiles
+interspersed between the stainless steel and brass absorber plates, segmented in
+pseudorapidity to provides an overall granularity of $\Delta\phi\times\Delta\eta=0.087\times0.087$. The
+same segmentation is maintained in end-cap calorimeters, HE, up to $|\eta|<1.6$,
+while it becomes two times larger in the complementary region. The maximum
+material amount in both HB and HE corresponds to approximately 10 interaction
+lengths $\lambda_I$. The energy resolution on single electron and hadron jets is shown in
+figure \ref{cal_reso}.
+\begin{figure}
+\centering
+\begin{tabular}{@{}p{0.52\columnwidth}@{} p{0.52\columnwidth}@{}}
+\includegraphics[width=0.52\columnwidth]{Images/cal_reso1.pdf}&
+\includegraphics[width=0.52\columnwidth]{Images/cal_reso2.pdf}
+\end{tabular}
+\caption{Left: ECAL energy resolution as a function of the electron energy
+as measured from a beam test. The energy was measured in a $3\times3$ crystals array
+with the electron impacting the central one. The stochastic, noise and constant
+terms are given. Right: the jet transverse energy resolution as a function of the
+transverse energy for barrel jets, end-cap jets and very forward jets reconstructed
+with an iterative cone algorithm with cone radius $R=0.5$. Figures from \cite{CMS}.}
+\label{cal_reso}
+\end{figure}
+
+\subsection{Trigger and Data Acquisition} \label{TRG}
+High bunch crossing rates and design luminosity at LHC correspond to approximately 
+20--25 superimposed events every 25 ns, for a total of $10^9$ events per second.
+The large amount of data associated to them is impossible to store and process,
+therefore a dramatic rate reduction has to be achieved. This is obtained with two
+steps: the Level 1 Trigger \cite{L1} and the High Level Trigger, HLT \cite{HLT}.
+
+The Level 1 Trigger is based on custom and programmable electronics, while
+HLT is a software system implemented on a $\sim1000$ commercial processors farm.
+The maximum allowed output rate for Level 1 Trigger is 100 kHz, which should
+be even kept lower, about 30 kHz, for safe operation. Level 1 Trigger uses rough
+information from coarse segmentation of calorimeters and Muon Detectors and
+holds the high-resolution data in a pipeline until acceptance/rejection decision
+is made. HLT exploits the full amount of collected data for each bunch crossing 
+accepted by Level 1 Trigger and is capable of complex calculations such as
+the off-line ones. HLT algorithms are those expected to undergo major changes
+in time, particularly with increasing luminosity. Configuration and operation of
+the trigger components are handled by a software system called Trigger Supervisor.
+
+The Level 1 Trigger relies on local, regional and global components. The Global
+Calorimeter and Global Muon Triggers determine the highest-rank calorimeter and
+muon objects across the entire experiment and transfer them to the Global Trigger,
+the top entity of the Level 1 hierarchy. The latter takes the decision to reject an
+event or to accept it for further evaluation by the HLT. The total allowed latency
+time for the Level 1 Trigger is $3.2\,\mu\mathrm{s}$. A schematic representation of the Level 1
+Trigger data flow is presented in figure \ref{trg_sch}.
+\begin{figure}
+\centering
+\includegraphics[width=0.8\columnwidth]{Images/trg_sch.pdf}
+\caption{Schematic representation of the Level 1 Trigger data flow.}
+\label{trg_sch}
+\end{figure}
+
+\subsubsection{Muon Trigger}
+All Muon Detectors -- DT, CSC and RPC -- contribute to the Trigger. Barrel
+DTs provide Local Trigger in the form of track segments in $\phi$ and hit patterns in
+$\eta$. End-cap CSCs provide 3-dimensional track segments. Both CSCs and DTs
+provide also timing information to identify the bunch crossing corresponding to
+candidate muons. The Local DT Trigger is implemented in custom electronics.
+BTIs, Bunch and Track Identifiers, search for coincidences of aligned hits in the
+four equidistant planes of staggered drift tubes in each chamber superlayer. From
+the associated hits, track segments defined by position and angular direction are
+determined. TRACOs, Track Correlators, attempt to correlate track segments
+measured in the two $\phi$ superlayers of each DT chamber, enhancing the angular resolution and producing a
+quality hierarchy.
+
+The requirement of robustness implies redundancy, which introduces, however,
+a certain amount of noise or duplicate tracks giving rise to false Triggers. Therefore 
+the BTIs, the TRACOs and the different parts of the Local Trigger contain
+complex noise and ghost reduction mechanisms. The position, transverse momentum 
+and quality of tracks are coded and transmitted to the DT regional Trigger,
+called the Drift Tube Track Finder (DTTF), through high-speed optical
+links.
+
+The Global Muon Trigger (GMT) combines the information from DTs, CSCs and
+RPCs, achieving an improved momentum resolution and efficiency compared to
+the stand-alone systems. It also reduces the Trigger rate and suppresses backgrounds 
+by making use of the complementarity and redundancy of the three Muon
+Systems. The Global Muon Trigger also exploits MIP/ISO bits\footnote{The MIP bit is set if the calorimeter energy is consistent with the passage og a minimum ionizing particle, the isolation bit is set if a certain energy threshold in the trigger towers surrounding the muon is not exceeded.} from the Regional
+Calorimeter Trigger. A muon is considered isolated if its energy deposit in the
+calorimeter region from which it emerged is below a defined threshold. DT and
+CSC candidates are first matched with barrel and forward RPC candidates based
+on their spatial coordinates. If a match is possible, the kinematic parameters are
+merged. Several merging options are possible and can be selected individually for
+all track parameters, taking into account the strengths of the individual Muon Systems. 
+Muons are back-extrapolated through the calorimeter regions to the vertex,
+in order to retrieve the corresponding MIP and ISO bits, which are then added to
+the GMT output and can be taken into account by the Global Trigger (GT). Finally,
+the muons are sorted by transverse momentum and quality to deliver four final
+candidates to the GT. The Muon Trigger is designed to cover up to $|\eta|<2.4$.
+
+\subsubsection{Global Trigger}
+The Global Trigger takes the decision to accept or reject an event at Level 1, based
+on candidate $e/\gamma$, muons, jets, as well as global quantities such as the sums of
+transverse energies (defined as $E_T=E\sin\theta$), the missing transverse energy and its direction, the scalar transverse energy sum of all jets above a chosen threshold (usually
+identified by the symbol $H_T$), and several threshold-dependent jet multiplicities.
+Objects representing particles and jets are ranked and sorted. Up to four objects
+are available and characterized by their $p_T$ or $E_T$, direction and quality. Charge,
+MIP and ISO bits are also available for muons. The Global Trigger has five basic
+stages implemented in Field-Programmable Gate-Arrays (FPGAs): input, logic, decision, distribution and read-out.
+If the Level 1 Accept decision is positive, the event is sent to the Data Acquisition
+stage.
+
+\subsubsection{High Level Trigger and Data Acquisition}
+The CMS Trigger and DAQ system is designed to collect and analyse the detector
+information at the LHC bunch crossing frequency of 40 MHz. The DAQ system 
+must sustain a maximum input rate of 100 kHz,
+and must provide enough computing power for a software filter system, the High
+Level Trigger (HLT), to reduce the rate of stored events by a factor of 1000. In CMS
+all events that pass the Level 1 Trigger are sent to a computer farm (Event Filter)
+that performs physics selections, using faster versions of the offline reconstruction
+software, to filter events and achieve the required output rate. The various subdetector 
+front-end systems store data continuously in 40 MHz pipelined buffers.
+Upon arrival of a synchronous Level 1 Trigger Accept via the Timing, Trigger and
+Control System (TTCS) the corresponding data are extracted from the front-end
+buffers and pushed into the DAQ system by the Front-End Drivers (FEDs). The
+event builder assembles the event fragments belonging to the same Level 1 Trigger
+from all FEDs into a complete event, and transmits it to one Filter Unit (FU) in
+the Event Filter for further processing. The DAQ system includes back-pressure
+from the filter farm through the event builder to the FEDs. During operation,
+Trigger thresholds and pre-scales will be optimized in order to fully utilize the
+available DAQ and HLT throughput capacity.
+
+\section{Monte Carlo Event Generator}
+Monte Carlo (MC) event generators provide an event-by-event prediction of complete 
+hadronic final states based on QCD calculation. They allow to study the
+topology of events generated in hadronic interactions and are used as input for
+detector simulation programs to investigate detector effects. The event simulation
+is divided into different stages as illustrated in figure \ref{MC_sch}. First, the partonic
+cross section is evaluated by calculating the matrix element in fixed order pQCD.
+The event generators presently available for the simulation of proton-proton collisions 
+provide perturbative calculations for beauty production up to NLO. Higher
+order corrections due to initial and final state radiation are approximated by running 
+a parton shower algorithm. The parton shower generates a set of secondary
+partons originating from subsequent gluon emission of the initial partons. It is
+followed by the hadronization algorithm which clusters the individual partons into
+colour-singlet hadrons. In a final step, the short lived hadrons are decayed. In the
+framework of the analysis presented here, the MC event generator PYTHIA 6.4
+\cite{PHY} is used to compute efficiencies, kinematic distributions, and for comparisons
+with the experimental results. This programs were run with its default parameter
+settings, except when mentioned otherwise.
+\begin{figure}
+\centering
+\includegraphics[width=0.7\columnwidth]{Images/MC_sch.pdf}
+\caption{Schematic view of the subsequent steps of a MC event generator:
+matrix element (ME), parton shower (PS), hadronization and decay.}
+\label{MC_sch}
+\end{figure}
+
+\subsubsection{PYTHIA}
+In the PYTHIA program, the matrix elements are calculated in LO pQCD and
+convoluted with the proton PDF, chosen herein to be CTEQ6L1. The mass of
+the b-quark is set to $m_b=4.8$ GeV. The underlying event is simulated with the
+D6T tune% \cite{D6T}
+. Pile-up events were not included in the simulation. The parton
+shower algorithm is based on a leading-logarithmic approximation for QCD radiation 
+and a string fragmentation model (implemented in JETSET% \cite{JET}
+) is applied.
+The longitudinal fragmentation is described by the Lund symmetric fragmentation 
+function% \cite{Lun}
+ for light quarks and by the Peterson fragmentation function for
+charm and beauty quarks, that is
+\begin{displaymath}\quad
+f(z)\propto\frac{1}{z\Big[1-\frac{1}{z}-\frac{\varepsilon_Q}{(1-z)}\Big]^2} \quad,
+\end{displaymath}
+where $z$ is defined as
+\begin{displaymath}\quad
+z=\frac{(E+p_\parallel)_\mathrm{hadron}}{(E+p)_\mathrm{quark}} \quad,
+\end{displaymath}
+$(E+p_\parallel)_\mathrm{hadron}$ is the sum of the energy and momentum component parallel to the fragmentation direction carried by the primary hadron, $(E+p)_\mathrm{quark}$ is the energy-momentum of the quark after accounting for initial state radiation, gluon bremsstrahlung and photon radiation in the final state. The parameters of the Peterson fragmentation function
+are set to $\epsilon_c=0.05$ and $\epsilon_b=0.005$. In order to estimate the systematic uncertainty 
+introduced by the choice of the fragmentation function, samples generated
+with different values of $\epsilon_b$ are studied. The hadronic decay chain used in PYTHIA
+is also implemented by the JETSET program. For comparison, additional event
+samples are generated where the EvtGen program is used to decay the b-hadrons. 
+EvtGen is an event generator designed for the simulation of the physics
+of b-hadron decays, and in particular provides a framework to handle complex
+sequential decays and CP violating decays.
+
