@@ -1,35 +1,45 @@
 \section{Fitting Results on data after unblinding}
 \label{sec:result}
 
-Here are results of the interesting variables from the fitting on the data after the unblinding.
-The results serve as central values, with only statistical errors here.
-The projection plots of each signal $q^2$ bin from the fitting are provided.
-The fit procedure is describe in detail in sec.~\ref{sec:fitseq}.
-The statistical uncertainties evaluation is described in sec.~\ref{sec:statUncert}.
-The systematic uncertainties are described and evaluated, included those after blinding, are described in sec~\ref{sec:syst}.
+In this section I will present the results of the fit to the data sample, after removing the \textit{blind} status to the analysis.
+Firstly, the methodology used to extract the statistical uncertainty is presented.
+Then the best-fit values of the parameters are reported, together with the total statistical and systematical uncertainties.
+Finally the distributions and the \pdf profiles for each $q^2$ bin are shown.
+
+%% Here are results of the interesting variables from the fitting on the data after the unblinding.
+%% The results serve as central values, with only statistical errors here.
+%% The projection plots of each signal $q^2$ bin from the fitting are provided.
+%% The fit procedure is describe in detail in sec.~\ref{sec:fitseq}.
+%% The statistical uncertainties evaluation is described in sec.~\ref{sec:statUncert}.
+%% The systematic uncertainties are described and evaluated, included those after blinding, are described in sec~\ref{sec:syst}.
 
 If not otherwise specified, we are using the fitting procedures described in Sect.\ref{sec:fitseq} and other relevant sections.
 
-
 \subsection{Statistical uncertainties determination}\label{sec:statUncert}
 
-The determination of the statistical uncertainties for the measured parameters cannot just be delegated to the fit software, and in particular to MINOS, due to the presence of physical boundaries on the parameters themself.
-These boundaries are discussed in sec.~\ref{WHERE}, and comes from the requirement that the {\tt pdf} is positive defined everywhere.
+The determination of the statistical uncertainties for the measured parameters cannot just be delegated to the fit software, and in particular to {\tt MINOS}, due to the presence of physical boundaries on the parameters.
+These boundaries are discussed in Section~\ref{sec:bound}, and comes from the requirement that the \pdf is positive defined everywhere.
 
-Different approaches to the problem have been explored: in the following we describe three of them: {\tt custom MINOS}, {\tt hybrid frequentist-bayesian}, and {\tt Feldman-Cousins}.
-For the final determination of the statistical uncertainties we have used the latter method, despite of its complexity and the huge cpu time required.
+Different approaches to the problem have been explored: in the following we describe three of them: {\tt custom MINOS}, {\tt hybrid frequentist-Bayesian}, and {\tt Feldman-Cousins}.
+For the final determination of the statistical uncertainties we have used the latter, despite of its complexity and the huge CPU time required.
 
-The former two methods are described in detail in appendix~\ref{sec:CM-Hyb}, and the corresponding coverage studies in appendix~\ref{sec:coverage}.
-At the end of this section, a detailed comparison of the three methods will be presented, showing the nice agreement among them, as was expected given the good results of the coverage studies show in appendix~\ref{sec:coverage}.
+In this thesis, only the {\tt Feldman-Cousins} approach is described.
+
+%% The former two methods are described in detail in appendix~\ref{sec:CM-Hyb}, and the corresponding coverage studies in appendix~\ref{sec:coverage}.
+%% At the end of this section, a detailed comparison of the three methods will be presented, showing a good agreement among them.
+
+%% , as was expected given the good results of the coverage studies show in appendix~\ref{sec:coverage}.
 
 \subsubsection{Feldman-Cousins}
-The approach used for the computation of statistical uncertainties, strongly suggested by the CMS statistical committee, is to apply the so-called Feldman-Cousins method~\cite{FC} with nuisance parameters.
-Given the enormous time needed for a full 2D scan of the phase space, we decided to perform the F-C procedure only along the maximum of the profile along $P_1$ and $P'_5$, respectively, of the $\mathcal{L}$ distribution.
+The approach used for the computation of statistical uncertainties, strongly suggested by the CMS Statistical Committee, is to apply the Feldman-Cousins method~\cite{FC} with nuisance parameters.
+Given the enormous time that would be needed to build a full bi-dimensional confidence interval in the $P_1$-$P_5'$ parameter space, we decided to perform the F-C procedure only along the maximum of the profile along $P_1$ and $P'_5$, respectively, of the $\mathcal{L}$ distribution, and extract two mono-dimensional confidence intervals.
 
-We consider the $\mathcal{L}$ distribution build fitting the data, and look for the maximum of that distribution along one variable, while the other is fixed.
-An evaluation for all the points in the $P_1,~P'_5$ plane for all the bins is not always available, since, for some $P_1,~P'_5$ points, the fit on data keeping $P_1,~P'_5$ fixed, and the yields as well as $A_s^5$ free to float, is not converging.
-So, we perform a bivariate Gaussian fit to the $\mathcal{L}$ distribution, and take the maximum of the profiled fitted function instead.
-The maximum of the profiled function is always searched for inside the physical region: the results are shown in fig~\ref{fig:profileL}.
+We consider the $\mathcal{L}$ distribution build fitting the data, as described in Section~\ref{sec:fitseq}, and look for the maximum of that distribution along one variable, while the other is fixed.
+In general, an evaluation of the likelihood is not available for all the points in the scan of the $P_1,~P'_5$ plane, since, for some $P_1,~P'_5$ points, the fit is not converging.
+Thus, building the profiles of the likelihood just looking for the maximum among the valid points leads often to unstable results.
+So, we perform a bivariate Gaussian fit to the $\mathcal{L}$ points available, similar to the one used to estimate the best-fit values of the parameters, and take the two profiles of the fitted function, instead.
+%% The maximum of the profiled function is always searched for inside the physical region: the results are shown in fig~\ref{fig:profileL}.
+The profiles of the function are always restricted inside the physical region: the results are shown in fig~\ref{fig:profileL}.
 
 \begin{figure}
   \centering
@@ -42,68 +52,69 @@ The maximum of the profiled function is always searched for inside the physical 
   \includegraphics[width=0.3\textwidth]{Figures/FC/scanFC_b7.png}
 
   \includegraphics[width=0.3\textwidth]{Figures/FC/scanFC_b8.png}
-  \caption{Distribution of $\mathcal{L}$ in the $P_1,~P'_5$, with contour curves at DLL=0.5 and 2.0, with the indication of the physical region.
-    Superimposed is a bivariate Gaussian fit, and the position of the maxima of the profiled $\mathcal{L}$ (red) and that of the Gaussian fit (blue).}
+  \caption{Distribution of $\mathcal{L}$ in the $P_1,~P'_5$, with contour curves at $\Delta\log{\mathcal{L}}=0.5$ and 2.0, with the indication of the physical region.
+    Superimposed is a bivariate Gaussian fit, and the position of the maximums of the profiled $\mathcal{L}$ (red) and that of the Gaussian fit (blue).}
   \label{fig:profileL}
 \end{figure}
 
 This procedure is more robust than just looking for the maximum of the $\mathcal{L}$ on a profile, since we do not have a determination of $\mathcal{L}$ for every bin.
 This is typically due to the fact that the physical boundary in the  $P_1,~P'_5$ region depends on $A_s^5$, so the fit of a particular point might converge to a set of values outside the physical region, and so it fails.
 Moreover, there is the chance that a determination of the $\log\mathcal{L}$ has a downward fluctuation which can be the minimum even though the shape of the $\log\mathcal{L}$ shows a parabolic behaviour, with a different vertex.
-This kind of behaviour can be seen in fig.~\ref{fig:ProblematicPProf}.
+This kind of behaviour can be seen in Figure~\ref{fig:ProblematicPProf}.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.5\textwidth]{Figures/FC/ProblematicPProf.pdf}
-  \caption{An example for profile of $\log\mathcal{L}$, where it is possible to see the two possible issues to find the minimum just scanning the results, instead of doing a fit.
+  \caption{An example for profile of $\log\mathcal{L}$, where it is possible to see the two possible issues to find the minimum just scanning the results, instead of performing a fit.
     Some bins are empty since the fit for those points fails, and there is a downward fluctuation of $\log\mathcal{L}$ which creates a fake minimum.}
   \label{fig:ProblematicPProf}
 \end{figure}
 
-For each of the point in the $P_1,~P'_5$ plane defined above, thereafter referred to as GEN-points, we generate a set of 100 toy MC, using the full {\tt pdf}, with data-like statistics, and with nuisance parameter $A_s^5$ which guarantees the wider physical region for $P_1,~P'_5$, namely $0.99$ or $-0.99$, depending on the bin.
+For each of the point in the scan of the $P_1,~P'_5$ plane defined above, thereafter referred to as GEN-points, we generate a set of 100 toy MC with data-like statistics, using the full \pdf, with $P_1$ and $P'_5$ parameters defined by the coordinates of the GEN-point, and with nuisance parameter $A_s^5$ which guarantees the wider physical region for $P_1,~P'_5$, namely $0.99$ or $-0.99$, depending on the bin.
 
-Each toy is fitted with a procedure identical to that used for the data, the only difference is that instead of scanning the whole $P_1,~P'_5$ region, only 20 points are scanned, in order to reduce the time needed to perform the whole procedure.
+Each toy is fitted with a procedure identical to that used for the data, the only difference is that instead of evaluating the likelihood on a $90\times90$ grid in the $P_1,~P'_5$ plane, only 20 points are scanned, in order to reduce the time needed to perform the whole procedure.
 These 20 points are chosen randomly, according to a bivariate Gaussian, around a central value.
 The width of the Gaussian is that returned by the fit on the data on the bin under consideration, while correlation is not considered.
 The central value is the result of a fit on the toy with $P_1,~P'_5$ free to float, or, if the fit does not converge, the GEN-point itself.
-The value of the $\mathcal{L}$ in these 20 points is finally fitted with a bivariate Gaussian, and the best fit for the toy is the maximum of the fitted function.
+If one of these points falls outside the physical boundary, it is discarded and an additional point is generated to replace it.
+The $\mathcal{L}$ is evaluated in these 20 points and it is finally fitted with a bivariate Gaussian.
 An example of such a fit is on fig.~\ref{fig:ExampleFC}.
 
-Eventually, for each toy of any GEN-point, a determination of $\mathcal{L}$ is available.
-In order to check if the GEN-point is inside or outside the $68\%$ CL region, we compare the $\Delta\log\mathcal{L}$ of the toys with that of the data.
-In particular, when computing the boundary of the parameter $P_1$ ($P'_5$), $\Delta\log\mathcal{L}_{toy_{i}}$ is defined, on the projection of $\log\mathcal{L}$ of the $toy_{i}$ on the $P_1$ ($P'_5$) axis, as the difference between the maximum of this projection and its value at $P_1=P_{1~\mathrm{GEN}}$ ($P'_5=P'_{5~\mathrm{GEN}}$), where ($P_{1~\mathrm{GEN}}$, $P'_{5~\mathrm{GEN}}$) are the coordiantes of the GEN-point.
+Eventually, for each toy of any GEN-point, a determination of the $\mathcal{L}$ function is available.
+In order to check if the GEN-point is inside or outside the $68\%$ CL region, we compare the $\Delta\log\mathcal{L}$ of the toys with the one of the data.
+In particular, when computing the boundary of the parameter $P_1$ ($P'_5$), $\Delta\log\mathcal{L}_{toy_{i}}$ is defined, on the projection of $\log\mathcal{L}$ of the $toy_{i}$ on the $P_1$ ($P'_5$) axis, as the difference between the maximum of this projection and its value at $P_1=P_{1~\mathrm{GEN}}$ ($P'_5=P'_{5~\mathrm{GEN}}$), where ($P_{1~\mathrm{GEN}}$, $P'_{5~\mathrm{GEN}}$) are the coordinates of the GEN-point.
 $\Delta\log\mathcal{L}_{Data}$ is defined as the difference between $\log\mathcal{L}$ of the best fit on data and that of the GEN-point.
 %% In particular: $\Delta\log\mathcal{L}_{toy_{i}}$ is defined as the difference
 %% between the $\log\mathcal{L}$ of the $toy_{i}$ and the $\log\mathcal{L}$ of the
 %% GEN-point. $\Delta\log\mathcal{L}_{Data}$ is defined as the difference between
 %% $\log\mathcal{L}$ of the best fit on data and that of the GEN-point.
 
-The {\em ratio} is computed as the fraction of toys with DLL lesser than that of the data.
+The {\em ratio} value is computed as the fraction of toys with $\Delta\log\mathcal{L}$ lesser than that of the data.
 A GEN point is considered inside the $1\sigma$ region, namely the $68.27\%$ CL region, if the ratio is lower than $68.27\%$.
 An example of this comparison is shown in fig.~\ref{fig:ExampleFC}.
 
-\begin{figure}
+\begin{figure}[hbt]
   \centering
   \includegraphics[width=0.45\textwidth]{Figures/FC/FitGaus2D_Bin7_Reg0_GP3069_Toy7.png}
   \includegraphics[width=0.54\textwidth]{Figures/FC/histo_GP3084_7_0.pdf}
   \caption{An example of a bivariate fit on the 20 scan points for one GEN-point (left).
-    Distribution of the DLL values for the 100 toys for one GEN-point and comparison with DLL for data for that GEN-point (right).}
+    Distribution of the $\Delta\log\mathcal{L}$ values for the 100 toys for one GEN-point and comparison with $\Delta\log\mathcal{L}$ for data, computed for that GEN-point (right).}
   \label{fig:ExampleFC}
 \end{figure}
 
-The final $68\%$ region for $P_1$ and $P'_5$ is found by looking at the distribution of the ratio as a function of $P_1$ and $P'_5$, respectively, and fitting this distribution with a linear function.
+The final $68\%$ confidence interval for $P_1$ and $P'_5$ is found by looking at the distribution of the ratio as a function of $P_1$ and $P'_5$, respectively, and fitting this distribution with a linear function.
 The crossing of the linear function with the $68.27\%$ line defines the $\pm1\sigma$ value.
 In total four directions were scanned, corresponding to lower and upper bound for $P_1$ and $P'_5$.
 
-In order to reduce the time consumption of this procedure, which is huge, we started scanning GEN-points around the value of $DLL=0.5$, and then extend the scanned region inside or outside depending on the results.
+In order to reduce the time consumption of this procedure, we started scanning GEN-points around the value of $\Delta\log\mathcal{L}=0.5$, and then extend the scanned region inside or outside depending on the results.
 In case the slope of the linear fit was not very steep, more GEN-points were scanned to make the result more robust.
 
-After a series of optimization, each individual fit to one toy took approximately 4 minutes, so, given that we perform the fit 20+1 times for each toy, the CPU time for each toy is about 1.6 h, including the toy generation, whose contribution is negligible.
-We scanned in total about 1000 GEN-points, including many which were not used for the final computation of the FC intervals due to various reasons (debugging of the procedure, different iterations and refinement, etc), for a grand total of about $2\cdot{10^6}$ fits, corresponding to 1.6 year of CPU time.
-The whole procedure, including setup, coding, debugging, learning and interpretation of results took about 2.5 months in total.
+%% After a series of optimization, each individual fit to one toy took approximately 4 minutes, so, given that we perform the fit 20+1 times for each toy, the CPU time for each toy is about 1.6 h, including the toy generation, whose contribution is negligible.
+%% We scanned in total about 1000 GEN-points, including many which were not used for the final computation of the FC intervals due to various reasons (debugging of the procedure, different iterations and refinement, etc), for a grand total of about $2\cdot{10^6}$ fits, corresponding to 1.6 year of CPU time.
+%% The whole procedure, including setup, coding, debugging, learning and interpretation of results took about 2.5 months in total.
 
 The results of the FC procedure described above are shown in fig~\ref{fig:FC0}~to~\ref{fig:FC8} for all the seven $q^2$ bins considered.
-The intervals, as well as the central values, are summarized in table~\ref{tab:FC}.
+The intervals, as well as the central values, are summarised in table~\ref{tab:FC}.
 
 \begin{figure}
   \centering
@@ -116,7 +127,7 @@ The intervals, as well as the central values, are summarized in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b0_reg3_v0.pdf}
 
   \caption{F-C results for bin 0.
-    GEN points scanned superimposed to DLL distribution, showing also physical boundaries: red points are ouside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -134,7 +145,7 @@ The intervals, as well as the central values, are summarized in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b1_reg3_v0.pdf}
 
   \caption{F-C results for bin 1.
-    GEN points scanned superimposed to DLL distribution, showing also physical boundaries: red points are ouside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -152,7 +163,7 @@ The intervals, as well as the central values, are summarized in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b2_reg3_v0.pdf}
 
   \caption{F-C results for bin 2.
-    GEN points scanned superimposed to DLL distribution, showing also physical boundaries: red points are ouside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -170,7 +181,7 @@ The intervals, as well as the central values, are summarized in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b3_reg3_v0.pdf}
 
   \caption{F-C results for bin 3.
-    GEN points scanned superimposed to DLL distribution, showing also physical boundaries: red points are ouside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -188,7 +199,7 @@ The intervals, as well as the central values, are summarized in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b5_reg3_v0.pdf}
 
   \caption{F-C results for bin 5.
-    GEN points scanned superimposed to DLL distribution, showing also physical boundaries: red points are ouside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -206,7 +217,7 @@ The intervals, as well as the central values, are summarized in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b7_reg3_v0.pdf}
 
   \caption{F-C results for bin 7.
-    GEN points scanned superimposed to DLL distribution, showing also physical boundaries: red points are ouside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -224,7 +235,7 @@ The intervals, as well as the central values, are summarized in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b8_reg3_v0.pdf}
 
   \caption{F-C results for bin 8.
-    GEN points scanned superimposed to DLL distribution, showing also physical boundaries: red points are ouside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -256,15 +267,12 @@ The intervals, as well as the central values, are summarized in table~\ref{tab:F
 \clearpage
 \subsubsection{Correlation coefficient}
 
-From the distribution of the likelihood~\ref{fig:profileL} it is also possible to get the correlation coefficient between the two measured parameters, $P_1,~P'_5$.
-The $\mathcal{L}$ in the $P_1,~P'_5$ plane is fitted with a bivariate gaussian, with the following expression
+From the distribution of the likelihood, in Figure~\ref{fig:profileL}, it is also possible to get the correlation coefficient between the two measured parameters, $P_1,~P'_5$.
+The $\mathcal{L}$ in the $P_1,~P'_5$ plane is fitted with a bivariate Gaussian, with the following expression:
 \begin{equation}\label{eq:bivariateGauss}
-  f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x%
-      }{\sigma _x}\right) ^2-2\rho \left( \frac{x-\mu _x}{\sigma _x}\right) \left( 
-      \frac{y-\mu _y}{\sigma _y}\right) +\left( \frac{y-\mu _y}{\sigma _y}\right)
-      ^2\right] \right\} }{2\pi \sigma _x\sigma _y\sqrt{1-\rho ^2}} 
+  f(x,y)=\frac{\exp \left\{ -\frac 1{2(1-\rho ^2)}\left[ \left( \frac{x-\mu _x}{\sigma _x}\right) ^2-2\rho \left( \frac{x-\mu _x}{\sigma _x}\right) \left(\frac{y-\mu _y}{\sigma _y}\right) +\left( \frac{y-\mu _y}{\sigma _y}\right)^2\right] \right\} }{2\pi \sigma _x\sigma _y\sqrt{1-\rho ^2}} 
 \end{equation}
-where $x=P_1$, $y=P'_5$ etc. The $\rho$ parameter in formula~\ref{eq:bivariateGauss} is the correlation coefficient among the two parameters and it is reported in table~\ref{tab:correlation} for all the bins.
+where $x=P_1$, $y=P'_5$ etc. The $\rho$ parameter in Equation~\ref{eq:bivariateGauss} is the correlation coefficient among the two parameters and it is reported in Table~\ref{tab:correlation} for all the bins.
 
 \begin{table*}[!htb]
 
@@ -287,76 +295,76 @@ where $x=P_1$, $y=P'_5$ etc. The $\rho$ parameter in formula~\ref{eq:bivariateGa
   \end{center}
 \end{table*}
 
-\subsubsection{Comparison of FC with the two other methods ((CM and Hyb)}
-In table~\ref{tab:FCcomparison} a detailed comparison of the statistical uncertainties found with the FC procedure are compared with two other approaches proposed.
-From the table is possible to see that the two alternative method (CM and Hyb) give intervals which are in very good agreement with the one provided by the FC one, with very few exceptions, where the difference is anyhow limited.
-This is in agreement with the coverage studies for the two alternative methods described in sec~\ref{sec:coverage}.
-It is worth to stress the huge difference in time spent to compute the intervals with the first two method and the FC one.
-The first two can be performed easily once the detailed discretization of the likelihood is done, while the third (FC) required millions of fit, $>1.5$~year of CPU time and two months of work.
+%% \subsubsection{Comparison of FC with the two other methods ((CM and Hyb)}
+%% In table~\ref{tab:FCcomparison} a detailed comparison of the statistical uncertainties found with the FC procedure are compared with two other approaches proposed.
+%% From the table is possible to see that the two alternative method (CM and Hyb) give intervals which are in very good agreement with the one provided by the FC one, with very few exceptions, where the difference is anyhow limited.
+%% This is in agreement with the coverage studies for the two alternative methods described in sec~\ref{sec:coverage}.
+%% It is worth to stress the huge difference in time spent to compute the intervals with the first two method and the FC one.
+%% The first two can be performed easily once the detailed discretisation of the likelihood is done, while the third (FC) required millions of fit, $>1.5$~year of CPU time and two months of work.
 
-\begin{table*}
-  \begin{center}
-    \caption{Comparison of the results of the statistical uncertainties computed with the three methods described in the text: {\tt Feldman-Cousins (FC)}, {\tt custom MINOS (CM)}, {\tt hybrid frequentist-bayesian (Hyb)}.
-      The agreement of the three method is very good for all the bins, with very few exceptions.}
-    \label{tab:FCcomparison}
+%% \begin{table*}
+%%   \begin{center}
+%%     \caption{Comparison of the results of the statistical uncertainties computed with the three methods described in the text: {\tt Feldman-Cousins (FC)}, {\tt custom MINOS (CM)}, {\tt hybrid frequentist-Bayesian (Hyb)}.
+%%       The agreement of the three method is very good for all the bins, with very few exceptions.}
+%%     \label{tab:FCcomparison}
 
-    %\setlength\extrarowheight{3pt}
-    \begin{tabular}{l|rccc|rccc}
-      & \multicolumn{4}{c|}{$P_1$}       &  \multicolumn{4}{c}{$P'_5$} \\ 
-      Bin  & & FC & CM & Hyb       & & FC & CM & Hyb    \\ 
-      \hline
-      0 & $ 0.12$ &  $^{+ 0.46}_{- 0.47}$  & $^{+ 0.44 }_{- 0.463 }$ & $^{+ 0.42 }_{- 0.447 }$  & $ 0.10$ & $^{+ 0.32}_{- 0.31}$ & $^{+ 0.313 }_{- 0.333 }$ & $^{+ 0.313 }_{- 0.333 }$ \\
-      1 & $-0.69$ &  $^{+ 0.58}_{- 0.27}$  & $^{+ 0.59 }_{- 0.267 }$ & $^{+ 0.537 }_{- 0.25 }$  & $-0.57$ & $^{+ 0.34}_{- 0.31}$ & $^{+ 0.35 }_{- 0.29 }$ & $^{+ 0.35 }_{- 0.29 }$     \\
-      2 & $ 0.53$ &  $^{{+ 0.24}}_{- 0.33}$  & $^{{+ 0.333 }}_{- 0.36 }$ & $^{{+ 0.297 }}_{- 0.32 }$  & $-0.96$ & $^{+ 0.22}_{{- 0.21}}$ & $^{+ 0.23 }_{{- 0.163 }}$ & $^{+ 0.23 }_{{- 0.163 }}$   \\
-      3 & $-0.47$ &  $^{+ 0.27}_{- 0.23}$  & $^{+ 0.307 }_{- 0.25 }$ & $^{+ 0.283 }_{- 0.23 }$  & $-0.64$ & $^{+ 0.15}_{- 0.19}$ & $^{+ 0.18 }_{- 0.183 }$ & $^{+ 0.18 }_{- 0.183 }$   \\
-      \hline                                                                                                                         
-      5 & $-0.53$ &  $^{{+ 0.2}}_{- 0.14} $  & $^{{+ 0.153} }_{- 0.137 }$ & $^{{+ 0.16} }_{- 0.14 }$  & $-0.69$ & $^{+ 0.11}_{- 0.14}$ & $^{+ 0.097 }_{- 0.12 }$ & $^{+ 0.107 }_{- 0.123 }$ \\
-      \hline                                                                                                                                           
-      7 & $-0.33$ &  $^{+ 0.24}_{- 0.23}$  & $^{+ 0.257 }_{- 0.23 }$ & $^{+ 0.25 }_{- 0.227 }$  & $-0.66$ & $^{+ 0.13}_{- 0.2}$  & $^{+ 0.143 }_{- 0.17 }$ & $^{+ 0.143 }_{- 0.17 }$  \\
-      8 & $-0.53$ &  $^{+ 0.19}_{- 0.19}$  & $^{+ 0.217 }_{- 0.21 }$ & $^{+ 0.207 }_{- 0.2 }$   & $-0.56$ & $^{+ 0.12}_{- 0.12}$ & $^{+ 0.137 }_{- 0.143 }$ & $^{+ 0.137 }_{- 0.143 }$\\
-
-
-    \end{tabular}
-  \end{center}
-\end{table*}
+%%     %\setlength\extrarowheight{3pt}
+%%     \begin{tabular}{l|rccc|rccc}
+%%       & \multicolumn{4}{c|}{$P_1$}       &  \multicolumn{4}{c}{$P'_5$} \\ 
+%%       Bin  & & FC & CM & Hyb       & & FC & CM & Hyb    \\ 
+%%       \hline
+%%       0 & $ 0.12$ &  $^{+ 0.46}_{- 0.47}$  & $^{+ 0.44 }_{- 0.463 }$ & $^{+ 0.42 }_{- 0.447 }$  & $ 0.10$ & $^{+ 0.32}_{- 0.31}$ & $^{+ 0.313 }_{- 0.333 }$ & $^{+ 0.313 }_{- 0.333 }$ \\
+%%       1 & $-0.69$ &  $^{+ 0.58}_{- 0.27}$  & $^{+ 0.59 }_{- 0.267 }$ & $^{+ 0.537 }_{- 0.25 }$  & $-0.57$ & $^{+ 0.34}_{- 0.31}$ & $^{+ 0.35 }_{- 0.29 }$ & $^{+ 0.35 }_{- 0.29 }$     \\
+%%       2 & $ 0.53$ &  $^{{+ 0.24}}_{- 0.33}$  & $^{{+ 0.333 }}_{- 0.36 }$ & $^{{+ 0.297 }}_{- 0.32 }$  & $-0.96$ & $^{+ 0.22}_{{- 0.21}}$ & $^{+ 0.23 }_{{- 0.163 }}$ & $^{+ 0.23 }_{{- 0.163 }}$   \\
+%%       3 & $-0.47$ &  $^{+ 0.27}_{- 0.23}$  & $^{+ 0.307 }_{- 0.25 }$ & $^{+ 0.283 }_{- 0.23 }$  & $-0.64$ & $^{+ 0.15}_{- 0.19}$ & $^{+ 0.18 }_{- 0.183 }$ & $^{+ 0.18 }_{- 0.183 }$   \\
+%%       \hline                                                                                                                         
+%%       5 & $-0.53$ &  $^{{+ 0.2}}_{- 0.14} $  & $^{{+ 0.153} }_{- 0.137 }$ & $^{{+ 0.16} }_{- 0.14 }$  & $-0.69$ & $^{+ 0.11}_{- 0.14}$ & $^{+ 0.097 }_{- 0.12 }$ & $^{+ 0.107 }_{- 0.123 }$ \\
+%%       \hline                                                                                                                                           
+%%       7 & $-0.33$ &  $^{+ 0.24}_{- 0.23}$  & $^{+ 0.257 }_{- 0.23 }$ & $^{+ 0.25 }_{- 0.227 }$  & $-0.66$ & $^{+ 0.13}_{- 0.2}$  & $^{+ 0.143 }_{- 0.17 }$ & $^{+ 0.143 }_{- 0.17 }$  \\
+%%       8 & $-0.53$ &  $^{+ 0.19}_{- 0.19}$  & $^{+ 0.217 }_{- 0.21 }$ & $^{+ 0.207 }_{- 0.2 }$   & $-0.56$ & $^{+ 0.12}_{- 0.12}$ & $^{+ 0.137 }_{- 0.143 }$ & $^{+ 0.137 }_{- 0.143 }$\\
 
 
+%%     \end{tabular}
+%%   \end{center}
+%% \end{table*}
 
-\clearpage
+
+
+%% \clearpage
 
 \subsection{Results of central values}
 \label{sec:res-centval}
 
-The results of the fit on data are summarized in table~\ref{tab:dataresult}.
-The {\tt pdf} we use for the final fit, once the two folding have been applied, has 2 physical parameters, $P1$, $P_5'$, which are the results of this analysis.
-Other nuisance parameter, left free to float in the fit, are $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
+The results of the fit on data are summarised in Table~\ref{tab:dataresult}.
+%% The \pdf we use for the final fit, once the two folding have been applied, has 2 physical parameters, $P1$, $P_5'$, which are the results of this analysis.
+%% Other nuisance parameter, left free to float in the fit, are $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
 
-The table presents results for all five parameters.
+The table presents results for all five parameters that was floating in the fit, both the analysis targets, $P1$ and $P_5'$, and the nuisance, $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
 The errors reported are those from the FC procedure for $P1$, $P_5'$, while are those returned by MINOS for the other three.
 
 
 \begin{table*}[!htb]
   \begin{center}
-    %  \begin{small}
-    \caption{The measured values of signal yield $Y^{C}_{S}$ (including both correctly tagged and mistagged events), background yield $Y_{B}$, $A^5_\mathrm{S}$, $P1$, and $P5'$ for the decay \BKpimm in bins of $q^2$.
-      The first uncertainty is statistical and the second (when present) is systematic. 
-      \label{tab:dataresult}}
+    \begin{footnotesize}
+      \caption{The measured values of signal yield $Y^{C}_{S}$, background yield $Y_{B}$, $A^5_\mathrm{S}$, $P1$, and $P5'$ for the decay \BKpimm in bins of $q^2$.
+        The first uncertainty is statistical and the second (when present) is systematic. 
+        \label{tab:dataresult}}
 
-    \begin{tabular}{c|ccc|cc}
-      \hline
-      $q^2~(\GeVns^2)$      & $Y^{C}_{S}$ & $Y_{B}$ & $A_s^5$ & $P_1$ & $P_5'$  \\
-      \hline         
-      1.00--2.00     & $80  \pm 12$ &    $95 \pm 11$    & $0.043 \pm 0.066$      & $0.119 ^{+ 0.46}_{- 0.47}\pm0.058$  & $0.101 ^{+ 0.32}_{- 0.31}\pm0.116$  \\
-      2.00--4.30     & $145 \pm 16$ &    $290\pm 20$    & $0.039 \pm 0.063$      & $-0.685^{+ 0.58}_{- 0.27}\pm0.088$  & $-0.567^{+ 0.34}_{- 0.31}\pm0.153$  \\
-      4.30--6.00     & $119 \pm 14$ &    $216\pm 17$    & $-0.052\pm 0.092$      & $0.533 ^{+ 0.24}_{- 0.33}\pm0.175$  & $-0.957^{+ 0.22}_{- 0.21}\pm0.161$  \\
-      6.00--8.68     & $247 \pm 21$ &    $351\pm 23$    & $0.057 \pm 0.005$     & $-0.470^{+ 0.27}_{- 0.23}\pm0.131$  & $-0.643^{+ 0.15}_{- 0.19}\pm0.138$  \\
-      10.09--12.86   & $354 \pm 23$ &    $575\pm  1$    & $-0.005\pm 0.008$    & $-0.531^{+ 0.2 }_{- 0.14}\pm0.215$  & $-0.690^{+ 0.11}_{- 0.14}\pm0.246$  \\
-      14.18--16.00   & $213 \pm 17$ &    $185\pm 16$    & $0.015 \pm 0.063$     & $-0.329^{+ 0.24}_{- 0.23}\pm0.245$  & $-0.664^{+ 0.13}_{- 0.2 }\pm0.188$  \\
-      16.00--19.00   & $239 \pm 19$ &    $ 82\pm 0 $    & $-0.004\pm 0.119$    & $-0.533^{+ 0.19}_{- 0.19}\pm0.131$  & $-0.559^{+ 0.12}_{- 0.12}\pm0.072$  \\
+      \begin{tabular}{c|ccc|cc}
+        \hline
+        $q^2~(\GeV^2)$      & $Y^{C}_{S}$ & $Y_{B}$ & $A_s^5$ & $P_1$ & $P_5'$  \\
+        \hline         
+        1.00--2.00     & $80  \pm 12$ &    $95 \pm 11$    & $0.043 \pm 0.066$      & $0.119 ^{+ 0.46}_{- 0.47}\pm0.058$  & $0.101 ^{+ 0.32}_{- 0.31}\pm0.116$  \\
+        2.00--4.30     & $145 \pm 16$ &    $290\pm 20$    & $0.039 \pm 0.063$      & $-0.685^{+ 0.58}_{- 0.27}\pm0.088$  & $-0.567^{+ 0.34}_{- 0.31}\pm0.153$  \\
+        4.30--6.00     & $119 \pm 14$ &    $216\pm 17$    & $-0.052\pm 0.092$      & $0.533 ^{+ 0.24}_{- 0.33}\pm0.175$  & $-0.957^{+ 0.22}_{- 0.21}\pm0.161$  \\
+        6.00--8.68     & $247 \pm 21$ &    $351\pm 23$    & $0.057 \pm 0.005$     & $-0.470^{+ 0.27}_{- 0.23}\pm0.131$  & $-0.643^{+ 0.15}_{- 0.19}\pm0.138$  \\
+        10.09--12.86   & $354 \pm 23$ &    $575\pm  1$    & $-0.005\pm 0.008$    & $-0.531^{+ 0.2 }_{- 0.14}\pm0.215$  & $-0.690^{+ 0.11}_{- 0.14}\pm0.246$  \\
+        14.18--16.00   & $213 \pm 17$ &    $185\pm 16$    & $0.015 \pm 0.063$     & $-0.329^{+ 0.24}_{- 0.23}\pm0.245$  & $-0.664^{+ 0.13}_{- 0.2 }\pm0.188$  \\
+        16.00--19.00   & $239 \pm 19$ &    $ 82\pm 0 $    & $-0.004\pm 0.119$    & $-0.533^{+ 0.19}_{- 0.19}\pm0.131$  & $-0.559^{+ 0.12}_{- 0.12}\pm0.072$  \\
 
-      \hline
-    \end{tabular}
-    %  \end{small}
+        \hline
+      \end{tabular}
+    \end{footnotesize}
   \end{center}
 \end{table*}
 
@@ -364,10 +372,10 @@ The results for $P1$, $P_5'$ and $As5$ are shown in Fig~\ref{fig:fitresultAs5}, 
 On the plots, the predictions from two theoretical groups are also shown.
 The orange band shows the predictions from Matias et al\cite{Genon:Swave}.
 and the pink band shows the predictions from Paul et al\cite{Paul2015}.
-Both predictions are adapted to our $q^2$binning scheme.
+Both predictions are adapted to our $q^2$ binning scheme.
 
-We also put the latest LHCb results from Ref.\cite{LHCbP5p} on the plots for comparison, also with only statistical errors.
-Note they are using different $q^2$ binnings than us.
+We also put the latest LHCb results~\cite{LHCbP5p} on the plots for comparison, also with only statistical errors.
+%% Note they are using different $q^2$ binnings than us.
 
 
 \begin{figure}[!hbtp]
@@ -379,49 +387,53 @@ Note they are using different $q^2$ binnings than us.
 \end{figure}
 
 
-
-\begin{figure}[!hbtp]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/DATAFit/P1.pdf}
-  \caption{The fitting results of the target physics observables.
-    The results for $P1$ are shown.}
-  \label{fig:fitresultP1}
+\begin{figure}[htbp!]
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{P1.pdf}
+    \caption{CMS measurements of the $P_1$ angular parameter versus $q^2$ for \BtoKstmumu decays, in comparison to results from the LHCb~\cite{LHCbP5p2} Collaboration.
+      The statistical uncertainties are shown by the inner vertical bars, while the outer vertical bars give the total uncertainties.
+      The horizontal bars show the bin widths. The vertical shaded regions correspond to the \cPJgy\ and $\psi'$ resonances.
+      The hatched regions show the predictions from two SM calculations described in the text, averaged over each $q^2$ bin.}
+    \label{fig:fitresultP1}
+  \end{center}
 \end{figure}
 
-
-\begin{figure}[!hbtp]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/DATAFit/P5p.pdf}
-  \caption{The fitting results of the target physics observables.
-    The results for $P_5'$  are shown.}
-  \label{fig:fitresultp5}
+\begin{figure}[htbp!]
+  \begin{center}
+    \includegraphics[width=0.9\textwidth]{P5p.pdf}
+    \caption{CMS measurements of the $P_5'$ angular parameter versus $q^2$ for \BtoKstmumu decays, in comparison to results from the LHCb~\cite{LHCbP5p2} and Belle~\cite{BelleP5p} Collaborations.
+      The statistical uncertainties are shown by the inner vertical bars, while the outer vertical bars give the total uncertainties.
+      The horizontal bars show the bin widths. The vertical shaded regions correspond to the \cPJgy\ and $\psi'$ resonances.
+      The hatched regions show the predictions from two SM calculations described in the text, averaged over each $q^2$ bin.}
+    \label{fig:fitresultp5}
+  \end{center}
 \end{figure}
 
-\subsubsection{Comparison of yield found on BPH-13-010}\label{sec:yieldComp}
+\subsubsection{Validation of the yield results}\label{sec:yieldComp}
 
-The yield of signal and background events per each bin is compared with the previous analysis BPH-13-010~\cite{AN-14-129}, which is base on the same dataset, on table~\ref{tab:yieldComp}.
+The yield of signal and background events per each bin is compared with the previous CMS analysis~\cite{AN-14-129}, which is base on the same dataset, on Table~\ref{tab:yieldComp}.
 
 \begin{table*}[!htb]
   \begin{center}
-    %  \begin{small}
-    \caption{Comparison of values of signal yield $Y^{C}_{S}$ (including both correctly tagged and mistagged events) and background yield $Y_{B}$ with the same values found in previous analysis BPH-13-010.\label{tab:yieldComp}}
+    \begin{footnotesize}
+      \caption{Comparison of values of signal yield $Y^{C}_{S}$ and background yield $Y_{B}$ with the same values found in previous CMS analysis.\label{tab:yieldComp}}
+      %%  (including both right-tagged and mis-tagged events)
+      \begin{tabular}{c|ccc|ccc}
+        \hline
+        & \multicolumn{2}{c}{$Y^{C}_{S}$} & $\Delta$  & \multicolumn{2}{c}{$Y_{B}$} & $\Delta$ \\
+        $q^2~(\GeV^2)$      & this analysis & previous CMS & & this analysis & previous CMS &\\
+        \hline         
+        1.00--2.00     & $80  \pm 12$ & $ 84 \pm 11$ & $-4\pm16$  &   $ 95\pm 11$    & $ 91 \pm 12$ & $4  \pm 16$\\
+        2.00--4.30     & $145 \pm 16$ & $145 \pm 16$ & $0\pm23$   &   $290\pm 20$    & $289 \pm 20$ & $1  \pm 28$\\
+        4.30--6.00     & $119 \pm 14$ & $117 \pm 15$ & $2\pm21$   &   $216\pm 17$    & $218 \pm 18$ & $-2 \pm 25$\\
+        6.00--8.68     & $247 \pm 21$ & $254 \pm 21$ & $-7\pm30$  &   $351\pm 23$    & $344 \pm 23$ & $7  \pm 33$\\
+        10.09--12.86   & $354 \pm 23$ & $362 \pm 25$ & $-8\pm34$  &   $575\pm 28$    & $567 \pm 29$ & $8  \pm 40$\\
+        14.18--16.00   & $213 \pm 17$ & $225 \pm 18$ & $-12\pm25$ &   $185\pm 16$    & $175 \pm 17$ & $10 \pm 23$\\
+        16.00--19.00   & $239 \pm 19$ & $239 \pm 18$ & $0\pm26$   &   $ 82\pm 12$    & $ 82 \pm 12$ & $0  \pm 17$\\
 
-    \begin{tabular}{c|ccc|ccc}
-      \hline
-      & \multicolumn{2}{c}{$Y^{C}_{S}$} & $\Delta$  & \multicolumn{2}{c}{$Y_{B}$} & $\Delta$ \\
-      $q^2~(\GeVns^2)$      & this analysis & BPH-13-010 & & this analysis & BPH-13-010 &\\
-      \hline         
-      1.00--2.00     & $80  \pm 12$ & $ 84 \pm 11$ & $-4\pm16$  &   $ 95\pm 11$    & $ 91 \pm 12$ & $4  \pm 16$\\
-      2.00--4.30     & $145 \pm 16$ & $145 \pm 16$ & $0\pm23$   &   $290\pm 20$    & $289 \pm 20$ & $1  \pm 28$\\
-      4.30--6.00     & $119 \pm 14$ & $117 \pm 15$ & $2\pm21$   &   $216\pm 17$    & $218 \pm 18$ & $-2 \pm 25$\\
-      6.00--8.68     & $247 \pm 21$ & $254 \pm 21$ & $-7\pm30$  &   $351\pm 23$    & $344 \pm 23$ & $7  \pm 33$\\
-      10.09--12.86   & $354 \pm 23$ & $362 \pm 25$ & $-8\pm34$  &   $575\pm 28$    & $567 \pm 29$ & $8  \pm 40$\\
-      14.18--16.00   & $213 \pm 17$ & $225 \pm 18$ & $-12\pm25$ &   $185\pm 16$    & $175 \pm 17$ & $10 \pm 23$\\
-      16.00--19.00   & $239 \pm 19$ & $239 \pm 18$ & $0\pm26$   &   $ 82\pm 12$    & $ 82 \pm 12$ & $0  \pm 17$\\
-
-      \hline
-    \end{tabular}
-    %  \end{small}
+        \hline
+      \end{tabular}
+    \end{footnotesize}
   \end{center}
 \end{table*}
 
@@ -432,23 +444,21 @@ The yield of signal and background events per each bin is compared with the prev
 \subsection{Detailed distributions in each $q^2$ bin}
 \label{sec:res-proj}
 
-The results of detailed distributions in each $q^2$ bin (folding twice) are shown in the following figures from Fig.~\ref{fig:res_bin0} to Fig.~\ref{fig:res_bin8}.
+The results of detailed distributions in each $q^2$ bin, together with the projections of the \pdf, are shown in the following figures from Fig.~\ref{fig:res_bin0} to Fig.~\ref{fig:res_bin8}.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_0_Canv0.pdf}
-  \caption{Some distributions in $q^2$ bin-0.
-    In all plots, black points with error bars are data, blue curves are signal, red curves are from combinatorial backgrounds, green curves are from mis-tag backgrounds and black curves are the total fitting results.
-    show the projections of the fitting results into B invariant mass, $cos\theta_l$, $cos\theta_K$, and $\phi$.}
+  \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~0.
+    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin0}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_1_Canv0.pdf}
-  \caption{Some distributions in $q^2$ bin-1.
-    In all plots, black points with error bars are data, blue curves are signal, red curves are from combinatorial backgrounds, green curves are from mis-tag backgrounds and black curves are the total fitting results.
-    show the projections of the fitting results into B invariant mass, $cos\theta_l$, $cos\theta_K$, and $\phi$.}
+  \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~1.
+    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin1}
 \end{figure}
 
@@ -456,44 +466,39 @@ The results of detailed distributions in each $q^2$ bin (folding twice) are show
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_2_Canv0.pdf}
-  \caption{Some distributions in $q^2$ bin-2.
-    In all plots, black points with error bars are data, blue curves are signal, red curves are from combinatorial backgrounds, green curves are from mis-tag backgrounds and black curves are the total fitting results.
-    show the projections of the fitting results into B invariant mass, $cos\theta_l$, $cos\theta_K$, and $\phi$.}
+  \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~2.
+    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin2}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_3_Canv0.pdf}
-  \caption{Some distributions in $q^2$ bin-3.
-    In all plots, black points with error bars are data, blue curves are signal, red curves are from combinatorial backgrounds, green curves are from mis-tag backgrounds and black curves are the total fitting results.
-    show the projections of the fitting results into B invariant mass, $cos\theta_l$, $cos\theta_K$, and $\phi$.}
+  \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~3.
+    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin3}
 \end{figure}
 
 \begin{figure}[!hbtp]
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_5_Canv0.pdf}
-  \caption{Some distributions in $q^2$ bin-5.
-    In all plots, black points with error bars are data, blue curves are signal, red curves are from combinatorial backgrounds, green curves are from mis-tag backgrounds and black curves are the total fitting results.
-    show the projections of the fitting results into B invariant mass, $cos\theta_l$, $cos\theta_K$, and $\phi$. }
+  \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~5.
+    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin5}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_7_Canv0.pdf}
-  \caption{Some distributions in $q^2$ bin-7.
-    In all plots, black points with error bars are data, blue curves are signal, red curves are from combinatorial backgrounds, green curves are from mis-tag backgrounds and black curves are the total fitting results.
-    show the projections of the fitting results into B invariant mass, $cos\theta_l$, $cos\theta_K$, and $\phi$.}
+  \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~7.
+    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin7}
 \end{figure}
 
 \begin{figure}
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_8_Canv0.pdf}
-  \caption{Some distributions in $q^2$ bin-8.
-    In all plots, black points with error bars are data, blue curves are signal, red curves are from combinatorial backgrounds, green curves are from mis-tag backgrounds and black curves are the total fitting results.
-    show the projections of the fitting results into B invariant mass, $cos\theta_l$, $cos\theta_K$, and $\phi$.}
+  \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~8.
+    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin8}
 \end{figure}
