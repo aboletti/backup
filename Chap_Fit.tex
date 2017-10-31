@@ -1,10 +1,10 @@
-\section{Fit strategy} \label{sec:fit}
+\chapter{Fit strategy} \label{sec:fit}
 
 The angular parameters are extracted through an unbinned fit to four variables, the $\PKp\Pgpm\Pgmp\Pgmm$ invariant mass and the three angular variables, using an extended maximum likelihood estimator.
 
 In the following sections I will give a detailed description of the probability density function used in the fit, and of the methods used to estimate its parameters.
 
-\subsection{Probability density function}
+\section{Probability density function}
 \label{sec:TotalPDF}
 
 The probability density function (\pdf) used in the fit has the following expression:
@@ -31,7 +31,7 @@ The factorisation assumption of the background pdf in Equation~(\ref{eq:angALL})
 The three-dimensional functions $\epsilon^{C}(\TK,\TL,\varphi)$ and $\epsilon^{M}(\TK,\TL,\varphi)$ are the efficiencies for right-tagged and mis-tagged signal events, respectively.
 The construction of these functions has been described in Section~\ref{sec:eff}.
 
-\subsubsection{Fraction of mis-tagged signal events}
+\subsection{Fraction of mis-tagged signal events}
 \label{sec:mistag}
 
 %% The signal and control channels are self-tagging decays.
@@ -74,7 +74,7 @@ The mistag fraction parameter is fixed in the fit to the values evaluated on MC 
 Some eventual differences between simulated and real events could lead to a bias in the mistag fraction values used in the \pdf, that could propagate to a bias in the analysis results.
 The contribution of this effect to the systematic uncertainty, is discussed in Section~\ref{sec:sys-mistag}.
 
-\subsubsection{Background parameterisation}
+\subsection{Background parameterisation}
 \label{sec:backg}
 
 Several kind of background events can contaminate the dataset used for the fit.
@@ -150,7 +150,7 @@ An example of the sideband event distributions, for $q^2$ bin~0, are plotted fro
 .
 %%%%%%%%%%%%%%%%%%55
 
-\subsubsection{Test of factorisable background hypothesis}
+\subsection{Test of factorisable background hypothesis}
 \label{sec:fact}
 
 The correlation of the variable distributions for the combinatorial background events is tested and the results shown in this section.
@@ -254,7 +254,7 @@ For some bins the low statistics don't allow to compare the distributions, but i
 %%   \label{fig:side10}
 %% \end{figure}
 
-\subsection{The fitting sequence, components and strategy}
+\section{The fitting sequence, components and strategy}
 \label{sec:fitseq}
 
 Before applying the fit procedure on data, some parameters of the \pdf in Equation~\ref{eq:angALL} are estimated, for each $q^2$ bin, on the simulated signal MC sample and kept fixed for the full fitting process.

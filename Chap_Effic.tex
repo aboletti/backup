@@ -1,4 +1,4 @@
-\section{Efficiency}\label{sec:eff}
+\chapter{Efficiency}\label{sec:eff}
 
 The efficiency for signal and for control channels is defined as the ratio of number of events passing the selection and whose selected candidate is matched with the generated final state, over the total number of events generated.
 It includes the effects of detector geometric acceptance, the trigger selection efficiency and the offline selection efficiency, and is entirely computed from MC simulation.
@@ -52,7 +52,7 @@ The classification of an event as wrong or correct tagged is defined by comparin
 
 Since the \TK and \TK variables are defined in the range $[0,\pi]$, there is no loss in information in building the efficiency as a function of \TK, \TL and \PHI, or as a function of \cTK, \cTL and \PHI. Since this second choice leads to slightly more smooth functions, it has been chosen for the construction of the efficiency. 
 
-\subsection{Parameterisation}\label{sec:eff_param}
+\section{Parameterisation}\label{sec:eff_param}
 
 %% The efficiency is defined as the product of two ratios as described in eq.~\ref{eq:eff} for each bin of $q^2$.
 %% In the following, we will take as implicit the dependence on $q^2$ in order to simplify the formula: $\epsilon(q^2,\theta_L,\theta_K,\phi)=\epsilon(\theta_L,\theta_K,\phi)$.
@@ -71,7 +71,7 @@ In this section both of them are described and some example functions are showed
 In the next section a closure test developed to determine their accuracy is described and the better performances of the KDE-based method will be highlighted.
 
 %% The first extend the efficiency description from two to three dimensions by considering two variables at a time, while integrating over the third, and then iterating on the variables choice.
-\subsubsection{Two-dimensional binned method}\label{sec:eff_2Dprod}
+\subsection{Two-dimensional binned method}\label{sec:eff_2Dprod}
 The first method is based on binned efficiency functions.
 Instead of building directly a three-dimensional binned efficiency, facing the low per-bin statistics, we use two-dimensional functions to compose the final efficiency.
 To model the efficiency correlation between each couple of parameters, three functions are created by integrating out, recursively, one angular variable and building the efficiency as a function of the remaining two.
@@ -98,7 +98,7 @@ An example of the two dimension binned efficiencies after a linear interpolation
     \label{fig:eff2D}
 \end{figure}
 
-\subsubsection{Kernel Density Estimator method}\label{sec:eff_kde}
+\subsection{Kernel Density Estimator method}\label{sec:eff_kde}
 The second approach uses a non-parametric description of the efficiency based on a Kernel Density Estimator (KDE)~\cite{opac-b1089297,Cranmer:2000du}.
 
 The general idea behind this method, in its simplest form for a uni-dimensional problem, is to start from an unbinned distribution of events as a function of a given variable $x$, and describe its true distribution \pdf$_{TRUE}$ by building a kernel, namely a function $K(x)$ with unitary integral over the range of definition of $x$, on top of every event, and use the sum of all kernels, with proper normalisation, as a non-parametric description of \pdf$_{TRUE}$:
@@ -338,7 +338,7 @@ An example of the projections of the efficiency, as obtained by the KDE method w
 
 \clearpage
 
-\subsection{Closure test}\label{sec:closure}
+\section{Closure test}\label{sec:closure}
 
 A validation of the efficiency parameterisation is performed via a closure test based on MC samples.
 We compare the event distribution of the three angular observables, \cTK, \cTL, and \PHI, as reconstructed after the full simulation and after the application of the whole set of selections described in Section~\ref{sec:selection}, with the full set of generated event distribution, before the application of the GEN-filter, weighted, event-by-event, with the tested efficiency function.

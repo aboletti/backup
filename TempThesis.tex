@@ -1,4 +1,5 @@
-\documentclass[12pt,oneside,a4paper]{report}
+%% \documentclass[12pt,oneside,a4paper]{report}
+\documentclass[a4paper,11pt,twoside]{book}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -8,8 +9,7 @@
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{lineno}
-\linenumbers
-
+%% \linenumbers
 
 %%%%% NEW COMMANDS
 \newcommand{\MeV}{\ensuremath{\,\textrm{MeV}}\xspace}
@@ -78,7 +78,8 @@
 
 %%%%%%%%%%%%%%% INFOS
 
-\title{Measurement of the P5' angular observable of  the decay B0 to K*mu+mu- at 8 TeV}
+%% \title{Measurement of the P5' angular observable of  the decay B0 to K*mu+mu- at 8 TeV}
+\title{Measurement of angular parameters from the decay $\mathrm{B}^0 \to \mathrm{K}^{*0} \mu^+ \mu^-$ in proton-proton collisions at $\sqrt{s}=8~\mathrm{TeV}$}
 
 % >> Authors
 %% \address[pdinfn]{INFN sez. Padova - Italy}
@@ -101,7 +102,8 @@
 
 \begin{document}
 
-\maketitle %maketitle comes after all the front information has been supplied
+\input{title.tex}
+%% \maketitle %maketitle comes after all the front information has been supplied
 
 %% % >> Abstract
 %% \abstract{
@@ -111,35 +113,38 @@
 \tableofcontents
 \clearpage
 
+\input{abstract.tex}
+\clearpage
+
 %% \input{Chap_Intro.tex}
 %% \clearpage
 
 \input{Chap_Theo.tex}
 \clearpage
 
-%% \input{Chap_Detec.tex}
-%% \clearpage
+\input{Chap_Detec.tex}
+\clearpage
 
-%% \input{Chap_Selec.tex}
-%% \clearpage
+\input{Chap_Selec.tex}
+\clearpage
 
-%% \input{Chap_Effic.tex}
-%% \clearpage
+\input{Chap_Effic.tex}
+\clearpage
 
-%% \input{Chap_Fit.tex}
-%% \clearpage
+\input{Chap_Fit.tex}
+\clearpage
 
-%% \input{Chap_Valid.tex}
-%% \clearpage
+\input{Chap_Valid.tex}
+\clearpage
 
-%% \input{Chap_Syst.tex}
-%% \clearpage
+\input{Chap_Syst.tex}
+\clearpage
 
-%% \input{Chap_Resul.tex}
-%% \clearpage
+\input{Chap_Resul.tex}
+\clearpage
 
-%% \input{Chap_Concl.tex}
-%% \clearpage
+\input{Chap_Concl.tex}
+\clearpage
 
 
 
