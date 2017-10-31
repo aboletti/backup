@@ -1,0 +1,71 @@
+\chapter{Future perspective and conclusions}
+\label{sec:FutConcl}
+
+\section{Perspective at LHC Run II}
+\label{sec:Future}
+Since the discrepancy originally observed by the LHCb collaboration in the $P_5'$ angular parameter is far to be resolved, either from the theoretical side, where a better understanding of the effects of the hadronic uncertainties is essential to have a reliable Standard Model prediction, or from the experimental side.
+
+In particular regarding this latter aspect, in the last few years the analyses from many experiments added their contribution to the LHCb result, to validate it and, by combining the results, improve the precision of the experimental measurement.
+
+Despite the large statistics collected during LHC Run I by CMS, LHCb and ATLAS experiments, the uncertainty of the results of these analyses are still statistically dominated.
+This makes this angular analysis an hot topic for the near future.
+
+Since 2015 LHC Run II is ongoing, and the machine is showing very good performance, delivering an instantaneous luminosity that is increasing year-by-year.
+In particular for CMS, the integrated luminosity expected to be collected in the full Run II period, ranging from 2015 to 2018, is \SI{150}{\per\femto\barn}, which is a huge value if compared to the statistics collected in Run I, considering also that the $B^0$ cross section increases by a factor of about two, thanks to the higher centre-of-mass energy of the collisions: $\sqrt{s}=13\TeV$.
+
+Performing the analysis on Run II data can give a large improvement to the experimental precision reached in the measurement of the angular parameters.
+In this section I will describe some new issues that an analysis on CMS Run-II data should face, and some upgrades that could improve the results and make them more robust.
+
+\subsection{Trigger developments}
+\label{sec:TrigDeve}
+
+The main negative aspect, at analysis level, of the increased LHC luminosity is the trigger selections.
+Since the computing resources are limited, the event reconstruction can be run only on a limited amount of data.
+Since it is pointless to collect data if they can never be reconstructed, the limited number of reconstructed events can be translated in a upper limit of the rate of events that pass the trigger system.
+This limit, in the first three years of Run II, is set to \SI{1000}{\hertz}, and is calculated taking into account the machine down-times, when the detector is not collecting data but the reconstruction process continues.
+
+When LHC increases the instantaneous luminosity of the collisions, the rate would increase as well, because the probability of having an proton-proton interaction with final state that fires the trigger is proportional to the luminosity.
+It is an even worse situation when the average pileup is increased, because many HLT algorithms, and almost all the L1T ones, can sum up the contribution of final states originated in different proton-proton interactions.
+The firing probability in this case increases more than linearly, as a function of the luminosity.
+Due to the rate upper limit, when the delivered luminosity increases, we need to set tighter requirements in the trigger algorithms.
+
+Focusing now on the trigger selection used by the \BtoKstmumu angular analysis, in the 2012 run there was a simple requirement on the presence of two muons with $p_T>3.5\GeV$ and $|\eta|<2.2$, and forming a common displaced vertex with some quality requirements, as described in details in Section~\ref{sec:onsel}.
+Since a simple increase of the $p_T$ and $\eta$ threshold, to keep the rate stable, would have led to a large drop in the signal efficiency, many studies have been performed in the selection optimisation, to achieve a sufficient rate reduction without affecting largely the signal efficiency.
+The main results of these studies are the introduction of the requirement of one hadronic track at HLT since 2015, and the use of an upper cut on the angular distance, $\Delta R_{\mu\mu}$, between the two muons at L1T, since 2017.
+On the other hand, in 2015 and 2016, the L1T algorithm could not have cuts on multi-object quantities (like $\Delta R_{\mu\mu}$), and the only available option was to cut tighter on the muon $p_T$ and $\eta$ quantities.
+
+A first test of the new HLT algorithm on 2016 dataset, after applying the same selection criteria optimised for the 2012 analysis plus the matching of the triggering hadronic track to at least one of the two hadrons in the candidate, led to an average efficiency in the range 30-70\% of the 2012 one.
+The range is due to different detector conditions over the year, whose problems are unrelated with the HLT strategy used.
+
+\subsection{Analysis upgrades}
+\label{sec:AnalUpg}
+
+On the analysis methods, there are many aspects that can be improved with respect to the version presented in this thesis.
+
+The first upgrade will aim to extend the analysis to measure the full set of angular parameters present in the decay rate.
+An increased number of events in the dataset and a better or equal signal-to-noise fraction will be crucial for this purpose.
+Also a better handling of the physical boundary can help with improving the fit stability, needed to extend the measurement.
+
+A second goal is to improve the fit performances, both in terms of time consumption, for which parallel GPU-based computing can be used, and in term of stability, for which a simpler efficiency parameterisation can be tested.
+
+Furthermore, a great improvement to the signal-to-noise ratio can be achieved by using a selection based on multi-variate analysis, like a Neural Network. This techniques would allow to maximise the background rejection by a full exploitation of the information contained in the variables.
+
+
+\section{Summary}
+\label{sec:Summ}
+
+In this thesis, I have presented important result of the CMS Collaboration in the Flavour Physics sector.
+The angular analysis of the \BtoKstmumu decay has been performed with the data collected by the CMS Experiment in the 2012 run of pp collisions at $\sqrt{s}=8\TeV$, corresponding to an integrated luminosity of \SI{20.5}{\per\femto\barn}.
+
+After presenting a general status of the theoretical description of this analysis and describing the LHC machine and the CMS detector, the details of the analysis are reported.
+
+Firstly, the selection criteria applied to the collected data, and the parameterisation of their efficiency and of the detector acceptance, evaluated on signal simulated samples, have been described.
+
+A complex fitting algorithm has been set up, to extract in a stable and reliable way the $P_1$ and $P_5'$ parameters from the distributions of the \PKp\Pgpm\Pgmp\Pgmm invariant mass and of the three angular variables.
+This fitting algorithm has been validated in many ways, by testing it on MC samples and on data control channels, \BtoKstJpsimumu and \BtoKstpsipmumu.
+
+In order to make the results as robust as possible, many sources of possible systematic uncertainty has been studied.
+The statistical uncertainties have been evaluated using an simplified form of a bi-dimensional Feldman-Cousins approach, to guarantee the correct coverage even when the result is close to an nonphysical region in the parameter phase-space.
+
+Finally, the fit procedure has been applied on data, and the results extracted.
+Currently, they are among the most precise measurements of these parameters, they are compatible with the results from the other experiment and they show no discrepancy to the Standard Model predictions.

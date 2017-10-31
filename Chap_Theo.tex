@@ -1,20 +1,31 @@
-\section{Conventions and formulations}
-\label{sec:formula}
+\chapter{Analysis introduction}
+\label{sec:theo}
 
-\subsection{The decay rate description in full angular variables}
-\label{sec:fullform}
+temp
 
-The angle $\theta_l$ is defined as the angle between the
-direction of the $\mu^+ $ ($\mu^- $) and the direction opposite that of
-the $\text{B}^0$ ($\bar{\text{B}^0}$) in the dimuon rest frame; the
-angle $\theta_\mathrm{K} $ is defined as the angle between the direction of the
-kaon and the direction opposite that of the $B^0$
-($\bar{\text{B}^0}$) in the $\text{K}^{*0}$ rest frame; the angle
-$\phi$ is the angle between the plane containing the $\mu^+ $ and
-$\mu^- $ and the plane containing the kaon and the pion from the
-$\PKst$ decay in the $\text{B}^0$ rest frame.  Using the notation of
-\cite{Ball2009}, the differential angular distribution can be written
-as:
+\section{Flavour Physics}
+\label{sec:flav}
+
+temp
+
+\subsection{Flavour-changing neutral currents}
+\label{sec:FCNC}
+
+temp
+
+\section{The decay B0 to K*0 mu+ mu-}
+\label{sec:Kstmm}
+
+temp
+
+\subsection{The angular decay rate}
+\label{sec:decRate}
+
+temp
+
+%%%%%%%%%%%%%%%%%%%%%%%55
+The angle $\theta_l$ is defined as the angle between the direction of the $\mu^+ $ ($\mu^- $) and the direction opposite that of the $\text{B}^0$ ($\bar{\text{B}^0}$) in the dimuon rest frame; the angle $\theta_\mathrm{K} $ is defined as the angle between the direction of the kaon and the direction opposite that of the $B^0$ ($\bar{\text{B}^0}$) in the $\text{K}^{*0}$ rest frame; the angle $\phi$ is the angle between the plane containing the $\mu^+ $ and $\mu^- $ and the plane containing the kaon and the pion from the $\PKst$ decay in the $\text{B}^0$ rest frame.
+Using the notation of~\cite{Ball2009}, the differential angular distribution can be written as:
 \begin{equation} \label{eq:Angular}
     \begin{split}
         \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} =&\frac{9}{32\pi}\left[\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \right.\\
@@ -28,10 +39,52 @@ where the $q^2$ dependent observables $P_i$ and $P'_i$ are optimized observables
 combinations of the $\text{K}^{*0}$ decay amplitudes, as defined in~\cite{Genon:Swave};
 $F_\mathrm{L}$ is the longitudinal polarization fraction of the $\text{K}^{*0}$ and
 $F_\mathrm{T}=(1-F_\mathrm{L})$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{S-wave contamination}
+\label{sec:S-waveform}
+Although the $K^+\pi^-$ invariant mass must be consistent with a
+$\text{K}^{*0}$, there can be contributions from a spinless (S-wave)
+$K^+\pi^-$ combination. The presence of a $K^+\pi^-$
+system in an S-wave configuration, due to a non-resonant contribution or
+to feed through from $K^+\pi^-$ scalar resonances, results in additional
+terms in the different angular distribution. Denoting the right-hand side
+ of Eq.~\ref{eq:Angular} by $W_p$, the differential decay rate takes the form
 
-\subsection{Transformation of pdf formulation used in the fit}
-\label{sec:transform}
+\begin{equation} \label{eq:S-wave}
+    \begin{split}
+    (1-F_\mathrm{S})W_p + (W_s + W_{sp})
+    \end{split}
+\end{equation}
 
+where 
+\begin{equation} \label{eq:S-wave0}
+    \begin{split}
+      W_s = \frac{3}{16\pi} F_\mathrm{S}\sin^2\theta_l
+    \end{split}
+\end{equation}
+
+and $W_{sp}$ is given from Eq.(44) in~\cite{Genon:Swave}. 
+\begin{equation} \label{eq:S-wave1}
+    \begin{split}
+      W_{sp}= &\frac{3}{16 \pi}\left[ A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}+ A_\mathrm{S}^4\sin\theta_\mathrm{K}\sin2\theta_l\cos\phi\right.\\
+            &+\left.A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi+A_\mathrm{S}^7\sin\theta_\mathrm{K}\sin\theta_l\sin\phi+A_\mathrm{S}^8\sin\theta_\mathrm{K}\sin2\theta_l\sin\phi\right]
+    \end{split}
+\end{equation}
+
+where $F_\mathrm{S}$ is the fraction of the S-wave component in the
+$\text{K}^{*0}$ mass window, and $W_{sp}$ contains all the
+interference terms, $A_\mathrm{S}^i$ are the intererence amplitudes between the
+S-wave and the P-wave decays\cite{Genon:Swave}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{The \pdf folding}
+\label{sec:folding}
+
+temp
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The angular distribution of the decay
 $\text{B}^0 \rightarrow \text{K}^{*0} \mu^+ \mu^-$ can be described by
 three angles ($\theta_l $, $\theta_\mathrm{K} $ and $\phi$) and the
@@ -96,68 +149,9 @@ $\theta_l$ is reduced to (0,$\pi$/2). According to $\cos(\pi-\theta_l) = -
             &\left.+\sqrt{F_\mathrm{T}F_\mathrm{L}}P_5'\sin2\theta_\mathrm{K}\sin\theta_l\cos\phi  \right]
     \end{split}
 \end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-We have studied how to do the foldings in a previous note
-AN-2015/172~\cite{AN-15-172}. We have derived two different
-formulations with two foldings and three foldings separately. Some
-preliminary studies based on a simplified fitting model has some
-indications that the two folding formulation would produce more
-precise results.  More details could be found in ref~\cite{AN-15-172}.
-
-On the other hand, the two LHCb publications and the recent Belle
-paper all use the same two-folding formulation. So we take these
-indications here and focus on the fitting with the two-folding
-formulation in this note.
-
-
-% The third folding is at $\phi = \pi/2$ (for $\phi >\pi/2,
-% \phi\rightarrow\phi- \pi/2$), the $\phi$'s domain is
-% (0,$\pi$/2). According $\cos(\phi- \pi/2) = \sin\phi$ and $\sin(\phi-
-% \pi/2) = -\cos\phi$, we can cancel the terms containing $\cos\phi$ and
-% $\sin\phi$ at the same time. Then the Eq(3) now reads:
-
-% \begin{equation} \label{eq:fold3}
-%   \begin{split}
-% \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} =&\frac{9}{8\pi}\left[2(\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \right +(\frac{1}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K}-F_\mathrm{L}\cos^2\theta_\mathrm{K})\cos2\theta_l) \right.\\
-%  &+\left\sqrt{F_\mathrm{T}F_\mathrm{L}}P_5'\sin2\theta_\mathrm{K}\sin\theta_l(\cos\phi-\sin\phi)\right]
-% \end{split}
-% \end{equation}
-
-\subsection{Influence of S-wave interference on the angular distributions}
-\label{sec:S-waveform}
-Although the $K^+\pi^-$ invariant mass must be consistent with a
-$\text{K}^{*0}$, there can be contributions from a spinless (S-wave)
-$K^+\pi^-$ combination. The presence of a $K^+\pi^-$
-system in an S-wave configuration, due to a non-resonant contribution or
-to feed through from $K^+\pi^-$ scalar resonances, results in additional
-terms in the different angular distribution. Denoting the right-hand side
- of Eq.~\ref{eq:Angular} by $W_p$, the differential decay rate takes the form
-
-\begin{equation} \label{eq:S-wave}
-    \begin{split}
-    (1-F_\mathrm{S})W_p + (W_s + W_{sp})
-    \end{split}
-\end{equation}
-
-where 
-\begin{equation} \label{eq:S-wave0}
-    \begin{split}
-      W_s = \frac{3}{16\pi} F_\mathrm{S}\sin^2\theta_l
-    \end{split}
-\end{equation}
-
-and $W_{sp}$ is given from Eq.(44) in~\cite{Genon:Swave}. 
-\begin{equation} \label{eq:S-wave1}
-    \begin{split}
-      W_{sp}= &\frac{3}{16 \pi}\left[ A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}+ A_\mathrm{S}^4\sin\theta_\mathrm{K}\sin2\theta_l\cos\phi\right.\\
-            &+\left.A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi+A_\mathrm{S}^7\sin\theta_\mathrm{K}\sin\theta_l\sin\phi+A_\mathrm{S}^8\sin\theta_\mathrm{K}\sin2\theta_l\sin\phi\right]
-    \end{split}
-\end{equation}
-
-where $F_\mathrm{S}$ is the fraction of the S-wave component in the
-$\text{K}^{*0}$ mass window, and $W_{sp}$ contains all the
-interference terms, $A_\mathrm{S}^i$ are the intererence amplitudes between the
-S-wave and the P-wave decays\cite{Genon:Swave}. For S-wave and the
+ For S-wave and the
 interference terms, we do the same transformation as P-wave, after the
 first ``folding'', it can reads:
 
@@ -174,17 +168,7 @@ After the second ``folding'', it reads:
         \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} =\frac{3}{4\pi}\left[F_\mathrm{S}\sin^2\theta_l+A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}+A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi\right]
     \end{split}
 \end{equation}
-
-% After the third "folding", Eq(6) finally becomes:
-% \begin{equation} \label{eq:S-fold3}
-%   \begin{split}
-% \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} =\frac{3}{4\pi}\left[2(F_\mathrm{S}\sin^2\theta_l+A_\mathrm{S}\sin^2\cos\theta_\mathrm{K})+\left.A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l(\cos\phi-\sin\phi)\right]
-% \end{split}
-% \end{equation}
-
-
-\subsection{Formulas after transformation with both P-wave and S-wave components}
-\label{sec:finalform}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 After the two folding are performed, the angular distribution can be
 written, using  Eq.~\ref{eq:fold2} and Eq.~\ref{eq:S-fold2} as:
@@ -199,17 +183,13 @@ written, using  Eq.~\ref{eq:fold2} and Eq.~\ref{eq:S-fold2} as:
 \end{equation}
 
 Now we have 6 parameters, they are $F_\mathrm{L}$, $F_S$, $P_1$, $P_5'$, $A_\mathrm{S}$
-and $A^5_\mathrm{S}$.  In the six parameters, $F_\mathrm{L}$, $F_S$, and $A_S$ have been
-measured by the BPH-13-010 analysis and we fix them in the
-fitting if not specified otherwise in the following text. The new parameters are: $P_1$, $P_5'$, $A^5_\mathrm{S}$.
+and $A^5_\mathrm{S}$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 
-Due to limited number of events, if we fit all of the 6 parameters, the fit
-maybe not in ''GOOD'' status. So we decided to get the value of $F_\mathrm{L}$, $F_S$, 
-and $A_S$ from BPH-13-010, and we can fix them when fitting data.
-We let also $F_\mathrm{L}$ float when statistics are big enough for validation purposes,
-such as the control channels, as described in Section.\ref{sec:controlchannel}.
+\subsection{Parameter constrains}
+\label{sec:bound}
 
-\subsection{Range of definition of interference terms}
+\subsubsection{Range of definition of interference terms}
 \label{sec:As5.range}
 Due to their nature, the value of the interference terms $A_s$ and $A_s^5$ is limited by the amplitude of the pure P-wave and S-wave components~\cite{Genon:Swave}. Their allowded ranges are the following:
 \begin{equation} \label{eq:As.range}
@@ -226,7 +206,7 @@ To make sure that the fitted value of $A_s^5$ is contained in this range, it has
 \end{equation}
 where $f$ is a placeholder parameter defined in the range [-1;1]. The fit is then performed with respect to $f$ instead of $A_s^5$.
 
-\subsection{P.D.F validity in the parameter space}
+\subsubsection{P.D.F validity in the parameter space}
 \label{sec:phys.bound}
 Using the P.D.F. parametrization described above, it is not guaranteed that it is physical (i.e. positive in the whole ($\cos\theta_K$,$\cos\theta_l$,$\phi$) space).
 
@@ -292,10 +272,3 @@ The boundaries of this regions, plotted in the negative $P_5'$ sector only (the 
   \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 8. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of gray-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest gray for $f=1$).}
   \label{fig:bound8}
 \end{figure}
-
-
-
-
-
-
-
