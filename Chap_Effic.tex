@@ -101,14 +101,14 @@ An example of the two dimension binned efficiencies after a linear interpolation
 \subsection{Kernel Density Estimator method}\label{sec:eff_kde}
 The second approach uses a non-parametric description of the efficiency based on a Kernel Density Estimator (KDE)~\cite{opac-b1089297,Cranmer:2000du}.
 
-The general idea behind this method, in its simplest form for a uni-dimensional problem, is to start from an unbinned distribution of events as a function of a given variable $x$, and describe its true distribution \pdftrue by building a kernel, namely a function $K(x)$ with unitary integral over the range of definition of $x$, on top of every event, and use the sum of all kernels, with proper normalisation, as a non-parametric description of \pdftrue:
+The general idea behind this method, in its simplest form for a uni-dimensional problem, is to start from an unbinned distribution of events as a function of a given variable $x$, and describe its true distribution {\texttt{pdf}$_{\mathrm{TRUE}}$} by building a kernel, namely a function $K(x)$ with unitary integral over the range of definition of $x$, on top of every event, and use the sum of all kernels, with proper normalisation, as a non-parametric description of {\texttt{pdf}$_{\mathrm{TRUE}}$}:
 \begin{equation}\label{eq:KDE}
     \pdfKDEx=\frac{1}{N}\sum_{i=1}^{N} K(x-x_i)
 \end{equation}
 where $i$ is an index running over the set of events and $N$ is the total number of events.
 The kernel $K(x)$ can be any non-negative function with unitary integral, and can be of different type; some common examples are uniform, triangular, or Gaussian kernels.
 A remarkable property of the KDE technique is that the quality of the PDF description depends rather weakly on the kernel used.
-The resulting \pdfKDEx in the limit $N\to\infty$ is a convolution of \pdftrue with the kernel $K(x)$.
+The resulting \pdfKDEx in the limit $N\to\infty$ is a convolution of {\texttt{pdf}$_{\mathrm{TRUE}}$} with the kernel $K(x)$.
 In this analysis, we decided to use a Gaussian kernel, because of its ability to produce a smooth \pdf even in regions where a low event statistics is available.
 
 The KDE method can be extended to multi-dimensional problems, building a \pdf as a function of a set of $n$ variables $x_1,\ldots,x_n)$.
@@ -116,7 +116,7 @@ In this case, the kernel used should be $n$-dimensional as well.
 
 An implementation of KDE method using a Gaussian kernel is available, for both the uni-dimensional and the multi-dimensional application, within the {\sc RooFit} package~\cite{RooFit}.
 
-The advantage of the KDE over a parametric description is that no prior assumption on the actual \pdftrue is needed, and the structure of the original \pdf is described as accurately as the statistics allow.
+The advantage of the KDE over a parametric description is that no prior assumption on the actual {\texttt{pdf}$_{\mathrm{TRUE}}$} is needed, and the structure of the original \pdf is described as accurately as the statistics allow.
 The last point is particularly relevant in the case under study, since in spite of the large statistics of events in the MC samples used to compute the efficiency, the phase space is very large, given the number of variables considered for the efficiency description.
 A disadvantage is that an unbinned distribution of events is needed, so it is not possible to use the KDE method directly on the efficiency, which is binned by construction, but it needs to be used on the numerator and denominator distributions, and then the efficiency will be defined through the ratios of these \pdfs.
 
