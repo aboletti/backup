@@ -12,7 +12,7 @@ The probability density function (\pdf) used in the fit has the following expres
   \begin{split}
     \mathrm{pdf}(m,\TK,\TL,\varphi) & = Y^{C}_{S} \biggl[ S^{C}(m)  \, S^a(\TK,\TL,\varphi) \, \epsilon^{C}(\TK,\TL,\varphi) \biggr. \\
       & \biggl. + \frac{f^{M}}{1-f^{M}}~S^{M}(m) \, S^a(-\TK,-\TL,\varphi) \, \epsilon^{M}(\TK,\TL,\varphi) \biggr] \\
-    & + Y_{B}\,B^m(m) \, B^{\TK}(\TK) \, B^{\TL}(\TL) \, B^{\varphi}(\varphi), \\
+    & + Y_{B}\,B^m(m) \, B^{\TK}(\cTK) \, B^{\TL}(\cTL) \, B^{\PHI}(\PHI), \\
   \end{split}
 \end{equation}
 where its three terms correspond to the \pdfs for right-tagged signal, mis-tagged signal, and background events, respectively.
@@ -24,9 +24,9 @@ Each of them is composed as the sum of two Gaussian functions, with a common mea
 %% In the fit, the mean, the four Gaussian function's width parameters, and the two fractions specifying the relative contribution of the two Gaussian functions in $S^{C}(m)$ and $S^{M}(m)$ are determined from simulation.
 %% The function $S^a(\TK,\TL,\varphi)$ describes the signal in the three-dimensional (3D) space of the angular variables and corresponds to Eq.~(\ref{eq:PDF}).
 
-The four \pdfs $B^m(m) \, B^{\TK}(\TK) \, B^{\TL}(\TL) \, B^{\varphi}(\varphi)$ describe the background in the space of the \PBz candidate invariant mass and the angular variables.
-The mass \pdf $B^m(m)$ is an exponential function, The angular \pdfs $B^{\TK}(\TK)$ and $B^{\TL}(\TL)$ are polynomials functions, ranging from second to forth degree depending on the $q^2$ bin, and $B^{\varphi}(\varphi)$ is a first-order polynomial function.
-The factorisation assumption of the background pdf in Equation~(\ref{eq:angALL}) is discussed in Section~\ref{sec:fact}.
+The four \pdfs $B^m(m)$, $B^{\TK}(\cTK)$, $B^{\TL}(\cTL)$, $B^{\PHI}(\PHI)$ describe the background in the space of the \PBz candidate invariant mass and the angular variables.
+The mass \pdf $B^m(m)$ is an exponential function, the angular \pdfs $B^{\TK}(\cTK)$ and $B^{\TL}(\cTL)$ are polynomials functions, ranging from second to fourth degree depending on the $q^2$ bin, and $B^{\PHI}(\PHI)$ is a first-order polynomial function.
+The factorisation assumption of the background \pdf in Equation~(\ref{eq:angALL}) is discussed in Section~\ref{sec:fact}.
 
 The three-dimensional functions $\epsilon^{C}(\TK,\TL,\varphi)$ and $\epsilon^{M}(\TK,\TL,\varphi)$ are the efficiencies for right-tagged and mis-tagged signal events, respectively.
 The construction of these functions has been described in Section~\ref{sec:eff}.
@@ -41,7 +41,7 @@ The construction of these functions has been described in Section~\ref{sec:eff}.
 %% Both the $\pi$ and $K$ mass hypothesis is considered for each of the two hadrons of the decay: the hypothesis with an invariant mass for the two-hadrons closer to the nominal $\PKst$ one is retained.
 
 %% As described in Section~\ref{sec:selection}, the CP-state of the candidate \PBz is affigned on the base of 
-The algorithm used to tag the CP-state of the \PBz candidate, described in Section~\ref{sec:selection}, has an intrinsic percentage of failure which is referred to as mistag fraction, $f^M_i$, defined as the ratio of mistagged signal events divided by the total number of signal events.
+The algorithm used to tag the CP-state of the \PBz candidate, described in Section~\ref{sec:selection}, has an intrinsic percentage of failure which is referred to as mistag fraction, $f^M$, defined as the ratio of mistagged signal events divided by the total number of signal events.
 The mistag fraction is determined from simulated events, comparing the results of the tag method to the MC truth, and by counting the number of correctly and wrongly tagged events.
 The resulting mistag fractions, for each $q^2$ bin, are shown in Table~\ref{tab:mistag}.
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,8 +71,8 @@ The resulting mistag fractions, for each $q^2$ bin, are shown in Table~\ref{tab:
 \end{table}
 
 The mistag fraction parameter is fixed in the fit to the values evaluated on MC simulation.
-Some eventual differences between simulated and real events could lead to a bias in the mistag fraction values used in the \pdf, that could propagate to a bias in the analysis results.
-The contribution of this effect to the systematic uncertainty, is discussed in Section~\ref{sec:sys-mistag}.
+Any differences between simulated and real events could lead to a bias in the mistag fraction values used in the \pdf, that could propagate to a bias in the analysis results.
+The contribution of this effect to the systematic uncertainty is discussed in Section~\ref{sec:sys-mistag}.
 
 \subsection{Background parameterisation}
 \label{sec:backg}
@@ -81,14 +81,14 @@ Several kind of background events can contaminate the dataset used for the fit.
 In this section I will present the studies performed to describe and evaluate the many sources of this contamination.
 
 The main contribution derives from the combinatorial background, i.e. events in which the four particles of the final state do not come from the same decay vertex.
-Since the four-body invariant mass distribution of these events does not have any structure, their contribution can be evaluated from the mass sidebands, and extrapolated to the full mass range.
+Since the four-body invariant mass distribution of these events does not show any structure, their contribution can be evaluated from the mass sidebands, and extrapolated to the full mass range.
 
 In addition, no correlation is expected between the four-body mass distribution and the angular variable distributions.
-This allows to estimate the shapes of the angular distributions on the sidebands, and consider them valid also to describe the combinatorial background contamination in the \PBz mass region.
+This allows to estimate the shapes of the angular distributions on the sidebands, and assume them valid also to describe the combinatorial background contamination in the \PBz mass region.
 
-The \pdf used to model the angular shape of this background is the product of three uncorrelated polynomial functions, $B^{\TK}(\TK) \, B^{\TL}(\TL) \, B^{\varphi}(\varphi)$.
+The \pdf used to model the angular shape of this background is the product of three uncorrelated polynomial functions, $B^{\TK}(\cTK) \, B^{\TL}(\cTL) \, B^{\PHI}(\PHI)$.
 The orders of the polynomial functions are chosen individually for each $q^2$ bin, in order to have them successfully describe any shape feature, while keeping the degrees of freedom as low as possible, to have a converging fit even with the low sideband statistics.
-The polynomial degrees used are listed in the Table~\ref{tab:back-degree}.
+The polynomial degrees that we use are listed in the Table~\ref{tab:back-degree}.
 
 \begin{table}[!htb]
   \begin{center}
@@ -96,7 +96,7 @@ The polynomial degrees used are listed in the Table~\ref{tab:back-degree}.
     \caption{Degree of the polynomial functions used to described the angular shape of the combinatorial background distributions, for each $q^2$ bin.
       \label{tab:back-degree}}
     \begin{tabular}{c|c|c|c}
-      $q^2$ bin & $B_i^{\cos\theta_\mathrm{K}}$ & $B_i^{\cos\theta_l}$ & $B_i^{\phi}$ \\
+      $q^2$ bin & $B^{\TK}$ & $B^{\TL}$ & $B^{\PHI}$ \\
       index & degree & degree & degree \\
       \hline
       0 & 3 & 2 & 1 \\
@@ -111,7 +111,7 @@ The polynomial degrees used are listed in the Table~\ref{tab:back-degree}.
   \end{center}
 \end{table}
 
-An example of the sideband event distributions, for $q^2$ bin~0, are plotted from Figure~\ref{fig:bin0-bkg-l} to Figure~\ref{fig:bin0-bkg-phi}, together with the projections of the combinatorial background \pdf on the angular variables, after the fit to the sideband distributions described in Section~\ref{sec:fitseq}.
+An example of the sideband event distributions, for $q^2$ bin~0, are plotted in Figure~\ref{fig:bin0-bkg-k}-\ref{fig:bin0-bkg-phi}, together with the projections of the combinatorial background \pdf on the angular variables, after the fit to the sideband distributions described in Section~\ref{sec:fitseq}.
 
 \begin{figure}[!hbt]
   \centering
@@ -130,7 +130,7 @@ An example of the sideband event distributions, for $q^2$ bin~0, are plotted fro
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/background/bin0-phi.pdf}
-  \caption{The sideband event distribution and the projection of the background \pdf as a function of $\phi$, for $q^2$ bin~0.}
+  \caption{The sideband event distribution and the projection of the background \pdf as a function of $\PHI$, for $q^2$ bin~0.}
   \label{fig:bin0-bkg-phi}
 \end{figure}
 
@@ -153,7 +153,7 @@ An example of the sideband event distributions, for $q^2$ bin~0, are plotted fro
 \subsection{Test of factorisable background hypothesis}
 \label{sec:fact}
 
-The correlation of the variable distributions for the combinatorial background events is tested and the results shown in this section.
+The result of a test on the correlation of the variable distributions for the combinatorial background events is shown in this section.
 
 For each angular variable, the mass-sideband sample has been divided in two sub-samples, cutting in the middle of the variable range.
 Then, the two sub-sample distributions as functions of the other variables are compared.
@@ -259,7 +259,7 @@ For some bins the low statistics don't allow to compare the distributions, but i
 
 Before applying the fit procedure on data, some parameters of the \pdf in Equation~\ref{eq:angALL} are estimated, for each $q^2$ bin, on the simulated signal MC sample and kept fixed for the full fitting process.
 These parameters are the mistag fraction $f^{M}$, as described in Section~\ref{sec:mistag}, and the seven parameters of the signal mass component of the \pdf: the two widths and the relative abundance for the double Gaussian describing the right-tagged events, the same for the double Gaussian describing the mis-tagged events, and the common mean.
-To take into account the effect of eventual difference between simulated and real events, some systematic uncertainties have been computed and will be described in Section~\ref{sec:syst}.
+To take into account the effect of any difference between simulated and real events, a specific systematic uncertainty have been computed and will be described in Section~\ref{sec:syst}.
 %% The PDF components whose parameters are determined with a MC simulaion are: $f^{M}$, $S^{C}(m)$, $S^{M}(m)$, $\epsilon^{C}(\TK,\theta_l,\phi)$ and $\epsilon^{M}(\TK,\theta_l,\phi)$, while all the remaining parameters are determined on data.
 
 The angular component of the signal \pdf, as described by Equation~(\ref{eq:PDF-f2}), depends on six  parameters, $F_\mathrm{L}$, $F_\mathrm{S}$, $A_\mathrm{S}$, $P_1$, $P_5'$, and $A^5_\mathrm{S}$.
@@ -283,12 +283,12 @@ The free parameters in this fit are the angular parameters $P_1$, $P_5'$, and $A
 %% In particular the PDF in Eq.~(\ref{eq:PDF}) is only guaranteed to be non-negative for a particular subset of the parameter space $P_1$, $P_5'$, and $A^5_\mathrm{S}$, whose mathematical expression is non trivial.
 This last fit cannot be run in a single step, since the presence of a physical boundary for the validity of the fitted parameters complicates the numerical maximisation process of the likelihood by \textsc{minuit}~\cite{Minuit}.
 Especially in the $q^2$ bins in which the likelihood maximum is close to this boundary, the maximisation results tend to be unstable and strongly dependent on the values of the parameters at the begin of the fit.
-Since this instability is unacceptable, a strategy was developed to avoid the effect of the physical boundary: the bi-dimensional space $P_1$ -- $P_5'$ is discretised by building a $90\times90$ rectangular grid, and for each of its points the values of $P_1$, $P_5'$ are fixed in the fit, and the likelihood is maximised as a function of the nuisance parameters $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
+A strategy was then developed to avoid the effect of the physical boundary: the bi-dimensional space $P_1$ -- $P_5'$ is discretised by building a $90\times90$ rectangular grid, and for each of its points the values of $P_1$, $P_5'$ are fixed in the fit, and the likelihood is maximised as a function of the nuisance parameters $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
 Once the likelihood has been minimised for each point of the grid, it is fit with a bi-variate Normal distribution.
 The position of the maximum of this function, limited to the physical region, corresponds to the best estimate of the angular parameters $P_1$, $P_5'$.
-To avoid that any eventual non-Gaussian behaviour of the likelihood distribution in regions far from the maximum could introduce a bias in the results, the fit with the bi-variate Normal distribution is limited to the grid points ($P_1^i$, $P_5'^i$) for which is valid the following request: $$\log\mathcal{L}(P_1^i,P_5'^i) > \log\mathcal{L}(P_1^{\mathrm{max}},P_5'^{\mathrm{max}}) - 0.5$$, where ($P_1^{\mathrm{max}}$, $P_5'^{\mathrm{max}}$) is the grid point for which the likelihood is maximum.
+To avoid that any eventual non-Gaussian behaviour of the likelihood distribution in regions far from the maximum could introduce a bias in the results, the fit with the bi-variate Normal distribution is limited to the grid points ($P_1^i$, $P_5'^i$) for which is valid the following request: $$\log\mathcal{L}(P_1^i,P_5'^i) > \log\mathcal{L}(P_1^{\mathrm{max}},P_5'^{\mathrm{max}}) - 0.5$$ where ($P_1^{\mathrm{max}}$, $P_5'^{\mathrm{max}}$) is the grid point for which the likelihood is maximum.
 In this way the grid points fitted are limited to a region around the maximum position.
-The dependence of the fit result as a function of the region width, was tested and is found to be negligible.
+The dependence of the fit result as a function of the region width, has been tested and found to be negligible.
 
 %% The presence of such a physical region greatly complicates the numerical maximisation process of the likelihood by \textsc{minuit}~\cite{Minuit} and especially the error determination by \textsc{minos}~\cite{Minuit}, in particular next to the boundary between physical and unphysical regions.
 %% Therefore the second fit step is performed by discretizing the bidimensional space $P_1$ -- $P_5'$, and by maximising the likelihood as a function of the nuisance parameters $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$ at fixed values of $P_1$, $P_5'$.
