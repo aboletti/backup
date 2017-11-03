@@ -28,7 +28,7 @@ The selection efficiency instead, is defined as:
 \end{equation}
 where
 \begin{itemize}
-    \item[$D_{reco}$] is the number of reconstructed events in the MC samples;
+    \item[$D_{reco}$] is the number of events in the MC samples that pass the GEN-filter and on which the reconstruction is run;
     \item[$N_{reco}$] is the number of reconstructed events passing all selection cuts defined in Sec.~\ref{sec:selection};
 \end{itemize}
 
@@ -50,7 +50,7 @@ The classification of an event as wrong or correct tagged is defined by comparin
 
 %% It is important to stress that the absolute value of the efficiency is not important for the \pdf fit, but only the shape as a function of the angular observables.
 
-Since the \TK and \TK variables are defined in the range $[0,\pi]$, there is no loss in information in building the efficiency as a function of \TK, \TL and \PHI, or as a function of \cTK, \cTL and \PHI. Since this second choice leads to slightly more smooth functions, it has been chosen for the construction of the efficiency. 
+Since the \TK and \TL variables are defined in the range $[0,\pi]$, there is no loss in information in building the efficiency as a function of \TK, \TL and \PHI, or as a function of \cTK, \cTL and \PHI. Since this second choice leads to slightly more smooth functions, it has been chosen for the construction of the efficiency. 
 
 \section{Parameterisation}\label{sec:eff_param}
 
@@ -78,9 +78,9 @@ To model the efficiency correlation between each couple of parameters, three fun
 The final three dimensional efficiency is then defined as the product of the three two dimensional ones.
 In formula:
 \begin{equation}\label{eq:eff2d}
-    \epsilon(\cTL,\cTK,\phi)=\epsilon(\cTL,\cTK)\times\epsilon(\cTL,\phi)\times\epsilon(\cTK,\phi)
+    \epsilon(\cTL,\cTK,\phi)=F\times\epsilon(\cTL,\cTK)\times\epsilon(\cTL,\phi)\times\epsilon(\cTK,\phi)
 \end{equation}
-The final function results not correctly normalised and was rescaled in such a way that the global efficiency, averaged over all the angular variables, matches the simple ratio of the number of events in the numerator and denominator distributions.
+Since the product of the three functions results not correctly normalised, it is rescaled by a factor $F$, in such a way that the global efficiency, averaged over all the angular variables, matches the simple ratio of the number of events in the numerator and denominator distributions.
 
 This approach has the advantage to reduce the three-dimensional problem to three two-dimensional ones, easier to deal with and less prone to lack of statistics.
 The correlation among the three angular variables are taken into account by the final product.
@@ -101,24 +101,24 @@ An example of the two dimension binned efficiencies after a linear interpolation
 \subsection{Kernel Density Estimator method}\label{sec:eff_kde}
 The second approach uses a non-parametric description of the efficiency based on a Kernel Density Estimator (KDE)~\cite{opac-b1089297,Cranmer:2000du}.
 
-The general idea behind this method, in its simplest form for a uni-dimensional problem, is to start from an unbinned distribution of events as a function of a given variable $x$, and describe its true distribution \pdf$_{TRUE}$ by building a kernel, namely a function $K(x)$ with unitary integral over the range of definition of $x$, on top of every event, and use the sum of all kernels, with proper normalisation, as a non-parametric description of \pdf$_{TRUE}$:
+The general idea behind this method, in its simplest form for a uni-dimensional problem, is to start from an unbinned distribution of events as a function of a given variable $x$, and describe its true distribution \pdftrue by building a kernel, namely a function $K(x)$ with unitary integral over the range of definition of $x$, on top of every event, and use the sum of all kernels, with proper normalisation, as a non-parametric description of \pdftrue:
 \begin{equation}\label{eq:KDE}
-    \mathtt{pdf}_{KDE}(x)=\frac{1}{N}\sum_{i=1}^{N} K(x-x_i)
+    \pdfKDEx=\frac{1}{N}\sum_{i=1}^{N} K(x-x_i)
 \end{equation}
 where $i$ is an index running over the set of events and $N$ is the total number of events.
 The kernel $K(x)$ can be any non-negative function with unitary integral, and can be of different type; some common examples are uniform, triangular, or Gaussian kernels.
 A remarkable property of the KDE technique is that the quality of the PDF description depends rather weakly on the kernel used.
-The resulting $\mathtt{pdf}_{KDE}(x)$ in the limit $N\to\infty$ is a convolution of \pdf$_{TRUE}$ with the kernel $K(x)$.
-In this analysis, we decided to use a Gaussian kernel, because of its ability to produce a smooth \pdf even in region where a low event statistics is available.
+The resulting \pdfKDEx in the limit $N\to\infty$ is a convolution of \pdftrue with the kernel $K(x)$.
+In this analysis, we decided to use a Gaussian kernel, because of its ability to produce a smooth \pdf even in regions where a low event statistics is available.
 
 The KDE method can be extended to multi-dimensional problems, building a \pdf as a function of a set of $n$ variables $x_1,\ldots,x_n)$.
 In this case, the kernel used should be $n$-dimensional as well.
 
 An implementation of KDE method using a Gaussian kernel is available, for both the uni-dimensional and the multi-dimensional application, within the {\sc RooFit} package~\cite{RooFit}.
 
-The advantage of the KDE over a parametric description is that no prior assumption on the actual \pdf$_{TRUE}$ is needed, and the structure of the original \pdf is described as accurately as the statistics allow.
+The advantage of the KDE over a parametric description is that no prior assumption on the actual \pdftrue is needed, and the structure of the original \pdf is described as accurately as the statistics allow.
 The last point is particularly relevant in the case under study, since in spite of the large statistics of events in the MC samples used to compute the efficiency, the phase space is very large, given the number of variables considered for the efficiency description.
-A disadvantage is that an unbinned distribution of event is needed, so it is not possible to use the KDE method directly on the efficiency, which is binned by construction, but it needs to be used on the numerator and denominator distributions, and then the efficiency will be defined through the ratios of these \pdfs.
+A disadvantage is that an unbinned distribution of events is needed, so it is not possible to use the KDE method directly on the efficiency, which is binned by construction, but it needs to be used on the numerator and denominator distributions, and then the efficiency will be defined through the ratios of these \pdfs.
 
 The efficiency at the observable boundaries is not expected to be null, especially for \PHI, given its periodic nature. 
 In such cases, the kernel estimator would introduce a significant decreasing of the \pdf, since it would behave, close to the border, like a convolution between a step function and a Gaussian function.
@@ -127,7 +127,7 @@ It means that, for any Gaussian function added for a data point next to a bounda
 
 Even if the KDE with Gaussian kernel is a non-parametric method, the values of the widths and correlation terms of the multi-dimensional kernel need to be determined.
 For simplicity, the correlation terms are kept equal to zero; the usage of these terms could be useful when the distribution to model shows a strong correlation between two or more of its variables, but it is not the case for these numerator and denominator distributions.
-The {\sc RooFit} class used to build the $\mathtt{pdf}_{KDE}$ uses a set of standard values for the width parameters, determined as a function of the variables range of definition.
+The {\sc RooFit} class used to build the \pdfKDE uses a set of standard values for the width parameters, determined as a function of the variables range of definition.
 An allowed tuning is the definition of an global scale factor, applied to the whole set of width parameters.
 On one hand, a wide kernel is less sensitive to the limited statistic of the data sample and allows to produce smoother \pdfs.
 On the other hand, a narrow kernel reproduces in a more accurate way the fine structures of the original distribution, especially when this distribution is steep.
@@ -142,9 +142,9 @@ Several width scale factors (1.0, 0.5, 0.3) have been tested and the choice of t
 %% test of the fixed width approach are good~\ref{sec:closure}, the adaptive
 %% approach has been disregarded.
 
-The procedure used to obtain the efficiency function is to use the KDE method on each of the four distributions ($N_{gen}, D_{gen}, N_{reco}, D_{reco}$) used in Equation~\ref{eq:eff}, to normalise each of the resulting \pdfs to the number of events in the original distributions, and then combine the four functions into final efficiency.
+The procedure used to obtain the efficiency function is to use the KDE method on each of the four distributions ($N_{gen}, D_{gen}, N_{reco}, D_{reco}$) used in Equation~\ref{eq:eff}, normalise each of the resulting \pdfs to the number of events in the original distributions, and then combine the four functions into final efficiency.
 For technical reason, it is not possible, in ROOT, to save the output of a multidimensional KDE \pdf into an output file and the time consumption to create the efficiency function, starting from the MC event distributions, any time the fit procedure is run is too large.
-For this reason, it was decided to save a binned distribution obtained from the sampling of the KDE \pdfs: numerator and denominator functions, obtained via the KDE algorithm, have been sampled into a three dimensional histogram, with $40\times40\times40$ bins, then the four histograms are combined in a binned efficiency function, which is finally saved in the output file.
+For this reason, it was decided to save a binned distribution obtained from the sampling of the KDE \pdfs: numerator and denominator functions, obtained via the KDE algorithm, have been sampled into a three dimensional histogram, with $40\times40\times40$ bins, then the four histograms were combined with a bin-per-bin application of Equation~\ref{eq:eff} in an efficiency function, which has been finally saved in the output file.
 %% The sampling to a 3D histogram is a workaround for this deficiency.
 The granularity of the bins have been chosen as a compromise between the fine structure of the efficiency distribution and computing time needed to perform the \pdf sampling.
 
@@ -352,21 +352,21 @@ The equality to test is the following:
 The closure test has been performed for any efficiency function produced: for each $q^2$ bin, separately for right (R) and mis-tag (M), and for signal and control samples.
 
 An example of the closure test results of the first method efficiencies, as described in Section~\ref{eff_2Dprod}, is shown, for right-tagged events in $q^2$ bin~1, for the linear interpolation in Fig.~\ref{fig:clEff2Dlin}, and for the parabolic interpolation in Fig.~\ref{fig:clEff2Dpar}.
-The result quality for the linearly-interpolated efficiency is decent, but does not follow very well the original distribution where is very steep and introduce a \PHI dependence where none is present.
+The result quality for the linearly-interpolated efficiency does not follow very well the original distribution where it is very steep and it introduces a \PHI dependence where none is present.
 The quality improvement due to the second-order interpolation is not enough to have an accurate description of the shape in the \cTK projection and the modulation against \PHI is still present.
 An improvement to this technique could come from an increase in the number of bins used to build the two-dimensional components of the efficiency, but the available statistics of the MC samples, especially for the mis-tagged events, prevent to go further with this.
 
 \begin{figure}[hbt]
     \includegraphics[width=.66\textwidth,trim={0 280 0 0},clip]{Plot/Closure2D_lin.pdf}
     \includegraphics[width=.33\textwidth,trim={0 0 280 280},clip]{Plot/Closure2D_lin.pdf}
-    \caption{Comparison of the reconstructed and selected MC event distributions (dots) with generated event distributions weighted with the efficiency, parameterised as in Equation~\ref{eq:eff2d} with linear interpolation of the two-dimension efficiency functions. Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~1.}
+    \caption{Comparison of the reconstructed and selected MC event distributions (histogram) with generated event distributions (dots) weighted with the efficiency, parameterised as in Equation~\ref{eq:eff2d} with linear interpolation of the two-dimension efficiency functions. Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~1.}
     \label{fig:clEff2Dlin}
 \end{figure}
 
 \begin{figure}[hbt]
     \includegraphics[width=.66\textwidth,trim={0 280 0 0},clip]{Plot/Closure2D_par.pdf}
     \includegraphics[width=.33\textwidth,trim={0 0 280 280},clip]{Plot/Closure2D_par.pdf}
-    \caption{Comparison of the reconstructed and selected MC event distributions (dots) with generated event distributions weighted with the efficiency, parameterised as in Equation~\ref{eq:eff2d} with parabolic interpolation of the two-dimension efficiency functions. Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~1.}
+    \caption{Comparison of the reconstructed and selected MC event distributions (histogram) with generated event distributions (dots) weighted with the efficiency, parameterised as in Equation~\ref{eq:eff2d} with parabolic interpolation of the two-dimension efficiency functions. Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~1.}
     \label{fig:clEff2Dpar}
 \end{figure}
 
@@ -378,7 +378,7 @@ On the other hand, a small width tends to create fine structures due to statisti
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin1width10.pdf}
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin1width05.pdf}
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin1width03.pdf}
-    \caption{Comparison of the reconstructed and selected MC event distributions (dots) with generated event distributions weighted with the efficiency, built through the KDE method, with width scale factor set to 1.0 (top), 0.5 (middle), and 0.3 (bottom). Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~0.}
+    \caption{Comparison of the reconstructed and selected MC event distributions (histogram) with generated event distributions (dots) weighted with the efficiency, built through the KDE method, with width scale factor set to 1.0 (top), 0.5 (middle), and 0.3 (bottom). Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~0.}
     \label{fig:clKDEwidthBin1}
 \end{figure}
 
@@ -386,11 +386,19 @@ On the other hand, a small width tends to create fine structures due to statisti
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin8width10.pdf}
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin8width05.pdf}
     \includegraphics[width=1.\textwidth]{Plot/closureKDEBin8width03.pdf}
-    \caption{Comparison of the reconstructed and selected MC event distributions (dots) with generated event distributions weighted with the efficiency, built through the KDE method, with width scale factor set to 1.0 (top), 0.5 (middle), and 0.3 (bottom). Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~7.}
+    \caption{Comparison of the reconstructed and selected MC event distributions (histogram) with generated event distributions (dots) weighted with the efficiency, built through the KDE method, with width scale factor set to 1.0 (top), 0.5 (middle), and 0.3 (bottom). Both the distributions and the efficiency refer to right-tagged events in $q^2$ bin~7.}
     \label{fig:clKDEwidthBin8}
 \end{figure}
 
 From the overall results of the closure test, the optimal parameterisation for this analysis in the KDE method. The width scale factor is chosen to be 0.5 for the efficiency for right-tagged events, while the scale factor of 1.0 was found to be optimal for the efficiency of mis-tagged events, for which less statistic is available in the MC samples.
+An example of the closure test results for mis-tagged events is shown in Fig.~\ref{fig:clKDEmistag}, for $q^2$ bin~0 and $q^2$ bin~7.
+
+\begin{figure}[hbt]
+    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin1.pdf}
+    \includegraphics[width=1.\textwidth]{Plot/closureTest8_WT_sgn_bin8.pdf}
+    \caption{Comparison of the reconstructed and selected MC event distributions (histogram) with generated event distributions (dots) weighted with the efficiency, built through the KDE method. Both the distributions and the efficiency refer to mis-tagged events in $q^2$ bin~0 (top) and in $q^2$ bin~0 (bottom).}
+    \label{fig:clKDEmistag}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%
 
