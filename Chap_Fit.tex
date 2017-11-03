@@ -10,8 +10,8 @@ In the following sections I will give a detailed description of the probability 
 The probability density function (\pdf) used in the fit has the following expression:
 \begin{equation} \label{eq:angALL}
   \begin{split}
-    \mathrm{pdf}(m,\TK,\TL,\varphi) & = Y^{C}_{S} \biggl[ S^{C}(m)  \, S^a(\TK,\TL,\varphi) \, \epsilon^{C}(\TK,\TL,\varphi) \biggr. \\
-      & \biggl. + \frac{f^{M}}{1-f^{M}}~S^{M}(m) \, S^a(-\TK,-\TL,\varphi) \, \epsilon^{M}(\TK,\TL,\varphi) \biggr] \\
+    \mathrm{pdf}(m,\TK,\TL,\PHI) & = Y^{C}_{S} \biggl[ S^{C}(m)  \, S^a(\TK,\TL,\PHI) \, \epsilon^{C}(\TK,\TL,\PHI) \biggr. \\
+      & \biggl. + \frac{f^{M}}{1-f^{M}}~S^{M}(m) \, S^a(-\TK,-\TL,\PHI) \, \epsilon^{M}(\TK,\TL,\PHI) \biggr] \\
     & + Y_{B}\,B^m(m) \, B^{\TK}(\cTK) \, B^{\TL}(\cTL) \, B^{\PHI}(\PHI), \\
   \end{split}
 \end{equation}
@@ -22,13 +22,13 @@ The parameters $Y^{C}_{S}$ and $Y_{B}$ are the yields of right-tagged signal eve
 The functions $S^{C}(m)$ and $S^{M}(m)$ are the signal \PBz-mass \pdfs, for right-tagged and mis-tagged signal events, respectively.
 Each of them is composed as the sum of two Gaussian functions, with a common mean for all four Gaussian functions.
 %% In the fit, the mean, the four Gaussian function's width parameters, and the two fractions specifying the relative contribution of the two Gaussian functions in $S^{C}(m)$ and $S^{M}(m)$ are determined from simulation.
-%% The function $S^a(\TK,\TL,\varphi)$ describes the signal in the three-dimensional (3D) space of the angular variables and corresponds to Eq.~(\ref{eq:PDF}).
+%% The function $S^a(\TK,\TL,\PHI)$ describes the signal in the three-dimensional (3D) space of the angular variables and corresponds to Eq.~(\ref{eq:PDF}).
 
 The four \pdfs $B^m(m)$, $B^{\TK}(\cTK)$, $B^{\TL}(\cTL)$, $B^{\PHI}(\PHI)$ describe the background in the space of the \PBz candidate invariant mass and the angular variables.
 The mass \pdf $B^m(m)$ is an exponential function, the angular \pdfs $B^{\TK}(\cTK)$ and $B^{\TL}(\cTL)$ are polynomials functions, ranging from second to fourth degree depending on the $q^2$ bin, and $B^{\PHI}(\PHI)$ is a first-order polynomial function.
 The factorisation assumption of the background \pdf in Equation~(\ref{eq:angALL}) is discussed in Section~\ref{sec:fact}.
 
-The three-dimensional functions $\epsilon^{C}(\TK,\TL,\varphi)$ and $\epsilon^{M}(\TK,\TL,\varphi)$ are the efficiencies for right-tagged and mis-tagged signal events, respectively.
+The three-dimensional functions $\epsilon^{C}(\TK,\TL,\PHI)$ and $\epsilon^{M}(\TK,\TL,\PHI)$ are the efficiencies for right-tagged and mis-tagged signal events, respectively.
 The construction of these functions has been described in Section~\ref{sec:eff}.
 
 \subsection{Fraction of mis-tagged signal events}
@@ -51,7 +51,7 @@ The resulting mistag fractions, for each $q^2$ bin, are shown in Table~\ref{tab:
     %% \begin{small}
       \caption{Mistag fraction as determined from simulated MC samples, for each $q^2$ bin.
         The values in $q^2$ bins 4 and 6 are evaluated on \BtoKstJpsimumu and \BtoKstpsipmumu MC samples, respectively. For the other $q^2$ bins the values are evaluated on signal MC sample.
-        \label{tab:Mis tag fraction}}
+        \label{tab:mistag}}
       \begin{tabular}{c|l|l}
         $q^2$ bin & Mistag fraction & Statistical \\
         index     & $f^M$           & uncertainty \\
