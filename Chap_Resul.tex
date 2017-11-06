@@ -34,7 +34,7 @@ In this thesis, only the {\tt Feldman-Cousins} approach is described.
 The approach used for the computation of statistical uncertainties, strongly suggested by the CMS Statistical Committee, is to apply the Feldman-Cousins method~\cite{FC} with nuisance parameters.
 Given the enormous time that would be needed to build a full bi-dimensional confidence interval in the $P_1$-$P_5'$ parameter space, we decided to perform the F-C procedure only along the maximum of the profile along $P_1$ and $P'_5$, respectively, of the $\mathcal{L}$ distribution, and extract two mono-dimensional confidence intervals.
 
-We consider the $\mathcal{L}$ distribution build fitting the data, as described in Section~\ref{sec:fitseq}, and look for the maximum of that distribution along one variable, while the other is fixed.
+We consider the $\mathcal{L}$ distribution built fitting the data, as described in Section~\ref{sec:fitseq}, and look for the maximum of that distribution along one variable, while the other one is fixed.
 In general, an evaluation of the likelihood is not available for all the points in the scan of the $P_1,~P'_5$ plane, since, for some $P_1,~P'_5$ points, the fit is not converging.
 Thus, building the profiles of the likelihood just looking for the maximum among the valid points leads often to unstable results.
 So, we perform a bivariate Gaussian fit to the $\mathcal{L}$ points available, similar to the one used to estimate the best-fit values of the parameters, and take the two profiles of the fitted function, instead.
@@ -74,11 +74,11 @@ For each of the point in the scan of the $P_1,~P'_5$ plane defined above, therea
 
 Each toy is fitted with a procedure identical to that used for the data, the only difference is that instead of evaluating the likelihood on a $90\times90$ grid in the $P_1,~P'_5$ plane, only 20 points are scanned, in order to reduce the time needed to perform the whole procedure.
 These 20 points are chosen randomly, according to a bivariate Gaussian, around a central value.
-The width of the Gaussian is that returned by the fit on the data on the bin under consideration, while correlation is not considered.
+The width of the Gaussian is the one returned by the fit on the data on the bin under consideration, while correlation is not considered.
 The central value is the result of a fit on the toy with $P_1,~P'_5$ free to float, or, if the fit does not converge, the GEN-point itself.
 If one of these points falls outside the physical boundary, it is discarded and an additional point is generated to replace it.
 The $\mathcal{L}$ is evaluated in these 20 points and it is finally fitted with a bivariate Gaussian.
-An example of such a fit is on fig.~\ref{fig:ExampleFC}.
+An example of such a fit is shown in Figure~\ref{fig:ExampleFC}.
 
 Eventually, for each toy of any GEN-point, a determination of the $\mathcal{L}$ function is available.
 In order to check if the GEN-point is inside or outside the $68\%$ CL region, we compare the $\Delta\log\mathcal{L}$ of the toys with the one of the data.
@@ -95,10 +95,10 @@ An example of this comparison is shown in fig.~\ref{fig:ExampleFC}.
 
 \begin{figure}[hbt]
   \centering
-  \includegraphics[width=0.45\textwidth]{Figures/FC/FitGaus2D_Bin7_Reg0_GP3069_Toy7.png}
-  \includegraphics[width=0.54\textwidth]{Figures/FC/histo_GP3084_7_0.pdf}
-  \caption{An example of a bivariate fit on the 20 scan points for one GEN-point (left).
-    Distribution of the $\Delta\log\mathcal{L}$ values for the 100 toys for one GEN-point and comparison with $\Delta\log\mathcal{L}$ for data, computed for that GEN-point (right).}
+  \includegraphics[width=0.9\textwidth]{Figures/FC/FitGaus2D_Bin7_Reg0_GP3069_Toy7.png}\\
+  \includegraphics[width=\textwidth]{Figures/FC/histo_GP3084_7_0.pdf}
+  \caption{An example of a bivariate fit on the 20 scan points for one GEN-point (top).
+    Distribution of the $\Delta\log\mathcal{L}$ values for the 100 toys for one GEN-point and comparison with $\Delta\log\mathcal{L}$ for data, computed for that GEN-point (bottom).}
   \label{fig:ExampleFC}
 \end{figure}
 
@@ -127,7 +127,7 @@ The intervals, as well as the central values, are summarised in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b0_reg3_v0.pdf}
 
   \caption{F-C results for bin 0.
-    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue ones are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -145,7 +145,7 @@ The intervals, as well as the central values, are summarised in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b1_reg3_v0.pdf}
 
   \caption{F-C results for bin 1.
-    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue ones are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -163,7 +163,7 @@ The intervals, as well as the central values, are summarised in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b2_reg3_v0.pdf}
 
   \caption{F-C results for bin 2.
-    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue ones are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -181,7 +181,7 @@ The intervals, as well as the central values, are summarised in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b3_reg3_v0.pdf}
 
   \caption{F-C results for bin 3.
-    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue ones are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -199,7 +199,7 @@ The intervals, as well as the central values, are summarised in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b5_reg3_v0.pdf}
 
   \caption{F-C results for bin 5.
-    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue ones are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -217,7 +217,7 @@ The intervals, as well as the central values, are summarised in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b7_reg3_v0.pdf}
 
   \caption{F-C results for bin 7.
-    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue ones are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -235,7 +235,7 @@ The intervals, as well as the central values, are summarised in table~\ref{tab:F
   \includegraphics[width=0.4\textwidth]{Figures/FC/scanFC_1d_b8_reg3_v0.pdf}
 
   \caption{F-C results for bin 8.
-    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue one are inside.
+    Scan of the GEN-points, superimposed to data $\mathcal{L}$ distribution: red points are outside the 68\% CL region, the blue ones are inside.
     The blue lines defines the $\pm1\sigma$ region (top).
     Ratio distribution as a function of $P_1$ for lower and upper bounds, with linear fit and 68\% horizontal line (middle left, right).
     Likewise for $P'_5$ (bottom).}
@@ -338,9 +338,8 @@ where $x=P_1$, $y=P'_5$ etc. The $\rho$ parameter in Equation~\ref{eq:bivariateG
 The results of the fit on data are summarised in Table~\ref{tab:dataresult}.
 %% The \pdf we use for the final fit, once the two folding have been applied, has 2 physical parameters, $P1$, $P_5'$, which are the results of this analysis.
 %% Other nuisance parameter, left free to float in the fit, are $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
-
-The table presents results for all five parameters that was floating in the fit, both the analysis targets, $P1$ and $P_5'$, and the nuisance, $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
-The errors reported are those from the FC procedure for $P1$, $P_5'$, while are those returned by MINOS for the other three.
+The table presents results for all five parameters that were floating in the fit, both the analysis targets, $P1$ and $P_5'$, and the nuisance, $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
+The errors reported for $P1$ and $P_5'$ are obtained from the FC procedure, while the errors returned by MINOS are quoted for the other three parameters.
 
 
 \begin{table*}[!htb]
@@ -381,8 +380,9 @@ We also put the latest LHCb results~\cite{LHCbP5p} on the plots for comparison, 
 \begin{figure}[!hbtp]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/DATAFit/As5.pdf}
-  \caption{The fitting results of the target physics observables.
-    The results for $AS5$ are shown.}
+  \caption{Fit results of the $A^5_\mathrm{S}$ angular parameter versus $q^2$.
+    Only the statistical uncertainties are shown.
+    The vertical shaded regions correspond to the \cPJgy\ and $\psi'$ resonances.
   \label{fig:fitresultAs5}
 \end{figure}
 
@@ -411,7 +411,7 @@ We also put the latest LHCb results~\cite{LHCbP5p} on the plots for comparison, 
 
 \subsubsection{Validation of the yield results}\label{sec:yieldComp}
 
-The yield of signal and background events per each bin is compared with the previous CMS analysis~\cite{AN-14-129}, which is base on the same dataset, on Table~\ref{tab:yieldComp}.
+The yield of signal and background events in each $q^2$ bin is compared with the previous CMS analysis~\cite{AN-14-129}, which used the same dataset, on Table~\ref{tab:yieldComp}.
 
 \begin{table*}[!htb]
   \begin{center}
@@ -450,7 +450,7 @@ The results of detailed distributions in each $q^2$ bin, together with the proje
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_0_Canv0.pdf}
   \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~0.
-    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
+    The data distribution and \pdf projections are shown as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin0}
 \end{figure}
 
@@ -458,7 +458,7 @@ The results of detailed distributions in each $q^2$ bin, together with the proje
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_1_Canv0.pdf}
   \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~1.
-    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
+    The data distribution and \pdf projections are shown as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin1}
 \end{figure}
 
@@ -467,7 +467,7 @@ The results of detailed distributions in each $q^2$ bin, together with the proje
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_2_Canv0.pdf}
   \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~2.
-    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
+    The data distribution and \pdf projections are shown as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin2}
 \end{figure}
 
@@ -475,7 +475,7 @@ The results of detailed distributions in each $q^2$ bin, together with the proje
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_3_Canv0.pdf}
   \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~3.
-    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
+    The data distribution and \pdf projections are shown as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin3}
 \end{figure}
 
@@ -483,7 +483,7 @@ The results of detailed distributions in each $q^2$ bin, together with the proje
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_5_Canv0.pdf}
   \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~5.
-    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
+    The data distribution and \pdf projections are shown as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin5}
 \end{figure}
 
@@ -491,7 +491,7 @@ The results of detailed distributions in each $q^2$ bin, together with the proje
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_7_Canv0.pdf}
   \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~7.
-    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
+    The data distribution and \pdf projections are shown as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin7}
 \end{figure}
 
@@ -499,6 +499,6 @@ The results of detailed distributions in each $q^2$ bin, together with the proje
   \centering
   \includegraphics[width=0.8\textwidth]{Figures/DATAFit/TotalPDFq2Bin_8_Canv0.pdf}
   \caption{Data distributions (black points) and the projections of the fitted \pdf (black curves), of its signal right-tagged component (blue curves), of its signal mis-tagged component (green curves), and of its background component (red curves), for $q^2$ bin~8.
-    The data distribution and \pdf projections are show as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
+    The data distribution and \pdf projections are shown as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin8}
 \end{figure}
