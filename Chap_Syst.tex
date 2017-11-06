@@ -347,6 +347,54 @@ The resulting uncertainties are summarised in the Table~\ref{tab:bkg. shape}.
   \end{center}
 \end{table*}
 
+\paragraph{Partially reconstructed background}
+\label{sec:partRecoBkg}
+
+%% The low-mass sideband might be affected by background events that have a different origin with respect to the combinatorial background that characterizes the signal region, e.g. partially reconstructed multibody \PB decays.
+%% We address this possible background contamination in Section~\ref{sec:Systematics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%5 Note appendix
+Since the lower sideband in the candidate $\PBz$ mass has a value range starting at about $5 \GeV$, it can contain a contamination from partially reconstructed events, i.e. events in which a $\PBz$ meson decays in a final state with more than four detectable particles and the candidate $\PBz$ is built using only four of them.
+The kinematic end-point for this kind of events is between $5.1\GeV$ and $5.15\GeV$.
+Since the angular distribution of these background events is expected to be different with respect to the distribution of the combinatorial background, a contamination of the lower sideband would bias the fit of the background parameters of the \pdf, estimated in the first step of the fit, according to the fit sequence described in Section~\ref{sec:fitseq}.
+Then, the biased background \pdf is used in the second step of the fit, even though under the resonance there is no contamination, and the fitted values of $P_1$ and $P^\prime_5$ can be affected.
+
+In order to check whether an eventual contamination has introduced a significant bias in the fitted values of $P_1$ and $P^\prime_5$, the two steps of the fit are repeated, but with the range of the low-mass sideband starting at about $5.1 \GeV$ (exactly $1 \GeV$ more narrow than the original sideband), and the results of the $P_1$ and $P^\prime_5$ parameters are compared with the original fit.
+A natural difference in these results can derive from the statistical fluctuation due to the use of a sub-sample of the original dataset.
+For this reason, the differences observed in this test are compared with the values of the \textit{Background Distribution} systematic uncertainty.
+
+The results of the fits with the reduced sideband are reported in Table~\ref{tab:red-sideband}, together with their absolute difference with respect to the original results.
+The values of the \textit{Background Distribution} systematic uncertainty are reported in this table as well.
+
+In the table are highlighted the differences that exceed twice the value of the systematic uncertainty.
+Globally, the differences are considered compatible with the systematics uncertainty.
+In the few bins with a larger difference, the results of the fit with reduced sidebands are affected by the very low statistics left in the sideband region.
+The worst case is bin 7, where the sideband reduction remove about 75\% of the background events.
+
+\begin{table*}[htb]
+  \caption{Results of the fits with the reduced sideband and their absolute difference with respect to the results with the full sideband, as described in Section~\ref{sec:partRecoBkg}.
+    The values of the \textit{Background Distribution} systematics, as described in Section~\ref{sec:sys-bkg}, are reported here for comparison sake.\label{tab:red-sideband}}
+          {\small
+            \begin{center}
+              \begin{tabular}{l|ccc|ccc}
+                $q^2$ bin & \multicolumn{3}{c}{$P_1$} & \multicolumn{3}{c}{$P'_5$} \\
+                index & result & difference & syst & result & difference & syst \\
+                \hline
+                0 &  0.124 & 0.005 & 0.013 &  0.077 &*0.024*& 0.010 \\
+                1 & -0.675 & 0.010 & 0.031 & -0.541 & 0.026 & 0.024 \\
+                2 &  0.505 & 0.028 & 0.046 & -0.888 &*0.069*& 0.030 \\
+                3 & -0.457 & 0.013 & 0.022 & -0.689 &*0.046*& 0.013 \\
+                5 & -0.490 & 0.041 & 0.070 & -0.714 & 0.024 & 0.049 \\
+                7 & -0.502 &*0.173*& 0.069 & -0.705 & 0.069 & 0.051 \\
+                8 & -0.520 & 0.013 & 0.012 & -0.565 & 0.006 & 0.015 \\
+              \end{tabular}
+            \end{center}
+          }
+\end{table*}
+
+%%%%%%%%%%%%%%%%%%55
+
+
 \subsection{Mass Distribution}
 \label{sec:sys-mass distribution}
 
@@ -574,7 +622,7 @@ Finally, the likelihood distribution is fitted with a bivariate normal distribut
 
 In order to check the stability of the fit, as well as any possible systematics due to the procedure, the angular parameters are evaluated varying the fit range.
 The range of the fit is defined as $\pm1\sigma$ (as computed by the FC procedure described in Section~\ref{sec:statUncert}), multiplied by a scale factor (in the range $[0.1,2]$), around the centre defined as the value of $P_1$ or $P'_5$, among the points of the grid defined in Section~\ref{sec:fitseq}, where the likelihood has an absolute maximum.
-So, for instance, a scale factor of $1.5$ means that the fit range will be $[P_1-1.5\sigma,P_1+1.5\sigma]$, and so on.
+%% So, for instance, a scale factor of $1.5$ means that the fit range will be $[P_1-1.5\sigma,P_1+1.5\sigma]$, and so on.
 
 An example of the results of these scans is shown in Figure~\ref{fig:gausFitRange}, for $q^2$ bin~3.
 To give an element of comparison, the $y$-axis range in the plots of the results is set equal to the confidence interval, as computed by the FC procedure described in Section~\ref{sec:statUncert}. 
@@ -667,7 +715,7 @@ The summary of all systematic uncertainties are shown in Table~\ref{tab:systemat
     Fit bias                     &   5--78   &  10--120 \\[1pt]
     Finite size of simulated samples  &  29--73   &  31--110 \\[1pt]
     Efficiency                   &  17--100  &   5--65  \\[1pt]
-    $\PK\pi$ mistagging          &   8--110  &   6--66  \\[1pt]
+    $\textrm{K}\pi$ mistagging   &   8--110  &   6--66  \\[1pt]
     Background distribution      &  12--70   &  10--51  \\[1pt]
     %Partially reconstruced \PBz  &   ?--?    &   ?--?   \\[1pt]
     Mass distribution            &      12   &      19  \\[1pt]

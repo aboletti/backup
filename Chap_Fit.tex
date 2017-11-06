@@ -135,20 +135,32 @@ An example of the sideband event distributions, for $q^2$ bin~0, are plotted in 
 \end{figure}
 
 %%%%%%%%%%%%%%555
-%% Using simulation, we search for possible backgrounds that might peak in the \PBz\ mass region.
-%% The event selection is applied to inclusive MC samples of \PBz, \PBs, \PBp, and $\Lambda_{\rm b}$ decays to \cPJgy\ X and $\psi'$ X, where X denotes all possible SM particles required to complete the known exclusive decay channels, and with the \cPJgy\ and $\psi'$ decaying to \Pgmp \Pgmm.
-%% No evidence for a peaking structure near the \PBz\ mass is found.
-%% The distributions of the few events that satisfy the selection criteria are similar to the shape of the combinatorial background.
-%% As an additional check, we generate events with $\PBs \to \cPKstz({\rm K}^+ \pi^-) \Pgmp \Pgmm$ decays, using the same branching fraction as for $\PBz \to \cPKstz({\rm K}^+ \pi^-)$ $\Pgmp \Pgmm$.
-%% About 70 such events, integrated over $q^2$, are found to cluster near the \PBs\ mass.
-%% This background is considered negligible since it should be rescaled by the ratio of branching fractions $\mathcal{B}(\PBs \to \cPJgy \cPKstz) / \mathcal{B}(\BtoKstJpsi) \approx 10^{-2}$~\cite{PDG}.
-%% Possible backgrounds from events with hadrons misidentified as muons or with muons misidentified as hadrons, \eg, from random \PD\ mesons associated with random stable charged hadrons or from $\PBz \to \PD {\rm X}$ or $\PBz \to {\rm J}/\psi {\rm K}^*$ decays, are considered negligible because of the good muon identification capabilities of the CMS detector~\cite{Chatrchyan:2012xi}.
-%% We also investigated possible background from events in which a $\PBp \to \PKp \Pgmp \Pgmm$ decay is combined with a random pion, and from events with a $\Lambda_b \to \Pp \PK \Pgmp \Pgmm$ decay in which the proton is assigned the pion mass.
-%% Both these potential sources of background are found to be negligible.
-%% The low-mass sideband might be affected by background events that have a different origin with respect to the combinatorial background that characterizes the signal region, \eg, partially reconstructed multibody \PB\ decays.
-%% We address this possible background contamination in Section~\ref{sec:Systematics}
-.
-%%%%%%%%%%%%%%%%%%55
+Other background sources has been investigated.
+None of them has been found relevant enough to be require a dedicated component in the fit \pdf.
+In the following paragraphs I will present the studys performed on these possible sources of contamination and the estimates on their impact on the analysis results.
+
+\paragraph{Feed-through background from control channels}
+\label{sec:feedThroughBkg}
+
+
+
+Using simulation, we search for possible backgrounds that might peak in the \PBz\ mass region.
+The event selection is applied to inclusive MC samples of \PBz, \PBs, \PBp, and $\Lambda_{\rm b}$ decays to \cPJgy\ X and $\psi'$ X, where X denotes all possible SM particles required to complete the known exclusive decay channels, and with the \cPJgy\ and $\psi'$ decaying to \Pgmp \Pgmm.
+No evidence for a peaking structure near the \PBz\ mass is found.
+The distributions of the few events that satisfy the selection criteria are similar to the shape of the combinatorial background.
+
+\paragraph{Other sources of peacking background}
+\label{sec:PeakBkg}
+
+As an additional check, we generate events with $\PBs \to \cPKstz({\rm K}^+ \pi^-) \Pgmp \Pgmm$ decays, using the same branching fraction as for $\PBz \to \cPKstz({\rm K}^+ \pi^-)$ $\Pgmp \Pgmm$.
+About 70 such events, integrated over $q^2$, are found to cluster near the \PBs\ mass.
+This background is considered negligible since it should be rescaled by the ratio of branching fractions $\mathcal{B}(\PBs \to \cPJgy \cPKstz) / \mathcal{B}(\BtoKstJpsi) \approx 10^{-2}$~\cite{PDG}.
+
+Possible backgrounds from events with hadrons misidentified as muons or with muons misidentified as hadrons, e.g. from random \PD\ mesons associated with random stable charged hadrons or from $\PBz \to \PD {\rm X}$ or $\PBz \to {\rm J}/\psi {\rm K}^*$ decays, are considered negligible because of the good muon identification capabilities of the CMS detector~\cite{Chatrchyan:2012xi}.
+
+We also investigated possible background from events in which a $\PBp \to \PKp \Pgmp \Pgmm$ decay is combined with a random pion, and from events with a $\Lambda_b \to \mathrm{p} \mathrm{K} \Pgmp \Pgmm$ decay in which the proton is assigned the pion mass.
+Both these potential sources of background are found to be negligible.
+
 
 \subsection{Test of factorisable background hypothesis}
 \label{sec:fact}
@@ -288,7 +300,7 @@ Once the likelihood has been minimised for each point of the grid, it is fit wit
 The position of the maximum of this function, limited to the physical region, corresponds to the best estimate of the angular parameters $P_1$, $P_5'$.
 To avoid that any eventual non-Gaussian behaviour of the likelihood distribution in regions far from the maximum could introduce a bias in the results, the fit with the bi-variate Normal distribution is limited to the grid points ($P_1^i$, $P_5'^i$) for which is valid the following request: $$\log\mathcal{L}(P_1^i,P_5'^i) > \log\mathcal{L}(P_1^{\mathrm{max}},P_5'^{\mathrm{max}}) - 0.5$$ where ($P_1^{\mathrm{max}}$, $P_5'^{\mathrm{max}}$) is the grid point for which the likelihood is maximum.
 In this way the grid points fitted are limited to a region around the maximum position.
-The dependence of the fit result as a function of the region width, has been tested and found to be negligible.
+The dependence of the fit result as a function of the region width, has been tested and found to be negligible, as will be discussed in Section~\ref{sec:bestFit}.
 
 %% The presence of such a physical region greatly complicates the numerical maximisation process of the likelihood by \textsc{minuit}~\cite{Minuit} and especially the error determination by \textsc{minos}~\cite{Minuit}, in particular next to the boundary between physical and unphysical regions.
 %% Therefore the second fit step is performed by discretizing the bidimensional space $P_1$ -- $P_5'$, and by maximising the likelihood as a function of the nuisance parameters $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$ at fixed values of $P_1$, $P_5'$.
