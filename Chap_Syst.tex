@@ -19,7 +19,7 @@ The sources of systematic uncertainties investigated are:
 
 \item[background distributions:] the effects of the background \pdf uncertainties, due to finite sideband statistics, on the fit results;
 
-\item[Uncertainty from fixed \pdf parameters:] the propagation of the uncertainties on the angular parameters $F_L$, $A_S$, $F_S$;
+\item[uncertainty from fixed \pdf parameters:] the propagation of the uncertainties on the angular parameters $F_L$, $A_S$, $F_S$;
 
 \item[angular resolution:] the effect of the finite reconstruction resolution on the fit results;
   
@@ -50,29 +50,45 @@ These additional datasets are then used to compute efficiency using the same KDE
 Finally, 101 fits are performed using each of the new efficiency functions.
 The spread of the fit result distributions obtained by these fits is used as systematic uncertainty.
 
-An example of the fit result distributions, for $q^2$ bin~3, is shown in Figure~\ref{fig:BKG-bin3}.
+This method is first tested on a cocktail-MC sample, as the ones used for the validation of the fit described in Section~\ref{sec:Cocktail-MC-pure}.
+The results of the fits with the toy-efficiencies are compared to the result of the fit with the original efficiency, computed both on the same cocktail-MC sample and on the full MC sample.
+This comparison validates the procedure of generating toy-efficiencies, showing that the results obtained with them are compatible with the result obtained with the original efficiency.
+Then, the method is applied to the data, after the unbinding of the signal region .%% , and these results are used to compute the systematic uncertainty.
+
+An example of the fit result distributions, for $q^2$ bin~3, is shown in Figure~\ref{fig:BKG-bin3-toy}, for the fits on a cocktail-MC sample, and in Figure~\ref{fig:BKG-bin3}, for the fits on the data sample.
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=0.7\textwidth]{Figures/MCstat/bin3.pdf}
-  \caption{The average results with different toy-efficiency functions using one of the cocktail sample, in $q^2$ bin~3.
-    Top left: $F_L$ value, top right: $F_L$ fit error, middle right: $P_1$ value, middle right: $P_1$ fit error, bottom right: $P_5'$ value, middle right: $P_5'$ fit error.
-    The red lines indicate the fitting results on the full RECO MC.
-    The green lines indicate the fit results on the used toy sample using the original efficiency.}
+  \includegraphics[width=0.9\textwidth]{Figures/MCstat/bin3_toy.pdf}
+  \caption{Results of the fits on a cocktail-MC sample with toy-efficiency functions, for $q^2$ bin~3.
+    On the left, the distributions of the $F_L$ (top), $P_1$ (middle), and $P_5'$ (bottom) parameter results are compared with the results from the fits with the original efficiency: on the same cocktail-MC sample (green line) and on the full MC sample (red line).
+    On the right: the distributions of the {\tt HESSE} errors on the $F_L$(top), $P_1$ (middle), and $P_5'$ (bottom) parameters are shown.}
+  \label{fig:BKG-bin3-toy}
+\end{figure}
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/MCstat/bin3.pdf}
+  \caption{Results of the fits on the data sample with toy-efficiency functions, for $q^2$ bin~3.
+    On the left, the distributions of the $F_L$ (top), $P_1$ (middle), and $P_5'$ (bottom) parameter results are shown.
+    On the right: the distributions of the {\tt HESSE} errors on the $F_L$(top), $P_1$ (middle), and $P_5'$ (bottom) parameters are shown.}
+  %% \caption{The average results with different toy-efficiency functions using one of the cocktail sample, in $q^2$ bin~3.
+  %%   Top left: $F_L$ value, top right: $F_L$ fit error, middle right: $P_1$ value, middle right: $P_1$ fit error, bottom right: $P_5'$ value, middle right: $P_5'$ fit error.
+  %%   The red lines indicate the fitting results on the full RECO MC.
+  %%   The green lines indicate the fit results on the used toy sample using the original efficiency.}
   \label{fig:BKG-bin3}
 \end{figure}
 
-The results computed fitting a data-like statistics ``cocktail'' MC sample are summarised for each $q^2$ bin in Table~\ref{tab:lim.MCstat.toy}.
-The results computed on data and used as systematic uncertainty are summarised for each $q^2$ bin in Table~\ref{tab:lim.MCstat}.
+The spread of the fit results are summarised in Table~\ref{tab:lim.MCstat.toy}, for the fit on the cocktail-MC sample, and in Table~\ref{tab:lim.MCstat} for the fit to the data sample.
+The latter are used as systematic uncertainty.
 
 \begin{table*}[!htb]
   \begin {center}
     \begin{small}
-      \caption{Spread values of the toy-efficiency result distributions, computed fitting a data-like statistics ``cocktail'' MC sample.
+      \caption{Spread values of the toy-efficiency result distributions, computed fitting a data-like statistics cocktail-MC sample.
         \label{tab:lim.MCstat.toy}}
-      \begin{tabular}{|l|c|c|c|c|}
-        \hline
-        $q^2$ bin index  & Fl  & P1 & P5p \\
+      \begin{tabular}{l|c|c|c|c}
+        $q^2$ bin index  & $F_L$ & $P_1$ & $P_5'$ \\
         \hline
         $ 0 $ & $\pm0.0157$ & $\pm0.0720$ & $\pm0.0859$\\
         $ 1 $ & $\pm0.0110$ & $\pm0.1208$ & $\pm0.1070$\\
@@ -81,7 +97,6 @@ The results computed on data and used as systematic uncertainty are summarised f
         $ 5 $ & $\pm0.0051$ & $\pm0.0170$ & $\pm0.0099$\\
         $ 7 $ & $\pm0.0043$ & $\pm0.0440$ & $\pm0.0384$\\
         $ 8 $ & $\pm0.0070$ & $\pm0.0790$ & $\pm0.0622$\\
-	\hline
       \end{tabular}
     \end{small}
   \end{center}
@@ -92,9 +107,8 @@ The results computed on data and used as systematic uncertainty are summarised f
     \begin{small}
       \caption{Spread values of the toy-efficiency result distributions, computed fitting real data.
         \label{tab:lim.MCstat}}
-      \begin{tabular}{|l|c|c|c|c|}
-        \hline
-        $q^2$ bin index  & P1 & P5p \\
+      \begin{tabular}{l|c|c|c|c}
+        $q^2$ bin index  & $P_1$ & $P_5'$ \\
         \hline
         $ 0 $ & $\pm0.050$ & $\pm0.046$\\
         $ 1 $ & $\pm0.062$ & $\pm0.066$\\
@@ -103,7 +117,6 @@ The results computed on data and used as systematic uncertainty are summarised f
         $ 5 $ & $\pm0.068$ & $\pm0.049$\\
         $ 7 $ & $\pm0.073$ & $\pm0.112$\\
         $ 8 $ & $\pm0.029$ & $\pm0.036$\\
-	\hline
       \end{tabular}
     \end{small}
   \end{center}
@@ -120,16 +133,16 @@ The results computed on data and used as systematic uncertainty are summarised f
 \subsection{Simulation mismodelling}
 \label{sec:sys-mismodel}
 
-With pure-signal simulation with high statistics, the effects of the simulation mismodelling is measured from the capability of the analysis to retrieve the interesting observables in extremely favourable conditions.
+The effects of the simulation mismodelling is measured through the capability of the analysis to retrieve the interesting observables in extremely favourable conditions, using pure-signal simulation with high statistics.
 
-This systematic also evaluates the impact of the non perfect symmetry of the efficiency with respect of the folding applied.
-In principle, the folding cancels some of the angular parameters only if applied at \pdf level.
-The actual fit is performed at reconstruction level, taking into account the efficiency of the reconstruction as a function of the angular variables.
-The efficiency, however, does not have the same exact symmetry as the \pdf, and so the product of \pdf and efficiency might cause the cancellation to be incomplete.
-By comparing the results of the fitting at GEN level (when the cancellation is exact) with that at RECO level (when is not), we evaluate the uncertainty related to the non-perfect cancellation.
-
-We compare the fitting results of generator-level MC sample and the one on reconstruction-level MC sample, as described in Section~\ref{sec:fitval-reco}.
+The fit results on generator-level MC sample are compared with the one on reconstruction-level MC sample, as described in Section~\ref{sec:fitval-reco}.
 The discrepancies between them are considered as symmetric systematic uncertainties.
+
+This systematic uncertainty also evaluates the impact of the non perfect symmetry of the efficiency with respect to the angular folding applied.
+The folding procedure cancels some of the angular parameters only if applied at \pdf level.
+The actual fit is performed at reconstruction level, taking into account the efficiency as a function of the angular variables.
+The efficiency does not have the same exact symmetries as the \pdf, and this might cause the cancellation to be incomplete.
+By comparing the results of the fit at generator level, when the cancellation is exact, with that at reconstruction level, when it is not, we evaluate the uncertainty related to the non-perfect cancellation.
 
 The results are summarised for each $q^2$ bin in Table~\ref{tab:mis.modelling}.
 
@@ -138,18 +151,16 @@ The results are summarised for each $q^2$ bin in Table~\ref{tab:mis.modelling}.
     \begin{small}
       \caption{Systematic uncertainties: simulation mismodelling.
         \label{tab:mis.modelling}}
-      \begin{tabular}{|l|c|c|c|c|}
+      \begin{tabular}{l|c|c|c|c}
+        $q^2$ bin index  & $F_L$ & $P_1$ & $P_5'$ \\
         \hline
-        $q^2$ bin index  & Fl  & P1 & P5p \\
-        \hline
-        $ 0 $    &  $\pm0.011 $ & $\pm0.005$ & $\pm0.023 $ \\
-        $ 1 $   &  $\pm0.001$  & $\pm0.005$ & $\pm0.013$  \\
-        $ 2 $    &  $\pm0.009$  & $\pm0.001$  & $\pm0.015$\\
-        $ 3 $    &  $\pm0.012$  & $\pm0.006$  & $\pm0.012$\\
-        $ 5 $   &  $\pm0.006$   & $\pm0.001$ & $\pm0.021$\\
-        $ 7 $   &  $\pm0.008$  & $\pm0.033$  & $\pm0.010$\\
-        $ 8 $   &  $\pm0.004$  & $\pm0.006$   & $\pm0.014$\\
-	\hline
+        $ 0 $ & $\pm0.011$ & $\pm0.005$ & $\pm0.023$\\
+        $ 1 $ & $\pm0.001$ & $\pm0.005$ & $\pm0.013$\\
+        $ 2 $ & $\pm0.009$ & $\pm0.001$ & $\pm0.015$\\
+        $ 3 $ & $\pm0.012$ & $\pm0.006$ & $\pm0.012$\\
+        $ 5 $ & $\pm0.006$ & $\pm0.001$ & $\pm0.021$\\
+        $ 7 $ & $\pm0.008$ & $\pm0.033$ & $\pm0.010$\\
+        $ 8 $ & $\pm0.004$ & $\pm0.006$ & $\pm0.014$\\
       \end{tabular}
     \end{small}
   \end{center}
@@ -159,21 +170,21 @@ The results are summarised for each $q^2$ bin in Table~\ref{tab:mis.modelling}.
 \label{sec:effshape-syst}
 
 The main validation of the correctness of the efficiency is performed by comparing the efficiency-corrected results for the control channels with the corresponding world-average values.
-The efficiency as a function of the angular variables is checked by comparing the $F_\mathrm{L}$ measurements from the \BKsJ sample, composed of 165\,000 signal events.
-The value of $F_\mathrm{L}$ obtained in this analysis is $0.537 \pm 0.002\stat$, compared with the world-average value of $0.571 \pm 0.007\,\text{(stat+syst)}$, indicating a discrepancy of $0.034$, which is then propagated to other $q^2$ bins to calculate the uncertainties of $P1$ and $P5'$.
-Varying $F_\mathrm{L}$ within the discrepancy, we refit the data 200 times and then take the RMS of the distribution as the systematic uncertainties.
+The efficiency as a function of the angular variables is checked by comparing the $F_\mathrm{L}$ measurements from the \BtoKstJpsi sample, composed of 165\,000 signal events.
+The value of $F_\mathrm{L}$ obtained in this analysis is $0.537 \pm 0.002\stat$, compared with the world-average value of $0.571 \pm 0.007\,\text{(stat+syst)}$, indicating a discrepancy of $0.034$, which is used in the other $q^2$ bins and propagated to the $P_1$ and $P_5'$ parameters.
+In each $q^2$ bin, a total of 200 values for the $F_L$ parameter is randomly generated from a Gaussian distribution, with mean the value of $F_L$ used in the fit to the data and with width the discrepancy to propagate, $0.034$.
+Finally, the data sample is fitted fixing the $F_L$ parameter to each of these 200 values and the RMS of the fit results is taken as systematic uncertainty.
 The results are summarised in Table~\ref{tab:eff.shape}.
 
-For completeness the $F_\mathrm{L}$ variable is also measured with the \BKsPsip sample, obtaining a value $0.538 \pm 0.008\stat$ to be compared with the world-average value of $0.463^{+0.028}_{-0.040}\,\text{(stat+syst)}$.
+For completeness the $F_\mathrm{L}$ variable is also measured with the \BtoKstpsip sample, obtaining a value $0.538 \pm 0.008\stat$ to be compared with the world-average value of $0.463^{+0.028}_{-0.040}\,\text{(stat+syst)}$.
 
 \begin{table*}[!htb]
   \begin {center}
     \begin{small}
       \caption{Systematic uncertainties: efficiency shape.
         \label{tab:eff.shape}}
-      \begin{tabular}{|l|c|c|c|}
-        \hline
-        $q^2$ bin index  & P1 & P5p  \\
+      \begin{tabular}{l|c|c|c}
+        $q^2$ bin index  & $P_1$ & $P_5'$  \\
         \hline
         $ 0 $ & $\pm0.017$ & $\pm0.005$ \\
         $ 1 $ & $\pm0.048$ & $\pm0.060$ \\
@@ -182,15 +193,14 @@ For completeness the $F_\mathrm{L}$ variable is also measured with the \BKsPsip 
         $ 5 $ & $\pm0.083$ & $\pm0.059$ \\
         $ 7 $ & $\pm0.100$ & $\pm0.060$ \\
         $ 8 $ & $\pm0.068$ & $\pm0.041$ \\
-        \hline
       \end{tabular}
     \end{small}
   \end{center}
 \end{table*}
 
-\subsubsection{Cross check: branching fraction of $\PBz\to\PKst\Ppsi'$ and $\PBz\to\PKst\PJpsi$ }
+\paragraph{Cross check: branching fraction of $\PBz\to\PKst\Ppsi'$ and $\PBz\to\PKst\PJpsi$ }
 
-An further test to validate the efficiency shape obtained from MC is to compare the branching fraction of the two control samples: $\PBz\to\PKst\Ppsi'$ and $\PBz\to\PKst\PJpsi$.
+A further test to validate the efficiency shape obtained from MC is to compare the branching fraction of the two control samples: $\PBz\to\PKst\Ppsi'$ and $\PBz\to\PKst\PJpsi$.
 
 The ratio of the two BR can be computed as follow:
 \begin{equation}\label{RBRatio}
@@ -198,19 +208,19 @@ The ratio of the two BR can be computed as follow:
   = \frac{Y_{\Ppsi'}}{\epsilon_{\psi'}}\frac{\epsilon_{\PJpsi}}{Y_{J/\psi}}
   \frac{\mathcal{B}(J/\psi \to \Pgmp \Pgmm)}{\mathcal{B}(\psi' \to \Pgmp \Pgmm)}
 \end{equation}
-
 where $Y_{\psi'}$ and $\epsilon_{\psi'}$ are the yield and the efficiency for the $\psi'$ channel, and likewise for $Y_{\PJpsi}$ and $\epsilon_{J/\psi}$ for $J/\psi$ one.
+
 The ratio of $\mathcal{B}$ for $J/\psi(\psi') \to \Pgmp \Pgmm$ is $7.54\pm0.86$ (PDG).
 The value of the ratio is (PDG): $\frac{\mathcal{B}(\PBz\to\PKst\psi')}{\mathcal{B}(\PBz\to\PKst J/\psi)}=0.484 \pm 0.018 \textrm{\tiny{(stat)}} \pm 0.011 \textrm{\tiny{(syst)}} \pm 0.012 \textrm{\tiny{($R^{ee}_\psi$)}}$.
 
 A first way to compute the ratio is to use directly the absolute efficiency for the two channels as obtained from MC.
 The ratio we obtain with this method is $0.476\pm 0.008({\rm stat}) \pm 0.055({\rm R}_{\psi}^{\mu\mu})$, in very good agreement with PDG.
 
-However, the computation above assume that the angular shape of the control channel as simulated in the MC is the one we have on data.
-To take properly into account the real signal and efficiency shape, we repeated the same computation using as efficiency $\varepsilon_{J/\psi/\Ppsi'}=\int_{phase~space}S(\vec{x};\vec{p})\times\varepsilon(\vec{x})d\vec{x}$, where $S(\vec{x};\vec{p})$ is the signal PDF, $\vec{p}$ is the set of angular parameter we got from the fit on the data on each control region, and $\varepsilon(\vec{x})$ is the efficiency for each region as a function of angular variable.
+However, the computation above assumes that the angular shape of the control channel is correctly simulated in MC.
+To take properly into account the real signal and efficiency shape, we repeated the same computation using as efficiency $\varepsilon_{J/\psi/\Ppsi'}=\int_{phase~space}S(\vec{x};\vec{p})\times\varepsilon(\vec{x})d\vec{x}$, where $S(\vec{x};\vec{p})$ is the signal \pdf, $\vec{p}$ is the set of angular parameter we got from the fit on the data on each control region, and $\varepsilon(\vec{x})$ is the efficiency for each region as a function of angular variable.
 The result of this more detailed computation is: $0.480\pm 0.008({\rm stat}) \pm 0.055({\rm R}_{\psi}^{\mu\mu})$, again in very good agreement with PDG.
 
-The same ratio can be computed using only right tag events, only wrong tag events, or both: in all the case the agreement is very good.
+The same ratio can be computed using only right tag events, only wrong tag events, or both: in all the cases the agreement is very good.
 
 \subsection{Fitting Bias}
 \label{sec:fitbias-syst}
@@ -229,18 +239,16 @@ The results are summarised in Table~\ref{tab:fit bias}.
     \begin{small}
       \caption{Systematic uncertainties: fitting bias.
         \label{tab:fit bias}}
-      \begin{tabular}{|l|c|c|c|}
+      \begin{tabular}{l|c|c|c}
+        $q^2$ bin index  & $P_1$ & $P_5'$  \\
         \hline
-        $q^2$ bin index  & P1 & P5p  \\
-        \hline
-        $ 0 $    &  $\pm0.005$ & $\pm0.040$  \\
-        $ 1 $   &  $\pm0.007$  & $\pm0.01$   \\
-        $ 2 $    &  $\pm0.019$  & $\pm0.119$  \\
-        $ 3 $    &  $\pm0.019$  & $\pm0.106$  \\
-        $ 5 $   &  $\pm0.041$   & $\pm0.052$ \\
-        $ 7 $   &  $\pm0.071$  & $\pm0.048$  \\
-        $ 8 $   &  $\pm0.078$  & $\pm0.031$  \\
-        \hline
+        $0$ & $\pm0.005$ & $\pm0.040$ \\
+        $1$ & $\pm0.007$ & $\pm0.010$ \\
+        $2$ & $\pm0.019$ & $\pm0.119$ \\
+        $3$ & $\pm0.019$ & $\pm0.106$ \\
+        $5$ & $\pm0.041$ & $\pm0.052$ \\
+        $7$ & $\pm0.071$ & $\pm0.048$ \\
+        $8$ & $\pm0.078$ & $\pm0.031$ \\
       \end{tabular}
     \end{small}
   \end{center}
@@ -268,12 +276,12 @@ The results are summarised in Table~\ref{tab:fit bias}.
 
 % \subsubsection{Mistag fraction}
 % \label{sec:mistag}
-The error on mistag fraction has been estimated using the control channel $B^0 \rightarrow K^{*0}(K^+\pi^-) J/\psi(\mu^+ \mu^-)$, in $q^2$ bin~4.
-A full fit on this channel has been performed, leaving also the mistag fraction fully free to float.
+The error on mistag fraction has been estimated using the control channel \BtoKstJpsi, in $q^2$ bin~4.
+A full fit on this channel has been performed, leaving also the mistag fraction free to float.
 This fit is possible on the control channel thanks to its large statistics, and the result has been compared with the mistag fraction estimated from MC sample.
 The difference between these values is 0.008 and, compared with the statistical uncertainty of the MC estimate in this bin, $\sigma\lesssim0.002$, it results to be the dominant uncertainty related to the mistag fraction.
 
-To assess the propagation of this systematic effect to the physical parameter of the final fit on data, a set of fit has been performed, using as free parameters $A_s^5$, $P_1$, $P_5'$, the signal and background yields, and using a fixed mistag fraction.
+To assess the propagation of this systematic effect to the physical parameter of the final fit on data, a set of fits has been performed, using as free parameters $A_s^5$, $P_1$, $P_5'$, the signal and background yields, and using a fixed mistag fraction.
 A set of 10 different values of mistag fractions has been used, randomly generated with Gaussian distribution around the mistag fraction estimated from MC for each $q^2$ bin, and with $\sigma$ equal to the difference of 0.008 computed on the control channel.
 For each $q^2$ bin, the RMS of the results of the 10 fits is used as systematic uncertainty for the fitted angular parameters, as summarised in Table~\ref{tab:Mistagfraction}.
 
@@ -311,7 +319,7 @@ An example of the distributions of the toy-background fit results, for $q^2$ bin
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=0.5\textwidth]{Figures/BKG/bin2.pdf}
+  \includegraphics[width=0.8\textwidth]{Figures/BKG/bin2.pdf}
   \caption{The results of the fits on data performed with background toy-functions, for the $q^2$ bin~2.
     The distributions of $P_1$ (top left), $P_5'$ (top right), signal yield (bottom left), and background yield (bottom right) are shown.}
   \label{fig:BKG-bin2}
@@ -324,18 +332,16 @@ The resulting uncertainties are summarised in the Table~\ref{tab:bkg. shape}.
     \begin{small}
       \caption{Systematic uncertainties: background shape.
         \label{tab:bkg. shape}}
-      \begin{tabular}{|l|c|c|c|}
+      \begin{tabular}{l|c|c|c}
+        $q^2$ bin index & $P_1$ & $P_5'$ \\
         \hline
-        $q^2$ bin index   & P1 & P5p \\
-        \hline
-        $ 0 $    &   $\pm0.013$ & $\pm0.010 $   \\
-        $ 1 $    &   $\pm0.031$ & $\pm0.024 $   \\
-        $ 2 $    &   $\pm0.046$ & $\pm0.030 $   \\
-        $ 3 $    &   $\pm0.022$ & $\pm0.013 $   \\
-        $ 5 $    &   $\pm0.070$ & $\pm0.049 $   \\
-        $ 7 $    &   $\pm0.069$ & $\pm0.051 $   \\
-        $ 8 $    &   $\pm0.012$ & $\pm0.015 $   \\
-        \hline
+        $0$ & $\pm0.013$ & $\pm0.010$ \\
+        $1$ & $\pm0.031$ & $\pm0.024$ \\
+        $2$ & $\pm0.046$ & $\pm0.030$ \\
+        $3$ & $\pm0.022$ & $\pm0.013$ \\
+        $5$ & $\pm0.070$ & $\pm0.049$ \\
+        $7$ & $\pm0.069$ & $\pm0.051$ \\
+        $8$ & $\pm0.012$ & $\pm0.015$ \\
       \end{tabular}
     \end{small}
   \end{center}
@@ -366,15 +372,14 @@ The maximum difference of $P1$ is 0.012, of $P5'$ is 0.019.
 Fixing three of the six angular parameters in the fit could have an effect of modifying the statistical uncertainties for the fitted parameters.
 This is true, in general, whenever there is a correlation between any fixed parameter and a free one.
 Since this effect could lead to an underestimation of the statistical error, a specific systematic uncertainty has been created to compensate this effect.
-For each measured parameter we define a \textit{scale factor} as the correction factor, strictly greater than (or equal to) one, that should be applied to the underestimated statistical error to compensate this effect. 
+For each measured parameter we define a \textit{scale factor} as the correction factor, greater than or equal to one, that should be applied to the underestimated statistical error to compensate this effect. 
 
-Firstly, this scale factor is computed.
+%% Firstly, this scale factor is computed.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%5
 Since it is not possible to fit the data with the $F_L$, $F_s$, $A_s$ parameters free to float, this scale factor is computed on pseudo-experiments with one hundred times the statistics of the data sample.
 Ten pseudo-experiments are used, for each $q^2$ bin, and the average of the ten resulting scale factors is used to compute the uncertainty.
 The same procedure described in Sec.~\ref{sec:statUncert} to fit a pseudo-experiment for the Feldman-Cousins (FC) method is used here to fit each high-statistics pseudo-experiment.
-The only difference is that the number of points where the 2D-likelihood is probed is here around one hundred, in order to guarantee a more robust result.
+The only difference is that the number of points where the 2D-likelihood is probed here is around one hundred, in order to guarantee a more robust result.
 This fitting procedure is applied twice, both fixing the $F_L$, $F_s$, $A_s$ parameters and leaving them free to float.
 Then, two scale factors are defined, one for $P_1$ and one for $P'_5$, as the ratio between the confidence intervals obtained with the two fits (fit with floating parameters over fit with fixed parameters).
 Note that here the {\tt custom MINOS} method, defined in Sec.~\ref{sec:statUncert}, is used to define the parameters' confidence interval.
@@ -394,21 +399,19 @@ A test to check whether the \textit{scale factors} depend on the statistics of t
 The scale-factor averages and the systematic uncertainty values are reported in table~\ref{tab:systFix}.
 
 \begin{table*}[!htb]
-      \caption{Scale-factor average values and systematic uncertainties computed to compensate the statistical error reduction introduced fixing some PDF parameters\label{tab:systFix}}
+  \caption{Scale-factor average values and systematic uncertainties computed to compensate the statistical error reduction introduced fixing some PDF parameters\label{tab:systFix}}
   \begin{center}
-        \begin{tabular}{c|cccc}
-             $q^2$ bin & SF($P_1$)  & $P_1$  & SF($P'_5$) & $P'_5$ \\
-            \hline
-            0  &  1.014 & 0.077 & 1.003 & 0.025  \\
-            1  &  1.116 & 0.211 & 1.099 & 0.148  \\
-            2  &  1.113 & 0.139 & 1.385 & 0.206  \\
-            3  &  1.082 & 0.103 & 1.028 & 0.041  \\
-            4  &  \multicolumn{3}{c}{$J/\psi$} \\
-            5  &  1.048 & 0.053 & 1.143 & 0.069  \\
-            6  &  \multicolumn{3}{c}{$\psi'$}  \\
-            7  &  0.982 & 0.000 & 1.090 & 0.072  \\
-            8  &  1.091 & 0.083 & 0.989 & 0.000  \\
-        \end{tabular}
+    \begin{tabular}{l|cc|cc}
+      $q^2$ bin index & SF($P_1$)  & $P_1$  & SF($P'_5$) & $P'_5$ \\
+      \hline
+      0 & 1.014 & 0.077 & 1.003 & 0.025  \\
+      1 & 1.116 & 0.211 & 1.099 & 0.148  \\
+      2 & 1.113 & 0.139 & 1.385 & 0.206  \\
+      3 & 1.082 & 0.103 & 1.028 & 0.041  \\
+      5 & 1.048 & 0.053 & 1.143 & 0.069  \\
+      7 & 0.982 & 0.000 & 1.090 & 0.072  \\
+      8 & 1.091 & 0.083 & 0.989 & 0.000  \\
+    \end{tabular}
   \end{center}
 \end{table*}
 
@@ -483,16 +486,14 @@ The difference between the two results, shown in table~\ref{tab:systReso}, is us
 \begin{table*}[!htb]
   \caption{Difference on the target physics observables ($F_L$, $P_1$, and $P'_5$) when obtained via a fit on reconstructed and generated angular distributions after all selection, performed on full MC sample. $\Delta{x}=|x_{RECO} - x_{GEN}|$\label{tab:systReso}}
   \begin{center}
-    \begin{tabular}{c|ccc}
-      $q^2$ bin & $\Delta{F_L}$  & $\Delta{P_1}$  & $\Delta{P'_5}$ \\
+    \begin{tabular}{l|ccc}
+      $q^2$ bin index & $\Delta{F_L}$  & $\Delta{P_1}$  & $\Delta{P'_5}$ \\
       \hline
       0  & -3.98\e{-4}  & -1.50\e{-3} &  1.05\e{-4}   \\
       1  & -7.83\e{-4}  & -3.30\e{-3} &  1.03\e{-3}  \\
       2  & -8.83\e{-3}  & -6.88\e{-3} &  1.33\e{-3}   \\
       3  & -4.94\e{-4}  & -7.38\e{-3} &  8.10\e{-4}   \\
-      4  &  \multicolumn{3}{c}{$J/\psi$}\\
       5  &  1.16\e{-3}  & -1.51\e{-2} &  2.36\e{-3}   \\
-      6  &  \multicolumn{3}{c}{$\psi'$}\\
       7  &  2.90\e{-4}  & -7.26\e{-3} & -8.28\e{-3}   \\
       8  & -1.93\e{-3}  & -6.81\e{-2} &  1.23\e{-2}   \\
     \end{tabular}
@@ -507,26 +508,24 @@ The difference between the two results, shown in table~\ref{tab:systReso}, is us
 The $q^2$ bins just below and above the resonance regions may be contaminated by $B^0 \to {\rm J/}\psi K^{*0}$ and $B^0 \to \psi' K^{*0}$ feed-through events that are not removed by the selection criteria.
 The potential uncertainties due to this contamination have been evaluated.
 
-The distribution of residual feed-through events are described a special \pdf.
-The distributions in $q^2$ bins 3 and 5 are evaluated from $B^0 \to {\rm J/}\psi K^{*0}$ simulation, as shown Figure~\ref{fig:feed-J-bin3} and Figure~\ref{fig:feed-J-bin5}.
+The distribution of residual feed-through events are described by a special \pdf.
+The distributions in $q^2$ bins 3 and 5 are evaluated from $B^0 \to {\rm J/}\psi K^{*0}$ simulation, as shown in Figure~\ref{fig:feed-J-bin3} and Figure~\ref{fig:feed-J-bin5}.
 Similarly, the distributions in $q^2$ bin~5 are evaluated from $B^0 \to \psi' K^{*0}$ simulated sample
 
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/Syst/Feed-through/JPsi-bin3.pdf}
-  \caption{Fit results to $B^0 \to {\rm J/}\psi K^{*0}$ simulation sample on $q^2$ bins No.3.
-    The different plots are, in order from left to right and from top to bottom: the 
-    projection on the $B^0$ invariant mass, $\cos\theta_l$, $\cos\theta_k$, $\phi$. }
+  \caption{Distributions of the feed-through events of the \BtoKstJpsi MC sample and the projections of the \pdf used to describe it, for $q^2$ bin~3.
+  }
   \label{fig:feed-J-bin3}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/Syst/Feed-through/JPsi-bin5.pdf}
-  \caption{Fit results to $B^0 \to {\rm J/}\psi K^{*0}$ simulation sample on $q^2$ bins No.5. 
-    The different plots are, in order from left to right and from top to bottom: the 
-    projection on the $B^0$ invariant mass, $\cos\theta_l$, $\cos\theta_k$, $\phi$. }
+  \caption{Distributions of the feed-through events of the \BtoKstJpsi MC sample and the projections of the \pdf used to describe it, for $q^2$ bin~5.
+  }
   \label{fig:feed-J-bin5}
 \end{figure} 
 
@@ -535,16 +534,14 @@ Data are then fitted with this additional component of feed through backgrounds,
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/Syst/Feed-through/TotalPDFq2Bin_3_Canv0.pdf}
-  \caption{Fit results on data for$q^2$ bins No.3. The different plots are, in order from left 
-    to right and from top to bottom: the projection on the $B^0$ invariant mass, $\cos\theta_l$, $\cos\theta_k$, $\phi$. }
+  \caption{Distributions of the data events, and the projections of the \pdf with the additional component for feed-through background, for $q^2$ bin~3.}
   \label{fig:feed-t-bin3}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/Syst/Feed-through/TotalPDFq2Bin_5_Canv0.pdf}
-  \caption{Fit results on data for $q^2$ bins No.5. The different plots are, in order from left
-    to right and from top to bottom: the projection on the $B^0$ invariant mass, $\cos\theta_l$, $\cos\theta_k$, $\phi$. }
+  \caption{Distributions of the data events, and the projections of the \pdf with the additional component for feed-through background, for $q^2$ bin~5.}
   \label{fig:feed-t-bin5}
 \end{figure} 
 
@@ -558,46 +555,48 @@ The result are in the Table~\ref{tab:feed-through}.
     \begin{small}
       \caption{Systematic uncertainties from the feed through backgrounds.
         \label{tab:feed-through}}
-      \begin{tabular}{|l|c|c|c|}
+      \begin{tabular}{l|c|c|c}
+        $q^2$ bin index & $P_1$ & $P_5'$ \\
         \hline
-        $q^2$ bin index   & P1 & P5p \\
-        \hline
-        $ 3 $ & $\pm 0.004$  & $\pm 0.012$    \\
-        $ 5 $ & $\pm 0.012$  & $\pm 0.020$  \\
-        $ 7 $ & $\pm 0.011$  & $\pm 0.024$   \\
-        \hline
+        $3$ & $\pm 0.004$ & $\pm 0.012$ \\
+        $5$ & $\pm 0.012$ & $\pm 0.020$ \\
+        $7$ & $\pm 0.011$ & $\pm 0.024$ \\
       \end{tabular}
     \end{small}
   \end{center}
 \end{table*}
 
-\subsection{Best fit values determination}\label{sec:bestFit}
+\subsection{Bivariate Guassian fit range}\label{sec:bestFit}
 
-As described in section~\ref{sec:fitseq}, the procedure to get the best fit from the data is to discretise the $P_1,P'_5$ space, and by maximising the likelihood as a function of nuisance parameters at fixed values of $P_1,P'_5$.
+As described in Section~\ref{sec:fitseq}, the procedure to get the best fit from the data is to discretise the $P_1,P'_5$ space, and maximise the likelihood as a function of nuisance parameters at fixed values of $P_1,P'_5$.
 So we have a scan of the likelihood in the $P_1$, $P'_5$ plane.
 Finally, the likelihood distribution is fitted with a bivariate normal distribution.
 
-In order to check the stability of the fit, as well as any possible systematics due to the procedure, we checked the stability of the fit by varying the fit range.
-The range of the fit is defined as $\pm1\sigma$ (as computed by the FC procedure described in sec~\ref{sec:statUncert}), multiplied by a scale factor (in the range $[0.1,2]$), around the centre defined as the value of $P_1$ or $P'_5$ where the likelihood has a absolute maximum.
+In order to check the stability of the fit, as well as any possible systematics due to the procedure, the angular parameters are evaluated varying the fit range.
+The range of the fit is defined as $\pm1\sigma$ (as computed by the FC procedure described in Section~\ref{sec:statUncert}), multiplied by a scale factor (in the range $[0.1,2]$), around the centre defined as the value of $P_1$ or $P'_5$, among the points of the grid defined in Section~\ref{sec:fitseq}, where the likelihood has an absolute maximum.
 So, for instance, a scale factor of $1.5$ means that the fit range will be $[P_1-1.5\sigma,P_1+1.5\sigma]$, and so on.
 
-The results of these scans are shown in fig.~\ref{fig:gausFitRange}: the vertical axis range is $\pm1\sigma$ for that specific bin.
-The difference between the value of $P_1$ and $P'_5$ from the absolute maximum and the normal fit is small, when compared with statistical uncertainties.
+An example of the results of these scans is shown in Figure~\ref{fig:gausFitRange}, for $q^2$ bin~3.
+To give an element of comparison, the $y$-axis range in the plots of the results is set equal to the confidence interval, as computed by the FC procedure described in Section~\ref{sec:statUncert}. 
+%% the vertical axis range in these plots is chosen to be $\pm1\sigma$ for that specific bin.
+The difference between the value of $P_1$ and $P'_5$ from the absolute maximum and the normal fit is small, when compared with statistical uncertainties and to the \textit{fit bias} uncertainty.
 Also the trend with respect to the fit range is small.
-A systematic uncertainties have been extracted by comparing the value of the position of the absolute maximum with that of a bivariate Gaussian fit, via linear fit in the range $scaleFactor\in[0.4,1.6]$, evaluated at $scaleFactor=1$.
+
+A quantitative difference has been extracted by comparing the value of the position of the absolute maximum with that of a bivariate Gaussian fit, via linear fit in the scale factor range $[0.4,1.6]$, evaluated for scale factor equal to 1.
 The differences are reported in table~\ref{tab:rangeGausFit}.
+
+Since these differences have the same nature of the \textit{fit bias} uncertainty, but are smaller than it, no specific systematic uncertainty has been introduced for them. 
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.4\textwidth]{Figures/FC/testGausFitRange_bin0.pdf}
-  \includegraphics[width=0.4\textwidth]{Figures/FC/testGausFitRange_bin1.pdf}
-  \includegraphics[width=0.4\textwidth]{Figures/FC/testGausFitRange_bin2.pdf}
-  \includegraphics[width=0.4\textwidth]{Figures/FC/testGausFitRange_bin3.pdf}
-  \includegraphics[width=0.4\textwidth]{Figures/FC/testGausFitRange_bin5.pdf}
-  \includegraphics[width=0.4\textwidth]{Figures/FC/testGausFitRange_bin7.pdf}
-  \includegraphics[width=0.4\textwidth]{Figures/FC/testGausFitRange_bin8.pdf}
-  \caption{Comparison between the position of the absolute maximum of the
-    likelihood (green line) and the bivariate Gaussian fit varying the range of the fit (black dots).
+  %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin0.pdf}
+  %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin1.pdf}
+  %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin2.pdf}
+  \includegraphics[width=0.8\textwidth]{Figures/FC/testGausFitRange_bin3.pdf}
+  %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin5.pdf}
+  %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin7.pdf}
+  %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin8.pdf}
+  \caption{Comparison between the position of the absolute maximum of the likelihood (green line) and the results of the bivariate Gaussian fit, as a function of the fit range (black dots), for the $P_1$ (left) and $P_5'$ (right) parameters, in $q^2$ bin~3.
   }
   \label{fig:gausFitRange}
 \end{figure}
@@ -630,26 +629,52 @@ The differences are reported in table~\ref{tab:rangeGausFit}.
 
 The summary of all systematic uncertainties are shown in Table~\ref{tab:systematics}.
 
-\begin{table*}[htbp!]
+%% \begin{table*}[htbp!]
+%%   \centering
+%%   \caption{\label{tab:systematics} Systematic uncertainty contributions for the measurements of $P1$ and $P5'$.
+%%     The total uncertainty in each $q^2$ bin is obtained by adding each contribution in quadrature.
+%%     For each item, the range indicates the variation of the uncertainty in the signal $q^2$ bins.}
+%%   \begin{tabular}{l|cccc}
+%%     Systematic uncertainty & $P_1 (10^{-3})$ & $P_5' (10^{-3})$ \\[1pt]
+%%     \hline \\[-2ex]
+%%     Simulation mismodelling               &  1--33  &  10--23  \\[1pt]
+%%     fitting bias                          &  5--78  &  10--119 \\[1pt]
+%%     MC statistical uncertainty            & 29--73  &  31--112 \\[1pt]
+%%     Efficiency                            & 17--100 &   5--65  \\[1pt]
+%%     $\textrm{K}\pi$ mistagging                   &  8--110 &   6--66  \\[1pt]
+%%     Background distribution               & 12--70  &  10--51  \\[1pt]
+%%     Mass distribution                     &     12  &      19  \\[1pt]
+%%     Feed-through background               &  4--12  &   3--24  \\[1pt]
+%%     $F_L,F_S,A_S$ uncertainty propagation &  0--126 &   0--200 \\[1pt]
+%%     Angular resolution                    &  2--68  & 0.2--12  \\[1pt]
+%%     Bivariate fit range                   &  2--16  & 0.2--20  \\[1pt]
+%%     \hline
+%%     Total systematic uncertainty          & 70--220 &  70--230 \\[1pt]
+%%   \end{tabular}
+%% \end{table*}
+
+\begin{table*}[htbp]
   \centering
   \caption{\label{tab:systematics} Systematic uncertainty contributions for the measurements of $P1$ and $P5'$.
     The total uncertainty in each $q^2$ bin is obtained by adding each contribution in quadrature.
     For each item, the range indicates the variation of the uncertainty in the signal $q^2$ bins.}
-  \begin{tabular}{l|cccc}
-    Systematic uncertainty & $P_1 (10^{-3})$ & $P_5' (10^{-3})$ \\[1pt]
+  %% \caption{\label{tab:systematics}
+  %%   Systematic uncertainties in $P_1$ and $P_5'$. For each source, the range indicates the variation over the bins in $q^2$.}     
+  \begin{tabular}{lcc}
+    Source & $P_1 (\times 10^{-3})$ & $P_5' (\times 10^{-3})$ \\[1pt]
     \hline \\[-2ex]
-    Simulation mismodelling               &  1--33  &  10--23  \\[1pt]
-    fitting bias                          &  5--78  &  10--119 \\[1pt]
-    MC statistical uncertainty            & 29--73  &  31--112 \\[1pt]
-    Efficiency                            & 17--100 &   5--65  \\[1pt]
-    $\textrm{K}\pi$ mistagging                   &  8--110 &   6--66  \\[1pt]
-    Background distribution               & 12--70  &  10--51  \\[1pt]
-    Mass distribution                     &     12  &      19  \\[1pt]
-    Feed-through background               &  4--12  &   3--24  \\[1pt]
-    $F_L,F_S,A_S$ uncertainty propagation &  0--126 &   0--200 \\[1pt]
-    Angular resolution                    &  2--68  & 0.2--12  \\[1pt]
-    Bivariate fit range                   &  2--16  & 0.2--20  \\[1pt]
+    Simulation mismodeling       &   1--33   &  10--23  \\[1pt]
+    Fit bias                     &   5--78   &  10--120 \\[1pt]
+    Finite size of simulated samples  &  29--73   &  31--110 \\[1pt]
+    Efficiency                   &  17--100  &   5--65  \\[1pt]
+    $\PK\pi$ mistagging          &   8--110  &   6--66  \\[1pt]
+    Background distribution      &  12--70   &  10--51  \\[1pt]
+    %Partially reconstruced \PBz  &   ?--?    &   ?--?   \\[1pt]
+    Mass distribution            &      12   &      19  \\[1pt]
+    Feed-through background      &   4--12   &   3--24  \\[1pt]
+    $F_\mathrm{L}$, $F_\mathrm{S}$, $A_\mathrm{S}$ uncertainty propagation & 0--210 & 0--210 \\[1pt]
+    Angular resolution           &   2--68   & 0.1--12  \\[1pt]
     \hline
-    Total systematic uncertainty          & 70--220 &  70--230 \\[1pt]
+    Total                        & 100--230  &  70--250 \\[1pt]
   \end{tabular}
 \end{table*}
