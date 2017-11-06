@@ -28,7 +28,7 @@ The four \pdfs $B^m(m)$, $B^{\TK}(\cTK)$, $B^{\TL}(\cTL)$, $B^{\PHI}(\PHI)$ desc
 The mass \pdf $B^m(m)$ is an exponential function, the angular \pdfs $B^{\TK}(\cTK)$ and $B^{\TL}(\cTL)$ are polynomials functions, ranging from second to fourth degree depending on the $q^2$ bin, and $B^{\PHI}(\PHI)$ is a first-order polynomial function.
 The factorisation assumption of the background \pdf in Equation~(\ref{eq:angALL}) is discussed in Section~\ref{sec:fact}.
 
-The three-dimensional functions $\epsilon^{C}(\TK,\TL,\PHI)$ and $\epsilon^{M}(\TK,\TL,\PHI)$ are the efficiencies for right-tagged and mis-tagged signal events, respectively.
+The three-dimensional functions $\epsilon^{C}(\TK,\TL,\PHI)$ and $\epsilon^{M}(\TK,\TL,\PHI)$ are the efficiency functions for right-tagged and mis-tagged signal events, respectively.
 The construction of these functions has been described in Section~\ref{sec:eff}.
 
 \subsection{Fraction of mis-tagged signal events}
@@ -41,7 +41,7 @@ The construction of these functions has been described in Section~\ref{sec:eff}.
 %% Both the $\pi$ and $K$ mass hypothesis is considered for each of the two hadrons of the decay: the hypothesis with an invariant mass for the two-hadrons closer to the nominal $\PKst$ one is retained.
 
 %% As described in Section~\ref{sec:selection}, the CP-state of the candidate \PBz is affigned on the base of 
-The algorithm used to tag the CP-state of the \PBz candidate, described in Section~\ref{sec:selection}, has an intrinsic percentage of failure which is referred to as mistag fraction, $f^M$, defined as the ratio of mistagged signal events divided by the total number of signal events.
+The algorithm used to tag the CP-state of the \PBz candidate, described in Section~\ref{sec:selection}, has an intrinsic percentage of failure which is referred to as mistag fraction, $f^M$, defined as the ratio of mis-tagged signal events divided by the total number of signal events.
 The mistag fraction is determined from simulated events, comparing the results of the tag method to the MC truth, and by counting the number of correctly and wrongly tagged events.
 The resulting mistag fractions, for each $q^2$ bin, are shown in Table~\ref{tab:mistag}.
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,37 +137,48 @@ An example of the sideband event distributions, for $q^2$ bin~0, are plotted in 
 %%%%%%%%%%%%%%555
 Other background sources has been investigated.
 None of them has been found relevant enough to be require a dedicated component in the fit \pdf.
-In the following paragraphs I will present the studys performed on these possible sources of contamination and the estimates on their impact on the analysis results.
+In the following paragraphs I will present the studies performed on these possible sources of contamination and the estimates on their impact on the analysis results.
 
-\paragraph{Feed-through background from control channels}
+\subsubsection{Feed-through background from control channels}
 \label{sec:feedThroughBkg}
 
+The second background contamination for relevance is due to the ``feed-through'' of events from the resonant control channels, \BtoKstJpsi and \BtoKstpsip, that are not rejected by the diagonal $q-m$ cuts and populate the $q^2$ bins adjacent to the resonance regions, i.e. bin~3, 5, and 7.
 
+The \pdf component needed to describe the distributions of these events is not included in the fit, because of its complex form and the fit general instability.
+A systematic uncertainty has been set up to describe the bias introduced by this omission on the fit results.
+It is described in Section~\ref{sec:feedthr}.
 
-Using simulation, we search for possible backgrounds that might peak in the \PBz\ mass region.
-The event selection is applied to inclusive MC samples of \PBz, \PBs, \PBp, and $\Lambda_{\rm b}$ decays to \cPJgy\ X and $\psi'$ X, where X denotes all possible SM particles required to complete the known exclusive decay channels, and with the \cPJgy\ and $\psi'$ decaying to \Pgmp \Pgmm.
-No evidence for a peaking structure near the \PBz\ mass is found.
-The distributions of the few events that satisfy the selection criteria are similar to the shape of the combinatorial background.
-
-\paragraph{Other sources of peacking background}
+\subsubsection{Peaking background}
 \label{sec:PeakBkg}
 
-As an additional check, we generate events with $\PBs \to \cPKstz({\rm K}^+ \pi^-) \Pgmp \Pgmm$ decays, using the same branching fraction as for $\PBz \to \cPKstz({\rm K}^+ \pi^-)$ $\Pgmp \Pgmm$.
-About 70 such events, integrated over $q^2$, are found to cluster near the \PBs\ mass.
-This background is considered negligible since it should be rescaled by the ratio of branching fractions $\mathcal{B}(\PBs \to \cPJgy \cPKstz) / \mathcal{B}(\BtoKstJpsi) \approx 10^{-2}$~\cite{PDG}.
+Using a set of simulated MC samples, possible background sources that peak in the \PBz\ mass region are investigated.
 
-Possible backgrounds from events with hadrons misidentified as muons or with muons misidentified as hadrons, e.g. from random \PD\ mesons associated with random stable charged hadrons or from $\PBz \to \PD {\rm X}$ or $\PBz \to {\rm J}/\psi {\rm K}^*$ decays, are considered negligible because of the good muon identification capabilities of the CMS detector~\cite{Chatrchyan:2012xi}.
+A set of inclusive MC samples of \PBz, \PBs, \PBp, and $\Lambda_{\rm b}$ hadrons decaying to $\cPJgy(\Pgmp\Pgmm)\mathrm{X}$ and $\psi'(\Pgmp\Pgmm)\mathrm{X}$, have been probed, after applying the full set of selection criteria, but the control region removal and the diagonal cuts. 
+No hints for peaking structures in the region of the \PBz\ mass are found.
+The mass distribution of these events is similar to the shape of the combinatorial background.
 
-We also investigated possible background from events in which a $\PBp \to \PKp \Pgmp \Pgmm$ decay is combined with a random pion, and from events with a $\Lambda_b \to \mathrm{p} \mathrm{K} \Pgmp \Pgmm$ decay in which the proton is assigned the pion mass.
+The same checks are performed with a MC sample of $\PBs \to \cPKstz({\rm K}^+ \pi^-) \Pgmp \Pgmm$ decays.
+Normalising the area of the cluster near the \PBs\ mass to the correct luminosity and assuming the same branching fraction as for $\PBz \to \cPKstz({\rm K}^+ \pi^-)$ $\Pgmp \Pgmm$, about 70 such events, integrated over $q^2$, are present.
+Since the branching fraction of the $\PBs \to \cPKstz \Pgmp \Pgmm$ decay has never been measure, we can assume that the same ratio of branching fractions measured for the resonant channels, $\mathcal{B}(\PBs \to \cPJgy \cPKstz) / \mathcal{B}(\BtoKstJpsi) \approx 10^{-2}$, is valid for the non-resonant channels as well.
+In this case, this background can be considered negligible since we expect less than one event in the whole $q^2$ range.
+
+In the same way, the MC samples containing $\PBp \to \PKp \Pgmp \Pgmm$ and $\Lambda_b \to \mathrm{p} \mathrm{K} \Pgmp \Pgmm$ events are tested.
+In this case the mass values assigned to the hadrons in the final state are changed with respect to the original ones, to one kaon mass and one pion mass, assigned according to the tagging criterion described in Section~\ref{sec:offsel}.
 Both these potential sources of background are found to be negligible.
 
+\subsubsection{Background from muon misidentification}
+\label{sec:muMisidBkg}
 
-\subsection{Test of factorisable background hypothesis}
+A possible background contamination can come from events with hadrons misidentified as muons, or vice-versa.
+To peak under in the signal mass region, these events can be either a four-hadron final states from \PB meson decay, like the \PD meson mediated decays $\PBz \to \PD {\rm X}$, with a pair of opposite-sign hadrons misidentified as muons, or a control-channel decay \BtoKstJpsidecay in which both one of the two muons has been misidentified as hadron and one of the two hadrons has been misidentified as muon.
+These contributions are calculated to be negligible because of the good muon identification capabilities of the CMS detector~\cite{Chatrchyan:2012xi}.
+
+\subsubsection{Test of factorisable background hypothesis}
 \label{sec:fact}
 
 The result of a test on the correlation of the variable distributions for the combinatorial background events is shown in this section.
 
-For each angular variable, the mass-sideband sample has been divided in two sub-samples, cutting in the middle of the variable range.
+For each angular variable, the mass sideband sample has been divided in two sub-samples, cutting in the middle of the variable range.
 Then, the two sub-sample distributions as functions of the other variables are compared.
 Furthermore, the angular variable distributions of the lower and higher sidebands are compared.
 
