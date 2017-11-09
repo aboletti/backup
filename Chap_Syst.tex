@@ -31,7 +31,7 @@ The sources of systematic uncertainties investigated are:
 
 In the following sections, the systematic uncertainties sources are discussed and estimated.
 
-\subsection{Limited amount of simulated events}
+\section{Limited amount of simulated events}
 \label{sec:sys-lim.MCstat}
 
 The use of kernel density estimator to determine the numerator and denominator of the efficiency is based on a sample of simulated events, and a systematic uncertainty is expected from the limited size of the sample used.
@@ -130,7 +130,7 @@ The latter are used as systematic uncertainty.
 % using, in the \pdf fit, a wider and a narrower kernel width, and comparing the results.
 
 
-\subsection{Simulation mismodelling}
+\section{Simulation mismodelling}
 \label{sec:sys-mismodel}
 
 The effects of the simulation mismodelling is measured through the capability of the analysis to retrieve the interesting observables in extremely favourable conditions, using pure-signal simulation with high statistics.
@@ -166,7 +166,7 @@ The results are summarised for each $q^2$ bin in Table~\ref{tab:mis.modelling}.
   \end{center}
 \end{table*}
 
-\subsection{Efficiency shape}
+\section{Efficiency shape}
 \label{sec:effshape-syst}
 
 The main validation of the correctness of the efficiency is performed by comparing the efficiency-corrected results for the control channels with the corresponding world-average values.
@@ -222,13 +222,13 @@ The result of this more detailed computation is: $0.480\pm 0.008({\rm stat}) \pm
 
 The same ratio can be computed using only right tag events, only wrong tag events, or both: in all the cases the agreement is very good.
 
-\subsection{Fitting Bias}
+\section{Fitting Bias}
 \label{sec:fitbias-syst}
 
 The fitting procedure itself could generate biases in the results, in addition to the uncertainties from the fitting components (efficiency, background shape, \pdf, etc) described above.
 The fitting procedure uncertainties thus arise from the possible biases from the fitting methods and procedures.
 
-We estimate this contribution from the fit results of the data-like simulated samples, which are described in Section~\ref{sec:Cocktail-MC}.
+We estimate this contribution from the fit results of the data-like simulated samples, which are described in Section~\ref{sec:Cocktail-MC-full}.
 
 To evaluate the fitting bias, we compare the average result of the fits to cocktail MC samples and the fitting result of full statistics MC sample.
 These differences are used as an estimation of this systematic uncertainty.
@@ -255,7 +255,7 @@ The results are summarised in Table~\ref{tab:fit bias}.
 \end{table*}
 
 
-\subsection{Wrong CP assignment}
+\section{Wrong CP assignment}
 \label{sec:sys-mistag}
 
 % This source of uncertainties will be evaluated from the data after the
@@ -274,7 +274,7 @@ The results are summarised in Table~\ref{tab:fit bias}.
 %       checks.
 % \end{itemize}
 
-% \subsubsection{Mistag fraction}
+% \subsection{Mistag fraction}
 % \label{sec:mistag}
 The error on mistag fraction has been estimated using the control channel \BtoKstJpsi, in $q^2$ bin~4.
 A full fit on this channel has been performed, leaving also the mistag fraction free to float.
@@ -304,7 +304,7 @@ For each $q^2$ bin, the RMS of the results of the 10 fits is used as systematic 
   \end{center}
 \end{table*}
 
-\subsection{Background distributions}
+\section{Background distributions}
 \label{sec:sys-bkg}
 
 The parameters of the background component in the \pdf are estimated on the mass sidebands and kept fixed in the fit to the full mass range, as described in Section~\ref{sec:backg}.
@@ -395,7 +395,7 @@ The worst case is bin 7, where the sideband reduction remove about 75\% of the b
 %%%%%%%%%%%%%%%%%%55
 
 
-\subsection{Mass Distribution}
+\section{Mass Distribution}
 \label{sec:sys-mass distribution}
 
 % Some components of the p.d.f are derived from simulations. The
@@ -414,7 +414,7 @@ For each parameter, the largest of these differences is used as systematic uncer
 
 The maximum difference of $P1$ is 0.012, of $P5'$ is 0.019.
 
-\subsection{Uncertainty from fixed \pdf parameters}
+\section{Uncertainty from fixed \pdf parameters}
 \label{sec:sys-fixedparm}
 
 Fixing three of the six angular parameters in the fit could have an effect of modifying the statistical uncertainties for the fitted parameters.
@@ -442,7 +442,7 @@ S = \sigma \sqrt{f^2-1}
 \end{equation}
 where $\sigma$ is the statistical error and $f$ is the scale-factor average.
 
-A test to check whether the \textit{scale factors} depend on the statistics of the pseudo-experiments used is described in Section~\ref{sec:app-fixSyst.test}.
+%% A test to check whether the \textit{scale factors} depend on the statistics of the pseudo-experiments used is described in Section~\ref{sec:app-fixSyst.test}.
 
 The scale-factor averages and the systematic uncertainty values are reported in table~\ref{tab:systFix}.
 
@@ -522,7 +522,7 @@ No significant bias are present.
 \clearpage
 
 
-\subsection{Angular Resolution}
+\section{Angular Resolution}
 \label{sec:sys-angres}
 
 This systematic uncertainty is due to the limited detector resolution on angular distributions.
@@ -550,7 +550,7 @@ The difference between the two results, shown in table~\ref{tab:systReso}, is us
 
 \clearpage
 
-\subsection{Feed-through background}
+\section{Feed-through background}
 \label{sec:feedthr}
 
 The $q^2$ bins just below and above the resonance regions may be contaminated by $B^0 \to {\rm J/}\psi K^{*0}$ and $B^0 \to \psi' K^{*0}$ feed-through events that are not removed by the selection criteria.
@@ -614,7 +614,7 @@ The result are in the Table~\ref{tab:feed-through}.
   \end{center}
 \end{table*}
 
-\subsection{Bivariate Guassian fit range}\label{sec:bestFit}
+\section{Bivariate Guassian fit range}\label{sec:bestFit}
 
 As described in Section~\ref{sec:fitseq}, the procedure to get the best fit from the data is to discretise the $P_1,P'_5$ space, and maximise the likelihood as a function of nuisance parameters at fixed values of $P_1,P'_5$.
 So we have a scan of the likelihood in the $P_1$, $P'_5$ plane.
@@ -671,8 +671,7 @@ Since these differences have the same nature of the \textit{fit bias} uncertaint
   \end{center}
 \end{table*}
 
-\clearpage
-\subsection{Total Systematic Uncertainties}
+\section{Total Systematic Uncertainties}
 \label{sec:sys-total}
 
 The summary of all systematic uncertainties are shown in Table~\ref{tab:systematics}.

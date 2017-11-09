@@ -1,6 +1,8 @@
 %% \documentclass[12pt,oneside,a4paper]{report}
 \documentclass[a4paper,11pt,twoside]{book}
 
+\usepackage{cite}
+\usepackage[hidelinks]{hyperref}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{siunitx}
@@ -37,6 +39,7 @@
 \newcommand{\JPsi}{\ensuremath{\textrm{J}/\psi}\xspace}
 \newcommand{\PJpsi}{\ensuremath{\textrm{J}/\psi}\xspace}
 \newcommand{\cPJgy}{\ensuremath{\textrm{J}/\psi}\xspace}
+\newcommand{\PK}{\ensuremath{\textrm{K}}\xspace}
 \newcommand{\PKp}{\ensuremath{\textrm{K}^{+}}\xspace}
 \newcommand{\PKm}{\ensuremath{\textrm{K}^{-}}\xspace}
 \newcommand{\Pgpp}{\ensuremath{\pi^{+}}\xspace}
@@ -140,10 +143,10 @@
 \input{Chap_Selec.tex}
 \clearpage
 
-\input{Chap_Effic.tex}
+\input{Chap_Fit.tex}
 \clearpage
 
-\input{Chap_Fit.tex}
+\input{Chap_Effic.tex}
 \clearpage
 
 \input{Chap_Valid.tex}
@@ -169,6 +172,8 @@
 %%%%%%%%%% BIBLIOGRAPHY
 %% \bibliography{auto_generated}   % will be created by the tdr script.
 %% \clearpage
+\bibliography{Biblio,bib-master,bib-note,bib-paper}{}
+\bibliographystyle{plain}
 
 %%%%%%%%% APPENDICES
 %% \appendix

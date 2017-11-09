@@ -6,7 +6,7 @@ Since the whole fit procedure is very complex, many validation checks are perfor
 In this section I will present the studies performed on the fit procedure, both on simulated MC events and on data control channels.
 Since all the signal MC samples contain only events with resonant P-wave \PKpi state, it will be implicit in this section that the angular decay rate used when fitting MC events does not have the S-wave and interference terms, while the full decay rate is used when fitting on data control channels.
 
-\subsection{Generator level fit to signal MC events}
+\section{Generator level fit to signal MC events}
 \label{sec:fitval-gen}
 
 The first validation step, presenting the minimum level of complexity, is performed by fitting the generator-level angular distributions of the signal MC sample, using the pure decay rate as \pdf: $S^a(\TK,\TL,\PHI)$.
@@ -95,7 +95,7 @@ An example of the generator-level angular distributions and the projections of t
 
 
 
-\subsection{Reconstruction-level fit to signal MC samples}
+\section{Reconstruction-level fit to signal MC samples}
 \label{sec:fitval-reco}
 
 The second validation step is performed by fitting the reconstruction-level angular distributions of the signal MC sample, after applying the criteria of candidate selection and CP-state tag described in Section~\ref{sec:selection}.
@@ -570,7 +570,7 @@ The results of right-tagged event fit and of the generator-level fit, are shown 
 %%   \label{fig:hc-closure-p1}
 %% \end{figure}
 
-\subsection{Reconstructed level fit to low statistics simulated samples}
+\section{Reconstructed level fit to low statistics simulated samples}
 \label{sec:datalike-MC}
 
 The fit algorithm is also validated with simulated samples having the same statistics of the real data sample, and containing both the signal and the background components.
@@ -586,7 +586,7 @@ To match the signal MC sub-samples, also for background a total of 200 sets of e
 These samples have been used to validate the fitting procedure, first using only the signal, then merging each signal sub-sample with a background one.
 I will refer to a merged sub-sample as ``cocktail'' MC sample.
 
-\subsubsection{Data-like samples of signal MC events}
+\subsection{Data-like samples of signal MC events}
 \label{sec:Cocktail-MC-pure}
 
 As a first step, the angular distribution of the signal sub-samples is fitted, using only the signal components of the \pdf.
@@ -647,7 +647,7 @@ The error bars assigned to the mean values are the standard deviations of the re
 %% error estimation from the fitting is reasonable.
 
 
-\subsubsection{Data-like ``cocktail'' MC samples}
+\subsection{Data-like ``cocktail'' MC samples}
 \label{sec:Cocktail-MC-full}
 
 As a second step, the mass and angular distributions of the 200 ``cocktail'' MC samples are fitted using the full \pdf function.
@@ -811,13 +811,13 @@ The comparison between the average results of the 200 ``cocktails'' fit and the 
 %%   \label{fig:error-com-8}
 %% \end{figure}
 
-\subsection{Validation with data control channels}
+\section{Validation with data control channels}
 \label{sec:controlchannel}
 
 The analysis technique is validated with the data by means of the control channels.
-In this way also the S-wave component of the PDF is tested, and we have a check of the efficiency behaviour on real data.
+In this way, the S-wave component of the PDF is tested, and we have a check of the efficiency behaviour on real data.
 
-\subsubsection{ Retrieved background shape from the data sidebands}
+\subsection{Sideband fit in control regions}
 \label{sec:bkgforcc}
 
 The background shape is determined as for the other bins, by using the data sidebands as a function of the angular observables.
@@ -883,7 +883,7 @@ The background distributions and \pdf projections are plotted in Figure~\ref{fig
 \end{figure}
 
 
-\subsubsection{Control channel fit}
+\subsection{Control channel fit}
 \label{sec:fitcc}
 
 The two control channels are fitted, with  $F_s$ and $A_s$ fixed, as described in Section~\ref{sec:fitseq}, while $F_L$ is kept floating.

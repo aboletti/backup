@@ -71,7 +71,10 @@ In this section both of them are described and some example functions are showed
 In the next section a closure test developed to determine their accuracy is described and the better performances of the KDE-based method will be highlighted.
 
 %% The first extend the efficiency description from two to three dimensions by considering two variables at a time, while integrating over the third, and then iterating on the variables choice.
-\subsection{Two-dimensional binned method}\label{sec:eff_2Dprod}
+
+\subsection{Two-dimensional binned method}
+\label{sec:eff_2Dprod}
+
 The first method is based on binned efficiency functions.
 Instead of building directly a three-dimensional binned efficiency, facing the low per-bin statistics, we use two-dimensional functions to compose the final efficiency.
 To model the efficiency correlation between each couple of parameters, three functions are created by integrating out, recursively, one angular variable and building the efficiency as a function of the remaining two.
@@ -98,7 +101,9 @@ An example of the two dimension binned efficiencies after a linear interpolation
     \label{fig:eff2D}
 \end{figure}
 
-\subsection{Kernel Density Estimator method}\label{sec:eff_kde}
+\subsection{Kernel Density Estimator method}
+\label{sec:eff_kde}
+
 The second approach uses a non-parametric description of the efficiency based on a Kernel Density Estimator (KDE)~\cite{opac-b1089297,Cranmer:2000du}.
 
 The general idea behind this method, in its simplest form for a uni-dimensional problem, is to start from an unbinned distribution of events as a function of a given variable $x$, and describe its true distribution {\texttt{pdf}$_{\mathrm{TRUE}}$} by building a kernel, namely a function $K(x)$ with unitary integral over the range of definition of $x$, on top of every event, and use the sum of all kernels, with proper normalisation, as a non-parametric description of {\texttt{pdf}$_{\mathrm{TRUE}}$}:
@@ -338,7 +343,8 @@ An example of the projections of the efficiency, as obtained by the KDE method w
 
 \clearpage
 
-\section{Closure test}\label{sec:closure}
+\section{Closure test}
+\label{sec:closure}
 
 A validation of the efficiency parameterisation is performed via a closure test based on MC samples.
 We compare the event distribution of the three angular observables, \cTK, \cTL, and \PHI, as reconstructed after the full simulation and after the application of the whole set of selections described in Section~\ref{sec:selection}, with the full set of generated event distribution, before the application of the GEN-filter, weighted, event-by-event, with the tested efficiency function.
@@ -351,7 +357,7 @@ The equality to test is the following:
 
 The closure test has been performed for any efficiency function produced: for each $q^2$ bin, separately for right (R) and mis-tag (M), and for signal and control samples.
 
-An example of the closure test results of the first method efficiencies, as described in Section~\ref{eff_2Dprod}, is shown, for right-tagged events in $q^2$ bin~1, for the linear interpolation in Fig.~\ref{fig:clEff2Dlin}, and for the parabolic interpolation in Fig.~\ref{fig:clEff2Dpar}.
+An example of the closure test results of the first method efficiencies, as described in Section~\ref{sec:eff_2Dprod}, is shown, for right-tagged events in $q^2$ bin~1, for the linear interpolation in Fig.~\ref{fig:clEff2Dlin}, and for the parabolic interpolation in Fig.~\ref{fig:clEff2Dpar}.
 The result quality for the linearly-interpolated efficiency does not follow very well the original distribution where it is very steep and it introduces a \PHI dependence where none is present.
 The quality improvement due to the second-order interpolation is not enough to have an accurate description of the shape in the \cTK projection and the modulation against \PHI is still present.
 An improvement to this technique could come from an increase in the number of bins used to build the two-dimensional components of the efficiency, but the available statistics of the MC samples, especially for the mis-tagged events, prevent to go further with this.
