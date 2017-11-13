@@ -18,21 +18,56 @@ temp
 
 %% temp
 
-%%%%%%%%%%%%%%%%%%%%5
+The FCNC decay \BtoKstmumudecay is an optimal laboratory to probe the flavour sector of the SM.
+From the experimental point of view, it has a fully charged final state, with two muons, which are easy to identify in a multi-purpose particle detector, and two charged hadronic particles.
+Furthermore, the charges of the hadrons in the final state determine the CP-state of the decay, i.e. whether it is \BtoKstmumudecay or \BtoKstmumuconjdecay.
+From the phenomenological point of view, the angular analysis of this decay can provide information on several components of the weak effective Hamiltonian: the electromagnetic and semileptonic operators, $\mathcal{O}_{7,9,10}$, and their chirality-flipped counterparts, $\mathcal{O}_{7^\prime,9^\prime,10^\prime}$, together with scalar and pseudoscalar operators, $\mathcal{O}_{S,P,S^\prime,P^\prime}$.
 
+%%%%%%%%%%%%%%%%%%%%%%%
 
-The angle $\theta_l$ is defined as the angle between the direction of the $\mu^+ $ ($\mu^- $) and the direction opposite that of the $\text{B}^0$ ($\bar{\text{B}^0}$) in the dimuon rest frame; the angle $\theta_\mathrm{K} $ is defined as the angle between the direction of the kaon and the direction opposite that of the $B^0$ ($\bar{\text{B}^0}$) in the $\text{K}^{*0}$ rest frame; the angle $\phi$ is the angle between the plane containing the $\mu^+ $ and $\mu^- $ and the plane containing the kaon and the pion from the $\PKst$ decay in the $\text{B}^0$ rest frame.
-%%%%%%%%%%%%%%%%%%%%%%%%
+The decay in the four-body final state is completely described by a set of four kinematical variables, \TL, \TK, \PHI, and $q^2$.
+The variable \TL is defined as the angle between the momentum of the \Pgmp (\Pgmm) and the direction opposite to the \PBz (\PaBz) momentum in the dimuon rest frame:
+\begin{equation} \label{eq:TLdef}
+  \begin{aligned}
+    \cTL & = \left( p_{\Pgmp}^{(\Pgmp\Pgmm)} \right) \cdot \left( -p_{\PBz }^{(\Pgmp\Pgmm)} \right)\, && \mathrm{for}\:\PBz\:\mathrm{decay} \\
+    \cTL & = \left( p_{\Pgmm}^{(\Pgmp\Pgmm)} \right) \cdot \left( -p_{\PaBz}^{(\Pgmp\Pgmm)} \right)\, && \mathrm{for}\:\PaBz\:\mathrm{decay} \\
+  \end{aligned}
+\end{equation}
+%% \begin{alignat}{3} \label{eq:TLdef}
+%%   \cTL = & \left( p_{\Pgmp}^{(\Pgmp\Pgmm)} \right) \cdot \left( -p_{\PBz }^{(\Pgmp\Pgmm)} \right)\, & \mathrm{for \PBz decay;} \\
+%%   \cTL = & \left( p_{\Pgmm}^{(\Pgmp\Pgmm)} \right) \cdot \left( -p_{\PaBz}^{(\Pgmp\Pgmm)} \right)\, & \mathrm{for \PaBz decay.}
+%% \end{alignat}
+The variable \TK is defined as the angle between the direction of the kaon and the direction opposite that of the \PBz (\PaBz), in the \cPKstz (\cPAKstz) rest frame
+\begin{equation} \label{eq:TKdef}
+  \begin{aligned}
+    \cTK&=\left( p_{\PKp}^{(\cPKstz) } \right) \cdot \left( -p_{\PBz }^{(\cPKstz) } \right)\, && \mathrm{for}\:\PBz\:\mathrm{decay;} \\
+    \cTK&=\left( p_{\PKm}^{(\cPAKstz)} \right) \cdot \left( -p_{\PaBz}^{(\cPAKstz)} \right)\, && \mathrm{for}\:\PaBz\:\mathrm{decay.}
+  \end{aligned}
+\end{equation}
+The variable \PHI is defined as the angle between the plane containing the \Pgmp and \Pgmm momenta and the plane containing the momenta of the kaon and the pion, in the \PBz rest frame, with the following sign conventions:
+\begin{equation} \label{eq:PHIdef}
+  \begin{aligned}
+    \cos(\PHI) &= \left( p_{\Pgmp}^{(\PBz)} \times p_{\Pgmm}^{(\PBz)} \right) \cdot \left( p_{\PKp}^{(\PBz)} \times p_{\Pgpm}^{(\PBz)} \right) \, && \mathrm{and} \\
+    \sin(\PHI) &= \left[ \left( p_{\Pgmp}^{(\PBz)} \times p_{\Pgmm}^{(\PBz)} \right) \times \left( p_{\PKp}^{(\PBz)} \times p_{\Pgpm}^{(\PBz)} \right) \right] \cdot p_{\cPKstz}^{(\PBz)}\, && \mathrm{for}\:\PBz\:\mathrm{decay;} \\[8pt]
+    \cos(\PHI) &= \left( p_{\Pgmm}^{(\PaBz)} \times p_{\Pgmp}^{(\PaBz)} \right) \cdot \left( p_{\PKm}^{(\PaBz)} \times p_{\Pgpp}^{(\PaBz)} \right) \, && \mathrm{and} \\
+    \sin(\PHI) &= \left[ \left( p_{\Pgmm}^{(\PaBz)} \times p_{\Pgmp}^{(\PaBz)} \right) \times \left( p_{\PKm}^{(\PaBz)} \times p_{\Pgpp}^{(\PaBz)} \right) \right] \cdot p_{\cPAKstz}^{(\PaBz)}\, && \mathrm{for}\:\PaBz\:\mathrm{decay.} \\
+  \end{aligned}
+\end{equation}
+Finally, the variable $q^2$ is defined as the invariant mass squared of the dimuon system.
+In the Equations~\ref{eq:TLdef},~\ref{eq:TKdef},~\ref{eq:PHIdef} the notation $p_a^{(b)}$ indicates the momentum of the particle $a$ in the rest frame of the particle $b$.
 
-Figure~\ref{fig:ske} illustrates the angular variables needed to describe the decay: $\theta_\ell$ is the angle between the positive (negative) muon momentum and the direction opposite to the \PBz\ $\big(\PaBz\big)$ momentum in the dimuon rest frame, $\theta_\PK$ is the angle between the kaon momentum and the direction opposite to the \PBz\ $\big(\PaBz\big)$ momentum in the \cPKstz\ $\big(\cPAKstz\big)$ rest frame, and $\varphi$ is the angle between the plane containing the two muons and the plane containing the kaon and the pion in the \PBz\ rest frame.
+The definition of the kinematical variables is coherent with the one used in the previous analyses performed on this decay channel.
+A graphic representation of the definition of the three angular variables is shown in Figure~\ref{fig:ske}.
 
-\begin{figure*}[t]
+\begin{figure*}[!tbh]
   \begin{center}
     \includegraphics[width=0.99\textwidth]{SketchDecay.pdf}
-    \caption{Illustration of the angular variables $\theta_\ell$ (left), $\theta_\PK$ (middle), and $\varphi$ (right) for the decay \BtoKstmumudecay.}
+    \caption{Illustration of the angular variables \TL (left), \TK (middle), and \PHI (right) for the decay \BtoKstmumudecay.}
     \label{fig:ske}
   \end{center}
 \end{figure*}
+
+The range of definition of the angular variables are $\left[0,\pi\right]$, for \TL and \TK, and $\left[-\pi,\pi\right]$, for \PHI.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%555
 
