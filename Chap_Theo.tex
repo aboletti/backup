@@ -8,7 +8,7 @@ temp
 
 temp
 
-\subsection{Flavour-changing neutral currents}
+\subsection{Flavour-changing neutral currents b to s l l}
 \label{sec:FCNC}
 
 temp
@@ -26,7 +26,7 @@ From the phenomenological point of view, the angular analysis of this decay can 
 %%%%%%%%%%%%%%%%%%%%%%%
 
 The decay in the four-body final state is completely described by a set of four kinematical variables, \TL, \TK, \PHI, and $q^2$.
-The variable \TL is defined as the angle between the momentum of the \Pgmp (\Pgmm) and the direction opposite to the \PBz (\PaBz) momentum in the dimuon rest frame:
+The variable \TL is defined as the angle between the momentum of the \Pgmp (\Pgmm) and the direction opposite to the \PBz (\PaBz) momentum, in the dimuon rest frame:
 \begin{equation} \label{eq:TLdef}
   \begin{aligned}
     \cTL & = \left( p_{\Pgmp}^{(\Pgmp\Pgmm)} \right) \cdot \left( -p_{\PBz }^{(\Pgmp\Pgmm)} \right)\, && \mathrm{for}\:\PBz\:\mathrm{decay} \\
@@ -50,13 +50,14 @@ The variable \PHI is defined as the angle between the plane containing the \Pgmp
     \cos(\PHI) &= \left( p_{\Pgmp}^{(\PBz)} \times p_{\Pgmm}^{(\PBz)} \right) \cdot \left( p_{\PKp}^{(\PBz)} \times p_{\Pgpm}^{(\PBz)} \right) \, && \mathrm{and} \\
     \sin(\PHI) &= \left[ \left( p_{\Pgmp}^{(\PBz)} \times p_{\Pgmm}^{(\PBz)} \right) \times \left( p_{\PKp}^{(\PBz)} \times p_{\Pgpm}^{(\PBz)} \right) \right] \cdot p_{\cPKstz}^{(\PBz)}\, && \mathrm{for}\:\PBz\:\mathrm{decay;} \\[8pt]
     \cos(\PHI) &= \left( p_{\Pgmm}^{(\PaBz)} \times p_{\Pgmp}^{(\PaBz)} \right) \cdot \left( p_{\PKm}^{(\PaBz)} \times p_{\Pgpp}^{(\PaBz)} \right) \, && \mathrm{and} \\
-    \sin(\PHI) &= \left[ \left( p_{\Pgmm}^{(\PaBz)} \times p_{\Pgmp}^{(\PaBz)} \right) \times \left( p_{\PKm}^{(\PaBz)} \times p_{\Pgpp}^{(\PaBz)} \right) \right] \cdot p_{\cPAKstz}^{(\PaBz)}\, && \mathrm{for}\:\PaBz\:\mathrm{decay.} \\
+    \sin(\PHI) &=-\left[ \left( p_{\Pgmm}^{(\PaBz)} \times p_{\Pgmp}^{(\PaBz)} \right) \times \left( p_{\PKm}^{(\PaBz)} \times p_{\Pgpp}^{(\PaBz)} \right) \right] \cdot p_{\cPAKstz}^{(\PaBz)}\, && \mathrm{for}\:\PaBz\:\mathrm{decay.} \\
   \end{aligned}
 \end{equation}
 Finally, the variable $q^2$ is defined as the invariant mass squared of the dimuon system.
 In the Equations~\ref{eq:TLdef},~\ref{eq:TKdef},~\ref{eq:PHIdef} the notation $p_a^{(b)}$ indicates the momentum of the particle $a$ in the rest frame of the particle $b$.
 
 The definition of the kinematical variables is coherent with the one used in the previous analyses performed on this decay channel.
+The definition of \TL differs from the one used un some phenomenological papers.
 A graphic representation of the definition of the three angular variables is shown in Figure~\ref{fig:ske}.
 
 \begin{figure*}[!tbh]
@@ -74,8 +75,78 @@ The range of definition of the angular variables are $\left[0,\pi\right]$, for \
 \subsection{The angular decay rate}
 \label{sec:decRate}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Using the notation of~\cite{Ball2009}, the differential angular distribution can be written as:
+The matrix element for the \BtoKstmumudecay can be obtained from the effective Hamiltonian in Equation~\ref{eq:effHamil}:
+\begin{equation}\label{eq:matrixelement}
+  \begin{split}
+    {\mathcal M}\ =& \frac{G_F\alpha}{\sqrt{2}\pi}V_{tb}^{}V_{ts}^*\bigg\{\bigg[ \braket{K \pi}{\bar{s}\gamma^{\mu}({C_9^\text{eff}P_L+C_9^{\prime\text{eff}} P_R})b}{\bar B} \\
+      &-\frac{2m_b}{q^2}\braket{K\pi}{\bar{s}i\sigma^{\mu\nu}q_{\nu}(C_7^\text{eff} P_R+C_7^{\prime\text{eff}}  P_L)b}{\bar B}\bigg](\bar{\mu}\gamma_{\mu}\mu)\\
+    &+ \braket{K\pi}{\bar{s}\gamma^{\mu}({C_{10}^\text{eff} P_L+C_{10}^{\prime\text{eff}} P_R})b}{\bar B}(\bar{\mu}\gamma_{\mu}\gamma_5 \mu) \\
+    & {+\braket{K \pi}{\bar{s} ({C_S P_R+C_S^\prime P_L}) b}{\bar B}(\bar{\mu}\mu)}{+\braket{K \pi}{\bar{s} ({C_P P_R+C_P^\prime P_L}) b}{\bar B}(\bar{\mu}\gamma_5\mu)} \bigg \}.
+  \end{split}
+\end{equation}
+where the naive factorization has been applied and a set of effective Wilson coefficients, $C_{i}^\text{eff}$, is used.
+These effective coefficients are linear combinations of the set defined in Section~\ref{sec:FCNC}, and their definition is described in Reference~\cite{Altmannshofer:2008dz}.
+
+The differential decay distribution as a function of the kinematical variables can be obtained by squaring Equation~\ref{eq:matrixelement}.
+Projecting the result on a basis of combinations of spherical harmonics of the angular variables, one obtains the following expression for the \BtoKstmumuconjdecay decay:
+\begin{small}
+  \begin{align} \label{eq:angulardist}
+    \frac{d^4\Gamma}{dq^2\, d\cTL\, d\cTK\, d\PHI} &=\frac{9}{32\pi}\bigg[ I_1^s\sin^2\TK + I_1^c\cos^2\TK \nonumber\\
+      & + (I_2^s\sin^2\TK + I_2^c\cos^2\TK)\cos2\TL + I_3 \sin^2\TK \sin^2\TL \cos 2\PHI \nonumber \\
+      & + I_4 \sin 2\TK \sin 2\TL \cos\PHI + I_5 \sin 2\TK \sin\TL \cos\PHI \nonumber \\
+      & + (I_6^s \sin^2\TK + {I_6^c \cos^2\TK})  \cos\TL + I_7 \sin 2\TK \sin\TL \sin\PHI \nonumber \\
+    & + I_8 \sin 2\TK \sin 2\TL \sin\PHI + I_9 \sin^2\TK \sin^2\TL \sin 2\PHI \bigg]
+  \end{align}
+\end{small}
+where the complex angular coefficients $I_i^{(a)}$ depend only on $q^2$.
+The differential distribution of the opposite CP-state decay, \BtoKstmumudecay, has the same expression, but it is function of the complex conjugated coefficiencts $\bar{I}_i^{(a)}$.
+
+The set of angular coefficients $I_i^{(a)}$ has been expressed as a function of the effective Wilson coefficients and of the form factors, under the assumptions of naive factorisation of the matrix element and adding corrections to describe the effect of non-factorisable terms.
+In literature they are also expressed as a function of eight \Ks transversity amplitudes.
+
+Unlike Wilson coefficients, form factors, and transversity amplitudes, the angular coefficients $I_i^{(a)}$ are physical observable and they can be experimentally measured by the angular analysis of the \BtoKstmumudecay decay.
+However, the theoretical predictions of these coefficients are prone to hadronic uncertainties, derived from their strong dependency on the form factors.
+For this reasons, more sophisticated bases of angular coefficients have been defined such that they are independent from form factors at leading order of the effective-theory expansion.
+
+Firstly, two sets of coefficients are defined, the CP-averages:
+\begin{equation}
+  S^{(a)}_i = \frac{ I^{(a)}_i + \bar I^{(a)}_i }{\frac{d\Gamma}{dq^2} + \frac{d\bar\Gamma}{dq^2}}
+  \label{eq:Ss}
+\end{equation}
+and the CP asymmetries:
+\begin{equation}
+  A^{(a)}_i = \frac{ I^{(a)}_i - \bar I^{(a)}_i }{\frac{d\Gamma}{dq^2}+\frac{d\bar\Gamma}{dq^2}}
+  \label{eq:As}
+\end{equation}
+that are usefull to disentangle potential NP effects that introduce new sources of CP-violation from the others.
+Since this analysis is aiming the measurement of two CP-averaged angular parameters, I will not spend time describing the basis of CP-violating coefficients but I will focus on the set of $S^{(a)}_i$ parameters.
+
+The twelve real angular coefficients in this set can be reduced to eight, in the approximation of nagligible leptom mass with respect to $q$.
+This is true in this analysis, since only candidates with $q$ value greater than 1\GeV are used, as described in Section~\ref{sec:q2}.
+In the massless-muon limit, the following conditions are valid:
+\begin{gather}
+  S_1^s = 3 S_2^s \nonumber\\
+  S_1^c = - S_2^c \nonumber\\
+  \frac{3}{4}\left(2S_1^s+S_1^c\right)-\frac{1}{4}\left(2S_2^s+S_2^c\right) = 1 \nonumber\\
+  S_6^c = 0 \label{eq:massless-reductions}
+\end{gather}
+where the latter condition is always true within the SM, even without the massless-muon limit, since it is generated by the scalar operator, which does not exist in the SM.
+
+The $S_1^c$ coefficient corresponds to the fraction of \Ks produced with longitudinal polarization, and it is usually reffered to as $F_L$.
+In the same way, the coefficient $S_6^s$ is proportional to the forward-backward asymmetry of the muon system, thus the parameter $A_{FB}=\frac{3}{4}S_6^s$ is used.
+
+The so-called $P$-primed basis of angular parameters, clean from leading-order hadronic uncertainties, is defined as:
+\begin{equation}\label{eq:defPPrime}
+  \begin{split}
+    P_1 &= \frac{2S_3}{1-F_L}\\
+    P_2 &= \frac{2}{3}\frac{A_{FB}}{1-F_L}\\
+    P_3 &= \frac{-S_9}{1-F_L}\\
+    P'_{4,5,8} &= \frac{S_{4,5,8}}{sqrt{F_L(1-F_L)}}\\
+    P'_6 &= \frac{S_7}{sqrt{F_L(1-F_L)}}\\
+  \end{split}
+\end{equation}
+
+Using the $P_i^{(\prime)}$ basis, with $F_L$ and its complementary $F_T=1-F_L$, the differential angular distribution can be written as:
 \begin{equation} \label{eq:Angular}
   \begin{split}
     \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} =\frac{9}{32\pi}\left[\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \right.\\
@@ -85,8 +156,6 @@ Using the notation of~\cite{Ball2009}, the differential angular distribution can
       &\left.+2P_2F_\mathrm{T}\sin^2\theta_\mathrm{K}\cos\theta_l-P_3F_\mathrm{T}\sin^2\theta_\mathrm{K}\sin^2\theta_l\sin2\phi \right]
   \end{split}
 \end{equation}
-where the $q^2$ dependent observables $P_i$ and $P'_i$ are optimized observables built via combinations of the $\text{K}^{*0}$ decay amplitudes, as defined in~\cite{Genon:Swave}; $F_\mathrm{L}$ is the longitudinal polarization fraction of the $\text{K}^{*0}$ and $F_\mathrm{T}=(1-F_\mathrm{L})$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 \subsubsection{S-wave contamination}
 \label{sec:S-waveform}
