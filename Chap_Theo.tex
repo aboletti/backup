@@ -8,15 +8,74 @@ temp
 
 temp
 
-\subsection{Flavour-changing neutral currents b to s l l}
+\subsection[Flavour-changing neutral currents b to s l l]{Flavour-changing neutral currents $b\to s\ell^+\ell^-$}
 \label{sec:FCNC}
 
-temp
+The penguin-mediated flavour-changing neutral currents (FCNC) $b\to s\ell^+\ell^-$ are a set of $b$-hadron semileptonic decays with a pair of non-resonant charged leptons in the final state.
+These decay channels are doubly suppressed within the SM:
+\begin{itemize}
+\item they are forbidden at tree-level, since there is no neutral current in SM allowed to violate the flavour, and the leading-order Feynman diagram that mediate them is a weak penguin loop;
+\item the leading-order diagram is Cabibbo suppressed, since it is proportional to $|V_{ts}V_{tb}|\sim10^{-2}$.
+\end{itemize}
+These suppressions result in in small branching fractions and they create an ideal environment for New Physics (NP) searches.
+Any potential contrubution from physics beyond the SM that enters in the loop diagram could produce sizeable effects in the decay branching fractions or in their angular distributions.
 
-\section{The decay B0 to K*0 mu+ mu-}
+On the other hand, the theoretical predictions of the angular distributions and branching fractions of these decays are quite suscettible to hadronic uncertainties due to long-distance Quantum Chromodynamic (QCD) processes.
+In order to separate, in the theoretical framework, the effect from long-distance QCD and from short-disctance effects, which are related to QCD and electroweak interactions but also to NP processes, an effective Hamiltonian is defined as follow:
+\begin{equation} \label{eq:Heff}
+  {\cal H}_{\eff} = - \frac{4\,G_F}{\sqrt{2}}\left(\lambda_t {\cal H}_{\eff}^{(t)} + \lambda_u {\cal H}_{\eff}^{(u)}\right)
+\end{equation}
+where $\lambda_i=V_{ib}V_{is}^*$ and
+\begin{eqnarray*}
+  {\cal H}_{\eff}^{(t)} & = & C_1 \mathcal O_1^c + C_2 \mathcal O_2^c + \sum_{i=3}^{6} C_i \mathcal O_i + \sum_{i=7,8,9,10,P,S} (C_i \mathcal O_i + C'_i \mathcal O'_i)\,, \\
+  {\cal H}_{\eff}^{(u)} & = & C_1 (\mathcal O_1^c-\mathcal O_1^u)  + C_2(\mathcal O_2^c-\mathcal O_2^u)\,.
+\end{eqnarray*}
+
+The of opearators $\mathcal O_i^{(a)}$ for $i<7$ are defined in the Reference~\cite{oper}, while the other ones are defined accordingly to Reference~\cite{Altmannshofer:2008dz}:
+\begin{align}
+  {\mathcal{O}}_{7} &= \frac{e}{g^2} m_b (\bar{s} \sigma_{\mu \nu} P_R b) F^{\mu \nu} &
+  {\mathcal{O}}_{7}^\prime &= \frac{e}{g^2} m_b (\bar{s} \sigma_{\mu \nu} P_L b) F^{\mu \nu} \label{eq:O7}\\
+  {\mathcal{O}}_{8} &= \frac{1}{g} m_b (\bar{s} \sigma_{\mu \nu} T^a P_R b) G^{\mu \nu \, a} &
+  {\mathcal{O}}_{8}^\prime &= \frac{1}{g} m_b (\bar{s} \sigma_{\mu \nu} T^a P_L b) G^{\mu \nu \, a} \label{eq:O8}\\
+  {\mathcal{O}}_{9} &= \frac{e^2}{g^2} (\bar{s} \gamma_{\mu} P_L b)(\bar{\mu} \gamma^\mu \mu) &
+  {\mathcal{O}}_{9}^\prime &= \frac{e^2}{g^2} (\bar{s} \gamma_{\mu} P_R b)(\bar{\mu} \gamma^\mu \mu) \label{eq:O9}\\
+  {\mathcal{O}}_{10} &=\frac{e^2}{g^2} (\bar{s}  \gamma_{\mu} P_L b)(\bar{\mu} \gamma^\mu \gamma_5 \mu) &
+  {\mathcal{O}}_{10}^\prime &=\frac{e^2}{g^2} (\bar{s}  \gamma_{\mu} P_R b)(\bar{\mu} \gamma^\mu \gamma_5 \mu) \label{eq:O10}\\
+  {\mathcal{O}}_{S} &=\frac{e^2}{16\pi^2} m_b (\bar{s} P_R b)(\bar{\mu} \mu) &
+  {\mathcal{O}}_{S}^\prime &=\frac{e^2}{16\pi^2} m_b (\bar{s} P_L b)(\bar{\mu} \mu) \label{eq:OS}\\
+  {\mathcal{O}}_{P} &=\frac{e^2}{16\pi^2} m_b (\bar{s} P_R b)(\bar{\mu} \gamma_5 \mu) &
+  {\mathcal{O}}_{P}^\prime &=\frac{e^2}{16\pi^2} m_b (\bar{s} P_L b)(\bar{\mu} \gamma_5 \mu) \label{eq:OP}
+\end{align}
+where $g$ is the strong coupling constant, $m_b$ is therunning $b$ quark mass in the $\bar{\mathrm{MS}}$ scheme, and $P_{L,R}=(1\mp\gamma_5)/2$ are the chirality projectors.
+
+The set of Wilson coefficients $C^{(\prime)}_i$ encodes the contribution from short-distance physics and could contain NP effects.
+These coefficients can be expanded and calculated in perturbation theory in powers of $\alpha_s$:
+\begin{equation}\label{WilExpansion}
+  C_i = C_i^{(0)} + \frac{\alpha_s}{4\pi}\, C_i^{(1)} + \left(\frac{\alpha_s}{4\pi}\right)^2 C_i^{(2)} + O(\alpha_s^3)\,,
+\end{equation}
+Their predicted values of these expanded coefficients, both within SM and for NP scenarios, are calculated at the scale $\mu=m_W$ and then evolved down to $\mu\sim m_b$.
+
+According to the SM, several of the terms in the effective Hamiltonian are expected to vanish or be highly suppressed; this is the case for all the primed operators, as well as for the scalar and pseudoscalar ones, ${\mathcal{O}}_{S}$ and ${\mathcal{O}}_{P}$.
+
+%%%%%%%%%%%%%%%%%%%%
+If we restrict the study to a $\mathrm{B}^{(0,\pm)}\to\K^{*(0,\pm)}\ell^+\ell^-$ decay, the matrix elements of the effective Hamiltonian operators ${\mathcal{O}}^{(\prime)}_{7,9,10,S,P}$ can be descibed as a function of seven form factors, $A_i(q^2)$, $V(q^2)$, and $T_j(q^2)$, where $0\le i\le2$ and $1\le j\le2$, and $q^2$ is the squared muomentum carried by the pair of leptons.
+In literature is also used the form factor $A_3(q^2)$, which is a linear combination of $A_1(q^2)$ and $A_2(q^2)$.
+
+The theoretical predictions of the form factors are computed using the QCD sum rules on the light-cone (LCSRs)~\cite{Khodjamirian:2001bj}.
+With this technique, the form factors are expanded as a function of $m_b m_{\mathrm{K}^*}/(m_b^2-q^2)$.
+The expansion works well for values of $q^2$ lower than about $6\,\mathrm{GeV}^2$, but for higher values the high-order terms of the expansion become more relevant and the uncertainty associated to the approximated prediction grows accordingly.
+
+%%%%%%%%%%%%%%%%%%
+In the $\mathrm{B}^{(0,\pm)}\to\K^{*(0,\pm)}\ell^+\ell^-$ decay amplitude, not only the terms proportional to the form factors are contributing.
+
+
+
+
+
+
+
+\section[The decay B0 to K*0 mu+ mu-]{The decay $\mathrm{B}^0_d \to \mathrm{K}^{*0} \mu^+ \mu^-$}
 \label{sec:Kstmm}
-
-%% temp
 
 The FCNC decay \BtoKstmumudecay is an optimal laboratory to probe the flavour sector of the SM.
 From the experimental point of view, it has a fully charged final state, with two muons, which are easy to identify in a multi-purpose particle detector, and two charged hadronic particles.
@@ -57,7 +116,7 @@ Finally, the variable $q^2$ is defined as the invariant mass squared of the dimu
 In the Equations~\ref{eq:TLdef},~\ref{eq:TKdef},~\ref{eq:PHIdef} the notation $p_a^{(b)}$ indicates the momentum of the particle $a$ in the rest frame of the particle $b$.
 
 The definition of the kinematical variables is coherent with the one used in the previous analyses performed on this decay channel.
-The definition of \TL differs from the one used un some phenomenological papers.
+The definition of \TL differs from the one used in some phenomenological papers.
 A graphic representation of the definition of the three angular variables is shown in Figure~\ref{fig:ske}.
 
 \begin{figure*}[!tbh]
@@ -75,7 +134,7 @@ The range of definition of the angular variables are $\left[0,\pi\right]$, for \
 \subsection{The angular decay rate}
 \label{sec:decRate}
 
-The matrix element for the \BtoKstmumudecay can be obtained from the effective Hamiltonian in Equation~\ref{eq:effHamil}:
+The matrix element for the \BtoKstmumudecay can be obtained from the effective Hamiltonian in Equation~\ref{eq:Heff}:
 \begin{equation}\label{eq:matrixelement}
   \begin{split}
     {\mathcal M}\ =& \frac{G_F\alpha}{\sqrt{2}\pi}V_{tb}^{}V_{ts}^*\bigg\{\bigg[ \braket{K \pi}{\bar{s}\gamma^{\mu}({C_9^\text{eff}P_L+C_9^{\prime\text{eff}} P_R})b}{\bar B} \\
@@ -84,7 +143,7 @@ The matrix element for the \BtoKstmumudecay can be obtained from the effective H
     & {+\braket{K \pi}{\bar{s} ({C_S P_R+C_S^\prime P_L}) b}{\bar B}(\bar{\mu}\mu)}{+\braket{K \pi}{\bar{s} ({C_P P_R+C_P^\prime P_L}) b}{\bar B}(\bar{\mu}\gamma_5\mu)} \bigg \}.
   \end{split}
 \end{equation}
-where the naive factorization has been applied and a set of effective Wilson coefficients, $C_{i}^\text{eff}$, is used.
+where the naive factorisation has been applied and a set of effective Wilson coefficients, $C_{i}^\text{eff}$, is used.
 These effective coefficients are linear combinations of the set defined in Section~\ref{sec:FCNC}, and their definition is described in Reference~\cite{Altmannshofer:2008dz}.
 
 The differential decay distribution as a function of the kinematical variables can be obtained by squaring Equation~\ref{eq:matrixelement}.
@@ -99,7 +158,7 @@ Projecting the result on a basis of combinations of spherical harmonics of the a
   \end{align}
 \end{small}
 where the complex angular coefficients $I_i^{(a)}$ depend only on $q^2$.
-The differential distribution of the opposite CP-state decay, \BtoKstmumudecay, has the same expression, but it is function of the complex conjugated coefficiencts $\bar{I}_i^{(a)}$.
+The differential distribution of the opposite CP-state decay, \BtoKstmumudecay, has the same expression, but it is function of the complex conjugated coefficients $\bar{I}_i^{(a)}$.
 
 The set of angular coefficients $I_i^{(a)}$ has been expressed as a function of the effective Wilson coefficients and of the form factors, under the assumptions of naive factorisation of the matrix element and adding corrections to describe the effect of non-factorisable terms.
 In literature they are also expressed as a function of eight \Ks transversity amplitudes.
@@ -118,10 +177,10 @@ and the CP asymmetries:
   A^{(a)}_i = \frac{ I^{(a)}_i - \bar I^{(a)}_i }{\frac{d\Gamma}{dq^2}+\frac{d\bar\Gamma}{dq^2}}
   \label{eq:As}
 \end{equation}
-that are usefull to disentangle potential NP effects that introduce new sources of CP-violation from the others.
+that are useful to disentangle potential NP effects that introduce new sources of CP-violation from the others.
 Since this analysis is aiming the measurement of two CP-averaged angular parameters, I will not spend time describing the basis of CP-violating coefficients but I will focus on the set of $S^{(a)}_i$ parameters.
 
-The twelve real angular coefficients in this set can be reduced to eight, in the approximation of nagligible leptom mass with respect to $q$.
+The twelve real angular coefficients in this set can be reduced to eight, in the approximation of negligible lepton mass with respect to $q$.
 This is true in this analysis, since only candidates with $q$ value greater than 1\GeV are used, as described in Section~\ref{sec:q2}.
 In the massless-muon limit, the following conditions are valid:
 \begin{gather}
@@ -132,7 +191,7 @@ In the massless-muon limit, the following conditions are valid:
 \end{gather}
 where the latter condition is always true within the SM, even without the massless-muon limit, since it is generated by the scalar operator, which does not exist in the SM.
 
-The $S_1^c$ coefficient corresponds to the fraction of \Ks produced with longitudinal polarization, and it is usually reffered to as $F_L$.
+The $S_1^c$ coefficient corresponds to the fraction of \Ks produced with longitudinal polarisation, and it is usually referred to as $F_L$.
 In the same way, the coefficient $S_6^s$ is proportional to the forward-backward asymmetry of the muon system, thus the parameter $A_{FB}=\frac{3}{4}S_6^s$ is used.
 
 The so-called $P$-primed basis of angular parameters, clean from leading-order hadronic uncertainties, is defined as:
@@ -141,8 +200,8 @@ The so-called $P$-primed basis of angular parameters, clean from leading-order h
     P_1 &= \frac{2S_3}{1-F_L}\\
     P_2 &= \frac{2}{3}\frac{A_{FB}}{1-F_L}\\
     P_3 &= \frac{-S_9}{1-F_L}\\
-    P'_{4,5,8} &= \frac{S_{4,5,8}}{sqrt{F_L(1-F_L)}}\\
-    P'_6 &= \frac{S_7}{sqrt{F_L(1-F_L)}}\\
+    P'_{4,5,8} &= \frac{S_{4,5,8}}{\sqrt{F_L(1-F_L)}}\\
+    P'_6 &= \frac{S_7}{\sqrt{F_L(1-F_L)}}\\
   \end{split}
 \end{equation}
 
@@ -182,7 +241,7 @@ and $W_{sp}$ is~\cite{Genon:Swave}:
       &+\left.A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi+A_\mathrm{S}^7\sin\theta_\mathrm{K}\sin\theta_l\sin\phi+A_\mathrm{S}^8\sin\theta_\mathrm{K}\sin2\theta_l\sin\phi\right]
   \end{split}
 \end{equation}
-where $F_\mathrm{S}$ is the fraction of the S-wave component in the $\text{K}^{*0}$ mass window, and $W_{sp}$ contains all the interference terms, $A_\mathrm{S}^i$ are the intererence amplitudes between the S-wave and the P-wave decays\cite{Genon:Swave}.
+where $F_\mathrm{S}$ is the fraction of the S-wave component in the $\text{K}^{*0}$ mass window, and $W_{sp}$ contains all the interference terms, $A_\mathrm{S}^i$ are the interference amplitudes between the S-wave and the P-wave decays\cite{Genon:Swave}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{The \pdf folding}
@@ -197,7 +256,7 @@ To retrieve the interesting variables more effectively and to reduce the number 
 
 Inspired by the derivations in ref \cite{LHCb2}\cite{Matias2012}, to reduce the number of parameters in the fit, we "fold" the data twice.
 ``Folding'' means that we divide the decay rate into different parts, calculate them separately according to some symmetries and then add them together to obtain the equivalent decay rates.
-If we take consecutive steps of ``folding'', the similar expansions are used to get the full PDFs.
+If we take consecutive steps of ``folding'', the similar expansions are used to get the full \pdfs.
 
 Let us take the first folding as an example.
 The first folding is at $ \phi=0$ (for $\phi<0,\phi\rightarrow-\phi$, the $\phi$'s domain is reduced to (0,$\pi$)).
@@ -273,7 +332,7 @@ Now we have 6 parameters, they are $F_\mathrm{L}$, $F_S$, $P_1$, $P_5'$, $A_\mat
 \subsubsection{Range of definition of interference terms}
 \label{sec:As5.range}
 Due to their nature, the values of the interference terms $A_s$ and $A_s^5$ are limited by the amplitude of the pure P-wave and S-wave components~\cite{Genon:Swave}.
-Their allowded ranges are the following:
+Their allowed ranges are the following:
 \begin{equation} \label{eq:As.range}
   |A_s|<2\sqrt{3}\sqrt{F_S(1-F_S)F_L}*F_{theo}
 \end{equation}
@@ -293,13 +352,13 @@ In this thesis this additional step will be kept implicit: when it will be state
 
 \subsubsection{\pdf validity in the parameter space}
 \label{sec:phys.bound}
-Using the \pdf parametrization described above it is not guaranteed that it is physical, i.e. positive in the whole ($\cos\theta_K$,$\cos\theta_l$,$\phi$) space.
+Using the \pdf parameterisation described above it is not guaranteed that it is physical, i.e. positive in the whole ($\cos\theta_K$,$\cos\theta_l$,$\phi$) space.
 
 In order to have a working fit sequence and reliable results, the values of the angular parameters that allow the \pdf to be physical need to be identified.
 As explained in Section~\ref{sec:fitseq}, the angular parameters that are free to float in the fit to the data are $P_1$, $P_5'$, and $A^5_\mathrm{S}$, while the others, $F_\mathrm{L}$, $F_S$, and $A_\mathrm{S}$, are kept fixed to the results of the previous CMS analysis.
 Thus, the region of validity of the \pdf is computed only in the three-dimensional space of the floating parameters, assuming the values of the others fixed like in the fit procedure.
 
-The analytical boundaries for the pure P-wave component can be found in literature~\cite{Matias:2014jua}, and after the reduction to the $P_1$, $P_5'$ parameter space they are:
+The analytic boundaries for the pure P-wave component can be found in literature~\cite{Matias:2014jua}, and after the reduction to the $P_1$, $P_5'$ parameter space they are:
 \begin{equation} \label{eq:anal.bound}
   (P_5')^2 - 1 < P_1 < 1
 \end{equation}
@@ -307,12 +366,12 @@ without any dependence on the value of $F_\mathrm{L}$.
 
 The pure S-wave component is always positive, as can be derived from Equation~\ref{eq:S-wave0} and from the range of definition of $F_S$, from 0 to 1.
 In general, the interference terms can be also negative, so additional constraints are needed to guarantee the positiveness of the full \pdf.
-Since these constraints are not available in literature in an analytical form, a numerical computation is needed to describe them.
+Since these constraints are not available in literature in an analytically form, a numerical computation is needed to describe them.
 
 %% This operation can be done analytically, probing the \pdf for some selected values of the angular variables.
 %% From this procedure it is possible to get that the P1 physical range is [-1,1]; but no boundary can be extracted for $P_5'$ and $A^5_\mathrm{S}$, for which a numerical computation is needed.
 
-For each bin, eight different phisical boundaries in the ($P_1$,$P_5'$) parameter space have been computed:
+For each bin, eight different physical boundaries in the ($P_1$,$P_5'$) parameter space have been computed:
 \begin{itemize}
 \item one boundary is obtained by requiring that only the P-wave component is positive; this is just a cross-check of the validity of Equation~\ref{eq:anal.bound}, since the same result is expected;
 \item seven boundaries are obtained by requiring the whole \pdf to be positive, for seven different values of $A_s^5$; according the convention defined in Section~\ref{sec:As5.range}, the seven values of the placeholder parameter $f$ are chosen to be [-1, -2/3, -1/3, 0, 1/3, 2/3, 1].
@@ -330,48 +389,48 @@ The P-wave boundary is symmetrically reflected with respect to $P_5'=0$; the bou
   \centering
   \includegraphics[width=0.85\textwidth]{Figures/boundaries/bound_b0.pdf}
   \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 0.
-    Accordingly to the description in Section~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of gray-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest gray for $f=1$).}
+    Accordingly to the description in Section~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of grey-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest grey for $f=1$).}
   \label{fig:bound0}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.85\textwidth]{Figures/boundaries/bound_b1.pdf}
-  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 1. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of gray-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest gray for $f=1$).}
+  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 1. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of grey-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest grey for $f=1$).}
   \label{fig:bound1}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.85\textwidth]{Figures/boundaries/bound_b2.pdf}
-  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 2. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of gray-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest gray for $f=1$).}
+  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 2. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of grey-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest grey for $f=1$).}
   \label{fig:bound2}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.85\textwidth]{Figures/boundaries/bound_b3.pdf}
-  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 3. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of gray-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest gray for $f=1$).}
+  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 3. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of grey-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest grey for $f=1$).}
   \label{fig:bound3}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.85\textwidth]{Figures/boundaries/bound_b5.pdf}
-  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 5. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of gray-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest gray for $f=1$).}
+  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 5. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of grey-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest grey for $f=1$).}
   \label{fig:bound5}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.85\textwidth]{Figures/boundaries/bound_b7.pdf}
-  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 7. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of gray-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest gray for $f=1$).}
+  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 7. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of grey-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest grey for $f=1$).}
   \label{fig:bound7}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics[width=0.85\textwidth]{Figures/boundaries/bound_b8.pdf}
-  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 8. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of gray-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest gray for $f=1$).}
+  \caption{Physical boundaries of the negative $P_5'$ sector of $q^2$ bin 8. Accordingly to the description in Sec.~\ref{sec:phys.bound}, the magenta line is the boundary of the P-wave physical region and the set of grey-scale lines are the boundaries of the total-PDF physical region, for different $A_s^5$ values (black for $f=-1$, lightest grey for $f=1$).}
   \label{fig:bound8}
 \end{figure}
