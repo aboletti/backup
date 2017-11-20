@@ -2,6 +2,14 @@
 
 The angular parameters are extracted through an unbinned fit to four variables, the $\PKp\Pgpm\Pgmp\Pgmm$ invariant mass and the three angular variables, using an extended maximum likelihood estimator.
 
+A \textit{blinding} procedure has been used for this analysis, to avoid any bias due to human decisions during the set up of the analysis strategy.
+During the steps of event selection, fit strategy definition and validation, and efficiency measurement, only the MC samples and data from the mass sidebands have been used, while the distributions of the events in the signal region were not considered.
+Most of the systematic uncertainty studies have been performed with \textit{blinded} datasets.
+Some of these studies have been firstly defined and tested on MC samples and data sidebands, then propagated on data signal after the \textit{unblinding} step.
+Some other systematic uncertainties, when specified in the description, have been studied directly on data, after the \textit{unblinding} step.
+After the analysis strategy and all the steps described here were defined and approved by a committee of reviewer inside the Collaboration, the data in the signal region were \textit{unblinded} and the fit procedure run on them.
+The estimation of the statistical uncertainty has been performed entirely after the data \textit{unblinding}.
+
 In the following sections I will give a detailed description of the probability density function used in the fit, and of the methods used to estimate its parameters.
 
 \section{Probability density function}
@@ -10,26 +18,57 @@ In the following sections I will give a detailed description of the probability 
 The probability density function (\pdf) used in the fit has the following expression:
 \begin{equation} \label{eq:angALL}
   \begin{split}
-    \mathrm{pdf}(m,\TK,\TL,\PHI) & = Y^{C}_{S} \biggl[ S^{C}(m)  \, S^a(\TK,\TL,\PHI) \, \epsilon^{C}(\TK,\TL,\PHI) \biggr. \\
-      & \biggl. + \frac{f^{M}}{1-f^{M}}~S^{M}(m) \, S^a(-\TK,-\TL,\PHI) \, \epsilon^{M}(\TK,\TL,\PHI) \biggr] \\
+    \mathrm{pdf}(m,\TK,\TL,\PHI) & = Y^{C}_{S} \biggl[ S^{C}(m)  \, S^a(\cTK,\cTL,\PHI) \, \epsilon^{C}(\TK,\TL,\PHI) \biggr. \\
+      & \biggl. + \frac{f^{M}}{1-f^{M}}~S^{M}(m) \, S^a(-\cTK,-\cTL,\PHI) \, \epsilon^{M}(\TK,\TL,\PHI) \biggr] \\
     & + Y_{B}\,B^m(m) \, B^{\TK}(\cTK) \, B^{\TL}(\cTL) \, B^{\PHI}(\PHI), \\
   \end{split}
 \end{equation}
 where its three terms correspond to the \pdfs for right-tagged signal, mis-tagged signal, and background events, respectively.
 
-The parameters $Y^{C}_{S}$ and $Y_{B}$ are the yields of right-tagged signal events and background events, respectively, while the parameter $f^{M}$ is the fraction of signal events that are mis-tagged.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The functions $S^{C}(m)$ and $S^{M}(m)$ are the signal \PBz-mass \pdfs, for right-tagged and mis-tagged signal events, respectively.
-Each of them is composed as the sum of two Gaussian functions, with a common mean for all four Gaussian functions.
+The pure-physics information about the angular distribution, derived from the theoretical description of the decay presented in Section~\ref{sec:Kstmm}, are contained in $S^a(\cTK,\cTL,\PHI)$.
+This term is defined as the differential decay distribution, which has been formulated, after the angular folding application, in Equation~\ref{eq:PDF-f2}.
+
+In order to describe the data collected in the collisions, we should adapt the theoretical differential distribution to the experimental conditions.
+They include the finite resolution of the measured kinematical variables and the distortion of the angular distributions introduced by the geometric acceptance of the detector and the selection criteria.
+All these effect are applied by multiplying the decay distribution by the efficiency function $\epsilon^{C}(\TK,\TL,\PHI)$.
+
+As explained in Section~\ref{sec:offsel}, there is a non-negligible probability that the wrong CP-state is assigned to the decay and the wrong mass hypothesis is assigned to the hadrons.
+However, these mis-tagged events still contain information about the decay distribution and their contribution can be taken into account in the \pdf.
+The choice of the wrong $\textrm{K}$ and $\pi$ mass hypothesis and CP-state causes some differences in the angle definition; using the Equations~\ref{eq:TLdef}, \ref{eq:TKdef}, and \ref{eq:PHIdef}, one can obtain that the correct term to use in the \pdf, as a function of the reconstructed variables, is $S^a(-\cTK,-\cTL,\PHI)$.
+The efficiency function for the mis-tagged events has been computed separately: $\epsilon^{M}(\TK,\TL,\PHI)$.
+Note that $\epsilon^{M}$ is defined as a function of the reconstructed variables, so there is no need to correct the signs of the angles.
+The term describing the mis-tagged event contribution is multiplied by ${f^{M}}/{1-f^{M}}$ to scale it correctly with respect to the right-tagged event contribution.
+
+As a last point, the \pdf must be able to describe the background contamination and distinguish it from the signal events.
+The set of functions $B^{\TK}(\cTK) \, B^{\TL}(\cTL) \, B^{\PHI}(\PHI)$ describe the angular distribution of the background events.
+However, to distinguish signal and background events the three angular variables are not useful, and a new variable is needed; the best kinematic variable for this use is the mass of the \PBz candidate.
+Each of the three terms in the \pdf is then multiplied by a function describing the mass distribution: $B^m(m)$ for the background events, $S^{C}(m)$ for the right-tagged signal events, and $S^{M}(m)$ for the mis-tagged signal events.
+Even if mis-tagged events are events produced by a \PBz decay, like the right-tagged events, they need a different mass-shape function because the wrong mass assignment for the hadronic tracks produce a different four-body invariant mass value.
+
+A factor $Y_{B}$ is used to multiply the background term, while a factor $Y^{C}_{S}$ is used with the signal terms, to correctly scale the two contributions.
+To give a physical meaning of number of events to these two parameters, the background term multiplying $Y_{B}$ and the right-tagged signal term multiplying $Y^{C}_{S}$ are normalised to 1 over the full phase-space.
+Note that, with this definition, $Y^{C}_{S}$ stands for the number of right-tagged events, not for the total number of signal events.
+
+\section{Parameterisation of the \pdf terms}
+\label{sec:pdf-param}
+
+%% The parameters $Y^{C}_{S}$ and $Y_{B}$ are the yields of right-tagged signal events and background events, respectively, while the parameter $f^{M}$ is the fraction of signal events that are mis-tagged.
+
+Each of the terms $S^{C}(m)$ and $S^{M}(m)$ is composed as the sum of two Gaussian functions with different normalisation factors.
+For each $q^2$ bin, all these four Gaussian functions are constrained to have the same mean value.
+
+The determination of the mistag fraction $f^{M}$ will be presented in Section~\ref{sec:mistag}.
+
 %% In the fit, the mean, the four Gaussian function's width parameters, and the two fractions specifying the relative contribution of the two Gaussian functions in $S^{C}(m)$ and $S^{M}(m)$ are determined from simulation.
 %% The function $S^a(\TK,\TL,\PHI)$ describes the signal in the three-dimensional (3D) space of the angular variables and corresponds to Eq.~(\ref{eq:PDF}).
 
-The four \pdfs $B^m(m)$, $B^{\TK}(\cTK)$, $B^{\TL}(\cTL)$, $B^{\PHI}(\PHI)$ describe the background in the space of the \PBz candidate invariant mass and the angular variables.
-The mass \pdf $B^m(m)$ is an exponential function, the angular \pdfs $B^{\TK}(\cTK)$ and $B^{\TL}(\cTL)$ are polynomials functions, ranging from second to fourth degree depending on the $q^2$ bin, and $B^{\PHI}(\PHI)$ is a first-order polynomial function.
-The factorisation assumption of the background \pdf in Equation~(\ref{eq:angALL}) is discussed in Section~\ref{sec:fact}.
+The construction of the three-dimensional functions $\epsilon^{C}(\TK,\TL,\PHI)$ and $\epsilon^{M}(\TK,\TL,\PHI)$ will be described in Section~\ref{sec:eff}.
 
-The three-dimensional functions $\epsilon^{C}(\TK,\TL,\PHI)$ and $\epsilon^{M}(\TK,\TL,\PHI)$ are the efficiency functions for right-tagged and mis-tagged signal events, respectively.
-The construction of these functions has been described in Section~\ref{sec:eff}.
+The background mass shape $B^m(m)$ is parameterised by an exponential function, while the angular shapes $B^{\TK}(\cTK)$ and $B^{\TL}(\cTL)$ are polynomials functions, ranging from second to fourth degree depending on the $q^2$ bin, and $B^{\PHI}(\PHI)$ is a first-order polynomial function.
+Some more details on the background description are given in Section~\ref{sec:backg}.
+The factorisation assumption of the background term in Equation~(\ref{eq:angALL}) is discussed in Section~\ref{sec:fact}.
 
 \subsection{Fraction of mis-tagged signal events}
 \label{sec:mistag}
@@ -302,9 +341,14 @@ To correctly propagate the uncertainties on the background parameters to the ana
 %% The sideband regions are $3\sigma_m < \abs{m-m_{\PBz}} < 5.5\sigma_m$, where $\sigma_m$ is the average mass resolution ($\approx$45\MeV), obtained from fitting the MC simulation signal to a sum of two Gaussians with a common mean.
 In the second step, the full set of events is fitted using the whole \pdf.
 The free parameters in this fit are the angular parameters $P_1$, $P_5'$, and $A^5_\mathrm{S}$, and the yields $Y^{C}_{S}$ and $Y_{B}$.
+
+The separation of the fit in these two steps is needed to allow a stable fit to the signal region.
+As described in Section~\ref{sec:backg} the angular shape of the background events contains a high number of parameters and evaluating them together with the signal components would lead to a very unstable fit.
+Furthermore, using this two-step fit allows to keep the background parameters fixed for any fit procedure applied on data; this has the benefit of saving a huge amount of computing time, especially when large series of fits are run for systematic uncertainty estimations or for finding the best-fit values of the parameters, as described in the following paragraph.
+
 %% The expression describing the angular distribution of $\mathrm{B}^0\to{\mathrm{K}^*\mu\mu}$, Eq.~(\ref{eq:PDF-f2}) and also its more general form in Ref.~\cite{Descotes-Genon:2013vna}, can become negative for certain values of the angular parameters.
 %% In particular the PDF in Eq.~(\ref{eq:PDF}) is only guaranteed to be non-negative for a particular subset of the parameter space $P_1$, $P_5'$, and $A^5_\mathrm{S}$, whose mathematical expression is non trivial.
-This last fit cannot be run in a single step, since the presence of a physical boundary for the validity of the fitted parameters complicates the numerical maximisation process of the likelihood by \textsc{minuit}~\cite{Minuit}.
+The second step of the fit cannot be run at once, since the presence of a physical boundary for the validity of the fitted parameters complicates the process of numerical maximisation of the likelihood performed by \textsc{minuit}~\cite{Minuit}.
 Especially in the $q^2$ bins in which the likelihood maximum is close to this boundary, the maximisation results tend to be unstable and strongly dependent on the values of the parameters at the begin of the fit.
 A strategy was then developed to avoid the effect of the physical boundary: the bi-dimensional space $P_1$ -- $P_5'$ is discretised by building a $90\times90$ rectangular grid, and for each of its points the values of $P_1$, $P_5'$ are fixed in the fit, and the likelihood is maximised as a function of the nuisance parameters $Y^{C}_{S}$, $Y_{B}$, and $A^5_\mathrm{S}$.
 Once the likelihood has been minimised for each point of the grid, it is fit with a bi-variate Normal distribution.

@@ -1,12 +1,80 @@
 \chapter{Analysis introduction}
 \label{sec:theo}
 
-temp
+In this thesis, I will present the angular analysis of the \BtoKstmumu decay, performed with the data collected by the CMS Experiment in the 2012 run of proton-proton (pp) collisions at a centre-of-mass energy $\sqrt{s}=8\TeV$, and corresponding to an integrated luminosity of \SI{20.5}{\per\femto\barn}.
+
+Two analyses of the \BtoKstmumu decay have been performed by the CMS Collaboration, using the data described above.
+The first analysis~\cite{CMS:2012} was aiming to measure the branching fraction and to perform a partial measurement of the angular distribution.
+The \Ks longitudinal polarisation fraction, $F_L$, and the forward-backward asymmetry of the dimuon system, $A_{FB}$, were estimated as a function of the dimuon invariant mass squared, $q^2$.
+A combination with the results obtained with pp collision data collected in 2011, corresponding to an integrated luminosity of \SI{5.2}{\per\femto\barn} at $\sqrt{s}=7\TeV$, was also performed.
+The results of this analysis are in good agreement with the Standard Model (SM) predictions and with the results from previous experiments: BaBar~\cite{Aubert:2008bi}, Belle~\cite{Wei:2009zv}, CDF~\cite{Aaltonen:2011ja}, and LHCb~\cite{Aaij:2013iag}.
+
+The first complete angular analysis was performed by the LHCb Collaboration~\cite{Aaij:2013qta}, with the data collected in 2011 pp collisions at $\sqrt{s}=7\TeV$.
+In this analysis the measurement has been extended to the full set of angular parameters, which will be defined in Section~\ref{sec:decRate}.
+A tension with respect to the SM predictions has been found in the measurement of one of these parameters, $P_5'$.
+The significance of this tension, without taking into account the look-elsewhere effect, is reported to be 3.7 standard deviations.
+
+The LHCb collaboration published also a complete angular analysis~\cite{Aaij:2015oid}, combining the data collected in 2011 and 2012 pp collisions for an overall integrated luminosity of \SI{3}{\per\femto\barn}.
+The results for the $P_5'$ parameter were still showing a discrepancy with respect to the predictions, as shown in Figure~\ref{fig:LHCb}.
+The tension is localised in the $q^2$ region between $4\GeV^2$ and $8\GeV^2$, and its significance is evaluated, using the full set of parameters, to be of about 3.4 standard deviations.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.85\textwidth]{PBasis_P5pPad.pdf}
+  \caption{Results of $P_5'$ angular parameter in bins of $q^2$ from LHCb Run~1 data, compared with SM-based predictions.
+    Image from Reference~\cite{Aaij:2015oid}.}
+  \label{fig:LHCb}
+\end{figure}
+
+After these results, the Belle Collaboration performed an extension~\cite{BelleP5p} of its original analysis, to measure the full set of angular parameters, in particular $P_5'$.
+The results are in agreement with the measurements of LHCb, but with a larger uncertainty that prevent to obtain a significant discrepancy of the $P_5'$ results with respect to the SM predictions.
+
+The second analysis from the CMS Collaboration~\cite{Sirunyan:2017dhj} is an extension of the first analysis, with the goal of measuring the $P_5'$ angular parameter to provide a new independent experimental result.
+The expected precision of this measurement is not as good as the latest result of the LHCb Collaboration, given the lower number of signal events and worse signal over background ratio.
+Anyway, it will have a smaller uncertainty and a $q^2$ bin structure more similar to the LHCb one, with respect to the result from Belle Collaboration.
+For this reason, these results could have an important role in the process of shedding light on the matter.
+
+In this thesis I will describes the details of this second analysis of the CMS Collaboration.
+Chapter~\ref{sec:theo} will continue with the description of the theoretical framework used to described the decays like \BtoKstmumu, and with the formulation of the angular distribution and few considerations about it.
+In Chapter~\ref{sec:detect} the Large Hadron Collider (LHC) and the Compact Muon Solenoid (CMS) experiment will be described, focusing in particular on the aspects more related to the analyses of Flavour Physics.
+The selection criteria used to reduce the contamination from background events will be presented in Chapter~\ref{sec:selection}, while in Chapter~\ref{sec:fit} the procedure used to extract the angular parameters from the selected data will be explained in details.
+Chapter~\ref{sec:eff} will be dedicated to the methods used to describe the efficiency of the event selection criteria.
+Several tests have been performed to validate the analysis procedure; they are described in Chapter~\ref{sec:validation}.
+The sources of systematic uncertainty that have been investigated will be listed in Chapter~\ref{sec:syst}, while the study of the statistical uncertainty and the results of the analysis will be reported in Chapter~\ref{sec:result}.
+Finally, I will conclude in Chapter~\ref{sec:FutConcl} by describing the future prospects for this analysis and focusing in particular on the ongoing efforts to improve it for the data from LHC Run~2 collisions.
 
 \section{Flavour Physics}
 \label{sec:flav}
 
-temp
+The sector of the Standard Model of particle physics in which the precision of the experimental probes reached higher levels is the Flavour Physics.
+
+In particular, it is the realm of the Cabibbo-Kobayashi-Maskawa (CKM) matrix, i.e. the $3\times3$ unitary matrix that rules the charge current weak interactions between quarks.
+This matrix was proposed by Kobayashi and Maskawa about 45 years ago, extending the Cabibbo $2\times2$ matrix to allow a source of CP-violation to be included in the model through a non-vanishing phase (that is not possible in a $2\times2$ unitary matrix).
+It allowed to foresee the existence of the three heavier quarks before discovering them in the experimental facilities.
+Its parameters, that link the basis of weak eigenstates with the one of Yukawa eigenstates, have been determined in the past decades with great precision.
+
+The unitarity of the CKM matrix is the real testing ground of the completeness of the theory.
+An observation of non-unitary behaviours in the CKM parameters would open the gates to scenarios beyond the SM, suggesting the presence of a forth generation of quarks.
+However, after many years of B-factory probes, and few years of analyses at LHC, no cracks have been found in the paradigm.
+This robust long-standing structure is not promising for searches of phenomena of New Physics (NP).
+
+On the other hand, few recent results from the LHCb Collaboration raised the interest for the world of the so-called rare decays.
+One result have been already mentioned before: the tension of the $P_5'$ parameter measured in the angular analysis of the flavour-changing neutral current (FCNC) \BtoKstmumu decay.
+Another, very interesting, result that is showing a discrepancy with respect to the predictions is the measurement~\cite{Aaij:2017vbb} of $R(\mathrm{K}^{(*)})$.
+These parameters are defined as the branching-fraction ratios:
+\begin{equation}\label{eq:RK-def}
+  \begin{split}
+    R(\mathrm{K}^{*}) &= \frac{\BR(\PBz\to\Ks\mu^+\mu^-)}{\BR(\PBz\to\Ks e^+e^-)} \\
+    R(\mathrm{K})     &= \frac{\BR(\PBp\to\PKp\mu^+\mu^-)}{\BR(\PBp\to\PKp e^+e^-)}
+  \end{split}
+\end{equation}
+expressed as a function of the dimuon invariant mass squared, $q^2$.
+
+In the latest LHCb results for both these ratios, a hint for tension with respect to the SM is present.
+Even if this discrepancy is less significant than the one on $P_5'$, the theoretical prediction for this variables are not affected at all by hadronic uncertainties, and it makes them very robust.
+One very interesting aspect of these discrepancies is that they could be related to a common cause, affecting one of the coefficients of the effective Hamiltonian, the so-called Wilson coefficients.
+
+In the following section, a brief description of the theoretical framework used to described these FCNC decays is given.
 
 \subsection[Flavour-changing neutral currents b to s l l]{Flavour-changing neutral currents $b\to s\ell^+\ell^-$}
 \label{sec:FCNC}
@@ -15,13 +83,13 @@ The penguin-mediated flavour-changing neutral currents (FCNC) $b\to s\ell^+\ell^
 These decay channels are doubly suppressed within the SM:
 \begin{itemize}
 \item they are forbidden at tree-level, since there is no neutral current in SM allowed to violate the flavour, and the leading-order Feynman diagram that mediate them is a weak penguin loop;
-\item the leading-order diagram is Cabibbo suppressed, since it is proportional to $|V_{ts}V_{tb}|\sim10^{-2}$.
+\item the leading-order diagram is Cabibbo suppressed, since it is proportional to the CKM elements $|V_{ts}V_{tb}|\sim10^{-2}$.
 \end{itemize}
-These suppressions result in in small branching fractions and they create an ideal environment for New Physics (NP) searches.
-Any potential contrubution from physics beyond the SM that enters in the loop diagram could produce sizeable effects in the decay branching fractions or in their angular distributions.
+These causes of suppression result in small branching fractions and they create an ideal environment for NP searches.
+Any potential contribution from physics beyond the SM that enters in the loop diagram could produce sizeable effects in the decay branching fractions or in their angular distributions.
 
-On the other hand, the theoretical predictions of the angular distributions and branching fractions of these decays are quite suscettible to hadronic uncertainties due to long-distance Quantum Chromodynamic (QCD) processes.
-In order to separate, in the theoretical framework, the effect from long-distance QCD and from short-disctance effects, which are related to QCD and electroweak interactions but also to NP processes, an effective Hamiltonian is defined as follow:
+On the other hand, the theoretical predictions of the angular distributions and branching fractions of these decays are quite susceptible to hadronic uncertainties due to long-distance Quantum Chromodynamic (QCD) processes.
+In order to separate, in the theoretical framework, the effect from long-distance QCD and from short-distance effects, which are related to QCD and electroweak interactions but also to NP processes, an effective Hamiltonian is defined as follow:
 \begin{equation} \label{eq:Heff}
   {\cal H}_{\eff} = - \frac{4\,G_F}{\sqrt{2}}\left(\lambda_t {\cal H}_{\eff}^{(t)} + \lambda_u {\cal H}_{\eff}^{(u)}\right)
 \end{equation}
@@ -31,7 +99,7 @@ where $\lambda_i=V_{ib}V_{is}^*$ and
   {\cal H}_{\eff}^{(u)} & = & C_1 (\mathcal O_1^c-\mathcal O_1^u)  + C_2(\mathcal O_2^c-\mathcal O_2^u)\,.
 \end{eqnarray*}
 
-The of opearators $\mathcal O_i^{(a)}$ for $i<7$ are defined in the Reference~\cite{oper}, while the other ones are defined accordingly to Reference~\cite{Altmannshofer:2008dz}:
+The of operators $\mathcal O_i^{(a)}$ for $i<7$ are equal to the $P_i$ defined in the Reference~\cite{Bobeth:1999mk}, while the other ones are defined accordingly to Reference~\cite{Altmannshofer:2008dz}:
 \begin{align}
   {\mathcal{O}}_{7} &= \frac{e}{g^2} m_b (\bar{s} \sigma_{\mu \nu} P_R b) F^{\mu \nu} &
   {\mathcal{O}}_{7}^\prime &= \frac{e}{g^2} m_b (\bar{s} \sigma_{\mu \nu} P_L b) F^{\mu \nu} \label{eq:O7}\\
@@ -46,7 +114,7 @@ The of opearators $\mathcal O_i^{(a)}$ for $i<7$ are defined in the Reference~\c
   {\mathcal{O}}_{P} &=\frac{e^2}{16\pi^2} m_b (\bar{s} P_R b)(\bar{\mu} \gamma_5 \mu) &
   {\mathcal{O}}_{P}^\prime &=\frac{e^2}{16\pi^2} m_b (\bar{s} P_L b)(\bar{\mu} \gamma_5 \mu) \label{eq:OP}
 \end{align}
-where $g$ is the strong coupling constant, $m_b$ is therunning $b$ quark mass in the $\bar{\mathrm{MS}}$ scheme, and $P_{L,R}=(1\mp\gamma_5)/2$ are the chirality projectors.
+where $g$ is the strong coupling constant, $m_b$ is the running $b$ quark mass in the $\bar{\mathrm{MS}}$ scheme, and $P_{L,R}=(1\mp\gamma_5)/2$ are the chirality projectors.
 
 The set of Wilson coefficients $C^{(\prime)}_i$ encodes the contribution from short-distance physics and could contain NP effects.
 These coefficients can be expanded and calculated in perturbation theory in powers of $\alpha_s$:
@@ -58,21 +126,21 @@ Their predicted values of these expanded coefficients, both within SM and for NP
 According to the SM, several of the terms in the effective Hamiltonian are expected to vanish or be highly suppressed; this is the case for all the primed operators, as well as for the scalar and pseudoscalar ones, ${\mathcal{O}}_{S}$ and ${\mathcal{O}}_{P}$.
 
 %%%%%%%%%%%%%%%%%%%%
-If we restrict the study to a $\mathrm{B}^{(0,\pm)}\to\K^{*(0,\pm)}\ell^+\ell^-$ decay, the matrix elements of the effective Hamiltonian operators ${\mathcal{O}}^{(\prime)}_{7,9,10,S,P}$ can be descibed as a function of seven form factors, $A_i(q^2)$, $V(q^2)$, and $T_j(q^2)$, where $0\le i\le2$ and $1\le j\le2$, and $q^2$ is the squared muomentum carried by the pair of leptons.
+If we restrict the study to a $\mathrm{B}^{(0,\pm)}\to\mathrm{K}^{*(0,\pm)}\ell^+\ell^-$ decay, the matrix elements of the effective Hamiltonian operators ${\mathcal{O}}^{(\prime)}_{7,9,10,S,P}$ can be described as a function of seven form factors, $A_i(q^2)$, $V(q^2)$, and $T_j(q^2)$, where $0\le i\le2$ and $1\le j\le2$, and $q^2$ is the squared momentum carried by the pair of leptons.
 In literature is also used the form factor $A_3(q^2)$, which is a linear combination of $A_1(q^2)$ and $A_2(q^2)$.
 
-The theoretical predictions of the form factors are computed using the QCD sum rules on the light-cone (LCSRs)~\cite{Khodjamirian:2001bj}.
-With this technique, the form factors are expanded as a function of $m_b m_{\mathrm{K}^*}/(m_b^2-q^2)$.
-The expansion works well for values of $q^2$ lower than about $6\,\mathrm{GeV}^2$, but for higher values the high-order terms of the expansion become more relevant and the uncertainty associated to the approximated prediction grows accordingly.
+The theoretical predictions of the form factors are computed using the QCD sum rules on the light-cone (Locusts)~\cite{Khodjamirian:2001bj}.
+With this technique, the form factors are expanded in powers of $m_b m_{\mathrm{K}^*}/(m_b^2-q^2)$.
+The expansion works well for values of $q^2$ lower than about $8\,\mathrm{GeV}^2$, but for higher values the high-order terms of the expansion become more relevant and the uncertainty associated to the approximated prediction grows accordingly.
 
 %%%%%%%%%%%%%%%%%%
-In the $\mathrm{B}^{(0,\pm)}\to\K^{*(0,\pm)}\ell^+\ell^-$ decay amplitude, not only the terms proportional to the form factors are contributing.
+In the $\mathrm{B}^{(0,\pm)}\to\mathrm{K}^{*(0,\pm)}\ell^+\ell^-$ decay amplitude, not only the terms proportional to the form factors are contributing.
+It contains additional ``non-factorisable effects'', which are related to the matrix elements of the operators not considered when defining the form factors: the purely hadronic operators ${\mathcal{O}}_{1,2,3,4,5,6}$ and the chromomagnetic operator ${\mathcal{O}}^{(\prime)}_{8}$, where an additional virtual photon emission is needed to produce the lepton pair.
 
+The contribution of these effects cannot be expressed as a function of a new set of form factors.
+In the combined heavy-quark and large-energy limits, they can be calculated using the QCD factorisation technique~\cite{Beneke:2000wa,Beneke:2001at,Beneke:2004dp}.
 
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%
 
 \section[The decay B0 to K*0 mu+ mu-]{The decay $\mathrm{B}^0_d \to \mathrm{K}^{*0} \mu^+ \mu^-$}
 \label{sec:Kstmm}
@@ -137,10 +205,10 @@ The range of definition of the angular variables are $\left[0,\pi\right]$, for \
 The matrix element for the \BtoKstmumudecay can be obtained from the effective Hamiltonian in Equation~\ref{eq:Heff}:
 \begin{equation}\label{eq:matrixelement}
   \begin{split}
-    {\mathcal M}\ =& \frac{G_F\alpha}{\sqrt{2}\pi}V_{tb}^{}V_{ts}^*\bigg\{\bigg[ \braket{K \pi}{\bar{s}\gamma^{\mu}({C_9^\text{eff}P_L+C_9^{\prime\text{eff}} P_R})b}{\bar B} \\
-      &-\frac{2m_b}{q^2}\braket{K\pi}{\bar{s}i\sigma^{\mu\nu}q_{\nu}(C_7^\text{eff} P_R+C_7^{\prime\text{eff}}  P_L)b}{\bar B}\bigg](\bar{\mu}\gamma_{\mu}\mu)\\
-    &+ \braket{K\pi}{\bar{s}\gamma^{\mu}({C_{10}^\text{eff} P_L+C_{10}^{\prime\text{eff}} P_R})b}{\bar B}(\bar{\mu}\gamma_{\mu}\gamma_5 \mu) \\
-    & {+\braket{K \pi}{\bar{s} ({C_S P_R+C_S^\prime P_L}) b}{\bar B}(\bar{\mu}\mu)}{+\braket{K \pi}{\bar{s} ({C_P P_R+C_P^\prime P_L}) b}{\bar B}(\bar{\mu}\gamma_5\mu)} \bigg \}.
+    {\mathcal M}\ =& \frac{G_F\alpha}{\sqrt{2}\pi}V_{tb}^{}V_{ts}^*\bigg\{\bigg[ \braket{K \pi|\bar{s}\gamma^{\mu}({C_9^\text{eff}P_L+C_9^{\prime\text{eff}} P_R})b|\bar B} \\
+      &-\frac{2m_b}{q^2}\braket{K\pi|\bar{s}i\sigma^{\mu\nu}q_{\nu}(C_7^\text{eff} P_R+C_7^{\prime\text{eff}}  P_L)b|\bar B}\bigg](\bar{\mu}\gamma_{\mu}\mu)\\
+    &+ \braket{K\pi|\bar{s}\gamma^{\mu}({C_{10}^\text{eff} P_L+C_{10}^{\prime\text{eff}} P_R})b|\bar B}(\bar{\mu}\gamma_{\mu}\gamma_5 \mu) \\
+    & {+\braket{K \pi|\bar{s} ({C_S P_R+C_S^\prime P_L}) b|\bar B}(\bar{\mu}\mu)}{+\braket{K \pi|\bar{s} ({C_P P_R+C_P^\prime P_L}) b|\bar B}(\bar{\mu}\gamma_5\mu)} \bigg \}.
   \end{split}
 \end{equation}
 where the naive factorisation has been applied and a set of effective Wilson coefficients, $C_{i}^\text{eff}$, is used.
@@ -208,11 +276,11 @@ The so-called $P$-primed basis of angular parameters, clean from leading-order h
 Using the $P_i^{(\prime)}$ basis, with $F_L$ and its complementary $F_T=1-F_L$, the differential angular distribution can be written as:
 \begin{equation} \label{eq:Angular}
   \begin{split}
-    \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} =\frac{9}{32\pi}\left[\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \right.\\
+    \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} =\frac{9}{32\pi}\bigg[\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \\
       &\left.+\left(\frac{1}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K}-F_\mathrm{L}\cos^2\theta_\mathrm{K}\right)\cos2\theta_l+\frac{1}{2}P_1F_\mathrm{T}\sin^2\theta_\mathrm{K}\sin^2\theta_l\cos 2\phi \right.\\
       &+\sqrt{F_\mathrm{T}F_\mathrm{L}}\left(\frac{1}{2}P_4'\sin2\theta_\mathrm{K}\sin2\theta_l\cos\phi+P_5'\sin2\theta_\mathrm{K}\sin\theta_l\cos\phi \right)\\
       &-\sqrt{F_\mathrm{T}F_\mathrm{L}}\left(P_6'\sin2\theta_\mathrm{K}\sin\theta_l\sin\phi-\frac{1}{2}P_8'\sin2\theta_\mathrm{K}\sin2\theta_l\sin\phi \right)\\
-      &\left.+2P_2F_\mathrm{T}\sin^2\theta_\mathrm{K}\cos\theta_l-P_3F_\mathrm{T}\sin^2\theta_\mathrm{K}\sin^2\theta_l\sin2\phi \right]
+      &+2P_2F_\mathrm{T}\sin^2\theta_\mathrm{K}\cos\theta_l-P_3F_\mathrm{T}\sin^2\theta_\mathrm{K}\sin^2\theta_l\sin2\phi \bigg]
   \end{split}
 \end{equation}
 
@@ -220,7 +288,8 @@ Using the $P_i^{(\prime)}$ basis, with $F_L$ and its complementary $F_T=1-F_L$, 
 \label{sec:S-waveform}
 
 Although the $K^+\pi^-$ invariant mass must be consistent with a $\text{K}^{*0}$, there can be contributions from a spinless (S-wave) $K^+\pi^-$ combination.
-The presence of a $K^+\pi^-$ system in an S-wave configuration, due to a non-resonant contribution or to feed through from $K^+\pi^-$ scalar resonances, results in additional terms in the different angular distribution.
+The presence of a $K^+\pi^-$ system in an S-wave configuration, due to a non-resonant contribution or to feed through from $K^+\pi^-$ scalar resonances, results in additional terms in the different decay rate.
+
 Denoting the right-hand side of Equation~\ref{eq:Angular} by $W_p$, the differential decay rate takes the form:
 \begin{equation} \label{eq:S-wave}
   \begin{split}
@@ -244,75 +313,104 @@ and $W_{sp}$ is~\cite{Genon:Swave}:
 where $F_\mathrm{S}$ is the fraction of the S-wave component in the $\text{K}^{*0}$ mass window, and $W_{sp}$ contains all the interference terms, $A_\mathrm{S}^i$ are the interference amplitudes between the S-wave and the P-wave decays\cite{Genon:Swave}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{The \pdf folding}
+\subsection{The angular folding}
 \label{sec:folding}
 
-%% The angular distribution of the decay
-%% $\text{B}^0 \rightarrow \text{K}^{*0} \mu^+ \mu^-$ can be described by
-%% three angles ($\theta_l $, $\theta_\mathrm{K} $ and $\phi$) and the
-%% invariant mass squared of the dimuon system ($q^2$).
-Because of the limited number of signal candidates in the data set, we didn't fit the data to full differential distribution of Equation~\ref{eq:Angular}.
-To retrieve the interesting variables more effectively and to reduce the number of fitting parameters, we performed the following transformations of the decay-rate formulation.
+%% Because of the limited number of signal candidates in the data set, we didn't fit the data to full differential distribution of Equation~\ref{eq:Angular}.
+%% To retrieve the interesting variables more effectively and to reduce the number of fitting parameters, we performed the following transformations of the decay-rate formulation.
 
-Inspired by the derivations in ref \cite{LHCb2}\cite{Matias2012}, to reduce the number of parameters in the fit, we "fold" the data twice.
-``Folding'' means that we divide the decay rate into different parts, calculate them separately according to some symmetries and then add them together to obtain the equivalent decay rates.
-If we take consecutive steps of ``folding'', the similar expansions are used to get the full \pdfs.
+The differential decay distributions, described above, contains 8 parameters for the P-wave component, and 6 parameters for the S-wave and interference contamination.
+As mentioned in the introduction, the primary goal of this angular analysis is to measure the angular parameter $P_5'$.
+In order to perform this measurement in the best environment, it has been decided to simplify the angular analysis by reducing the number of measured parameters.
+This is done with the \textit{angular folding} method.
+%% , as already used and explained in References~\cite{LHCb2,Matias2012}.
 
-Let us take the first folding as an example.
-The first folding is at $ \phi=0$ (for $\phi<0,\phi\rightarrow-\phi$, the $\phi$'s domain is reduced to (0,$\pi$)).
-To be more clear, we divide the decay rate $d\Gamma$ into two parts corresponding to $\phi>0$ and $\phi<0$, i.e. $d\Gamma(\phi;\phi>0)$, and $d\Gamma(\phi;\phi<0)$:
-\begin{equation} \label{eq:folding}
-  \begin{split}
-    d\hat{\Gamma} &= d\Gamma(\phi|\phi<0) + d\Gamma(\phi|\phi>0) \\
-    & = f_0(\phi|\phi\rightarrow-\phi) + f_0(\phi|\phi>0) \\
-    & = f_0(\cos\phi, -\sin\phi) + f_0(\cos\phi, \sin\phi)
-  \end{split}
+In the following, I will use the expression ``folding a variable $x$ around $a$'' referring to the redefinition of that variable in the following way:
+\begin{equation} \label{eq:folding-def}
+  \begin{aligned}
+    & x \to x \quad & \textrm{for}\: x \ge a \\ 
+    & x \to 2a-x \quad & \textrm{for}\: x < a \\ 
+  \end{aligned}
 \end{equation}
 
-According to trigonometric identities $\cos(-\phi) = \cos\phi $, $\sin(-\phi) = -\sin\phi $, we can cancel the terms that are odd under this transformation.
-%% containing $\sin\phi$
-Equation~\ref{eq:Angular} now reads:
-\begin{equation} \label{eq:fold1}
-  \begin{split}
-    \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \frac{9}{16\pi}\left[\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \right.\\
-      &\left.+(\frac{1}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K}-F_\mathrm{L}\cos^2\theta_\mathrm{K})\cos2\theta_l+\frac{1}{2}P_1F_\mathrm{T}\sin^2\theta_\mathrm{K}\sin^2\theta_l\cos 2\phi \right.\\
-      &+\sqrt{F_\mathrm{T}F_\mathrm{L}}(\frac{1}{2}P_4'\sin2\theta_\mathrm{K}\sin2\theta_l\cos\phi+P_5'\sin2\theta_\mathrm{K}\sin\theta_l\cos\phi )\\
-      &\left.+2P_2F_\mathrm{T}\sin^2\theta_\mathrm{K}\cos\theta_l \right]
-  \end{split}
-\end{equation}
+The key of this method is to exploit the even and odd symmetries of the terms forming the differential distribution, around some values of the angular variables.
+By folding a variable around one of these values, all the terms with an even symmetry will be unchanged after the transformation, while all the terms with an odd symmetry will be become equal to zero.
+Any folding applied around a value for which there is no symmetry, in at least one term of the distribution, would modify the expression of that term.
+In this analysis, only folding corresponding to symmetries will be applied.
 
-The second folding is performed at $\theta_l = \pi/2$ (for $\theta_l>\pi/2,\theta_l\rightarrow \pi- \theta_l$).
-The domain of $\theta_l$ is reduced to (0,$\pi$/2).
-According to $\cos(\pi-\theta_l) = -\cos\theta_l$ and $\sin(\pi-\theta_l) = \sin\theta_l$, we can cancel the terms that are odd under this transformation.
-%% proportional to $P_4'$, which contains $\sin 2\theta_l$.
+In order to preserve the term proportional to $P_5'$ in the angular distribution and to reduce as much as possible the total number of parameters, two foldings have been applied.
+The \PHI variable has been folded around 0, reducing its range from $\left[-\pi,\pi\right]$ to $\left[0,\pi\right]$.
+Then, the \TL variable has been folded around $\pi/2$, reducing its range from $\left[0,\pi\right]$ to $\left[0,\pi/2\right]$.
 
-\begin{equation} \label{eq:fold2}
-  \begin{split}
-    \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \frac{9}{8\pi}\left[\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \right.\\
-      &\left.+(\frac{1}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K}-F_\mathrm{L}\cos^2\theta_\mathrm{K})\cos2\theta_l+\frac{1}{2}P_1F_\mathrm{T}\sin^2\theta_\mathrm{K}\sin^2\theta_l\cos 2\phi \right.\\
-      &\left.+\sqrt{F_\mathrm{T}F_\mathrm{L}}P_5'\sin2\theta_\mathrm{K}\sin\theta_l\cos\phi  \right]
-  \end{split}
+Note that, according to the definition in Equation~\ref{eq:folding-def}, the resulting range of \TL should have been $\left[\pi/2,\pi\right]$.
+However, for convenience this second folding has been applied in the other way:
+\begin{equation} \label{eq:folding-def-alt}
+  \begin{aligned}
+    & x \to 2a-x \quad & \textrm{for}\: x \ge a \\
+    & x \to x \quad & \textrm{for}\: x < a \\
+  \end{aligned}
 \end{equation}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The effect of this alternative definition on the differential distribution is identical to the original one.
 
-For S-wave and the interference terms, we do the same transformation as P-wave, after the first ``folding'', it can reads:
-\begin{equation} \label{eq:S-fold1}
-  \begin{split}
-    \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \frac{3}{8\pi}\left[F_\mathrm{S}\sin^2\theta_l+ A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}\right.\\
-      &+\left. A_\mathrm{S}^4\sin\theta_\mathrm{K}\sin2\theta_l\cos\phi + A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi\right]
-  \end{split}
-\end{equation}
+%% , to reduce the number of parameters in the fit, we "fold" the data twice.
+%% ``Folding'' means that we divide the decay rate into different parts, calculate them separately according to some symmetries and then add them together to obtain the equivalent decay rates.
+%% If we take consecutive steps of ``folding'', the similar expansions are used to get the full \pdfs.
 
-After the second ``folding'', it reads:
-\begin{equation} \label{eq:S-fold2}
-  \begin{split}
-    \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \\
-    &\frac{3}{4\pi}\left[F_\mathrm{S}\sin^2\theta_l+A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}+A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi\right]
-  \end{split}
-\end{equation}
+%% Let us take the first folding as an example.
+%% The first folding is at $ \phi=0$ (for $\phi<0,\phi\rightarrow-\phi$, the $\phi$'s domain is reduced to (0,$\pi$)).
+%% To be more clear, we divide the decay rate $d\Gamma$ into two parts corresponding to $\phi>0$ and $\phi<0$, i.e. $d\Gamma(\phi;\phi>0)$, and $d\Gamma(\phi;\phi<0)$:
+%% \begin{equation} \label{eq:folding}
+%%   \begin{split}
+%%     d\hat{\Gamma} &= d\Gamma(\phi|\phi<0) + d\Gamma(\phi|\phi>0) \\
+%%     & = f_0(\phi|\phi\rightarrow-\phi) + f_0(\phi|\phi>0) \\
+%%     & = f_0(\cos\phi, -\sin\phi) + f_0(\cos\phi, \sin\phi)
+%%   \end{split}
+%% \end{equation}
+
+%% According to trigonometric identities $\cos(-\phi) = \cos\phi $, $\sin(-\phi) = -\sin\phi $, we can cancel the terms that are odd under this transformation.
+%% %% containing $\sin\phi$
+%% Equation~\ref{eq:Angular} now reads:
+%% \begin{equation} \label{eq:fold1}
+%%   \begin{split}
+%%     \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \frac{9}{16\pi}\left[\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \right.\\
+%%       &\left.+(\frac{1}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K}-F_\mathrm{L}\cos^2\theta_\mathrm{K})\cos2\theta_l+\frac{1}{2}P_1F_\mathrm{T}\sin^2\theta_\mathrm{K}\sin^2\theta_l\cos 2\phi \right.\\
+%%       &+\sqrt{F_\mathrm{T}F_\mathrm{L}}(\frac{1}{2}P_4'\sin2\theta_\mathrm{K}\sin2\theta_l\cos\phi+P_5'\sin2\theta_\mathrm{K}\sin\theta_l\cos\phi )\\
+%%       &\left.+2P_2F_\mathrm{T}\sin^2\theta_\mathrm{K}\cos\theta_l \right]
+%%   \end{split}
+%% \end{equation}
+
+%% The second folding is performed at $\theta_l = \pi/2$ (for $\theta_l>\pi/2,\theta_l\rightarrow \pi- \theta_l$).
+%% The domain of $\theta_l$ is reduced to (0,$\pi$/2).
+%% According to $\cos(\pi-\theta_l) = -\cos\theta_l$ and $\sin(\pi-\theta_l) = \sin\theta_l$, we can cancel the terms that are odd under this transformation.
+%% %% proportional to $P_4'$, which contains $\sin 2\theta_l$.
+
+%% \begin{equation} \label{eq:fold2}
+%%   \begin{split}
+%%     \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \frac{9}{8\pi}\left[\frac{3}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K} + F_\mathrm{L}\cos^2\theta_\mathrm{K} \right.\\
+%%       &\left.+(\frac{1}{4}F_\mathrm{T}\sin^2\theta_\mathrm{K}-F_\mathrm{L}\cos^2\theta_\mathrm{K})\cos2\theta_l+\frac{1}{2}P_1F_\mathrm{T}\sin^2\theta_\mathrm{K}\sin^2\theta_l\cos 2\phi \right.\\
+%%       &\left.+\sqrt{F_\mathrm{T}F_\mathrm{L}}P_5'\sin2\theta_\mathrm{K}\sin\theta_l\cos\phi  \right]
+%%   \end{split}
+%% \end{equation}
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% For S-wave and the interference terms, we do the same transformation as P-wave, after the first ``folding'', it can reads:
+%% \begin{equation} \label{eq:S-fold1}
+%%   \begin{split}
+%%     \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \frac{3}{8\pi}\left[F_\mathrm{S}\sin^2\theta_l+ A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}\right.\\
+%%       &+\left. A_\mathrm{S}^4\sin\theta_\mathrm{K}\sin2\theta_l\cos\phi + A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi\right]
+%%   \end{split}
+%% \end{equation}
+
+%% After the second ``folding'', it reads:
+%% \begin{equation} \label{eq:S-fold2}
+%%   \begin{split}
+%%     \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \\
+%%     &\frac{3}{4\pi}\left[F_\mathrm{S}\sin^2\theta_l+A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}+A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi\right]
+%%   \end{split}
+%% \end{equation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
-After the two folding are performed, the angular distribution can be written, using  Equation~\ref{eq:fold2} and Equation~\ref{eq:S-fold2} as:
+After the application of the two foldings, the differential decay distribution can be written as:
 \begin{equation} \label{eq:PDF-f2}
   \begin{split}
     \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}&\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi} = \\
@@ -323,8 +421,7 @@ After the two folding are performed, the angular distribution can be written, us
   \end{split}
 \end{equation}
 
-Now we have 6 parameters, they are $F_\mathrm{L}$, $F_S$, $P_1$, $P_5'$, $A_\mathrm{S}$ and $A^5_\mathrm{S}$.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+Now it contains 6 angular parameters: $F_\mathrm{L}$, $P_1$, and $P_5'$ for the P-wave component, $F_S$ for the S-wave component, $A_\mathrm{S}$ and $A^5_\mathrm{S}$ for the interference component.
 
 \subsection{Parameter constrains}
 \label{sec:bound}
