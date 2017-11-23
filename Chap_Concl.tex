@@ -21,21 +21,85 @@ In this section I will describe some new issues that an analysis on CMS Run-II d
 
 The main negative aspect, at analysis level, of the increased LHC luminosity is the trigger selections.
 Since the computing resources are limited, the event reconstruction can be run only on a limited amount of data.
-Since it is pointless to collect data if they can never be reconstructed, the limited number of reconstructed events can be translated in a upper limit of the rate of events that pass the trigger system.
-This limit, in the first three years of Run II, is set to \SI{1000}{\hertz}, and is calculated taking into account the machine down-times, when the detector is not collecting data but the reconstruction process continues.
+Since it is pointless to collect data if they can never be reconstructed, the limited number of reconstructed events can be translated in a upper limit of the rate of events that pass the HLT system.
+This limit, in the first three years of Run II, is about \SI{1000}{\hertz}, and is calculated taking into account the LHC down-times, when the detector is not collecting data but the reconstruction process continues.
 
-When LHC increases the instantaneous luminosity of the collisions, the rate would increase as well, because the probability of having an proton-proton interaction with final state that fires the trigger is proportional to the luminosity.
-It is an even worse situation when the average pileup is increased, because many HLT algorithms, and almost all the L1T ones, can sum up the contribution of final states originated in different proton-proton interactions.
+In addition, the maximum frequency at which the silicon detectors can be read sets a limit in the L1T output rate to \SI{100}{\kilo\hertz}.
+
+When LHC increases the instantaneous luminosity of the collisions, the rate would increase as well, because the probability of having a proton-proton interaction with final state that fires the trigger is proportional to the luminosity.
+It is an even worse situation when the average pileup is increased, because some HLT algorithms, and many of the L1T ones, can sum up the contribution of final states originated in different proton-proton interactions.
 The firing probability in this case increases more than linearly, as a function of the luminosity.
 Due to the rate upper limit, when the delivered luminosity increases, we need to set tighter requirements in the trigger algorithms.
 
 Focusing now on the trigger selection used by the \BtoKstmumu angular analysis, in the 2012 run there was a simple requirement on the presence of two muons with $p_T>3.5\GeV$ and $|\eta|<2.2$, and forming a common displaced vertex with some quality requirements, as described in details in Section~\ref{sec:onsel}.
 Since a simple increase of the $p_T$ and $\eta$ threshold, to keep the rate stable, would have led to a large drop in the signal efficiency, many studies have been performed in the selection optimisation, to achieve a sufficient rate reduction without affecting largely the signal efficiency.
-The main results of these studies are the introduction of the requirement of one hadronic track at HLT since 2015, and the use of an upper cut on the angular distance, $\Delta R_{\mu\mu}$, between the two muons at L1T, since 2017.
-On the other hand, in 2015 and 2016, the L1T algorithm could not have cuts on multi-object quantities (like $\Delta R_{\mu\mu}$), and the only available option was to cut tighter on the muon $p_T$ and $\eta$ quantities.
 
-A first test of the new HLT algorithm on 2016 dataset, after applying the same selection criteria optimised for the 2012 analysis plus the matching of the triggering hadronic track to at least one of the two hadrons in the candidate, led to an average efficiency in the range 30-70\% of the 2012 one.
-The range is due to different detector conditions over the year, whose problems are unrelated with the HLT strategy used.
+\subsubsection{2015 and 2016 trigger}
+\label{sec:2016}
+
+The L1T seed used during 2015 and 2016 runs is not containing any specific improvement, but only tighter thresholds are applied on the two muons.
+Two algorithms are contributing to the trigger:
+\begin{itemize}
+\item a seed with no cut on the muon transverse momenta, and a cut on their pseudorapidity $|\eta_{L1\mu}|<1.4\,(1.6)$. The two thresholds were used for collisions with higher (1.4) and lower (1.6) values of instantaneous luminosity;
+\item a seed with no cut on the pseudorapidity, and a cut on muon transverse momenta. During collisions at higher (lower) instantaneous luminosity, the cut on the leading muon is $p_{T\,L1\mu}>12\,(11)\GeV$, and the cut on the second muon is $p_{T\,L1\mu}>5\,(4)\GeV$.
+\end{itemize}
+
+The HLT path used has a raised requirement on the transverse momenta of the two muons, with respect to the 2012 version, $p_{T\,L3\mu}>4\GeV$.
+There are not cuts on the muon pseudorapidity, while the vertexing requirements are still present.
+In addition, it constraints the requirement of an additional hadronic track, with $p_{T\,h}>0.8\GeV$ and forming a common vertex with the muon pair.
+Thanks to the latter requirement, the trigger manages to deal with the higher luminosity values reached without needing to increase dramatically the cuts on $p_T$.
+
+A preliminary and underestimated prevision on the number of signal events expected in 2016 dataset can be obtained by applying the same offline selection criteria used in Run~1 analysis to the new data sample, and adding the matching requirement between the hadronic track firing the trigger and one of the two tracks used to build the candidate at reconstructed-level.
+The candidate-\PBz invariant mass distribution of the selected sample, obtained from the full 2016 dataset, is shown in Figure~\ref{fig:prosp-2016}, for the signal and \JPsi $q^2$ regions.
+Note that the selection cuts used were optimised on the 2012 data and re-optimising them on the Run~2 data would improve the signal over background ratio.
+In addition, the analysis upgrades described in Section~\ref{sec:AnalUpg} are expected to further improve it.
+
+\begin{figure}[!hbt]
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[width=0.45\textwidth]{Signal_2016.png} &
+    \includegraphics[width=0.45\textwidth]{JPsi_2016.png}
+  \end{tabular}
+  \caption{Distribution of the candidate-\PBz invariant mass of the 2016 dataset, for the signal (left) and \JPsi (right) $q^2$ regions.
+    The selection criteria applied to the dataset are described in Section~\ref{sec:2016}.
+    The rough fits are performed with a \pdf obtained from the sum of a Gaussian and an exponential function.
+  \label{fig:prosp-2016}}
+\end{figure}
+
+
+\subsubsection{2017 trigger}
+\label{sec:2017}
+
+The L1T firmware used during 2017 run allowed to exploit the correlations between pair of objects, giving the possibility to cut on di-object quantities, like invariant mass and $\Delta R=\sqrt{\Delta\eta^2 + \Delta\phi^2}$.
+The two L1T seeds used for the \BtoKstmumu channel has been developed to contain cuts on the distance between the two muons:
+\begin{itemize}
+\item a seed with no cut on the muon transverse momenta, used a stable cut on their pseudorapidity $|\eta_{L1\mu}|<1.5$ and a cut $\Delta R_{\mu\mu}<1.4$;
+\item a seed with no cut on the pseudorapidity, and a cut on muon transverse momenta, $p_{T\,L1\mu}>4\GeV$ for both the leading and second muons, and a cut on the dimuon distance, $\Delta R_{\mu\mu}<1.2$.
+\end{itemize}
+In addition the quality requirement on the two muons has been increased, with respect to 2016 version, from an intermediate quality to the highest quality possible.
+These new cuts on the dimuon distance and quality allows to keep looser thresholds on muon transverse momenta and pseudorapidity, even if the instantaneous luminosity has been increased with respect to 2016 run.
+
+The HLT path used in 2017 is very similar to the 2016 version.
+The only difference, introduced to keep the rate at affordable values, is that the cut on hadronic track transverse momentum is increased, $p_{T\,h}>1.2\GeV$, and a new requirement has been introduced on the significance of the hadronic track impact parameter on the transverse plane with respect to the beamspot, $d_{xy}/\sigma(d_{xy}) > 2$.
+The latter cut is identical to the one applied at reconstructed level in the Run~1 analysis, as described in Section~\ref{sec:opt-selec}.
+
+The same selections described in the previous section and applied to the 2016 dataset, are now applied to a partial 2017 dataset, containing the events corresponding to an integrated luminosity of \SI{28}{\per\femto\barn}.
+The candidate-\PBz invariant mass distribution of the selected sample is shown in Figure~\ref{fig:prosp-2017}, for the signal and \JPsi $q^2$ regions.
+
+\begin{figure}[!hbt]
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[width=0.45\textwidth]{Signal_2017.png} &
+    \includegraphics[width=0.45\textwidth]{JPsi_2017.png}
+  \end{tabular}
+  \caption{Distribution of the candidate-\PBz invariant mass of a partial 2017 dataset, corresponding to \SI{28}{\per\femto\barn}, for the signal (left) and \JPsi (right) $q^2$ regions.
+    The selection criteria applied to the dataset are described in Section~\ref{sec:2016}.
+    The rough fits are performed with a \pdf obtained from the sum of a Gaussian and an exponential function.
+  \label{fig:prosp-2017}}
+\end{figure}
+
+%% A first test of the new HLT algorithm on 2016 dataset, after applying the same selection criteria optimised for the 2012 analysis plus the matching of the triggering hadronic track to at least one of the two hadrons in the candidate, led to an average efficiency in the range 30-70\% of the 2012 one.
+%% The range is due to different detector conditions over the year, whose problems are unrelated with the HLT strategy used.
 
 \subsection{Analysis upgrades}
 \label{sec:AnalUpg}

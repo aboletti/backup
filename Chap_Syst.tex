@@ -1,7 +1,7 @@
 \chapter{Systematic uncertainties}\label{sec:syst}
 
 In this section the systematic uncertainties considered for this analysis are discussed.
-Some of the systematics are handled in similar methods as those discussed in the previous CMS analysis~\cite{Khachatryan:2015isa,AN-14-129}.
+Some of the systematics are handled in similar methods as those discussed in the previous CMS analysis~\cite{Khachatryan:2015isa}.
 
 The sources of systematic uncertainties investigated are:
 \begin{description}
@@ -25,7 +25,7 @@ The sources of systematic uncertainties investigated are:
   
 \item[feed-through background:] the effect of the contamination with $B^0 \to {\rm J}\psi K^{*0}$ and $B^0 \to \psi' K^{*0}$ feed-through events, in $q^2$ bins just below and above the resonance regions;
 
-\item[bivariate gauss fit range:] the dependency of the results on the range of the bivariate fit to the likelihood distribution in the $P_1$, $P'_5$ plane, when estimating the best-fit value.
+\item[bivariate Gauss fit range:] the dependency of the results on the range of the bivariate fit to the likelihood distribution in the $P_1$, $P'_5$ plane, when estimating the best-fit value.
 
 \end{description}
 
@@ -367,13 +367,13 @@ The results of the fits with the reduced sideband are reported in Table~\ref{tab
 The values of the \textit{Background Distribution} systematic uncertainty are reported in this table as well.
 
 In the table are highlighted the differences that exceed twice the value of the systematic uncertainty.
-Globally, the differences are considered compatible with the systematics uncertainty.
+Globally, the differences are considered compatible with the systematic uncertainty.
 In the few bins with a larger difference, the results of the fit with reduced sidebands are affected by the very low statistics left in the sideband region.
 The worst case is bin 7, where the sideband reduction remove about 75\% of the background events.
 
 \begin{table*}[htb]
   \caption{Results of the fits with the reduced sideband and their absolute difference with respect to the results with the full sideband, as described in Section~\ref{sec:partRecoBkg}.
-    The values of the \textit{Background Distribution} systematics, as described in Section~\ref{sec:sys-bkg}, are reported here for comparison sake.\label{tab:red-sideband}}
+    The values of the \textit{Background Distribution} systematic uncertainty, as described in Section~\ref{sec:sys-bkg}, are reported here for comparison sake.\label{tab:red-sideband}}
           {\small
             \begin{center}
               \begin{tabular}{l|ccc|ccc}
@@ -406,7 +406,7 @@ The worst case is bin 7, where the sideband reduction remove about 75\% of the b
 %% The mean value is obtained from the fit to the data, while the other parameters (four $\sigma$ and two ratios) are obtained from fits to MC-simulated events.
 
 The parameters of the mass shape in the signal component of the \pdf are estimated through a fit to the MC mass distribution and kept fixed in the data fit, as described in Section~\ref{sec:fitseq}.
-To evaluate the bias due to mis-modelling of the MC description of the mass shapes, and propagate it to the analysis results as a systematics, the control channels are used.
+To evaluate the bias due to mis-modelling of the MC description of the mass shapes, and propagate it to the analysis results as a systematic uncertainty, the control channels are used.
 Thanks to the high-statistics of these samples, it is possible to perform a fit with some mass parameters free to float.
 The angular parameters are measured on both control channels, at first with signal mass shape for right-tagged events free to float, and then with signal mass shape for mis-tagged events free to float.
 The difference of the angular parameter values obtained from these fits, with respect to the results with the standard fit sequence, are calculated.
@@ -516,6 +516,42 @@ No significant bias are present.
 %%   \label{fig:fixSyst8}
 %% \end{figure}
 
+\subsection{Test of scale-factor dependency on toy statistics}
+\label{sec:fixSyst.test}
+
+The procedure used to compute the systematic uncertainty due to the fixed parameters, as described above, relies on the assumption that the scale factors do not depend on the statistics of the pseudo-experiment used.
+This assumption has been tested for two $q^2$ bins, for two different $q^2$ regimes, bin~0 and bin~8.
+
+The test consists in repeating the procedure to extract the scale factor on a set of pseudo-experiments with different statistics.
+Defining $R$ as the ratio between the statistics of a pseudo-experiment and the data sample, the procedure used for the estimation of the systematic uncertainty used a sample with $R=100$.
+The test is performed with a set of 9 samples, with $R=\{10,20,\ldots,90\}$.
+The same procedure used for the systematic uncertainty is applied on these pseudo-experiments, to extract the scale factor for both $P_1$ and $P'_5$.
+
+%% Since the systematic uncertainty was computed with a pseudo-experiment with a number of events 100 times larger than data, this test is performed with a set of pseudo-experiments with a statistics which is a multiple of 10, from 10 to 90, with respect to the statistics in data.
+
+The set of scale factors obtained is shown in Figure~\ref{fig:fixSyst0} and Figure~\ref{fig:fixSyst8}, for bin~0 and bin~8 respectively.
+From these results, one can notice that, besides few isolated points, all the scale factors are in agreement and there are no evident trends as a function of the statistics.
+
+\begin{figure}[!hbt]
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[width=0.45\textwidth]{Figures/FixSyst/fixP1_0.pdf} &
+    \includegraphics[width=0.45\textwidth]{Figures/FixSyst/fixP5_0.pdf}
+  \end{tabular}
+  \caption{The error scale factors, obtained with the procedure described in Section~\ref{sec:sys-fixedparm}, are shown for $P_1$ (left) and $P'_5$ (right), in $q^2$ bin~0, as a function of the statistics of the pseudo-experiment used.}
+  \label{fig:fixSyst0}
+\end{figure}
+
+\begin{figure}[!hbt]
+  \centering
+  \begin{tabular}{cc}
+    \includegraphics[width=0.45\textwidth]{Figures/FixSyst/fixP1_8.pdf} &
+    \includegraphics[width=0.45\textwidth]{Figures/FixSyst/fixP5_8.pdf}
+  \end{tabular}
+  \caption{The error scale factors, obtained with the procedure described in Section~\ref{sec:sys-fixedparm}, are shown for $P_1$ (left) and $P'_5$ (right), in $q^2$ bin~8, as a function of the statistics of the pseudo-experiment used.}
+  \label{fig:fixSyst8}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%555
 
@@ -614,13 +650,13 @@ The result are in the Table~\ref{tab:feed-through}.
   \end{center}
 \end{table*}
 
-\section{Bivariate Guassian fit range}\label{sec:bestFit}
+\section{Bivariate Gaussian fit range}\label{sec:bestFit}
 
 As described in Section~\ref{sec:fitseq}, the procedure to get the best fit from the data is to discretise the $P_1,P'_5$ space, and maximise the likelihood as a function of nuisance parameters at fixed values of $P_1,P'_5$.
 So we have a scan of the likelihood in the $P_1$, $P'_5$ plane.
-Finally, the likelihood distribution is fitted with a bivariate normal distribution.
+Finally, the likelihood distribution is fitted with a bi-variate normal distribution.
 
-In order to check the stability of the fit, as well as any possible systematics due to the procedure, the angular parameters are evaluated varying the fit range.
+In order to check the stability of the fit, as well as any possible source of bias due to the procedure, the angular parameters are evaluated varying the fit range.
 The range of the fit is defined as $\pm1\sigma$ (as computed by the FC procedure described in Section~\ref{sec:statUncert}), multiplied by a scale factor (in the range $[0.1,2]$), around the centre defined as the value of $P_1$ or $P'_5$, among the points of the grid defined in Section~\ref{sec:fitseq}, where the likelihood has an absolute maximum.
 %% So, for instance, a scale factor of $1.5$ means that the fit range will be $[P_1-1.5\sigma,P_1+1.5\sigma]$, and so on.
 
@@ -630,7 +666,7 @@ To give an element of comparison, the $y$-axis range in the plots of the results
 The difference between the value of $P_1$ and $P'_5$ from the absolute maximum and the normal fit is small, when compared with statistical uncertainties and to the \textit{fit bias} uncertainty.
 Also the trend with respect to the fit range is small.
 
-A quantitative difference has been extracted by comparing the value of the position of the absolute maximum with that of a bivariate Gaussian fit, via linear fit in the scale factor range $[0.4,1.6]$, evaluated for scale factor equal to 1.
+A quantitative difference has been extracted by comparing the value of the position of the absolute maximum with that of a bi-variate Gaussian fit, via linear fit in the scale factor range $[0.4,1.6]$, evaluated for scale factor equal to 1.
 The differences are reported in table~\ref{tab:rangeGausFit}.
 
 Since these differences have the same nature of the \textit{fit bias} uncertainty, but are smaller than it, no specific systematic uncertainty has been introduced for them. 
@@ -644,7 +680,7 @@ Since these differences have the same nature of the \textit{fit bias} uncertaint
   %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin5.pdf}
   %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin7.pdf}
   %% \includegraphics[width=0.45\textwidth]{Figures/FC/testGausFitRange_bin8.pdf}
-  \caption{Comparison between the position of the absolute maximum of the likelihood (green line) and the results of the bivariate Gaussian fit, as a function of the fit range (black dots), for the $P_1$ (left) and $P_5'$ (right) parameters, in $q^2$ bin~3.
+  \caption{Comparison between the position of the absolute maximum of the likelihood (green line) and the results of the bi-variate Gaussian fit, as a function of the fit range (black dots), for the $P_1$ (left) and $P_5'$ (right) parameters, in $q^2$ bin~3.
   }
   \label{fig:gausFitRange}
 \end{figure}
@@ -652,7 +688,7 @@ Since these differences have the same nature of the \textit{fit bias} uncertaint
 \begin{table*}[!htb]
   \begin {center}
     \begin{small}
-      \caption{Systematic uncertainties: bias from bivariate Gaussian fit to the likelihood.
+      \caption{Systematic uncertainties: bias from bi-variate Gaussian fit to the likelihood.
         \label{tab:rangeGausFit}}
       \begin{tabular}{l|cc}
         \hline
