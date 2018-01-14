@@ -1,7 +1,7 @@
 \chapter{Analysis introduction}
 \label{sec:theo}
 
-In this thesis, I will present the angular analysis of the \BtoKstmumu decay, performed with the data collected by the CMS Experiment in the 2012 run of proton-proton (pp) collisions at a centre-of-mass energy $\sqrt{s}=8\TeV$, and corresponding to an integrated luminosity of \SI{20.5}{\per\femto\barn}.
+In this thesis, I will present the angular analysis of the \BtoKstmumu decay, performed with the data collected by the Compact Muon Solenoid (CMS) Experiment in the 2012 run of proton-proton (pp) collisions at a centre-of-mass energy $\sqrt{s}=8\TeV$, and corresponding to an integrated luminosity of \SI{20.5}{\per\femto\barn}.
 
 Two analyses of the \BtoKstmumu decay have been performed by the CMS Collaboration, using the data described above.
 The first analysis~\cite{CMS:2012} was aiming to measure the branching fraction and to perform a partial measurement of the angular distribution.
@@ -36,10 +36,10 @@ For this reason, these results could have an important role in the process of sh
 
 In this thesis I will describes the details of this second analysis of the CMS Collaboration.
 Chapter~\ref{sec:theo} will continue with the description of the theoretical framework used to described the decays like \BtoKstmumu, and with the formulation of the angular distribution and few considerations about it.
-In Chapter~\ref{sec:detect} the Large Hadron Collider (LHC) and the Compact Muon Solenoid (CMS) experiment will be described, focusing in particular on the aspects more related to the analyses of Flavour Physics.
+In Chapter~\ref{sec:detect} the Large Hadron Collider (LHC) and the CMS experiment will be described, focusing in particular on the aspects more related to the analyses of Flavour Physics.
 The selection criteria used to reduce the contamination from background events will be presented in Chapter~\ref{sec:selection}, while in Chapter~\ref{sec:fit} the procedure used to extract the angular parameters from the selected data will be explained in details.
-Chapter~\ref{sec:eff} will be dedicated to the methods used to describe the efficiency of the event selection criteria.
-Several tests have been performed to validate the analysis procedure; they are described in Chapter~\ref{sec:validation}.
+Chapter~\ref{sec:eff} will be dedicated to the methods used to describe the efficiency of the selection criteria on signal events.
+Several tests have been performed to validate the analysis procedure; they will be described in Chapter~\ref{sec:validation}.
 The sources of systematic uncertainty that have been investigated will be listed in Chapter~\ref{sec:syst}, while the study of the statistical uncertainty and the results of the analysis will be reported in Chapter~\ref{sec:result}.
 Finally, I will conclude in Chapter~\ref{sec:FutConcl} by describing the future prospects for this analysis and focusing in particular on the ongoing efforts to improve it for the data from LHC Run~2 collisions.
 
@@ -79,10 +79,10 @@ In the following section, a brief description of the theoretical framework used 
 \subsection[Flavour-changing neutral currents b to s l l]{Flavour-changing neutral currents $b\to s\ell^+\ell^-$}
 \label{sec:FCNC}
 
-The penguin-mediated flavour-changing neutral currents (FCNC) $b\to s\ell^+\ell^-$ are a set of $b$-hadron semileptonic decays with a pair of non-resonant charged leptons in the final state.
+The penguin-mediated FCNC $b\to s\ell^+\ell^-$ are a set of $b$-hadron semileptonic decays with a pair of non-resonant charged leptons in the final state.
 These decay channels are doubly suppressed within the SM:
 \begin{itemize}
-\item they are forbidden at tree-level, since there is no neutral current in SM allowed to violate the flavour, and the leading-order Feynman diagram that mediate them is a weak penguin loop;
+\item they are forbidden at tree-level, since there is no neutral current in SM allowed to violate the flavour, and the leading-order Feynman diagram that mediates them is a weak penguin loop;
 \item the leading-order diagram is Cabibbo suppressed, since it is proportional to the CKM elements $|V_{ts}V_{tb}|\sim10^{-2}$.
 \end{itemize}
 These causes of suppression result in small branching fractions and they create an ideal environment for NP searches.
@@ -99,7 +99,7 @@ where $\lambda_i=V_{ib}V_{is}^*$ and
   {\cal H}_{\eff}^{(u)} & = & C_1 (\mathcal O_1^c-\mathcal O_1^u)  + C_2(\mathcal O_2^c-\mathcal O_2^u)\,.
 \end{eqnarray*}
 
-The of operators $\mathcal O_i^{(a)}$ for $i<7$ are equal to the $P_i$ defined in the Reference~\cite{Bobeth:1999mk}, while the other ones are defined accordingly to Reference~\cite{Altmannshofer:2008dz}:
+The operators $\mathcal O_i^{(a)}$ for $i<7$ are equal to the $P_i$ defined in the Reference~\cite{Bobeth:1999mk}, while for $i\geq7$ they are defined accordingly to Reference~\cite{Altmannshofer:2008dz}:
 \begin{align}
   {\mathcal{O}}_{7} &= \frac{e}{g^2} m_b (\bar{s} \sigma_{\mu \nu} P_R b) F^{\mu \nu} &
   {\mathcal{O}}_{7}^\prime &= \frac{e}{g^2} m_b (\bar{s} \sigma_{\mu \nu} P_L b) F^{\mu \nu} \label{eq:O7}\\
@@ -114,10 +114,10 @@ The of operators $\mathcal O_i^{(a)}$ for $i<7$ are equal to the $P_i$ defined i
   {\mathcal{O}}_{P} &=\frac{e^2}{16\pi^2} m_b (\bar{s} P_R b)(\bar{\mu} \gamma_5 \mu) &
   {\mathcal{O}}_{P}^\prime &=\frac{e^2}{16\pi^2} m_b (\bar{s} P_L b)(\bar{\mu} \gamma_5 \mu) \label{eq:OP}
 \end{align}
-where $g$ is the strong coupling constant, $m_b$ is the running $b$ quark mass in the $\bar{\mathrm{MS}}$ scheme, and $P_{L,R}=(1\mp\gamma_5)/2$ are the chirality projectors.
+where $g$ is the strong coupling constant, $m_b$ is the running $b$ quark mass in the $\overline{\mathrm{MS}}$ scheme, and $P_{L,R}=(1\mp\gamma_5)/2$ are the chirality projectors.
 
 The set of Wilson coefficients $C^{(\prime)}_i$ encodes the contribution from short-distance physics and could contain NP effects.
-These coefficients can be expanded and calculated in perturbation theory in powers of $\alpha_s$:
+These coefficients can be expanded and calculated in perturbation theory in powers of $\alpha_s\equiv g^2/4\pi$:
 \begin{equation}\label{WilExpansion}
   C_i = C_i^{(0)} + \frac{\alpha_s}{4\pi}\, C_i^{(1)} + \left(\frac{\alpha_s}{4\pi}\right)^2 C_i^{(2)} + O(\alpha_s^3)\,,
 \end{equation}
@@ -127,15 +127,15 @@ According to the SM, several of the terms in the effective Hamiltonian are expec
 
 %%%%%%%%%%%%%%%%%%%%
 If we restrict the study to a $\mathrm{B}^{(0,\pm)}\to\mathrm{K}^{*(0,\pm)}\ell^+\ell^-$ decay, the matrix elements of the effective Hamiltonian operators ${\mathcal{O}}^{(\prime)}_{7,9,10,S,P}$ can be described as a function of seven form factors, $A_i(q^2)$, $V(q^2)$, and $T_j(q^2)$, where $0\le i\le2$ and $1\le j\le2$, and $q^2$ is the squared momentum carried by the pair of leptons.
-In literature is also used the form factor $A_3(q^2)$, which is a linear combination of $A_1(q^2)$ and $A_2(q^2)$.
+In literature the form factor $A_3(q^2)$, which is a linear combination of $A_1(q^2)$ and $A_2(q^2)$, is also used.
 
-The theoretical predictions of the form factors are computed using the QCD sum rules on the light-cone (Locusts)~\cite{Khodjamirian:2001bj}.
+The theoretical predictions of the form factors are computed using the QCD sum rules on the light-cone (LCSRs)~\cite{Khodjamirian:2001bj}.
 With this technique, the form factors are expanded in powers of $m_b m_{\mathrm{K}^*}/(m_b^2-q^2)$.
-The expansion works well for values of $q^2$ lower than about $8\,\mathrm{GeV}^2$, but for higher values the high-order terms of the expansion become more relevant and the uncertainty associated to the approximated prediction grows accordingly.
+This expansion works well for values of $q^2$ lower than about $8\,\mathrm{GeV}^2$, but for higher values the high-order terms become more relevant and the uncertainty associated to the approximated prediction grows accordingly.
 
 %%%%%%%%%%%%%%%%%%
 In the $\mathrm{B}^{(0,\pm)}\to\mathrm{K}^{*(0,\pm)}\ell^+\ell^-$ decay amplitude, not only the terms proportional to the form factors are contributing.
-It contains additional ``non-factorisable effects'', which are related to the matrix elements of the operators not considered when defining the form factors: the purely hadronic operators ${\mathcal{O}}_{1,2,3,4,5,6}$ and the chromomagnetic operator ${\mathcal{O}}^{(\prime)}_{8}$, where an additional virtual photon emission is needed to produce the lepton pair.
+It contains additional ``non-factorisable effects'', which are related to the matrix elements of the operators not considered when defining the form factors: the purely hadronic operators ${\mathcal{O}}_{1,2,3,4,5,6}$ and the chromomagnetic operators ${\mathcal{O}}^{(\prime)}_{8}$, where an additional virtual photon emission is needed to produce the lepton pair.
 
 The contribution of these effects cannot be expressed as a function of a new set of form factors.
 In the combined heavy-quark and large-energy limits, they can be calculated using the QCD factorisation technique~\cite{Beneke:2000wa,Beneke:2001at,Beneke:2004dp}.
@@ -148,7 +148,7 @@ In the combined heavy-quark and large-energy limits, they can be calculated usin
 The FCNC decay \BtoKstmumudecay is an optimal laboratory to probe the flavour sector of the SM.
 From the experimental point of view, it has a fully charged final state, with two muons, which are easy to identify in a multi-purpose particle detector, and two charged hadronic particles.
 Furthermore, the charges of the hadrons in the final state determine the CP-state of the decay, i.e. whether it is \BtoKstmumudecay or \BtoKstmumuconjdecay.
-From the phenomenological point of view, the angular analysis of this decay can provide information on several components of the weak effective Hamiltonian: the electromagnetic and semileptonic operators, $\mathcal{O}_{7,9,10}$, and their chirality-flipped counterparts, $\mathcal{O}_{7^\prime,9^\prime,10^\prime}$, together with scalar and pseudoscalar operators, $\mathcal{O}_{S,P,S^\prime,P^\prime}$.
+From the phenomenological point of view, the angular analysis of this decay can provide information on several components of the effective Hamiltonian described in Section~\ref{sec:FCNC}: the electromagnetic and semileptonic operators, $\mathcal{O}_{7,9,10}$, and their chirality-flipped counterparts, $\mathcal{O}_{7^\prime,9^\prime,10^\prime}$, together with scalar and pseudoscalar operators, $\mathcal{O}_{S,P,S^\prime,P^\prime}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -183,11 +183,11 @@ The variable \PHI is defined as the angle between the plane containing the \Pgmp
 Finally, the variable $q^2$ is defined as the invariant mass squared of the dimuon system.
 In the Equations~\ref{eq:TLdef},~\ref{eq:TKdef},~\ref{eq:PHIdef} the notation $p_a^{(b)}$ indicates the momentum of the particle $a$ in the rest frame of the particle $b$.
 
-The definition of the kinematical variables is coherent with the one used in the previous analyses performed on this decay channel.
+The definition of the kinematical variables is coherent with the one used in the previous experimental analyses performed on this decay channel.
 The definition of \TL differs from the one used in some phenomenological papers.
 A graphic representation of the definition of the three angular variables is shown in Figure~\ref{fig:ske}.
 
-\begin{figure*}[!tbh]
+\begin{figure*}[tb]
   \begin{center}
     \includegraphics[width=0.99\textwidth]{SketchDecay.pdf}
     \caption{Illustration of the angular variables \TL (left), \TK (middle), and \PHI (right) for the decay \BtoKstmumudecay.}
@@ -202,7 +202,7 @@ The range of definition of the angular variables are $\left[0,\pi\right]$, for \
 \subsection{The angular decay rate}
 \label{sec:decRate}
 
-The matrix element for the \BtoKstmumudecay can be obtained from the effective Hamiltonian in Equation~\ref{eq:Heff}:
+The matrix element for the \BtoKstmumudecay, obtained from the effective Hamiltonian in Equation~\ref{eq:Heff}, is:
 \begin{equation}\label{eq:matrixelement}
   \begin{split}
     {\mathcal M}\ =& \frac{G_F\alpha}{\sqrt{2}\pi}V_{tb}^{}V_{ts}^*\bigg\{\bigg[ \braket{K \pi|\bar{s}\gamma^{\mu}({C_9^\text{eff}P_L+C_9^{\prime\text{eff}} P_R})b|\bar B} \\
@@ -211,7 +211,7 @@ The matrix element for the \BtoKstmumudecay can be obtained from the effective H
     & {+\braket{K \pi|\bar{s} ({C_S P_R+C_S^\prime P_L}) b|\bar B}(\bar{\mu}\mu)}{+\braket{K \pi|\bar{s} ({C_P P_R+C_P^\prime P_L}) b|\bar B}(\bar{\mu}\gamma_5\mu)} \bigg \}.
   \end{split}
 \end{equation}
-where the naive factorisation has been applied and a set of effective Wilson coefficients, $C_{i}^\text{eff}$, is used.
+where the naive factorisation has been applied, by ignoring the non-factorisable terms, and a set of effective Wilson coefficients, $C_{i}^\text{eff}$, is used.
 These effective coefficients are linear combinations of the set defined in Section~\ref{sec:FCNC}, and their definition is described in Reference~\cite{Altmannshofer:2008dz}.
 
 The differential decay distribution as a function of the kinematical variables can be obtained by squaring Equation~\ref{eq:matrixelement}.
@@ -226,14 +226,14 @@ Projecting the result on a basis of combinations of spherical harmonics of the a
   \end{align}
 \end{small}
 where the complex angular coefficients $I_i^{(a)}$ depend only on $q^2$.
-The differential distribution of the opposite CP-state decay, \BtoKstmumudecay, has the same expression, but it is function of the complex conjugated coefficients $\bar{I}_i^{(a)}$.
+The differential distribution of the opposite CP-state decay, \BtoKstmumudecay, has the same expression, but it is function of the weak-phase conjugated coefficients $\bar{I}_i^{(a)}$.
 
 The set of angular coefficients $I_i^{(a)}$ has been expressed as a function of the effective Wilson coefficients and of the form factors, under the assumptions of naive factorisation of the matrix element and adding corrections to describe the effect of non-factorisable terms.
 In literature they are also expressed as a function of eight \Ks transversity amplitudes.
 
 Unlike Wilson coefficients, form factors, and transversity amplitudes, the angular coefficients $I_i^{(a)}$ are physical observable and they can be experimentally measured by the angular analysis of the \BtoKstmumudecay decay.
 However, the theoretical predictions of these coefficients are prone to hadronic uncertainties, derived from their strong dependency on the form factors.
-For this reasons, more sophisticated bases of angular coefficients have been defined such that they are independent from form factors at leading order of the effective-theory expansion.
+For this reasons, more sophisticated bases of angular coefficients have been defined in order to be independent from form factors at leading order of the effective-theory expansion.
 
 Firstly, two sets of coefficients are defined, the CP-averages:
 \begin{equation}
@@ -257,7 +257,7 @@ In the massless-muon limit, the following conditions are valid:
   \frac{3}{4}\left(2S_1^s+S_1^c\right)-\frac{1}{4}\left(2S_2^s+S_2^c\right) = 1 \nonumber\\
   S_6^c = 0 \label{eq:massless-reductions}
 \end{gather}
-where the latter condition is always true within the SM, even without the massless-muon limit, since it is generated by the scalar operator, which does not exist in the SM.
+where the latter condition is always true within the SM, even without the massless-muon limit, since the $S_6^c$ term is generated by the scalar operator, which does not exist in the SM.
 
 The $S_1^c$ coefficient corresponds to the fraction of \Ks produced with longitudinal polarisation, and it is usually referred to as $F_L$.
 In the same way, the coefficient $S_6^s$ is proportional to the forward-backward asymmetry of the muon system, thus the parameter $A_{FB}=\frac{3}{4}S_6^s$ is used.
@@ -292,25 +292,21 @@ The presence of a $K^+\pi^-$ system in an S-wave configuration, due to a non-res
 
 Denoting the right-hand side of Equation~\ref{eq:Angular} by $W_p$, the differential decay rate takes the form:
 \begin{equation} \label{eq:S-wave}
-  \begin{split}
-    (1-F_\mathrm{S})W_p + (W_s + W_{sp})
-  \end{split}
+  \frac{1}{\mathrm{d}\Gamma/\mathrm{d}q^2}\frac{\mathrm{d}^4\Gamma}{\mathrm{d}q^2 \mathrm{d}\cos\theta_l \mathrm{d}\cos\theta_\mathrm{K} \mathrm{d}\phi}\bigg|_{S+P} = (1-F_\mathrm{S})W_p + (W_s + W_{sp})
 \end{equation}
 where 
 \begin{equation} \label{eq:S-wave0}
-  \begin{split}
-    W_s = \frac{3}{16\pi} F_\mathrm{S}\sin^2\theta_l
-  \end{split}
+  W_s = \frac{3}{16\pi} F_\mathrm{S}\sin^2\theta_l
 \end{equation}
 %% and $W_{sp}$ is given from Eq.(44) in~\cite{Genon:Swave}. 
-and $W_{sp}$ is~\cite{Genon:Swave}:
+and $W_{sp}$ is:
 \begin{equation} \label{eq:S-wave1}
   \begin{split}
-    W_{sp}= &\frac{3}{16 \pi}\left[ A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}+ A_\mathrm{S}^4\sin\theta_\mathrm{K}\sin2\theta_l\cos\phi\right.\\
-      &+\left.A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi+A_\mathrm{S}^7\sin\theta_\mathrm{K}\sin\theta_l\sin\phi+A_\mathrm{S}^8\sin\theta_\mathrm{K}\sin2\theta_l\sin\phi\right]
+    W_{sp}=\frac{3}{16 \pi}\left[&A_\mathrm{S}\sin^2\theta_l\cos\theta_\mathrm{K}+ A_\mathrm{S}^4\sin\theta_\mathrm{K}\sin2\theta_l\cos\phi+A^5_\mathrm{S}\sin\theta_\mathrm{K}\sin\theta_l\cos\phi\right.\\
+      &+\left.A_\mathrm{S}^7\sin\theta_\mathrm{K}\sin\theta_l\sin\phi+A_\mathrm{S}^8\sin\theta_\mathrm{K}\sin2\theta_l\sin\phi\right]
   \end{split}
 \end{equation}
-where $F_\mathrm{S}$ is the fraction of the S-wave component in the $\text{K}^{*0}$ mass window, and $W_{sp}$ contains all the interference terms, $A_\mathrm{S}^i$ are the interference amplitudes between the S-wave and the P-wave decays\cite{Genon:Swave}.
+where $F_\mathrm{S}$ is the fraction of the S-wave component in the $\text{K}^{*0}$ mass window, and $A_\mathrm{S}^i$ are the interference amplitudes between the S-wave and the P-wave decays\cite{Genon:Swave}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{The angular folding}
@@ -321,7 +317,7 @@ where $F_\mathrm{S}$ is the fraction of the S-wave component in the $\text{K}^{*
 
 The differential decay distributions, described above, contains 8 parameters for the P-wave component, and 6 parameters for the S-wave and interference contamination.
 As mentioned in the introduction, the primary goal of this angular analysis is to measure the angular parameter $P_5'$.
-In order to perform this measurement in the best environment, it has been decided to simplify the angular analysis by reducing the number of measured parameters.
+In order to perform this measurement in the best possible environment, it has been decided to simplify the angular analysis by reducing the number of measured parameters.
 This is done with the \textit{angular folding} method.
 %% , as already used and explained in References~\cite{LHCb2,Matias2012}.
 
@@ -335,8 +331,8 @@ In the following, I will use the expression ``folding a variable $x$ around $a$'
 
 The key of this method is to exploit the even and odd symmetries of the terms forming the differential distribution, around some values of the angular variables.
 By folding a variable around one of these values, all the terms with an even symmetry will be unchanged after the transformation, while all the terms with an odd symmetry will be become equal to zero.
-Any folding applied around a value for which there is no symmetry, in at least one term of the distribution, would modify the expression of that term.
-In this analysis, only folding corresponding to symmetries will be applied.
+Any folding applied around a value for which there is no symmetry, in at least one term of the distribution, would modify the expression of that term in a non-trivial way.
+In this analysis, only foldings corresponding to symmetries of the angular decay rate are applied.
 
 In order to preserve the term proportional to $P_5'$ in the angular distribution and to reduce as much as possible the total number of parameters, two foldings have been applied.
 The \PHI variable has been folded around 0, reducing its range from $\left[-\pi,\pi\right]$ to $\left[0,\pi\right]$.
@@ -455,7 +451,7 @@ In order to have a working fit sequence and reliable results, the values of the 
 As explained in Section~\ref{sec:fitseq}, the angular parameters that are free to float in the fit to the data are $P_1$, $P_5'$, and $A^5_\mathrm{S}$, while the others, $F_\mathrm{L}$, $F_S$, and $A_\mathrm{S}$, are kept fixed to the results of the previous CMS analysis.
 Thus, the region of validity of the \pdf is computed only in the three-dimensional space of the floating parameters, assuming the values of the others fixed like in the fit procedure.
 
-The analytic boundaries for the pure P-wave component can be found in literature~\cite{Matias:2014jua}, and after the reduction to the $P_1$, $P_5'$ parameter space they are:
+The analytic boundaries for the pure P-wave component can be found in literature~\cite{Matias:2014jua} and, after the reduction to the $P_1$, $P_5'$ parameter space, they are:
 \begin{equation} \label{eq:anal.bound}
   (P_5')^2 - 1 < P_1 < 1
 \end{equation}
@@ -463,7 +459,7 @@ without any dependence on the value of $F_\mathrm{L}$.
 
 The pure S-wave component is always positive, as can be derived from Equation~\ref{eq:S-wave0} and from the range of definition of $F_S$, from 0 to 1.
 In general, the interference terms can be also negative, so additional constraints are needed to guarantee the positiveness of the full \pdf.
-Since these constraints are not available in literature in an analytically form, a numerical computation is needed to describe them.
+Since these constraints are not available in literature in an analytic form, a numerical computation is needed to describe them.
 
 %% This operation can be done analytically, probing the \pdf for some selected values of the angular variables.
 %% From this procedure it is possible to get that the P1 physical range is [-1,1]; but no boundary can be extracted for $P_5'$ and $A^5_\mathrm{S}$, for which a numerical computation is needed.
@@ -475,7 +471,7 @@ For each bin, eight different physical boundaries in the ($P_1$,$P_5'$) paramete
 \end{itemize}
 
 To compute numerically each of these physical boundaries, the $P_1$,$P_5'$ space has been scanned with a grid of step 0.01 in both directions.
-For each point of this \textit{parameter} grid, the values of $\cos\theta_K$, $\cos\theta_l$ and $\phi$ are moved on a three-dimensional grid with step 0.02 in each direction; if the \pdf is positive for all of the points of this \textit{angle} grid, the point in the $P_1$,$P_5'$ space is inside the physical region, otherwise it is outside.
+For each point of this \textit{parameter} grid, the values of $\cos\theta_K$, $\cos\theta_l$ and $\phi$ are moved on a three-dimensional grid with step 0.02 in each direction; if the \pdf is positive for all of the points of this \textit{angle} grid, the point in the $P_1$,$P_5'$ space is defined to be inside the physical region, otherwise it is outside.
 %% The resulting region is equivalent to a $P_1$-dependent upper boundary for the absolute value of $P_5'$.
 
 The boundaries of the resulting physical regions, plotted in the negative $P_5'$ sector only, are shown from Figure~\ref{fig:bound0} to Figure~\ref{fig:bound8}.
