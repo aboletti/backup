@@ -17,7 +17,14 @@ The angular folding operations are applied to distributions and \pdfs, but this 
 Since the ``true'' values of the angular parameters used to simulate the events of the MC samples are not defined, the results of this fit will be used as a reference value for any comparison of the following results.
 This fit is clean from any effect due to finite experimental resolution, so I expect that the fit results do not have any bias.
 
-An example of the generator-level angular distributions and the projections of the fitted decay rate, for $q^2$ bin~3, are shown in Fig.~\ref{fig:gen-bin3}.
+An example of the generator-level angular distributions and the projections of the fitted decay rate, for $q^2$ bin~0, are shown in Fig.~\ref{fig:gen-bin0}.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin0.pdf}
+  \caption{Generator-level variable distributions of the MC sample before the GEN-filter, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-gen}, for $q^2$ bin~0.}
+  \label{fig:gen-bin0}
+\end{figure}
 
 %% \begin{figure}[!hbt]
 %%   \centering
@@ -52,12 +59,12 @@ An example of the generator-level angular distributions and the projections of t
 %%   \label{fig:gen-bin2}
 %% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin3.pdf}
-  \caption{Generator-level variable distributions of the MC sample before the GEN-filter, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-gen}, for $q^2$ bin~3.}
-  \label{fig:gen-bin3}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/GENFit/bin3.pdf}
+%%   \caption{Generator-level variable distributions of the MC sample before the GEN-filter, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-gen}, for $q^2$ bin~3.}
+%%   \label{fig:gen-bin3}
+%% \end{figure}
 
 %% \begin{figure}[!hbt]
 %%   \centering
@@ -105,7 +112,14 @@ The simulated sample contains both right-tagged and mis-tagged events, which can
 As a first step, these two categories are fitted individually, using for each of them the corresponding angular component of the \pdf, which is the decay rate times the efficiency function.
 The results of the fit show that the inclusion of the efficiency function in the fit procedure is correctly implemented.
 
-An example of the reconstruction-level angular distributions of the signal MC sample and the projections of the angular component of the \pdf, for $q^2$ bin~3, is shown in Figure~\ref{fig:rtag-bin3} for right-tagged events and in Figure~\ref{fig:wtag-bin3} for mis-tagged events.
+An example of the reconstruction-level angular distributions of the signal MC sample and the projections of the angular component of the \pdf, for $q^2$ bin~0, is shown in Figure~\ref{fig:rtag-bin0} for right-tagged events and in Figure~\ref{fig:wtag-bin0} for mis-tagged events.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv0.pdf}
+  \caption{Angular variable distributions of the right-tagged MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~0.}
+  \label{fig:rtag-bin0}
+\end{figure}
 
 %% \begin{figure}[!hbt]
 %%   \centering
@@ -141,12 +155,12 @@ An example of the reconstruction-level angular distributions of the signal MC sa
 %%   \label{fig:rtag-bin2}
 %% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv3.pdf}
-  \caption{Angular variable distributions of the right-tagged MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~3.}
-  \label{fig:rtag-bin3}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/correct/AngleS_Canv3.pdf}
+%%   \caption{Angular variable distributions of the right-tagged MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~3.}
+%%   \label{fig:rtag-bin3}
+%% \end{figure}
 
 %% \begin{figure}[!hbt]
 %%   \centering
@@ -180,6 +194,13 @@ An example of the reconstruction-level angular distributions of the signal MC sa
 %%     bars are from RECO sample. } 
 %%   \label{fig:rtag-bin8}
 %% \end{figure}
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv0.pdf}
+  \caption{Angular variable distributions of the mis-tagged MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~0.}
+  \label{fig:wtag-bin0}
+\end{figure}
 
 %% \begin{figure}[!hbt]
 %%   \centering
@@ -215,12 +236,12 @@ An example of the reconstruction-level angular distributions of the signal MC sa
 %%   \label{fig:wtag-bin2}
 %% \end{figure}
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv3.pdf}
-  \caption{Angular variable distributions of the mis-tagged MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~3.}
-  \label{fig:wtag-bin3}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/wrong/SignalRECO_Canv3.pdf}
+%%   \caption{Angular variable distributions of the mis-tagged MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~3.}
+%%   \label{fig:wtag-bin3}
+%% \end{figure}
 
 %% \begin{figure}[!hbt]
 %%   \centering
@@ -261,7 +282,14 @@ Since the mistag fraction values are computed on the same MC sample used for thi
 
 The fit is still limited to the three angular variables, because all the parameters of the mass shapes and the relative abundances are fixed in the fit and there is no information to extract from the mass distributions.
 
-An example of the reconstruction-level angular distributions of the signal MC sample and the projections of the angular component of the \pdf, for both right-tagged and mis-tagged events in $q^2$ bin~3, is shown in Figure~\ref{fig:fullreco-bin3}.
+An example of the reconstruction-level angular distributions of the signal MC sample and the projections of the angular component of the \pdf, for both right-tagged and mis-tagged events in $q^2$ bin~0, is shown in Figure~\ref{fig:fullreco-bin0}.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv0.pdf}
+  \caption{Angular variable distributions of all the MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~0.}
+  \label{fig:fullreco-bin0}
+\end{figure}
 
 %% \begin{figure}[!hbt]
 %%   \centering
@@ -299,12 +327,12 @@ An example of the reconstruction-level angular distributions of the signal MC sa
 
 
 
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv3.pdf}
-  \caption{Angular variable distributions of all the MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~3.}
-  \label{fig:fullreco-bin3}
-\end{figure}
+%% \begin{figure}[!hbt]
+%%   \centering
+%%   \includegraphics[width=0.9\textwidth]{Figures/RECOFit/full-reco/SignalRECO_Canv3.pdf}
+%%   \caption{Angular variable distributions of all the MC events after the selection criteria application, together with the projections of the fitted \pdf, as described in Section~\ref{sec:fitval-reco}, for $q^2$ bin~3.}
+%%   \label{fig:fullreco-bin3}
+%% \end{figure}
 
 
 
@@ -409,7 +437,7 @@ The results of right-tagged event fit and of the generator-level fit, are shown 
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=0.7\textwidth]{Figures/RECOFit/full-reco/P5p.pdf}
+  \includegraphics[width=0.7\textwidth]{Figures/CMS-PAS-BPH-15-008_Figure-aux_008.pdf}
   \caption{Results for the $P_5'$ parameter from the reconstruction-level fit (black) and from the generator-level fit (red), for each $q^2$ bin.
     The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:fullreco-closure-p5p}
@@ -418,7 +446,7 @@ The results of right-tagged event fit and of the generator-level fit, are shown 
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=0.7\textwidth]{Figures/RECOFit/full-reco/P1.pdf}
+  \includegraphics[width=0.7\textwidth]{Figures/CMS-PAS-BPH-15-008_Figure-aux_009.pdf}
   \caption{Results for the $P_1$ parameter from the reconstruction-level fit (black) and from the generator-level fit (red), for each $q^2$ bin.
     The vertical shaded regions correspond to the $q^2$ bins dedicated to the $J/\psi$ and $\psi'$ control channels.}
   \label{fig:fullreco-closure-p1}
@@ -891,7 +919,7 @@ The projection plots of the fit results are shown Figure~\ref{fig:result-bin4} a
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=1.0\textwidth]{Figures/J/TotalPDF-J.pdf}
+  \includegraphics[width=1.0\textwidth]{Figures/CMS-PAS-BPH-15-008_Figure-aux_012.pdf}
   \caption{The fitting results of the control channel \cPJgy on data.
     The plots show the projections of the fitting results on three different angular variables: \PBz mass, \cTL, \cTK and \PHI.}
   \label{fig:result-bin4}
@@ -899,7 +927,7 @@ The projection plots of the fit results are shown Figure~\ref{fig:result-bin4} a
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics[width=1.0\textwidth]{Figures/Psi/TotalPDF-Psi.pdf}
+  \includegraphics[width=1.0\textwidth]{Figures/CMS-PAS-BPH-15-008_Figure-aux_013.pdf}
   \caption{The fitting results of the control channel $\Psi'$ on data.
     The plots show the projections of the fitting results on three different angular variables: \PBz mass, \cTL, \cTK and \PHI.}
   \label{fig:result-bin6}
