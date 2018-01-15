@@ -1,4 +1,4 @@
-\chapter{Fitting Results on data after unblinding}
+\chapter{Fit results}
 \label{sec:result}
 
 In this section I will present the results of the fit to the data sample, after removing the \textit{blind} status to the analysis.
@@ -30,7 +30,7 @@ In this thesis, only the {\tt Feldman-Cousins} approach is described.
 
 %% , as was expected given the good results of the coverage studies show in appendix~\ref{sec:coverage}.
 
-\subsection{Feldman-Cousins}
+\subsection{Feldman-Cousins method}
 The approach used for the computation of statistical uncertainties, strongly suggested by the CMS Statistical Committee, is to apply the Feldman-Cousins method~\cite{FC} with nuisance parameters.
 Given the enormous time that would be needed to build a full bi-dimensional confidence interval in the $P_1$-$P_5'$ parameter space, we decided to perform the F-C procedure only along the maximum of the profile along $P_1$ and $P'_5$, respectively, of the $\mathcal{L}$ distribution, and extract two mono-dimensional confidence intervals.
 
@@ -409,41 +409,6 @@ We also put the latest LHCb results~\cite{LHCbP5p} on the plots for comparison, 
   \end{center}
 \end{figure}
 
-\subsection{Validation of the yield results}\label{sec:yieldComp}
-
-The yield of signal and background events in each $q^2$ bin is compared with the previous CMS analysis~\cite{AN-14-129}, which used the same dataset, on Table~\ref{tab:yieldComp}.
-
-\begin{table*}[!htb]
-  \begin{center}
-    \begin{footnotesize}
-      \caption{Comparison of values of signal yield $Y^{C}_{S}$ and background yield $Y_{B}$ with the same values found in previous CMS analysis.\label{tab:yieldComp}}
-      %%  (including both right-tagged and mis-tagged events)
-      \begin{tabular}{c|ccc|ccc}
-        \hline
-        & \multicolumn{2}{c}{$Y^{C}_{S}$} & $\Delta$  & \multicolumn{2}{c}{$Y_{B}$} & $\Delta$ \\
-        $q^2~(\GeV^2)$      & this analysis & previous CMS & & this analysis & previous CMS &\\
-        \hline         
-        1.00--2.00     & $80  \pm 12$ & $ 84 \pm 11$ & $-4\pm16$  &   $ 95\pm 11$    & $ 91 \pm 12$ & $4  \pm 16$\\
-        2.00--4.30     & $145 \pm 16$ & $145 \pm 16$ & $0\pm23$   &   $290\pm 20$    & $289 \pm 20$ & $1  \pm 28$\\
-        4.30--6.00     & $119 \pm 14$ & $117 \pm 15$ & $2\pm21$   &   $216\pm 17$    & $218 \pm 18$ & $-2 \pm 25$\\
-        6.00--8.68     & $247 \pm 21$ & $254 \pm 21$ & $-7\pm30$  &   $351\pm 23$    & $344 \pm 23$ & $7  \pm 33$\\
-        10.09--12.86   & $354 \pm 23$ & $362 \pm 25$ & $-8\pm34$  &   $575\pm 28$    & $567 \pm 29$ & $8  \pm 40$\\
-        14.18--16.00   & $213 \pm 17$ & $225 \pm 18$ & $-12\pm25$ &   $185\pm 16$    & $175 \pm 17$ & $10 \pm 23$\\
-        16.00--19.00   & $239 \pm 19$ & $239 \pm 18$ & $0\pm26$   &   $ 82\pm 12$    & $ 82 \pm 12$ & $0  \pm 17$\\
-
-        \hline
-      \end{tabular}
-    \end{footnotesize}
-  \end{center}
-\end{table*}
-
-
-
-\clearpage
-
-\section{Detailed distributions in each $q^2$ bin}
-\label{sec:res-proj}
-
 The results of detailed distributions in each $q^2$ bin, together with the projections of the \pdf, are shown in the following figures from Fig.~\ref{fig:res_bin0} to Fig.~\ref{fig:res_bin8}.
 
 \begin{figure}
@@ -502,3 +467,33 @@ The results of detailed distributions in each $q^2$ bin, together with the proje
     The data distribution and \pdf projections are shown as functions of \PBz invariant mass, \cTL, \cTK, and \PHI.}
   \label{fig:res_bin8}
 \end{figure}
+
+\clearpage
+
+\subsection{Validation of the yield results}\label{sec:yieldComp}
+
+The yield of signal and background events in each $q^2$ bin is compared with the previous CMS analysis~\cite{AN-14-129}, which used the same dataset, on Table~\ref{tab:yieldComp}.
+
+\begin{table*}[!htb]
+  \begin{center}
+    \begin{footnotesize}
+      \caption{Comparison of values of signal yield $Y^{C}_{S}$ and background yield $Y_{B}$ with the same values found in previous CMS analysis.\label{tab:yieldComp}}
+      %%  (including both right-tagged and mis-tagged events)
+      \begin{tabular}{c|ccc|ccc}
+        \hline
+        & \multicolumn{2}{c}{$Y^{C}_{S}$} & $\Delta$  & \multicolumn{2}{c}{$Y_{B}$} & $\Delta$ \\
+        $q^2~(\GeV^2)$      & this analysis & previous CMS & & this analysis & previous CMS &\\
+        \hline         
+        1.00--2.00     & $80  \pm 12$ & $ 84 \pm 11$ & $-4\pm16$  &   $ 95\pm 11$    & $ 91 \pm 12$ & $4  \pm 16$\\
+        2.00--4.30     & $145 \pm 16$ & $145 \pm 16$ & $0\pm23$   &   $290\pm 20$    & $289 \pm 20$ & $1  \pm 28$\\
+        4.30--6.00     & $119 \pm 14$ & $117 \pm 15$ & $2\pm21$   &   $216\pm 17$    & $218 \pm 18$ & $-2 \pm 25$\\
+        6.00--8.68     & $247 \pm 21$ & $254 \pm 21$ & $-7\pm30$  &   $351\pm 23$    & $344 \pm 23$ & $7  \pm 33$\\
+        10.09--12.86   & $354 \pm 23$ & $362 \pm 25$ & $-8\pm34$  &   $575\pm 28$    & $567 \pm 29$ & $8  \pm 40$\\
+        14.18--16.00   & $213 \pm 17$ & $225 \pm 18$ & $-12\pm25$ &   $185\pm 16$    & $175 \pm 17$ & $10 \pm 23$\\
+        16.00--19.00   & $239 \pm 19$ & $239 \pm 18$ & $0\pm26$   &   $ 82\pm 12$    & $ 82 \pm 12$ & $0  \pm 17$\\
+
+        \hline
+      \end{tabular}
+    \end{footnotesize}
+  \end{center}
+\end{table*}
