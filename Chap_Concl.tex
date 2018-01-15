@@ -3,11 +3,11 @@
 
 \section{Perspective at LHC Run II}
 \label{sec:Future}
-Since the discrepancy originally observed by the LHCb collaboration in the $P_5'$ angular parameter is far to be resolved, either from the theoretical side, where a better understanding of the effects of the hadronic uncertainties is essential to have a reliable Standard Model prediction, or from the experimental side.
+The puzzle originated by the discrepancy observed by the LHCb collaboration in the $P_5'$ angular parameter is far to be resolved, both from the theoretical side, where a better understanding of the effects of the hadronic uncertainties is essential to have a reliable Standard Model prediction, and from the experimental side.
 
 In particular regarding this latter aspect, in the last few years the analyses from many experiments added their contribution to the LHCb result, to validate it and, by combining the results, improve the precision of the experimental measurement.
 
-Despite the large statistics collected during LHC Run I by CMS, LHCb and ATLAS experiments, the uncertainty of the results of these analyses are still statistically dominated.
+Despite the large statistics collected during LHC Run I by CMS, LHCb and ATLAS experiments, the uncertainty of the results of these analyses is still statistically dominated.
 This makes this angular analysis an hot topic for the near future.
 
 Since 2015 LHC Run II is ongoing, and the machine is showing very good performance, delivering an instantaneous luminosity that is increasing year-by-year.
@@ -20,14 +20,14 @@ In this section I will describe some new issues that an analysis on CMS Run-II d
 \label{sec:TrigDeve}
 
 The main negative aspect, at analysis level, of the increased LHC luminosity is the trigger selections.
-Since the computing resources are limited, the event reconstruction can be run only on a limited amount of data.
-Since it is pointless to collect data if they can never be reconstructed, the limited number of reconstructed events can be translated in a upper limit of the rate of events that pass the HLT system.
-This limit, in the first three years of Run II, is about \SI{1000}{\hertz}, and is calculated taking into account the LHC down-times, when the detector is not collecting data but the reconstruction process continues.
+Due to the limited availability of computing resources, the event reconstruction can be run only on a certain amount of data.
+Since it is pointless to collect data if they can never be reconstructed, the limited number of reconstructed events can be translated in an upper limit of the rate of events that pass the HLT system.
+This limit, in the first three years of Run II, is about \SI{1000}{\hertz}, for the data stream dedicated to physics, and it is calculated taking into account the LHC down-times, when the detector is not collecting data but the reconstruction process continues.
 
 In addition, the maximum frequency at which the silicon detectors can be read sets a limit in the L1T output rate to \SI{100}{\kilo\hertz}.
 
 When LHC increases the instantaneous luminosity of the collisions, the rate would increase as well, because the probability of having a proton-proton interaction with final state that fires the trigger is proportional to the luminosity.
-It is an even worse situation when the average pileup is increased, because some HLT algorithms, and many of the L1T ones, can sum up the contribution of final states originated in different proton-proton interactions.
+The situation is even worse when the average pileup is increased, because some HLT algorithms, and most of the L1T ones, can sum up the contribution of final states originated in different proton-proton interactions.
 The firing probability in this case increases more than linearly, as a function of the luminosity.
 Due to the rate upper limit, when the delivered luminosity increases, we need to set tighter requirements in the trigger algorithms.
 
@@ -40,8 +40,8 @@ Since a simple increase of the $p_T$ and $\eta$ threshold, to keep the rate stab
 The L1T seed used during 2015 and 2016 runs is not containing any specific improvement, but only tighter thresholds are applied on the two muons.
 Two algorithms are contributing to the trigger:
 \begin{itemize}
-\item a seed with no cut on the muon transverse momenta, and a cut on their pseudorapidity $|\eta_{L1\mu}|<1.4\,(1.6)$. The two thresholds were used for collisions with higher (1.4) and lower (1.6) values of instantaneous luminosity;
-\item a seed with no cut on the pseudorapidity, and a cut on muon transverse momenta. During collisions at higher (lower) instantaneous luminosity, the cut on the leading muon is $p_{T\,L1\mu}>12\,(11)\GeV$, and the cut on the second muon is $p_{T\,L1\mu}>5\,(4)\GeV$.
+\item a seed with no cuts on the muon transverse momenta, and a cut on their pseudorapidity $|\eta_{L1\mu}|<1.4\,(1.6)$. The two thresholds were used for collisions with higher (1.4) and lower (1.6) values of instantaneous luminosity;
+\item a seed with no cuts on the pseudorapidity, and a cut on muon transverse momenta. During collisions at higher (lower) instantaneous luminosity, the cut on the leading muon is $p_{T\,L1\mu}>12\,(11)\GeV$, and the cut on the second muon is $p_{T\,L1\mu}>5\,(4)\GeV$.
 \end{itemize}
 
 The HLT path used has a raised requirement on the transverse momenta of the two muons, with respect to the 2012 version, $p_{T\,L3\mu}>4\GeV$.
@@ -70,7 +70,7 @@ In addition, the analysis upgrades described in Section~\ref{sec:AnalUpg} are ex
 \subsubsection{2017 trigger}
 \label{sec:2017}
 
-The L1T firmware used during 2017 run allowed to exploit the correlations between pair of objects, giving the possibility to cut on di-object quantities, like invariant mass and $\Delta R=\sqrt{\Delta\eta^2 + \Delta\phi^2}$.
+The L1T firmware used during 2017 run allowed to exploit the correlations between pairs of objects, giving the possibility to cut on di-object quantities, like invariant mass and $\Delta R=\sqrt{\Delta\eta^2 + \Delta\phi^2}$.
 The two L1T seeds used for the \BtoKstmumu channel has been developed to contain cuts on the distance between the two muons:
 \begin{itemize}
 \item a seed with no cut on the muon transverse momenta, used a stable cut on their pseudorapidity $|\eta_{L1\mu}|<1.5$ and a cut $\Delta R_{\mu\mu}<1.4$;
@@ -129,7 +129,7 @@ A complex fitting algorithm has been set up, to extract in a stable and reliable
 This fitting algorithm has been validated in many ways, by testing it on MC samples and on data control channels, \BtoKstJpsimumu and \BtoKstpsipmumu.
 
 In order to make the results as robust as possible, many sources of possible systematic uncertainty has been studied.
-The statistical uncertainties have been evaluated using an simplified form of a bi-dimensional Feldman-Cousins approach, to guarantee the correct coverage even when the result is close to an nonphysical region in the parameter phase-space.
+The statistical uncertainties have been evaluated using a simplified form of a bi-dimensional Feldman-Cousins approach, to guarantee the correct coverage even when the result is close to an nonphysical region in the parameter phase-space.
 
 Finally, the fit procedure has been applied on data, and the results extracted.
-Currently, they are among the most precise measurements of these parameters, they are compatible with the results from the other experiment and they show no discrepancy to the Standard Model predictions.
+Currently, they are among the most precise measurements of these parameters, they are compatible with the results from the other experiments and they show no discrepancies to the Standard Model predictions.
